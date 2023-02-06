@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+
+
+	<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main banner START -->
+<section>
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-md-10 text-center mx-auto">
+				<!-- Image -->
+				<img src="assets/images/farmstouch/free-sticker-plant-9440167.png" class="h-lg-500px mb-4" alt="">
+				<!-- Title -->
+				<h1 class="display-1 mb-0" style="color: #446A46;">404</h1>
+				<!-- Subtitle -->
+				<h2>Oh no, something went wrong!</h2>
+				<!-- info -->
+				<p class="mb-4">문제가 발생했거나 이 페이지가 더 이상 존재하지 않습니다.</p>
+				<!-- Button -->
+				<a href="index.html" class="btn btn-light mb-0">Take me to Homepage</a>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Main banner START -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+</body>
+</html>

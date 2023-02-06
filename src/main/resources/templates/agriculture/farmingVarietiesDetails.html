@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+
+
+<!-- Header END -->	
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main content START -->
+<section class="pt-4" style="background-color: #F6EDD9;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-xl-8 mx-auto">
+
+				<div class="card shadow">
+					<!-- Image -->
+					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220216%2F1642133084591%EF%BC%8D1.jpg" class="rounded-top" alt="">
+
+					<!-- Card body -->
+					<div class="card-body text-center p-4">
+						<!-- Title -->
+						<h1 class="card-title fs-3">사하라(Boseokchal)</h1>
+						<p class="lead mb-3">장미</p>
+
+						<!-- Second title -->
+
+						<!-- List -->
+						<div class="row justify-content-between text-start mb-4">
+							<div class="col-lg-6">
+								<ul class="list-group list-group-borderless">
+									<li class="list-group-item d-sm-flex justify-content-between">
+										<span class="mb-0 col-lg-4"><i class="fa-solid fa-pen"></i> 주요특성 :</span>
+										<span class="h6 fw-normal mb-0">가. 핑크빛 아이보리색의 절화수명이 긴 스프레이 품종<br>나. 가시가 적어 재배 편의성이 높은 품종<br>다. 소화수가 많고 절화수량이 많은 다수성 품종</span>
+									</li>
+									<li class="list-group-item d-sm-flex justify-content-between align-items-center">
+										<span class="mb-0"><i class="fa-solid fa-calendar"></i> 육성년도 :</span>
+										<span class="h6 fw-normal mb-0">2022</span>
+									</li>
+									<li class="list-group-item d-sm-flex justify-content-between">
+										<span class="mb-0 col-lg-4"><i class="fa-solid fa-location-dot"></i> 육성기관 :</span>
+										<span class="h6 fw-normal mb-0">농촌진흥청 국립원예특작과학원 원예작물부 화훼과</span>
+									</li>
+								</ul>
+							</div>
+
+							<div class="col-lg-6">
+								<ul class="list-group list-group-borderless">
+									<li class="list-group-item d-sm-flex justify-content-between align-items-center">
+										<span class="mb-0"><i class="fa-solid fa-user"></i> 작성자 :</span>
+										<span class="h6 fw-normal mb-0">양경록</span>
+									</li>
+									<li class="list-group-item d-sm-flex justify-content-between align-items-center">
+										<span class="mb-0"><i class="fa-solid fa-phone"></i> 전화번호 :</span>
+										<span class="h6 fw-normal mb-0">010-6213-2594</span>
+									</li>
+									<li class="list-group-item d-sm-flex justify-content-between align-items-center">
+										<span class="mb-0"><i class="fa-solid fa-envelope"></i> 이메일 :</span>
+										<span class="h6 fw-normal mb-0">ykrap02@rda.go.kr</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Button -->
+						<div class="d-sm-flex justify-content-sm-end d-grid">
+							<!-- Share button with dropdown -->
+							<div class="dropdown me-sm-2 mb-2 mb-sm-0">
+								<a href="#" class="btn btn-light mb-0 w-100" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="bi bi-share me-2"></i>공유하기
+								</a>
+								<!-- dropdown button -->
+								<ul class="dropdown-menu dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare">
+									<li><a  class="dropdown-item" href="#"><i class="fab fa-twitter-square me-2"></i>Twitter</a></li>
+									<li><a class="dropdown-item" href="#"><i class="fab fa-facebook-square me-2"></i>Facebook</a></li>
+									<li><a class="dropdown-item" href="#"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
+									<li><a class="dropdown-item" href="#"><i class="fas fa-copy me-2"></i>Copy link</a></li>
+								</ul>
+							</div>
+							<!-- Download button -->
+							<a href="#" class="btn btn-success2 mb-0"><i class="bi bi-file-pdf me-2"></i>품종요약서 다운로드</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Main content START -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- =======================Footer START -->
+
+	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+</body>
+</html>

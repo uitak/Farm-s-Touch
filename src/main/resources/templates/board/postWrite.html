@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+
+
+<!-- Header END -->	
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+
+<!-- =======================
+Main banner START -->
+<section class="pt-0">
+	<!-- Background and title -->
+	<div class="container-fluid" style="background-image:url(assets/images/farmstouch/example/rey.PNG); background-position: center left; background-size: cover; height: 25rem;">
+		<div class="row" style="margin-bottom: 1.875rem;">
+		</div>
+	</div>
+
+	<div class="container" style="margin-top: -17.5rem;">
+		<!-- Banner title -->
+		<div class="row my-2 my-xl-5" > 
+			<div class="col-md-8 mx-auto"> 
+				<h1 class="text-left text-white" style="margin-bottom: 50px; text-shadow:0.063rem 0.063rem 0.315rem #044a0e" >게시글 작성</h1>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Main banner START -->
+
+
+<!-- =======================
+Main contain START -->
+<section class="py-4" style="margin-top: 2.5rem; margin-bottom: 3.5rem;">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<!-- Chart START -->
+				<div class="card border">
+					<!-- Card body -->
+					<div class="card-body">
+            <!-- Form START -->
+            <form>
+              <!-- Main form -->
+              <div class="row">
+                <div class="col-12">
+                  <!-- 제목 -->
+                  <div class="mb-3">
+                    <input required id="con-name" name="name" type="text" class="form-control" placeholder="제목을 입력하세요.">
+                  </div>
+                </div>
+								<!-- 카테고리 줄 시작 -->
+								<div class="col-lg-6">
+                  <!-- Message -->
+                  <div class="mb-3">
+                    <label class="form-label">카테고리</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected value="1">농산물 직거래 장터 게시판</option>
+                      <option value="2">식물 분양 게시판</option>
+                    </select>
+                  </div>
+                </div>
+								<div class="col-lg-6">
+                  <!-- Message -->
+                  <div class="mb-3">
+                    <label class="form-label">판매여부</label>
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected value="1">판매중</option>
+                      <option value="2">판매완료</option>
+                    </select>
+                  </div>
+                </div>
+								<!-- 카테고리 줄 끝 -->
+							<!-- 본문 -->
+              <div class="col-12">
+                <div class="mb-3">
+                    <textarea class="form-control" rows="15" placeholder="본문을 입력하세요."></textarea>
+                </div>
+              </div>
+
+              <!-- Main toolbar -->
+                <div class="col-12">
+                  <div class="mb-3">
+                  <!-- Image -->
+                  <div class="position-relative">
+                    <h6 class="my-2">파일 업로드</h6>
+                    <label class="w-100" style="cursor:pointer;">
+                      <span> 
+                        <input class="form-control stretched-link" type="file" name="my-image" id="image" accept="image/gif, image/jpeg, image/png">
+                      </span>
+                    </label>
+                  </div>
+                  <p class="small mb-0 mt-2">JPG, JPEG, PNG 파일 업로드 가능</p>
+                  </div>
+                </div>
+                <!-- Create post button -->
+                <div class="col-md-12 text-start">
+                  <button class="btn btn-success2 w-100" type="submit">작성하기</button>
+                </div>
+              </div>
+            </form>
+            <!-- Form END -->
+					</div>
+				</div>
+				<!-- Chart END -->
+			</div>
+    </div>
+	</div>
+</section>
+<!-- =======================
+Main contain END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- footer 시작 -->
+<footer th:replace="~{common/layout2 :: #footer}"></footer>
+</body>
+</html>

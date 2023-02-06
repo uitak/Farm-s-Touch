@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+
+
+<!-- Header END -->	
+
+
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main banner START -->
+<section class="pt-0">
+	<!-- Background and title -->
+	<div class="container-fluid" style="background-image:url(assets/images/farmstouch/example/visual14.jpg); background-position: center left; background-size: cover; height: 27rem;">
+		<div class="row py-8"> 
+			<div class="col-md-2 mx-auto"> </div>
+			<div class="col-md-6 mx-auto"> 
+				<h1 class="text-start " style="text-shadow:0.125rem 0.125rem 0.125rem #285430; color: white;">농업기술 더하기 나누기</h1>
+				<h5 class="text-center " style="text-shadow:0.125rem 0.125rem 0.125rem #285430; color: white;">사용자가 직접 참여하는 농업기술 공유 사이트</h5>
+			</div>
+			<div class="col-md-4 mx-auto"> </div>
+		</div>
+		<div class="row" style="margin-bottom: 30px;"></div>
+			
+	</div>
+</section>
+<!-- =======================
+Main banner START -->
+	
+<!-- =======================
+Title and notice board START -->
+
+<!-- =======================
+Title and notice board END -->
+
+<!-- =======================
+Content START -->
+<section class="pt-0">
+	<div class="container vstack gap-4">
+		<!-- Title START -->
+		<div class="row">
+			<div class="col-12">
+				<h5 class="mb-0"><i class="bi bi-award fa-fw me-1"></i>총 게시글과 top3 분야</h5>
+			</div>
+		</div>	
+		<!-- Title END -->
+
+		<!-- Counter START -->
+		<div class="row g-4">
+			<!-- Counter item -->
+			<div class="col-sm-6 col-xl-3">
+				<div class="card card-body border">
+					<div class="d-flex align-items-center">
+						<!-- Icon -->
+						<div class="icon-xl bg-primary rounded-3 text-white">
+							<img src="https://img.icons8.com/stickers/100/null/open-box.png" style="height: 3.438rem;"/>
+						</div>
+						<!-- Content -->
+						<div class="ms-3">
+							<h4>433</h4>
+							<span>Total Posts</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Counter item -->
+			<div class="col-sm-6 col-xl-3">
+				<div class="card card-body border">
+					<div class="d-flex align-items-center">
+						<!-- Icon -->
+						<div class="icon-xl bg-success rounded-3 text-white">
+							<img src="https://img.icons8.com/stickers/100/null/lawn-care.png" style="height: 3.438rem;"/>
+						</div>
+						<!-- Content -->
+						<div class="ms-3">
+							<h4>176</h4>
+							<span>AgricultureTech</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Counter item -->
+			<div class="col-sm-6 col-xl-3">
+				<div class="card card-body border">
+					<div class="d-flex align-items-center">
+						<!-- Icon -->
+						<div class="icon-xl bg-info rounded-3 text-white">
+							<img src="https://img.icons8.com/stickers/100/null/virtual-machine.png" style="height: 3.438rem;"/>
+						</div>
+						<!-- Content -->
+						<div class="ms-3">
+							<h4>126</h4>
+							<span>etc.</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Counter item -->
+			<div class="col-sm-6 col-xl-3">
+				<div class="card card-body border">
+					<div class="d-flex align-items-center">
+						<!-- Icon -->
+						<div class="icon-xl bg-warning rounded-3 text-white">
+							<img src="https://img.icons8.com/stickers/100/null/head-with-brain.png" style="height: 3.438rem;"/>
+						</div>
+						<!-- Content -->
+						<div class="ms-3">
+							<h4>40</h4>
+							<span>Education</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+		</div>
+		<!-- Counter END -->
+
+		
+	</div>
+</section>
+<!-- =======================
+Content END -->
+
+
+
+<!-- =======================
+Flight list START -->
+<section class="pt-0">
+	<div class="container">
+		<div class="row">
+			
+				<!-- Left sidebar START -->
+				<aside class="col-xl-4 col-xxl-3">
+					<!-- Responsive offcanvas body START -->
+						<div class="offcanvas-xl offcanvas-end" tabindex="-1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
+							<!-- Offcanvas header -->
+							<div class="offcanvas-header">
+								<h5 class="offcanvas-title" id="offcanvasSidebarLabel">Advance Filters</h5>
+								<button  type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasSidebar" aria-label="Close"></button>
+							</div>
+
+							<!-- Offcanvas body -->
+							<div class="offcanvas-body flex-column p-3 p-xl-0">
+								
+								<div class="rounded-3 shadow">
+									<form>
+										<!-- Popular filters START -->
+										<div class="card card-body rounded-0 rounded-top p-4">
+											<!-- Title -->
+											<h6 class="mb-2">지역 분류</h6>
+											<!-- Popular filters group -->
+											<div class="col-12">	
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType1">
+														<label class="form-check-label" for="popolarType1">서울특별시</label>
+													</div>
+													<!-- <span class="small">(41)</span> -->
+												</div>	
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType2">
+														<label class="form-check-label" for="popolarType2">부산광역시</label>
+													</div>
+													<!-- <span class="small">(20)</span> -->
+												</div>	
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType3">
+														<label class="form-check-label" for="popolarType3">대구광역시</label>
+													</div>
+													<!-- <span class="small">(4)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType4">
+														<label class="form-check-label" for="popolarType4">인천광역시</label>
+													</div>
+													<!-- <span class="small">(2)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType5">
+														<label class="form-check-label" for="popolarType5">울산광역시</label>
+													</div>
+													<!-- <span class="small">(2)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType6">
+														<label class="form-check-label" for="popolarType6">광주광역시</label>
+													</div>
+													<!-- <span class="small">(2)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType7">
+														<label class="form-check-label" for="popolarType7">세종특별자치시</label>
+													</div>
+													<!-- <span class="small">(2)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType8">
+														<label class="form-check-label" for="popolarType8">경기도</label>
+													</div>
+													<!-- <span class="small">(2)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType9">
+														<label class="form-check-label" for="popolarType9">강원도</label>
+													</div>
+													<!-- <span class="small">(2)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType10">
+														<label class="form-check-label" for="popolarType10">충청북도</label>
+													</div>
+													<!-- <span class="small">(2)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType11">
+														<label class="form-check-label" for="popolarType11">충청남도</label>
+													</div>
+													<!-- <span class="small">(2)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType12">
+														<label class="form-check-label" for="popolarType12">전라북도</label>
+													</div>
+													<!-- <span class="small">(2)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType13">
+														<label class="form-check-label" for="popolarType13">전라남도</label>
+													</div>
+													<!-- <span class="small">(2)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType14">
+														<label class="form-check-label" for="popolarType14">경상북도</label>
+													</div>
+													<!-- <span class="small">(2)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType15">
+														<label class="form-check-label" for="popolarType15">경상남도</label>
+													</div>
+													<!-- <span class="small">(2)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType16">
+														<label class="form-check-label" for="popolarType16">제주특별자치도</label>
+													</div>
+													<!-- <span class="small">(2)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" id="popolarType17">
+														<label class="form-check-label" for="popolarType17">전국</label>
+													</div>
+													<!-- <span class="small">(2)</span> -->
+												</div>
+											</div>
+										</div>
+										<!-- Popular filters END -->
+
+										<hr class="my-0"> <!-- Divider -->
+
+										<!-- Layover Airport START -->
+										<div class="card card-body rounded-0 rounded-bottom p-4">
+											<!-- Title -->
+											<h6 class="mb-2">분야 분류</h6>
+											<!-- Layover Airport group -->
+											<div class="col-12">
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" value="" id="lauoverType1">
+														<label class="form-check-label" for="lauoverType1">농업기술</label>
+													</div>
+													<!-- <span class="small">(01)</span> -->
+												</div>	
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" value="" id="lauoverType2">
+														<label class="form-check-label" for="lauoverType2">교육</label>
+													</div>
+													<!-- <span class="small">(02)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" value="" id="lauoverType3">
+														<label class="form-check-label" for="lauoverType3">기타</label>
+													</div>
+													<!-- <span class="small">(02)</span> -->
+												</div>
+												<!-- Checkbox -->
+												<div class="d-flex justify-content-between align-items-center">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" value="" id="lauoverType4">
+														<label class="form-check-label" for="lauoverType4">음식</label>
+													</div>
+													<!-- <span class="small">(03)</span> -->
+												</div>
+												
+												<!-- Collapse body -->
+												<div class="multi-collapse collapse" id="lauoverCollapes">
+													<!-- Checkbox -->
+													<div class="d-flex justify-content-between align-items-center">
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="" id="lauoverType7">
+															<label class="form-check-label" for="lauoverType7">생활문화</label>
+														</div>
+														<!-- <span class="small">(04)</span> -->
+													</div>
+													<!-- Checkbox -->
+													<div class="d-flex justify-content-between align-items-center">
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="" id="lauoverType8">
+															<label class="form-check-label" for="lauoverType8">공모전</label>
+														</div>
+														<!-- <span class="small">(15)</span> -->
+													</div>
+													<!-- Checkbox -->
+													<div class="d-flex justify-content-between align-items-center">
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="" id="lauoverType9">
+															<label class="form-check-label" for="lauoverType9">농자재</label>
+														</div>
+														<!-- <span class="small">(04)</span> -->
+													</div>
+													<!-- Checkbox -->
+													<div class="d-flex justify-content-between align-items-center">
+														<div class="form-check">
+															<input class="form-check-input" type="checkbox" value="" id="lauoverType10">
+															<label class="form-check-label" for="lauoverType10">해외농업</label>
+														</div>
+														<!-- <span class="small">(04)</span> -->
+													</div>
+												</div>
+												<!-- Collapse button -->
+												<a class="btn-more d-flex align-items-center collapsed p-0 mb-0 mt-2" data-bs-toggle="collapse" href="#lauoverCollapes" role="button" aria-expanded="false" aria-controls="lauoverCollapes">
+													See <span class="see-more ms-1">more</span><span class="see-less ms-1">less</span><i class="fa-solid fa-angle-down ms-2"></i>
+												</a>
+											</div>
+										</div>
+									</form>	<!-- Layover Airport END -->
+								</div><!-- Form End -->
+							</div>
+
+							<!-- Buttons -->
+							<div class="d-flex justify-content-between p-2 p-xl-0 mt-xl-4">
+								<button class="btn btn-link p-0 mb-0">Clear all</button>
+								<button class="btn btn-success2 mb-0"  type="submit">필터 검색 결과</button>
+							</div>
+		
+						</div>
+					<!-- Responsive offcanvas body END -->
+				</aside>
+				<!-- Left sidebar END -->
+
+				<!-- Main content START -->
+				<div class="col-xl-8 col-xxl-9">
+					<div class="vstack gap-4">
+						
+						<!-- Action box START -->
+						<div class="bg-success bg-opacity-10 p-3 rounded-2 d-sm-flex justify-content-sm-between align-items-center">
+							<!-- Title and badge -->
+							<div class="d-flex align-items-center mb-3 mb-sm-0">
+								<div class="position-relative z-index-1 me-2">
+									<img src="assets/images/element/05.svg" class="position-relative h-40px" alt="">
+									<span class="smaller text-white position-absolute top-50 start-50 translate-middle">Hot</span>
+								</div>
+								<!-- Title -->
+								<h6 class="mb-0 fw-normal">지금 <strong class='text-success'>농업기술더하기나누기</strong>에서 당신을 기다립니다.</h6>
+							</div>
+
+							<!-- Button -->
+							<a href="https://www.nongsaro.go.kr/portal/ps/psx/psxa/mlrdCurationMain.ps?menuId=PS03974" target="_blank" class="btn btn-sm btn-success2 mb-0">Go Now</a>
+						</div>
+						<!-- Action box END -->
+
+						<!-- ============================================================ -->
+						<!-- Booking table START -->
+						<div class="row">
+							<div class="col-12">
+								<div class="card border rounded-3" style="font-size: 0.875rem;">
+									<!-- Card header START -->
+									<div class="card-header border-bottom">
+										<div class="d-sm-flex justify-content-between align-items-center">
+											<h5 class="mb-2 mb-sm-0">농업기술 더하기 나누기 목록</h5>
+											<a href="#" class="btn btn-sm btn-info mb-0">메인페이지로</a>
+										</div>
+									</div>
+									<!-- Card header END -->
+
+									<!-- Card body START -->
+									<div class="card-body">
+										<!-- Search and select START -->
+		
+										<div class="row g-3 align-items-center justify-content-between mb-3">
+											<!-- Select option -->
+											<div class="col-md-3">
+												<!-- Short by filter -->
+												<form>
+													<select class="form-select js-choice" aria-label=".form-select-sm">
+														<option value="title">제목</option>
+														<option value="content">작성자</option>
+													</select>
+												</form>
+											</div>
+											<!-- Search -->
+											<div class="col-md-8">
+												<div class="rounded position-relative">
+													<input class="form-control pe-5" type="search" placeholder="Search" aria-label="Search">
+													<button class="btn border-0 px-3 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6"></i></button>
+												</div>
+											</div>
+										
+											
+										</div>
+										<!-- Search and select END -->
+
+										<!-- Hotel room list START -->
+										<div class="table-responsive border-0">
+											<table class="table align-middle p-4 mb-0 table-hover table-shrink">
+												<!-- Table head -->
+												<thead class="table-light" style="text-align: center;">
+													<tr>
+														<th scope="col" class="border-0 rounded-start">#</th>
+														<th scope="col" class="border-0">제목</th>
+														<th scope="col" class="border-0">지역</th>
+														<th scope="col" class="border-0">작목</th>
+														<th scope="col" class="border-0">분야</th>
+														<th scope="col" class="border-0 rounded-end">등록일</th>
+													</tr>
+												</thead>
+
+												<!-- Table body START -->
+												<tbody class="border-top-0">
+													<!-- Table item -->
+													<tr style="text-align: center;">
+														<td> <span class="mb-0">001</span> </td>
+														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">키위(참다래), 단순히 먹는 과일에서 그치지않고 오감만족 아이템으로 최고</a></span> </td>
+														<td> 전라남도 </td>
+														<td> <div class="badge text-bg-success">기타</div> </td>
+														<td> <div class="badge bg-success bg-opacity-10 text-success">교육</div> </td>
+														<td style="font-size: 12px;">2017-11-09</td>
+													</tr>
+
+													<!-- Table item -->
+													<tr style="text-align: center;">
+														<td> <span class="mb-0">002</span> </td>
+														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">창업에서 마케팅까지! SNS로 시작한 나의 잭과사과나무(정보화경진대회 우수상, 경상북도 청도군 박수빈)</a></span> </td>
+														<td> 제주특별자치도 </td>
+														<td> <div class="badge text-bg-success">사과</div> </td>
+														<td> <div class="badge bg-success bg-opacity-10 text-success">농업기술</div> </td>
+														<td style="font-size: 12px;">2017-11-11</td>
+													</tr>
+
+													<!-- Table item -->
+													<tr style="text-align: center;">
+														<td> <span class="mb-0">002</span> </td>
+														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">약초된장</a></span> </td>
+														<td> 제주특별자치도 </td>
+														<td> <div class="badge text-bg-success">사과</div> </td>
+														<td> <div class="badge bg-success bg-opacity-10 text-success">농업기술</div> </td>
+														<td style="font-size: 12px;">2017-11-11</td>
+													</tr>
+
+													<!-- Table item -->
+													<tr style="text-align: center;">
+														<td> <span class="mb-0">001</span> </td>
+														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">키위(참다래), 단순히 먹는 과일에서 그치지않고 오감만족 아이템으로 최고</a></span> </td>
+														<td> 전라남도 </td>
+														<td> <div class="badge text-bg-success">기타</div> </td>
+														<td> <div class="badge bg-success bg-opacity-10 text-success">교육</div> </td>
+														<td style="font-size: 12px;">2017-11-09</td>
+													</tr>
+
+													<!-- Table item -->
+													<tr style="text-align: center;">
+														<td> <span class="mb-0">002</span> </td>
+														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">창업에서 마케팅까지! SNS로 시작한 나의 잭과사과나무(정보화경진대회 우수상, 경상북도 청도군 박수빈)</a></span> </td>
+														<td > 제주특별자치도 </td>
+														<td> <div class="badge text-bg-success">사과</div> </td>
+														<td> <div class="badge bg-success bg-opacity-10 text-success">농업기술</div> </td>
+														<td style="font-size: 12px;">2017-11-11</td>
+													</tr>
+
+													<!-- Table item -->
+													<tr style="text-align: center;">
+														<td> <span class="mb-0">002</span> </td>
+														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">약초된장</a></span> </td>
+														<td> 제주특별자치도 </td>
+														<td> <div class="badge text-bg-success">사과</div> </td>
+														<td> <div class="badge bg-success bg-opacity-10 text-success">농업기술</div> </td>
+														<td style="font-size: 12px;">2017-11-11</td>
+													</tr>
+
+													<!-- Table item -->
+													<tr style="text-align: center;">
+														<td> <span class="mb-0">002</span> </td>
+														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">약초된장</a></span> </td>
+														<td> 제주특별자치도 </td>
+														<td> <div class="badge text-bg-success">사과</div> </td>
+														<td> <div class="badge bg-success bg-opacity-10 text-success">농업기술</div> </td>
+														<td style="font-size: 12px;">2017-11-11</td>
+													</tr>
+
+													<!-- Table item -->
+													<tr style="text-align: center;">
+														<td> <span class="mb-0">002</span> </td>
+														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">창업에서 마케팅까지! SNS로 시작한 나의 잭과사과나무(정보화경진대회 우수상, 경상북도 청도군 박수빈)</a></span> </td>
+														<td> 경상남도 </td>
+														<td> <div class="badge text-bg-success">사과</div> </td>
+														<td> <div class="badge bg-success bg-opacity-10 text-success">농업기술</div> </td>
+														<td style="font-size: 12px;">2017-11-11</td>
+													</tr>
+
+													<!-- Table item -->
+													<tr style="text-align: center;">
+														<td> <span class="mb-0">002</span> </td>
+														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">창업에서 마케팅까지! SNS로 시작한 나의 잭과사과나무(정보화경진대회 우수상, 경상북도 청도군 박수빈)</a></span> </td>
+														<td> 제주특별자치도 </td>
+														<td> <div class="badge text-bg-success">사과</div> </td>
+														<td> <div class="badge bg-success bg-opacity-10 text-success">농업기술</div> </td>
+														<td style="font-size: 12px;">2017-11-11</td>
+													</tr>
+												</tbody>
+												<!-- Table body END -->
+											</table>
+										</div>
+										<!-- Hotel room list END -->
+									</div>
+									<!-- Card body END -->
+
+									<!-- Card footer START -->
+									<div class="card-footer pt-0">
+										<!-- Pagination and content -->
+										<div class="d-sm-flex justify-content-sm-between align-items-sm-center">
+											<!-- Content -->
+											<p class="mb-sm-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
+											<!-- Pagination -->
+											<nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
+												<ul class="pagination pagination-sm pagination-primary-soft mb-0">
+													<li class="page-item disabled">
+														<a class="page-link" href="#" tabindex="-1">Prev</a>
+													</li>
+													<li class="page-item"><a class="page-link" href="#">1</a></li>
+													<li class="page-item active"><a class="page-link" href="#">2</a></li>
+													<li class="page-item disabled"><a class="page-link" href="#">..</a></li>
+													<li class="page-item"><a class="page-link" href="#">15</a></li>
+													<li class="page-item">
+														<a class="page-link" href="#">Next</a>
+													</li>
+												</ul>
+											</nav>
+										</div>
+									</div>
+									<!-- Card footer END -->
+								</div>
+							</div>
+						</div>	
+						<!-- Booking table END -->
+					</div>
+				</div>
+				<!-- Main content END -->
+			
+		</div> <!-- Row END -->
+	</div>
+</section>
+<!-- =======================
+Flight list END -->
+
+
+
+<!-- =======================
+Action box START -->
+<section>
+	<div class="container" >
+		<div class="row g-4">
+			<div class="col-12">
+				<!-- Action box START -->
+				<div class="card card-body shadow p-4" style="background-color: rgb(217, 244, 180);">
+					<div class="row g-4 justify-content-between align-items-center">
+						<!-- Image -->
+						<div class="col-sm-3 col-lg-2">
+							<img src="assets/images/farmstouch/example/fam02.png" alt="">
+						</div>
+
+						<!-- Title and content -->
+						<div class="col-sm-9 col-lg-6 col-xl-7">
+							<h4>Why did you choose Farm's Touch</h4>
+							<p class="mb-0">농업과학기술 개발보급과 진흥을 위해 농촌진흥청 및 소속기관이 보유한 다양한 콘텐츠 및 대국민 서비스를 제공하고 있습니다.</p>
+						</div>
+
+						<!-- Button -->
+						<div class="col-lg-3 col-xxl-2 d-grid">
+							
+						</div>
+					</div>
+				</div>
+				<!-- Action box END -->
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Action box END -->
+
+
+
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- =======================Footer START -->
+
+	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+</body>
+</html>

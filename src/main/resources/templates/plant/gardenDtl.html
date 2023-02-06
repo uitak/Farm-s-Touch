@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+	<!-- Header END -->
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+	
+<!-- =======================
+Main Banner START -->
+<section class="pt-4">
+	<div class="container">
+
+		<!-- Title -->
+		<div class="row">
+			<div class="col-12 mb-4">
+				<h1 class="fs-3">군자란</h1>
+				<!-- Location -->
+				<p class="fw-bold mb-0"><i class="bi bi-flower2 me-2"></i>Clivia miniata / Scarlet Caffir Lily,Kaffir Lily, Clivia, Bush lily </p>
+			</div>
+		</div>
+
+		<!-- Slider START -->
+		<div class="tiny-slider arrow-round arrow-blur">
+			<div class="tiny-slider-inner" data-autoplay="true" data-arrow="true" data-edge="0" data-dots="false" data-items="2" data-items-sm="1">
+				<!-- Slider item -->
+				<div>
+					<a class="w-100 h-100" data-glightbox data-gallery="gallery" href="https://www.nongsaro.go.kr/cms_contents/301/12974_MF_ATTACH_01.jpg">
+						<div class="card card-element-hover card-overlay-hover overflow-hidden">
+							<!-- Image -->
+							<img style="height: 20rem; object-fit: cover;" src="https://www.nongsaro.go.kr/cms_contents/301/12974_MF_ATTACH_01.jpg" class="rounded-3" alt="">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Slider item -->
+				<div>
+					<a class="w-100 h-100" data-glightbox data-gallery="gallery" href="https://www.nongsaro.go.kr/cms_contents/301/12974_MF_ATTACH_02.jpg">
+						<div class="card card-element-hover card-overlay-hover overflow-hidden">
+							<!-- Image -->
+							<img style="height: 20rem; object-fit: cover;" src="https://www.nongsaro.go.kr/cms_contents/301/12974_MF_ATTACH_02.jpg" class="rounded-3" alt="">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Slider item -->
+				<div>
+					<a class="w-100 h-100" data-glightbox data-gallery="gallery" href="https://www.nongsaro.go.kr/cms_contents/301/12974_MF_ATTACH_03.jpg">
+						<div class="card card-element-hover card-overlay-hover overflow-hidden">
+							<!-- Image -->
+							<img style="height: 20rem; object-fit: cover;" src="https://www.nongsaro.go.kr/cms_contents/301/12974_MF_ATTACH_03.jpg" class="rounded-3" alt="">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Slider item -->
+				<div>
+					<a class="w-100 h-100" data-glightbox data-gallery="gallery" href="https://www.nongsaro.go.kr/cms_contents/301/12974_MF_ATTACH_04.jpg">
+						<div class="card card-element-hover card-overlay-hover overflow-hidden">
+							<!-- Image -->
+							<img style="height: 20rem; object-fit: cover;"src="https://www.nongsaro.go.kr/cms_contents/301/12974_MF_ATTACH_04.jpg" class="rounded-3" alt="">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- Slider START -->
+	</div>
+</section>
+<!-- =======================
+Main Banner END -->
+
+<!-- =======================
+Room detail START -->
+<section class="pt-0 ">
+	<div class="container">
+		<div class="row mb-6 mt-5">
+
+			<!-- Detail START -->
+            <div class="col-xl-7">
+				<div class="card bg-transparent p-0">
+					<!-- Card header -->
+					<div class="card-header bg-transparent border-bottom d-sm-flex justify-content-sm-between align-items-center p-0 pb-3">
+						<h4 class="mb-2 mb-sm-0 ">상세정보</h4>
+
+						
+					</div>
+
+					<!-- Card body START -->
+					<div class="card-body p-0 pt-3">
+						<div class="vstack gap-5">
+							<!-- Room item START -->
+							<div class="row g-4">
+								<!-- Item -->
+								<div class="col-sm-6">
+									<div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-circle" style="display: inline-block;" ><i class="fa-solid fa-shapes"></i></div>
+									<h5 class="mx-2" style="display: inline-block;" >형태</h5>
+									<p class="mt-3">일반형</p>
+								</div>
+								<!-- Item -->
+								<div class="col-sm-6">
+									<div class="icon-lg bg-warning bg-opacity-10 text-warning rounded-circle" style="display: inline-block;"><i class="bi bi-flower2"></i></div>
+									<h5 class="mx-2" style="display: inline-block;">꽃</h5>
+									<p class="mt-3">빨강색,오렌지색,노랑색</p>
+								</div>
+								<!-- Item -->
+								<div class="col-sm-6">
+									<div class="icon-lg bg-success bg-opacity-10 text-success rounded-circle" style="display: inline-block;"><i class="fa-solid fa-leaf"></i></div>
+									<h5 class="mx-2" style="display: inline-block;">잎</h5>
+									<p class="mt-3">녹색, 연두색,흰색, 크림색</p>
+								</div>
+								<!-- Item -->
+								<div class="col-sm-6">
+									<div class="icon-lg bg-danger bg-opacity-10 text-danger rounded-circle" style="display: inline-block;"><i class="fa-solid fa-apple-whole"></i></div>
+									<h5 class="mx-2" style="display: inline-block;">열매</h5>
+									<p class="mt-3">빨강색</p>
+								</div>	
+								<div class="col-sm-6">
+									<div class="icon-lg bg-orange bg-opacity-10 text-orange rounded-circle" style="display: inline-block;"><i class="fa-solid fa-wind"></i></div>
+									<h5 class="mx-2" style="display: inline-block;">냄새</h5>
+									<p class="mt-3"> - </p>
+								</div>
+								<!-- Item -->
+								<div class="col-sm-6">
+									<div class="icon-lg bg-black bg-opacity-10 text-black rounded-circle" style="display: inline-block;"><i class="fa-solid fa-skull"></i></div>
+									<h5 class="mx-2" style="display: inline-block;">독성</h5>
+									<p class="mt-3">복용시 치명적 독성</p>
+								</div>		
+								<div class="col-sm-6">
+									<div class="icon-lg bg-secondary bg-opacity-10 text-secondary rounded-circle" style="display: inline-block;"><i class="fa-solid fa-bug"></i></div>
+									<h5 class="mx-2" style="display: inline-block;">병충해</h5>
+									<p class="mt-3">응애,깍지벌레</p>
+								</div>
+								<!-- Item -->
+								<div class="col-sm-6">
+									<div class="icon-lg bg-primary bg-opacity-50 text-white rounded-circle" style="display: inline-block;"><i class="fa-solid fa-seedling"></i></div>
+									<h5 class="mx-2" style="display: inline-block;">번식 방법</h5>
+									<p class="mt-3">파종,분주</p>
+								</div>			
+							</div>
+							<!-- Room item END -->
+						</div>
+					</div>
+					<!-- Card body END -->
+				</div>	
+			</div>
+			<!-- Detail END -->
+
+			<!-- Right side content START -->
+			<aside class="col-xl-5 d-none d-xl-block">
+				<div class="card bg-transparent border">
+					<!-- Card header START -->
+					<div class="card-header bg-transparent border-bottom">
+						<!-- Title -->
+						<h4 class="card-title mb-0">소개</h4>
+					</div>
+					<!-- Card header END -->
+
+					<!-- Card body START -->
+					<div class="card-body">
+
+						
+
+						<!-- List -->
+						<ul class="list-group list-group-borderless mb-3">
+							<li class="list-group-item bg-light d-flex justify-content-between rounded-2 px-2 mt-1 mb-2">
+								
+								<span class="h5 fw-bold mb-0">군자란</span>
+							</li>
+							<li class="list-group-item px-2 d-flex justify-content-between">
+								<span class="h6 fw-bold mb-0">식물학명</span>
+							</li>
+							<li class="list-group-item px-2 d-flex justify-content-between mb-2">
+								<span class="h6 fw-light mb-0">Clivia miniata</span>
+							</li>
+							<li class="list-group-item px-2 d-flex justify-content-between">
+								<span class="h6 fw-bold mb-0">식물영명</span>				
+							</li>
+							<li class="list-group-item px-2 d-flex justify-content-between mb-2">
+								<span class="h6 fw-light mb-0">Scarlet Caffir Lily,Kaffir Lily, Clivia, Bush lily</span>
+							</li>
+							<li class="list-group-item px-2 d-flex justify-content-between">
+								<span class="h6 fw-bold mb-0">유통명</span>				
+							</li>
+							<li class="list-group-item px-2 d-flex justify-content-between mb-2">
+								<span class="h6 fw-light mb-0">-</span>
+							</li>
+							<li class="list-group-item px-2 d-flex justify-content-between">
+								<span class="h6 fw-bold mb-0">과명</span>				
+							</li>
+							<li class="list-group-item px-2 d-flex justify-content-between mb-2">
+								<span class="h6 fw-light mb-0">수선화과</span>
+							</li>
+							<li class="list-group-item px-2 d-flex justify-content-between">
+								<span class="h6 fw-bold mb-0">원산지</span>
+							</li>
+							<li class="list-group-item px-2 d-flex justify-content-between mb-2">
+								<span class="h6 fw-light mb-0">남아프리카의 나탈</span>
+							</li>
+							<li class="list-group-item px-2 d-flex justify-content-between">
+								<span class="h6 fw-bold mb-0">부가정보</span>
+							</li>
+							<li class="list-group-item px-2 d-flex justify-content-between mb-2">
+								<span class="h6 fw-light mb-0">꽃말: 고귀, / 君子蘭(군자란)은 이름 끝에 ‘란’이라고 되어있지만 난 종류가 아님/컨테이너, 표본, 경계</span>
+							</li>
+						</ul>
+
+						
+					</div>
+					<!-- Card body END -->
+				</div>
+			</aside>
+			<!-- Right side content END -->
+		</div>
+        <div class="row mb-6 mt-8">
+            <aside class="col-xl-5 d-none d-xl-block">
+				<div class="card bg-transparent border">
+					<!-- Card header START -->
+					<div class="card-header bg-transparent border-bottom">
+						<!-- Title -->
+						<h4 class="card-title mb-0">난이도 : 경험자 </h4>
+					</div>
+					<!-- Card header END -->
+
+					<!-- Card body START -->
+					<div class="card-body">
+                        <h3 class="text-center text-white bg-success rounded-3" style="line-height: 4rem;"><i class="fa-solid fa-user"></i></h3>
+						<div class="row g-4 mb-6">
+						<!-- Item -->
+						
+							<div class="bg-light py-3 px-4 rounded-3">
+								<h6 class="  mb-1">경험자란?</h6>
+								<h6 class=" fw-light small mb-0">식물을 한 번 키워보신 적이 있는 분이시라면, 키우는 데 큰 어려움이 없으실 겁니다.</h6>
+							</div>
+							
+						</div>
+
+						<!-- List -->
+						<div class="mb-3">
+                            <h4>육성 Tip</h4>
+                            <p>군자란의 수명은 30년 이상으로 장수하는 식물이다. 어린 묘로부터 시작하면 3년은 지나야 꽃이 피지만, 일단 꽃을 피운 것은 이듬해부터는 매년 꽃을 피운다. 씨앗으로 번식해도 되지만 꽃이 피기까지 5년 정도 걸리기 때문에 보통은 포기나누기 한다. 씨앗은 11월경에 충분히 성숙된 것을 따서 뿌리면 되는데 다소 저온인 16-21℃에서 발아가 잘된다. 포기나누기는 늦은 겨울이나 이른 봄에 한다.</p>
+
+                        </div>
+
+						<!-- Button -->
+						
+					</div>
+					<!-- Card body END -->
+				</div>
+			</aside>
+            
+
+			<!-- Detail START -->
+			<div class="col-xl-7">
+				<div class="card bg-transparent p-0">
+					<!-- Card header -->
+					<div class="card-header bg-transparent border-bottom d-sm-flex justify-content-sm-between align-items-center p-0 pb-3">
+						<h4 class="mb-2 mb-sm-0 ">재배방법</h4>
+
+						<div class="col-sm-4">
+							
+						</div>
+					</div>
+
+					<!-- Card body START -->
+					<div class="card-body p-0 pt-3">
+						<div class="vstack gap-5">
+							<!-- Room item START -->
+							<div class="card border bg-transparent p-3">
+								<div class="row g-3 g-md-4">
+									<!-- Image and content -->
+									<div class="col-md-4">
+                                        
+										<!-- Image -->
+										<div class="bg-success py-2 px-3 rounded-3 h-100" >
+											<h1 class="text-white" ><i class="fa-solid fa-temperature-half"></i></h1>
+                                            <h5 class="text-white">생육온도</h5>
+                                            <h6 class="text-white">16~20℃</h6>
+                                            
+										</div>	
+
+									</div>
+                                    
+                                    <div class="col-md-4">
+                                        <!-- Image -->
+                                        <div class="bg-success py-2 px-3 rounded-3 h-100 " >
+                                            <h1 class="text-white"><i class="fa-solid fa-temperature-arrow-up"></i></h1>
+                                            <h5 class="text-white">월동온도</h5>
+                                            <h6 class="text-white">10℃</h6>
+                                            
+                                        </div>	
+                                    </div>
+									<!-- Room detail START -->
+									<div class="col-md-4">
+										<!-- Image -->
+										<div class="bg-success py-2 px-3 rounded-3 h-100" >
+											<h1 class="text-white"><i class="fa-regular fa-sun"></i></h1>
+                                            <h5 class="text-white">광도</h5>
+                                            <p class="text-white" style="font-weight: bold;">중간 광도(800~1,500 Lux),높은 광도(1,500~10,000 Lux)</p>
+                                            
+										</div>
+									</div>
+									<!-- Room detail START -->
+								</div>
+							</div>
+							<!-- Room item END -->
+
+							<!-- Room item START -->
+							<div class="card border bg-transparent p-3">
+								<div class="row g-3 g-md-4">
+									<!-- Image and content -->
+									<div class="col-md-4">
+                                        
+										<!-- Image -->
+										<div class="bg-success py-2 px-3 rounded-3 h-100" >
+											<h1 class="text-white"><i class="fa-solid fa-droplet"></i></h1>
+                                            <h5 class="text-white">습도</h5>
+                                            <h6 class="text-white">40 ~ 70%</h6>
+                                            
+										</div>	
+
+									</div>
+
+									<!-- Room detail START -->
+									<div class="col-md-4">
+										<!-- Image -->
+										<div class="bg-success py-2 px-3 rounded-3  h-100" >
+											<h1 class="text-white"><i class="fa-solid fa-shower"></i></h1>
+                                            <h5 class="text-white">물주기</h5>
+                                            <p class="text-white" style="font-weight: bold;">토양 표면이 말랐을때 충분히 관수함</p>
+                                            
+										</div>
+									</div>
+                                    <div class="col-md-4">
+										<!-- Image -->
+										<div class="bg-success py-2 px-3 rounded-3  h-100" >
+											<h1 class="text-white"><i class="fa-solid fa-poo"></i></h1>
+                                            <h5 class="text-white">비료</h5>
+                                            <h6 class="text-white">비료를 보통 요구함</h6>
+                                            
+										</div>	
+									</div>
+									<!-- Room detail START -->
+								</div>
+							</div>
+							<!-- Room item END -->
+						</div>
+					</div>
+					<!-- Card body END -->
+				</div>	
+			</div>
+			<!-- Detail END -->
+
+			<!-- Right side content START -->
+			
+			<!-- Right side content END -->
+		</div>
+	</div>
+</section>
+<!-- =======================
+Room detail END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+</body>
+</html>

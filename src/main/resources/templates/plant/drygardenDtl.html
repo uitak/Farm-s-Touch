@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+	
+<!-- =======================
+Main Banner START -->
+<section class="pt-3 pt-lg-5">
+	<div class="container">
+			<!-- Content and Image START -->
+			<div class="row g-4 g-lg-5">
+				<!-- Content -->
+				<div class="col-lg-6 position-relative mb-4 mb-md-0">
+					<!-- Title -->
+					<h3 class="mb-6 mt-md-5 display-5">
+						<span class="position-relative z-index-9" style="font-size: 3rem;">산세베리아 ‘하니’
+							<!-- SVG START -->
+							<span class="position-absolute top-50 start-50 translate-middle z-index-n1 d-none d-md-block mt-4">
+								<svg width="30rem" height="1rem" viewBox="0 0 445.5 21.5">
+									<path class="fill-success opacity-7" d="M409.9,2.6c-9.7-0.6-19.5-1-29.2-1.5c-3.2-0.2-6.4-0.2-9.7-0.3c-7-0.2-14-0.4-20.9-0.5 c-3.9-0.1-7.8-0.2-11.7-0.3c-1.1,0-2.3,0-3.4,0c-2.5,0-5.1,0-7.6,0c-11.5,0-23,0-34.5,0c-2.7,0-5.5,0.1-8.2,0.1 c-6.8,0.1-13.6,0.2-20.3,0.3c-7.7,0.1-15.3,0.1-23,0.3c-12.4,0.3-24.8,0.6-37.1,0.9c-7.2,0.2-14.3,0.3-21.5,0.6 c-12.3,0.5-24.7,1-37,1.5c-6.7,0.3-13.5,0.5-20.2,0.9C112.7,5.3,99.9,6,87.1,6.7C80.3,7.1,73.5,7.4,66.7,8 C54,9.1,41.3,10.1,28.5,11.2c-2.7,0.2-5.5,0.5-8.2,0.7c-5.5,0.5-11,1.2-16.4,1.8c-0.3,0-0.7,0.1-1,0.1c-0.7,0.2-1.2,0.5-1.7,1 C0.4,15.6,0,16.6,0,17.6c0,1,0.4,2,1.1,2.7c0.7,0.7,1.8,1.2,2.7,1.1c6.6-0.7,13.2-1.5,19.8-2.1c6.1-0.5,12.3-1,18.4-1.6 c6.7-0.6,13.4-1.1,20.1-1.7c2.7-0.2,5.4-0.5,8.1-0.7c10.4-0.6,20.9-1.1,31.3-1.7c6.5-0.4,13-0.7,19.5-1.1c2.7-0.1,5.4-0.3,8.1-0.4 c10.3-0.4,20.7-0.8,31-1.2c6.3-0.2,12.5-0.5,18.8-0.7c2.1-0.1,4.2-0.2,6.3-0.2c11.2-0.3,22.3-0.5,33.5-0.8 c6.2-0.1,12.5-0.3,18.7-0.4c2.2-0.1,4.4-0.1,6.7-0.1c11.5-0.1,23-0.2,34.6-0.4c7.2-0.1,14.4-0.1,21.6-0.1c12.2,0,24.5,0.1,36.7,0.1 c2.4,0,4.8,0.1,7.2,0.2c6.8,0.2,13.5,0.4,20.3,0.6c5.1,0.2,10.1,0.3,15.2,0.4c3.6,0.1,7.2,0.4,10.8,0.6c10.6,0.6,21.1,1.2,31.7,1.8 c2.7,0.2,5.4,0.4,8,0.6c2.9,0.2,5.8,0.4,8.6,0.7c0.4,0.1,0.9,0.2,1.3,0.3c1.1,0.2,2.2,0.2,3.2-0.4c0.9-0.5,1.6-1.5,1.9-2.5 c0.6-2.2-0.7-4.5-2.9-5.2c-1.9-0.5-3.9-0.7-5.9-0.9c-1.4-0.1-2.7-0.3-4.1-0.4c-2.6-0.3-5.2-0.4-7.9-0.6 C419.7,3.1,414.8,2.9,409.9,2.6z"/>
+								</svg>
+							</span>
+							<!-- SVG END -->
+						</span>
+					</h3>
+					<!-- Info -->
+
+					<!-- Buttons -->
+                    <div class="col-9 mb-4">
+						<h5 class="mt-2"><i class="fa-solid fa-a icon-lg bg-success bg-opacity-50 text-white rounded-circle"></i>&nbsp;&nbsp;&nbsp;식물학명</h5>
+						<h6 class="mb-0"><i>Sansevieria trifasciata</i> 'Hahnii' , 용설란과</h6>
+					</div>
+                    <div class="col-9 mb-4">
+						<h5 class="mt-2"><i class="fa-solid fa-b icon-lg bg-success bg-opacity-50 text-white rounded-circle"></i>&nbsp;&nbsp;&nbsp;과명</h5>
+						<h6 class="mb-0">산세베리아(Sansevieria)속 (용설란과)</h6>
+					</div>
+                    <div class="col-9 mb-4">
+						<h5 class="mt-2"><i class="fa-solid fa-c icon-lg bg-success bg-opacity-50 text-white rounded-circle"></i>&nbsp;&nbsp;&nbsp;유통명</h5>
+						<h6 class="mb-0">-</h6>
+					</div>
+                    <div class="col-9 mb-4">
+						<h5 class="mt-2"><i class="fa-solid fa-d icon-lg bg-success bg-opacity-50 text-white rounded-circle"></i>&nbsp;&nbsp;&nbsp;원산지</h5>
+						<h6 class="mb-0">아프리카 콩고</h6>
+					</div>
+				</div>
+                
+				
+				<!-- Image -->
+				<div class="col-lg-6 position-relative">
+
+					<img src="http://www.nongsaro.go.kr/cms_contents/1122/204869_MF_BIMG_01.jpg" class="rounded" alt="">
+
+					<!-- Svg decoration -->
+					<figure class="position-absolute end-0 bottom-0">
+						<svg width="10.188rem" height="10.188rem" viewBox="0 0 163 163">
+							<path class="fill-success opacity-50" d="M145.6,66.2c-0.9-0.3-1.6,0.2-2.1-0.4c-0.5-0.7-1-1.5-1-2.4c0-3.1,0.1-6.2,0-9.3c0-0.7,0.3-1.3,0.5-1.9 c0.8-1.6,1.6-3.2,2.7-4.5c0.5-0.6,1.2-1.2,2-1.5c0.4-0.2,0.8,0.4,1.3-0.1c0.4-0.4,1,0.7,1.6,0.7c0.4,1-0.4,1.5-1,2.1 c0.7,0.3,1.4,0.3,2.1,0.7c0.6,0.4,1.2,0.7,1,1.5c-0.2,1,0.6,1.3,1,1.9c-0.2,0.3-0.6,0.4-0.5,0.8c1.2,3.2,0.3,5.4-0.7,8.1 c-0.3,0.7-0.7,1.6-0.7,2.2c-0.1,1.5-1.2,2.7-1.4,4.1c-0.2,1.1-0.9,1.7-2.1,1.6c-0.2,0-0.4,0.5-1,0.4c-0.2-0.2-0.7-0.5-0.7-0.8 c0-1-0.1-1.7-1.1-2.1C145.5,67.2,145.6,66.6,145.6,66.2"/>
+							<path class="fill-success opacity-50" d="M94.3,143.5c1.1,0.3,2.4-0.5,3.2,0.7c-0.4,0.7-0.7,1.4-1,2.1c0.5,0.5,0.7,0.2,1.2,0.1c1.6-0.6,2-0.4,2.5,1.2 c0.1,0.2,0,0.6,0.3,0.6c1.8,0.4,1.4,2.2,2.1,3.2c-0.8,0.9,0.5,1.8,0.1,2.6c-0.5,0.8-0.3,2-1.3,2.6c-0.3,0.2-0.1,0.5-0.2,0.7 c-0.3,2.1-1.2,3.7-3.4,4.4c-0.3,0.1-0.4,0.6-1,0.4c-0.3-0.6-0.6-1.3-1-1.9c-0.5-0.2-1.5,0.3-1.4-1h-3c-0.2-1.4,0-2.9-1.1-3.9 c-0.1-0.1-0.1-0.4,0-0.5c0.7-1.2,0.2-2.6,0.7-3.8c0.3-0.6,0.4-1,0.1-1.6c-0.9-1.3,0-2.4,0.7-3.3C92.5,145,93.4,144.3,94.3,143.5"/>
+							<path class="fill-success opacity-50" d="M119.6,77.3c-0.4,0.8-1.1,0.6-2,0.8c0.2,1.1-0.4,2.2,0.5,3.3c-0.8,0-0.8,0-1.2-0.3c-0.6,0.3-0.8,1-1.2,1.6 c0.1-1.9-0.6-3.2-2-4.1c-0.6-0.1-0.7,0.3-1,0.5c-1-1.9-1-2.8-0.2-7.7c0.4-2.5,1.7-4.6,3.6-6.8c0.6-0.1,1.5,1.5,2.3,0 c0.8,1.5-0.7,2.3-0.8,3.7c0.8-0.4,1.6-0.7,2.4-0.4c0.4,0.4-0.1,1,0.3,1.4c0.8,0.6,1.4,1.3,0.4,2.3c1.1,0.8-0.3,1.5-0.1,2.4 c0.2,0.8,0,1.7,0,2.5c-0.8-0.2-1-1.1-1.8-1C118.2,76.4,119.5,76.5,119.6,77.3"/>
+							<path class="fill-success opacity-50" d="M25,131c-0.3-0.6-1.2-0.3-1.7-0.5v-1.2c-0.1-0.1-0.1-0.2-0.2-0.2c-1.4,0.5-2.2-1-3.4-1.2 c-1.2-0.1-1.9-1-2.1-2.2c-0.1-0.5,0.1-0.8,0.5-1.1c-2-1.7-0.8-3.4-0.1-5.1c0.8-2.2,2.6-2.5,4.6-2.4c0.4,1.1,0.2,2-0.6,2.7 c1.5,1,2-0.5,3-0.8c0.3,0.6,0.6,1.2,0.9,1.6c0,0.6-0.8,0.8-0.4,1.4c0.7,0.8,0.9-0.5,1.7-0.3c1,0.9,0.9,2.2,0.8,3.4 c0.4,0.1,0.6,0.2,1,0.3c-0.1,0.6-1,0.8-1,1.5c0,0.8,0.8,0.2,1,0.7C27.7,128.8,26.9,130.3,25,131"/>
+							<path class="fill-success opacity-50" d="M84.9,95H87c0.4,0.4,0.3,1.6-0.3,2.8c1.2,1,1.7-0.5,2.4-0.8c0.8,0,0.8,0.6,1.2,0.7c0.2,0.8-0.7,0.9-0.4,1.7 c0.5,0.3,1.7,0,1.9,0.9c0.2,0.7,0.3,1.5-0.5,2.1c0.3,0.1,0.6,0.2,0.9,0.3c-0.1,0.7-1.1,1.3-0.5,2.2c-1.1,1.5-3,2.1-4.4,3.3 c-0.3,0.2-0.8,1-1.5,0.5c-0.3-0.4,0.4-0.4,0.3-0.8c-0.7-0.5-1.6,0.1-2.4-0.3c-0.2-0.6,0.1-1.4-0.8-1.8c-1.1,0.5-2.2,0.7-3.2-0.8 c1.3-0.8,3-1.1,3.2-3c-1,0-1.7,0.9-2.7,1c-0.2-0.2-0.5-0.4-0.8-0.7c-0.1-0.1,0.1-0.1,0.2-0.3c0.6-1.1,2.4-1,2.5-2.5 c1.2-0.5,1.1-1.7,1.3-2.5C83.8,96.3,84.3,95.7,84.9,95"/>
+							<path class="fill-success opacity-50" d="M41.2,153.9c0.3-0.7,0.9-0.8,0.4-1.6c-0.3-0.3-1.1,0.2-1.8-0.2c0-0.2-0.1-0.4-0.1-0.7c-0.1-0.1-0.2-0.2-0.3,0 c-0.3,0.4-0.7,0.4-1.1,0.4c-1.3,0-1.5-0.4-1.6-1.7c0-0.6,0.4-0.8,0.5-1.4c-0.4,0-0.8-0.1-1.4-0.1c-0.4-1.9,0.7-3.6,1.1-5.4 c0.2-0.9,1.6-1.3,2.7-1.3c0.4,0.2,0.3,0.6,0.3,0.7c0.2,0.4,0.3,0.3,0.4,0.1c0.6-0.5,1.3-0.6,1.7,0.1c0.5,0.7,1.1,0.6,1.8,0.7 c0.4,0.4,0.1,0.8,0.2,1.2c0.3,0.4,0.8,0.2,1.3,0.3c1,0.7,0.5,2.1,1.3,2.9C43.8,152.3,43.1,153.1,41.2,153.9"/>
+							<path class="fill-success opacity-50" d="M70.9,43.4c-0.3-1.4-1.2-1.8-2.6-1.5c-1.2-2.3-0.8-4.8-0.5-7.2c0.1-0.5,0.4-1.1,0.3-1.7 c-0.2-1.1,0.5-1.9,0.6-2.9c0.1-0.7,1.3-0.9,2-1.3c0.9,0.8,0.9,0.8,1.2,2c0.3,0,0.6,0,0.4,0c1.3,0,0.8,0.9,1.3,1.2 c0.3,0.1,0.8,0.5,0.7,1c-0.2,0.8,1,1.4,0.5,2.1c-0.5,0.7-0.2,1.5-0.5,2.1c-0.8,1.5-1,3.2-1.5,4.8C72.6,43.1,72,43.4,70.9,43.4"/>
+							<path class="fill-success opacity-50" d="M125.4,118.4c-0.4-0.3-0.6-0.7-1.3-0.8c-1.6-0.1-1.6-0.2-1.9-1.9c-1.1-0.4-2.2,0-3.2,0.4 c-0.5-0.5-0.2-0.9-0.4-1.4c0.4-0.1,0.7-0.2,1-0.4v-3c-0.5,0.2-1,0.3-1.7,0.5c-0.3,0-0.4-0.6-0.8-0.7c0.6-1.5,1.8-2.4,2.8-3.5 c1.3,0.3,2.6-1.1,3.8,0.4c0,0.1-0.1,1.8,0,2.1c-0.2,0-0.5,0.1-0.7,0.1c-0.2,0-0.3,0-0.5,0c-0.4,0.4-0.1,1.1-0.7,1.5 c1.3-0.5,2.4-1,3.3-2c0.4,0.4,0.7,0.8,1.4,0.6c-1.1,0.9,0.4,2.1-1,2.9c1,0,1.1-0.6,1.5-0.8c0.4-0.1,0.8-0.1,1.2-0.2 c0.5,1,1.1,1.8,0.6,3c-0.7,0.6-2.2,0.4-2.5,2.1c1.2-0.2,1.9-0.9,2.5-1.5c0.7,0.1,0.7,0.5,0.6,0.8c-1.3-0.1-1.2,1.5-2.3,1.9 c-0.9,0.3-1.6,1-2.7,1.8C124.7,119.5,125.1,119,125.4,118.4"/>
+							<path class="fill-success opacity-50" d="M101.7,41c-0.3,0.3-0.6,0.6-0.9,0.9c0.9,0.6-0.9,1.6,0.4,2.1c-2,2.3-2,2.4-2.1,4.8h-2.4c-0.2-0.1,0-0.5-0.2-0.8 c-2.4-0.3-2.9-0.8-3-3.3c0-0.6,0.2-1.4-0.5-1.8c0.5-0.7,0.2-1.6,0.7-2.4c1-1.5,2.3-2.7,3.5-3.9c0.5-0.2,1-0.1,1.4,0 c0.2,1-1.1,1.6-0.2,2.6c0.3-0.4,0.6-0.8,0.9-1.3C100.2,39.2,101.7,39.5,101.7,41"/>
+							<path class="fill-success opacity-50" d="M140.4,5.4c-0.4,0.6-1.2-0.1-1.5,0.6c0.7,0.4,1.5,0.1,2.3,0.2c0.3,1.1,0.9,2.1,1.3,3.2c0.9,2.4,0.3,4.4-0.6,6.6 c-0.4,0.9-0.9,1.2-1.9,1c-0.2-0.5-0.5-1.2-0.9-1.9c-0.6-0.2-1.5,0-1.9-1c0.1-1.7,0.1-3.6-1.1-5.2c0.4-0.7,0.7-1.3,1.1-1.9 c-0.3-0.1-0.6-0.2-1-0.4c0.2-0.8,0.5-1.6,1.3-2.3h2.2C140,4.6,140.5,4.8,140.4,5.4"/>
+							<path class="fill-success opacity-50" d="M65.7,68.8c-0.4,0.6-0.9,0.4-1.4,0.4c-1.2-1.1-0.4-2.9-1.4-4.1c1.5-3,1.5-3,4.1-4.2c0.5,0.1,0.8,0.5,1,1 c0.1,0.6-0.8,0.7-0.5,1.3c0.5,0.6,0.9,0.2,1.2-0.2c1.5,0.6,1.1,2.5,2.4,3.3c-0.1,1.1,0.2,2.2-0.2,3.2L69,72.2c-0.3,0-0.7,0-1,0 c-0.3-0.5-0.9-2.2-0.8-2.4C66.7,69.6,66.2,69.2,65.7,68.8"/>
+							<path class="fill-success opacity-50" d="M37.5,69.7c-0.5,0.2,0,0.9-0.4,1c-0.7,0.2-1-0.2-1.2-0.6c-0.4-0.7,0.1-1.6-0.2-2.2c-0.5-0.7-0.6-1.2-0.1-2 c0.5-0.6,0.2-1.5,0.6-2.3c0.9-2,0.9-2.1,3-2.1c0.1,0.1,0.2,0.1,0.2,0.2c0,0.3,0,0.7,0,1.1c0.7,0.4,1.7,0.1,2.1,1.3 c0.3,0.9,1.2,1.5,1,2.7c-0.2,0.9,0.1,1.8-0.8,2.5c-0.4,0.4-0.8,1.1-0.8,2c0,0.6-0.5,1-1.2,1.1c-0.6,0.1-1-0.3-1.2-0.7 C38,71,37.8,70.3,37.5,69.7"/>
+							<path class="fill-success opacity-50" d="M53.9,87.8c0.7,0,1.4,0,2.1,0c0.5,0.3,0.1,1,0.4,1.4c0.4,0.3,0.8,0.1,1.2,0.2c0.6,1.2,1.4,2.4,1.7,3.6 c0.4,1.4-0.2,2.7-0.7,4c-1,0.4-1.5-0.4-2.1-0.9c-0.7,0-1.4,0-2.1,0c-0.4-1-0.8-1.8-2.1-1.5c-0.6-0.7,0.2-1.8-0.7-2.3 c0.5-0.6,0.9-1.3,1-2.1C52.8,89.2,53.2,88.5,53.9,87.8"/>
+							<path class="fill-success opacity-50" d="M0.1,95.7c0.9-1.3,2.3-1.7,3.8-1.8c1,1.2-0.7,1.5-0.8,2.3c1.1,1,2-0.7,3.1,0c0.6,0.6-0.2,0.8-0.3,1.2 c0.4,0.5,1,0,1.4,0.3c0.4,1.1-0.3,2.3,0.6,3.3c-0.8,0.8-0.7,2.2-1.9,2.8c-1.1-0.2-1.8-1-2.6-1.7c-0.7-0.6-1.9-0.5-2.6-1.9 C1,98.9-0.4,97.4,0.1,95.7"/>
+							<path class="fill-success opacity-50" d="M155.5,91.5c-0.9-0.5-1.7-0.7-2.3-1.6c0.4-0.2,0.8-0.5,1.2-0.7c-1.2-0.4-2.1,0.7-3.1,0c0.6-1,1.8-1,2.5-1.7 c0.1-0.6-0.3-0.6-0.7-0.7c-0.7-0.2-0.9,0.9-1.6,0.5c-0.3-0.3-0.4-0.7-0.1-0.9c1.7-1,3-2.3,4.5-3.5c0.9-0.7,1.1-0.9,2.5-1.2 c-0.1,0.5-0.6,0.7-0.9,1.1c0.7,0.7,1.3,0.1,1.9-0.2c0.1,1.1,0.9,1.9,0.5,3.4C158.3,87.4,157.4,89.8,155.5,91.5"/>
+						</svg>
+					</figure>
+
+					<!-- Support guid -->
+					
+
+					<!-- Round image group -->
+					<div class="vstack gap-5 align-items-center position-absolute top-0 start-0 d-none d-md-flex mt-4 ms-n3">
+						<img class="icon-lg shadow-lg border border-3 border-white rounded-circle" src="assets/images/farmstouch/T1.jpg" alt="avatar">
+						<img class="icon-xl shadow-lg border border-3 border-white rounded-circle" src="assets/images/farmstouch/T2.jpg" alt="avatar">
+					</div>
+				</div>
+			</div>
+			<!-- Content and Image END -->
+			
+		<!-- Search START -->
+		
+		<!-- Search END -->
+	</div>
+</section>
+<!-- =======================
+Main Banner END -->
+
+<!-- =======================
+Best deal START -->
+
+<!-- =======================
+Best deal END -->
+
+<!-- =======================
+About START -->
+<section class="pb-0 pb-xl-5">
+	<div class="container">
+		<div class="row g-4 justify-content-between align-items-center">
+			<!-- Left side START -->
+			<div class="col-lg-5 position-relative">
+				<!-- Svg Decoration -->
+				<figure class="position-absolute top-0 start-0 translate-middle z-index-1 ms-4">
+					<svg class="fill-success opacity-50" width="4.813rem" height="4.813rem">
+						<path d="M76.997,41.258 L45.173,41.258 L67.676,63.760 L63.763,67.673 L41.261,45.171 L41.261,76.994 L35.728,76.994 L35.728,45.171 L13.226,67.673 L9.313,63.760 L31.816,41.258 L-0.007,41.258 L-0.007,35.725 L31.816,35.725 L9.313,13.223 L13.226,9.311 L35.728,31.813 L35.728,-0.010 L41.261,-0.010 L41.261,31.813 L63.763,9.311 L67.676,13.223 L45.174,35.725 L76.997,35.725 L76.997,41.258 Z"/>
+					</svg>
+				</figure>
+
+				<!-- Svg decoration -->
+				<figure class="position-absolute bottom-0 end-0 d-none d-md-block mb-n5 me-n4">
+					<svg height="400" class="fill-primary opacity-2" viewBox="0 0 340 340">
+						<circle cx="194.2" cy="2.2" r="2.2"></circle>
+						<circle cx="2.2" cy="2.2" r="2.2"></circle>
+						<circle cx="218.2" cy="2.2" r="2.2"></circle>
+						<circle cx="26.2" cy="2.2" r="2.2"></circle>
+						<circle cx="242.2" cy="2.2" r="2.2"></circle>
+						<circle cx="50.2" cy="2.2" r="2.2"></circle>
+						<circle cx="266.2" cy="2.2" r="2.2"></circle>
+						<circle cx="74.2" cy="2.2" r="2.2"></circle>
+						<circle cx="290.2" cy="2.2" r="2.2"></circle>
+						<circle cx="98.2" cy="2.2" r="2.2"></circle>
+						<circle cx="314.2" cy="2.2" r="2.2"></circle>
+						<circle cx="122.2" cy="2.2" r="2.2"></circle>
+						<circle cx="338.2" cy="2.2" r="2.2"></circle>
+						<circle cx="146.2" cy="2.2" r="2.2"></circle>
+						<circle cx="170.2" cy="2.2" r="2.2"></circle>
+						<circle cx="194.2" cy="26.2" r="2.2"></circle>
+						<circle cx="2.2" cy="26.2" r="2.2"></circle>
+						<circle cx="218.2" cy="26.2" r="2.2"></circle>
+						<circle cx="26.2" cy="26.2" r="2.2"></circle>
+						<circle cx="242.2" cy="26.2" r="2.2"></circle>
+						<circle cx="50.2" cy="26.2" r="2.2"></circle>
+						<circle cx="266.2" cy="26.2" r="2.2"></circle>
+						<circle cx="74.2" cy="26.2" r="2.2"></circle>
+						<circle cx="290.2" cy="26.2" r="2.2"></circle>
+						<circle cx="98.2" cy="26.2" r="2.2"></circle>
+						<circle cx="314.2" cy="26.2" r="2.2"></circle>
+						<circle cx="122.2" cy="26.2" r="2.2"></circle>
+						<circle cx="338.2" cy="26.2" r="2.2"></circle>
+						<circle cx="146.2" cy="26.2" r="2.2"></circle>
+						<circle cx="170.2" cy="26.2" r="2.2"></circle>
+						<circle cx="194.2" cy="50.2" r="2.2"></circle>
+						<circle cx="2.2" cy="50.2" r="2.2"></circle>
+						<circle cx="218.2" cy="50.2" r="2.2"></circle>
+						<circle cx="26.2" cy="50.2" r="2.2"></circle>
+						<circle cx="242.2" cy="50.2" r="2.2"></circle>
+						<circle cx="50.2" cy="50.2" r="2.2"></circle>
+						<circle cx="266.2" cy="50.2" r="2.2"></circle>
+						<circle cx="74.2" cy="50.2" r="2.2"></circle>
+						<circle cx="290.2" cy="50.2" r="2.2"></circle>
+						<circle cx="98.2" cy="50.2" r="2.2"></circle>
+						<circle cx="314.2" cy="50.2" r="2.2"></circle>
+						<circle cx="122.2" cy="50.2" r="2.2"></circle>
+						<circle cx="338.2" cy="50.2" r="2.2"></circle>
+						<circle cx="146.2" cy="50.2" r="2.2"></circle>
+						<circle cx="170.2" cy="50.2" r="2.2"></circle>
+						<circle cx="194.2" cy="74.2" r="2.2"></circle>
+						<circle cx="2.2" cy="74.2" r="2.2"></circle>
+						<circle cx="218.2" cy="74.2" r="2.2"></circle>
+						<circle cx="26.2" cy="74.2" r="2.2"></circle>
+						<circle cx="242.2" cy="74.2" r="2.2"></circle>
+						<circle cx="50.2" cy="74.2" r="2.2"></circle>
+						<circle cx="266.2" cy="74.2" r="2.2"></circle>
+						<circle cx="74.2" cy="74.2" r="2.2"></circle>
+						<circle cx="290.2" cy="74.2" r="2.2"></circle>
+						<circle cx="98.2" cy="74.2" r="2.2"></circle>
+						<circle cx="314.2" cy="74.2" r="2.2"></circle>
+						<circle cx="122.2" cy="74.2" r="2.2"></circle>
+						<circle cx="338.2" cy="74.2" r="2.2"></circle>
+						<circle cx="146.2" cy="74.2" r="2.2"></circle>
+						<circle cx="170.2" cy="74.2" r="2.2"></circle>
+						<circle cx="194.2" cy="98.2" r="2.2"></circle>
+						<circle cx="2.2" cy="98.2" r="2.2"></circle>
+						<circle cx="218.2" cy="98.2" r="2.2"></circle>
+						<circle cx="26.2" cy="98.2" r="2.2"></circle>
+						<circle cx="242.2" cy="98.2" r="2.2"></circle>
+						<circle cx="50.2" cy="98.2" r="2.2"></circle>
+						<circle cx="266.2" cy="98.2" r="2.2"></circle>
+						<circle cx="74.2" cy="98.2" r="2.2"></circle>
+						<circle cx="290.2" cy="98.2" r="2.2"></circle>
+						<circle cx="98.2" cy="98.2" r="2.2"></circle>
+						<circle cx="314.2" cy="98.2" r="2.2"></circle>
+						<circle cx="122.2" cy="98.2" r="2.2"></circle>
+						<circle cx="338.2" cy="98.2" r="2.2"></circle>
+						<circle cx="146.2" cy="98.2" r="2.2"></circle>
+						<circle cx="170.2" cy="98.2" r="2.2"></circle>
+						<circle cx="194.2" cy="122.2" r="2.2"></circle>
+						<circle cx="2.2" cy="122.2" r="2.2"></circle>
+						<circle cx="218.2" cy="122.2" r="2.2"></circle>
+						<circle cx="26.2" cy="122.2" r="2.2"></circle>
+						<circle cx="242.2" cy="122.2" r="2.2"></circle>
+						<circle cx="50.2" cy="122.2" r="2.2"></circle>
+						<circle cx="266.2" cy="122.2" r="2.2"></circle>
+						<circle cx="74.2" cy="122.2" r="2.2"></circle>
+						<circle cx="290.2" cy="122.2" r="2.2"></circle>
+						<circle cx="98.2" cy="122.2" r="2.2"></circle>
+						<circle cx="314.2" cy="122.2" r="2.2"></circle>
+						<circle cx="122.2" cy="122.2" r="2.2"></circle>
+						<circle cx="338.2" cy="122.2" r="2.2"></circle>
+						<circle cx="146.2" cy="122.2" r="2.2"></circle>
+						<circle cx="170.2" cy="122.2" r="2.2"></circle>
+						<circle cx="194.2" cy="146.2" r="2.2"></circle>
+						<circle cx="2.2" cy="146.2" r="2.2"></circle>
+						<circle cx="218.2" cy="146.2" r="2.2"></circle>
+						<circle cx="26.2" cy="146.2" r="2.2"></circle>
+						<circle cx="242.2" cy="146.2" r="2.2"></circle>
+						<circle cx="50.2" cy="146.2" r="2.2"></circle>
+						<circle cx="266.2" cy="146.2" r="2.2"></circle>
+						<circle cx="74.2" cy="146.2" r="2.2"></circle>
+						<circle cx="290.2" cy="146.2" r="2.2"></circle>
+						<circle cx="98.2" cy="146.2" r="2.2"></circle>
+						<circle cx="314.2" cy="146.2" r="2.2"></circle>
+						<circle cx="122.2" cy="146.2" r="2.2"></circle>
+						<circle cx="338.2" cy="146.2" r="2.2"></circle>
+						<circle cx="146.2" cy="146.2" r="2.2"></circle>
+						<circle cx="170.2" cy="146.2" r="2.2"></circle>
+						<circle cx="194.2" cy="170.2" r="2.2"></circle>
+						<circle cx="2.2" cy="170.2" r="2.2"></circle>
+						<circle cx="218.2" cy="170.2" r="2.2"></circle>
+						<circle cx="26.2" cy="170.2" r="2.2"></circle>
+						<circle cx="242.2" cy="170.2" r="2.2"></circle>
+						<circle cx="50.2" cy="170.2" r="2.2"></circle>
+						<circle cx="266.2" cy="170.2" r="2.2"></circle>
+						<circle cx="74.2" cy="170.2" r="2.2"></circle>
+						<circle cx="290.2" cy="170.2" r="2.2"></circle>
+						<circle cx="98.2" cy="170.2" r="2.2"></circle>
+						<circle cx="314.2" cy="170.2" r="2.2"></circle>
+						<circle cx="122.2" cy="170.2" r="2.2"></circle>
+						<circle cx="338.2" cy="170.2" r="2.2"></circle>
+						<circle cx="146.2" cy="170.2" r="2.2"></circle>
+						<circle cx="170.2" cy="170.2" r="2.2"></circle>
+						<circle cx="194.2" cy="194.2" r="2.2"></circle>
+						<circle cx="2.2" cy="194.2" r="2.2"></circle>
+						<circle cx="218.2" cy="194.2" r="2.2"></circle>
+						<circle cx="26.2" cy="194.2" r="2.2"></circle>
+						<circle cx="242.2" cy="194.2" r="2.2"></circle>
+						<circle cx="50.2" cy="194.2" r="2.2"></circle>
+						<circle cx="266.2" cy="194.2" r="2.2"></circle>
+						<circle cx="74.2" cy="194.2" r="2.2"></circle>
+						<circle cx="290.2" cy="194.2" r="2.2"></circle>
+						<circle cx="98.2" cy="194.2" r="2.2"></circle>
+						<circle cx="314.2" cy="194.2" r="2.2"></circle>
+						<circle cx="122.2" cy="194.2" r="2.2"></circle>
+						<circle cx="338.2" cy="194.2" r="2.2"></circle>
+						<circle cx="146.2" cy="194.2" r="2.2"></circle>
+						<circle cx="170.2" cy="194.2" r="2.2"></circle>
+						<circle cx="194.2" cy="218.2" r="2.2"></circle>
+						<circle cx="2.2" cy="218.2" r="2.2"></circle>
+						<circle cx="218.2" cy="218.2" r="2.2"></circle>
+						<circle cx="26.2" cy="218.2" r="2.2"></circle>
+						<circle cx="242.2" cy="218.2" r="2.2"></circle>
+						<circle cx="50.2" cy="218.2" r="2.2"></circle>
+						<circle cx="266.2" cy="218.2" r="2.2"></circle>
+						<circle cx="74.2" cy="218.2" r="2.2"></circle>
+						<circle cx="290.2" cy="218.2" r="2.2"></circle>
+						<circle cx="98.2" cy="218.2" r="2.2"></circle>
+						<circle cx="314.2" cy="218.2" r="2.2"></circle>
+						<circle cx="122.2" cy="218.2" r="2.2"></circle>
+						<circle cx="338.2" cy="218.2" r="2.2"></circle>
+						<circle cx="146.2" cy="218.2" r="2.2"></circle>
+						<circle cx="170.2" cy="218.2" r="2.2"></circle>
+						<circle cx="194.2" cy="242.2" r="2.2"></circle>
+						<circle cx="2.2" cy="242.2" r="2.2"></circle>
+						<circle cx="218.2" cy="242.2" r="2.2"></circle>
+						<circle cx="26.2" cy="242.2" r="2.2"></circle>
+						<circle cx="242.2" cy="242.2" r="2.2"></circle>
+						<circle cx="50.2" cy="242.2" r="2.2"></circle>
+						<circle cx="266.2" cy="242.2" r="2.2"></circle>
+						<circle cx="74.2" cy="242.2" r="2.2"></circle>
+						<circle cx="290.2" cy="242.2" r="2.2"></circle>
+						<circle cx="98.2" cy="242.2" r="2.2"></circle>
+						<circle cx="314.2" cy="242.2" r="2.2"></circle>
+						<circle cx="122.2" cy="242.2" r="2.2"></circle>
+						<circle cx="338.2" cy="242.2" r="2.2"></circle>
+						<circle cx="146.2" cy="242.2" r="2.2"></circle>
+						<circle cx="170.2" cy="242.2" r="2.2"></circle>
+						<circle cx="194.2" cy="266.2" r="2.2"></circle>
+						<circle cx="2.2" cy="266.2" r="2.2"></circle>
+						<circle cx="218.2" cy="266.2" r="2.2"></circle>
+						<circle cx="26.2" cy="266.2" r="2.2"></circle>
+						<circle cx="242.2" cy="266.2" r="2.2"></circle>
+						<circle cx="50.2" cy="266.2" r="2.2"></circle>
+						<circle cx="266.2" cy="266.2" r="2.2"></circle>
+						<circle cx="74.2" cy="266.2" r="2.2"></circle>
+						<circle cx="290.2" cy="266.2" r="2.2"></circle>
+						<circle cx="98.2" cy="266.2" r="2.2"></circle>
+						<circle cx="314.2" cy="266.2" r="2.2"></circle>
+						<circle cx="122.2" cy="266.2" r="2.2"></circle>
+						<circle cx="338.2" cy="266.2" r="2.2"></circle>
+						<circle cx="146.2" cy="266.2" r="2.2"></circle>
+						<circle cx="170.2" cy="266.2" r="2.2"></circle>
+						<circle cx="194.2" cy="290.2" r="2.2"></circle>
+						<circle cx="2.2" cy="290.2" r="2.2"></circle>
+						<circle cx="218.2" cy="290.2" r="2.2"></circle>
+						<circle cx="26.2" cy="290.2" r="2.2"></circle>
+						<circle cx="242.2" cy="290.2" r="2.2"></circle>
+						<circle cx="50.2" cy="290.2" r="2.2"></circle>
+						<circle cx="266.2" cy="290.2" r="2.2"></circle>
+						<circle cx="74.2" cy="290.2" r="2.2"></circle>
+						<circle cx="290.2" cy="290.2" r="2.2"></circle>
+						<circle cx="98.2" cy="290.2" r="2.2"></circle>
+						<circle cx="314.2" cy="290.2" r="2.2"></circle>
+						<circle cx="122.2" cy="290.2" r="2.2"></circle>
+						<circle cx="338.2" cy="290.2" r="2.2"></circle>
+						<circle cx="146.2" cy="290.2" r="2.2"></circle>
+						<circle cx="170.2" cy="290.2" r="2.2"></circle>
+						<circle cx="194.2" cy="314.2" r="2.2"></circle>
+						<circle cx="2.2" cy="314.2" r="2.2"></circle>
+						<circle cx="218.2" cy="314.2" r="2.2"></circle>
+						<circle cx="26.2" cy="314.2" r="2.2"></circle>
+						<circle cx="242.2" cy="314.2" r="2.2"></circle>
+						<circle cx="50.2" cy="314.2" r="2.2"></circle>
+						<circle cx="266.2" cy="314.2" r="2.2"></circle>
+						<circle cx="74.2" cy="314.2" r="2.2"></circle>
+						<circle cx="290.2" cy="314.2" r="2.2"></circle>
+						<circle cx="98.2" cy="314.2" r="2.2"></circle>
+						<circle cx="314.2" cy="314.2" r="2.2"></circle>
+						<circle cx="122.2" cy="314.2" r="2.2"></circle>
+						<circle cx="338.2" cy="314.2" r="2.2"></circle>
+						<circle cx="146.2" cy="314.2" r="2.2"></circle>
+						<circle cx="170.2" cy="314.2" r="2.2"></circle>
+						<circle cx="194.2" cy="338.2" r="2.2"></circle>
+						<circle cx="2.2" cy="338.2" r="2.2"></circle>
+						<circle cx="218.2" cy="338.2" r="2.2"></circle>
+						<circle cx="26.2" cy="338.2" r="2.2"></circle>
+						<circle cx="242.2" cy="338.2" r="2.2"></circle>
+						<circle cx="50.2" cy="338.2" r="2.2"></circle>
+						<circle cx="266.2" cy="338.2" r="2.2"></circle>
+						<circle cx="74.2" cy="338.2" r="2.2"></circle>
+						<circle cx="290.2" cy="338.2" r="2.2"></circle>
+						<circle cx="98.2" cy="338.2" r="2.2"></circle>
+						<circle cx="314.2" cy="338.2" r="2.2"></circle>
+						<circle cx="122.2" cy="338.2" r="2.2"></circle>
+						<circle cx="338.2" cy="338.2" r="2.2"></circle>
+						<circle cx="146.2" cy="338.2" r="2.2"></circle>
+						<circle cx="170.2" cy="338.2" r="2.2"></circle>
+					</svg>
+				</figure>
+
+				<!-- Image -->
+				<img src="http://www.nongsaro.go.kr/cms_contents/1122/204869_MF_BIMG_02.jpg" class="rounded-3 position-relative" alt="">
+
+				<!-- Client rating START -->
+				
+				<!-- Client rating END -->
+			</div>
+			<!-- Left side END -->
+
+			<!-- Right side START -->
+			<div class="col-lg-6">
+				<h3 class="mb-3 mb-lg-5">상세정보</h3>
+
+				<!-- Features START -->
+				<div class="row g-4">
+                    <!-- Item -->
+                    <div class="col-sm-6">
+                        <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-circle" style="display: inline-block;"><i class="fa-solid fa-shapes"></i></div>
+                        <h5 class="mx-2" style="display: inline-block;">형태</h5>
+                        <p class="mt-3">로제트형</p>
+                    </div>
+                    <!-- Item -->
+                    <div class="col-sm-6">
+                        <div class="icon-lg bg-warning bg-opacity-10 text-warning rounded-circle" style="display: inline-block;"><i class="bi bi-flower2"></i></div>
+                        <h5 class="mx-2" style="display: inline-block;">꽃</h5>
+                        <p class="mt-3">한 여름 무렵에 흰색 꽃이 핌</p>
+                    </div>
+                    <!-- Item -->
+                    <div class="col-sm-6">
+                        <div class="icon-lg bg-success bg-opacity-10 text-success rounded-circle" style="display: inline-block;"><i class="fa-solid fa-leaf"></i></div>
+                        <h5 class="mx-2" style="display: inline-block;">잎</h5>
+                        <p class="mt-3">-</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="icon-lg bg-danger bg-opacity-10 text-danger rounded-circle" style="display: inline-block;"><i class="fa-solid fa-carrot"></i></div>
+                        <h5 class="mx-2" style="display: inline-block;">뿌리</h5>
+                        <p class="mt-3">굵은 뿌리</p>
+                    </div>
+                    
+                    <!-- Item -->
+                    <div class="col-sm-6">
+                        <div class="icon-lg bg-orange bg-opacity-10 text-orange rounded-circle" style="display: inline-block;"><i class="fa-solid fa-seedling"></i></div>
+                        <h5 class="mx-2" style="display: inline-block;">생장속도</h5>
+                        <p class="mt-3">빠름</p>
+                    </div>		
+                    <div class="col-sm-6">
+                        <div class="icon-lg bg-secondary bg-opacity-10 text-secondary rounded-circle" style="display: inline-block;"><i class="fa-solid fa-bug"></i></div>
+                        <h5 class="mx-2" style="display: inline-block;">병충해</h5>
+                        <p class="mt-3">병충해에는 별로 걸리지 않으나 잎을 깨끗이 닦아주도록 함</p>
+                    </div>
+                    	
+                </div>
+				<!-- Features END -->
+
+			</div>
+			<!-- Right side END -->
+		</div>
+	</div>
+</section>
+<!-- =======================
+About END -->
+
+<!-- =======================
+Featured Hotels START -->
+<section>
+	<div class="container">
+
+		<div class="row mb-6 mt-6">
+            <aside class="col-xl-5 d-none d-xl-block">
+				<div class="card bg-transparent border">
+					<!-- Card header START -->
+					<div class="card-header bg-transparent border-bottom">
+						<!-- Title -->
+						<h4 class="card-title mb-0">난이도 : 쉬움 </h4>
+					</div>
+					<!-- Card header END -->
+
+					<!-- Card body START -->
+					<div class="card-body">
+                        <h3 class="text-center text-white bg-success rounded-3" style="line-height: 4rem;"><i class="fa-solid fa-baby"></i></h3>
+						<div class="row g-4 mb-6">
+							
+
+							<!-- Item -->
+							
+								<div class="bg-light py-3 px-4 rounded-3">
+									<h6 class="  mb-1">쉬움이란?</h6>
+									<h6 class=" fw-light small mb-0">애기들도 키울 수 있을만큼 쉽습니다.</h6>
+								</div>
+							
+						</div>
+
+						<!-- List -->
+						<div class="mb-3">
+                            <h4>육성 Tip</h4>
+                            <p>10월 상, 중순부터 물을 점차 줄이고 비료도<br />주지 않음<br />고온에서 잘 자라고 저온에는 매우 약하므로<br />겨울에 냉해를 입지 않도록 잘 보온하여<br />적정온도 20-25℃를 유지함</p>
+
+                        </div>
+
+						<!-- Button -->
+						
+					</div>
+					<!-- Card body END -->
+				</div>
+			</aside>
+            
+
+			<!-- Detail START -->
+			<div class="col-xl-7">
+				<div class="card bg-transparent p-0">
+					<!-- Card header -->
+					<div class="card-header bg-transparent border-bottom d-sm-flex justify-content-sm-between align-items-center p-0 pb-3">
+						<h4 class="mb-2 mb-sm-0">재배방법</h4>
+
+						<div class="col-sm-4">
+							
+						</div>
+					</div>
+
+					<!-- Card body START -->
+					<div class="card-body p-0 pt-3">
+						<div class="vstack gap-5">
+							<!-- Room item START -->
+							<div class="card border bg-transparent p-3">
+								<div class="row g-3 g-md-4">
+									<!-- Image and content -->
+									<div class="col-md-4">
+                                        
+										<!-- Image -->
+										<div class="bg-success py-2 px-3 rounded-3 h-100" >
+											<h1 class="text-white" ><i class="fa-solid fa-temperature-half"></i></h1>
+                                            <h5 class="text-white">생육온도</h5>
+                                            <h6 class="text-white">18~27°C</h6>
+                                            
+										</div>	
+
+									</div>
+                                    
+                                    <div class="col-md-4">
+                                        <!-- Image -->
+                                        <div class="bg-success py-2 px-3 rounded-3 h-100 " >
+                                            <h1 class="text-white"><i class="fa-solid fa-temperature-arrow-up"></i></h1>
+                                            <h5 class="text-white">월동온도</h5>
+                                            <h6 class="text-white">2~3°C</h6>
+                                            
+                                        </div>	
+                                    </div>
+									<!-- Room detail START -->
+									<div class="col-md-4">
+										<!-- Image -->
+										<div class="bg-success py-2 px-3 rounded-3 h-100" >
+											<h1 class="text-white"><i class="fa-regular fa-sun"></i></h1>
+                                            <h5 class="text-white">광도</h5>
+                                            <p class="text-white" style="font-weight: bold;">고온에 강하므로 연중 광선이 잘 쬐는 반그늘<br />아래에서 잘 자라고 여름철에는 직사광선을<br />약간 피함</p>
+                                            
+										</div>
+									</div>
+									<!-- Room detail START -->
+								</div>
+							</div>
+							<!-- Room item END -->
+
+							<!-- Room item START -->
+							<div class="card border bg-transparent p-3">
+								<div class="row g-3 g-md-4">
+									<!-- Image and content -->
+									<div class="col-md-4">
+                                        
+										<!-- Image -->
+										<div class="bg-success py-2 px-3 rounded-3 h-100" >
+											<h1 class="text-white"><i class="fa-solid fa-hands-holding-circle"></i></h1>
+                                            <h5 class="text-white">관리요구도</h5>
+                                            <h6 class="text-white">약간 돌봄</h6>
+                                            
+										</div>	
+
+									</div>
+
+									<!-- Room detail START -->
+									<div class="col-md-4">
+										<!-- Image -->
+										<div class="bg-success py-2 px-3 rounded-3  h-100" >
+											<h1 class="text-white"><i class="fa-solid fa-shower"></i></h1>
+                                            <h5 class="text-white">물주기</h5>
+                                            <p class="text-white" style="font-weight: bold;">분 흙이 충분히 마른 뒤 며칠 후 충분히 관수</p>
+                                            
+										</div>
+									</div>
+                                    <div class="col-md-4">
+										<!-- Image -->
+										<div class="bg-success py-2 px-3 rounded-3  h-100" >
+											<h1 class="text-white"><i class="fa-solid fa-poo"></i></h1>
+                                            <h5 class="text-white">비료</h5>
+                                            <h6 class="text-white">-</h6>
+                                            
+										</div>	
+									</div>
+									<!-- Room detail START -->
+								</div>
+							</div>
+							<!-- Room item END -->
+						</div>
+					</div>
+					<!-- Card body END -->
+				</div>	
+			</div>
+			<!-- Detail END -->
+
+			<!-- Right side content START -->
+			
+			<!-- Right side content END -->
+		</div>
+	</div>
+</section>
+<!-- =======================
+Featured Hotels END -->
+
+<!-- =======================
+Client START -->
+
+<!-- =======================
+Download app END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+
+
+	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+</body>
+</html>

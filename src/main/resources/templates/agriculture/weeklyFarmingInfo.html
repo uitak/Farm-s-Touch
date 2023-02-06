@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+
+
+<!-- Header END -->	
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main banner START --> <!--assets/images/bg/20.jpg-->
+<section class="position-relative py-8 py-lg-9" style="background-image:url(assets/images/farmstouch/example/nongbg.jpg); background-position: center left; background-size: cover;">
+	<!-- Background dark overlay -->
+	<div class="bg-overlay bg-dark opacity-8"></div>
+	<div class="container z-index-9 position-relative">
+		<div class="row py-sm-5">
+			<!-- Title -->
+			<div class="col-xl-8 m-auto text-center">
+				<h6 class="text-white fw-normal mb-3">매주 업데이트 되는 알찬 농사 정보를 받아보는</h6>
+				<h1 class="display-4 text-white mb-0">주간농사정보
+					<span class="position-relative z-index-9 d-block">Farm's Touch
+						<!-- SVG START -->
+						<span class="position-absolute top-50 start-50 translate-middle z-index-n1 d-none d-md-block mt-4">
+							<svg width="390.5px" height="21.5px" viewBox="0 0 445.5 21.5">
+								<path class="fill-success opacity-7" d="M409.9,2.6c-9.7-0.6-19.5-1-29.2-1.5c-3.2-0.2-6.4-0.2-9.7-0.3c-7-0.2-14-0.4-20.9-0.5 c-3.9-0.1-7.8-0.2-11.7-0.3c-1.1,0-2.3,0-3.4,0c-2.5,0-5.1,0-7.6,0c-11.5,0-23,0-34.5,0c-2.7,0-5.5,0.1-8.2,0.1 c-6.8,0.1-13.6,0.2-20.3,0.3c-7.7,0.1-15.3,0.1-23,0.3c-12.4,0.3-24.8,0.6-37.1,0.9c-7.2,0.2-14.3,0.3-21.5,0.6 c-12.3,0.5-24.7,1-37,1.5c-6.7,0.3-13.5,0.5-20.2,0.9C112.7,5.3,99.9,6,87.1,6.7C80.3,7.1,73.5,7.4,66.7,8 C54,9.1,41.3,10.1,28.5,11.2c-2.7,0.2-5.5,0.5-8.2,0.7c-5.5,0.5-11,1.2-16.4,1.8c-0.3,0-0.7,0.1-1,0.1c-0.7,0.2-1.2,0.5-1.7,1 C0.4,15.6,0,16.6,0,17.6c0,1,0.4,2,1.1,2.7c0.7,0.7,1.8,1.2,2.7,1.1c6.6-0.7,13.2-1.5,19.8-2.1c6.1-0.5,12.3-1,18.4-1.6 c6.7-0.6,13.4-1.1,20.1-1.7c2.7-0.2,5.4-0.5,8.1-0.7c10.4-0.6,20.9-1.1,31.3-1.7c6.5-0.4,13-0.7,19.5-1.1c2.7-0.1,5.4-0.3,8.1-0.4 c10.3-0.4,20.7-0.8,31-1.2c6.3-0.2,12.5-0.5,18.8-0.7c2.1-0.1,4.2-0.2,6.3-0.2c11.2-0.3,22.3-0.5,33.5-0.8 c6.2-0.1,12.5-0.3,18.7-0.4c2.2-0.1,4.4-0.1,6.7-0.1c11.5-0.1,23-0.2,34.6-0.4c7.2-0.1,14.4-0.1,21.6-0.1c12.2,0,24.5,0.1,36.7,0.1 c2.4,0,4.8,0.1,7.2,0.2c6.8,0.2,13.5,0.4,20.3,0.6c5.1,0.2,10.1,0.3,15.2,0.4c3.6,0.1,7.2,0.4,10.8,0.6c10.6,0.6,21.1,1.2,31.7,1.8 c2.7,0.2,5.4,0.4,8,0.6c2.9,0.2,5.8,0.4,8.6,0.7c0.4,0.1,0.9,0.2,1.3,0.3c1.1,0.2,2.2,0.2,3.2-0.4c0.9-0.5,1.6-1.5,1.9-2.5 c0.6-2.2-0.7-4.5-2.9-5.2c-1.9-0.5-3.9-0.7-5.9-0.9c-1.4-0.1-2.7-0.3-4.1-0.4c-2.6-0.3-5.2-0.4-7.9-0.6 C419.7,3.1,414.8,2.9,409.9,2.6z"/>
+							</svg>
+						</span>
+						<!-- SVG END -->
+					</span>
+				</h1>
+			</div>
+
+			<!-- Search START -->
+			<div class="col-xl-10 mx-auto">
+				<div class="bg-blur bg-white bg-opacity-10 border border-light border-opacity-25 rounded-3 p-4 mt-5">
+					<!-- 스크롤 이동 START -->
+					<div class="row g-3 justify-content-center align-items-center">
+						<div class="col-lg-10">
+							<!-- Input -->
+							<div class="form-input-dropdown position-relative">
+								<div class="form-control form-control-lg me-1 ps-5">주간농사정보를 알아보려면 옆의 버튼을 눌러주세요.</div>
+								<!-- Icon -->
+								<span class="position-absolute top-50 start-0 translate-middle ps-5"><i class="bi bi-search fs-5"></i></span>
+							</div>
+						</div>
+
+						<div class="col-lg-2 d-grid">
+							<!-- click -->
+							<button class="btn btn-lg btn-success2 mb-0" id="scrollDown">Click <i class="fa-solid fa-paper-plane"></i></button>
+						</div>
+					</div>
+					<!-- 스크롤 이동 END -->
+				</div>
+			</div>	
+			<!-- Search END -->
+
+		</div> <!-- Row END -->
+	</div>
+</section>
+
+<!-- ============================================================================================click moveDown -->
+<script src="assets/images/farmstouch/js/scrolldown.js"></script>
+<!-- =======================
+Main banner END -->
+
+
+<!-- =======================
+Offer action box START -->
+<section class="pt-0 pt-sm-5" style="margin-bottom: -3.125rem;" id="blac">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<!-- Card -->
+				<div class="card bg-dark p-3">
+					<div class="card-body border border-2 border-dashed border-white rounded position-relative">
+						<!-- Scissor Svg -->
+						<figure class="position-absolute top-0 start-0 mt-n3 ms-3">
+							<svg class="pt-1" width="30.1px" height="23.4px" viewBox="0 0 30.1 23.4" style="enable-background:new 0 0 30.1 23.4;" xml:space="preserve">
+								<path class="fill-white" d="M30.1,4.4c0,0-1.9-1.6-3.4-0.7c-1.2,0.7-8.9,4.5-12.3,6.2L9.6,7.2c0.5-0.9,0.6-2,0.3-3C9.6,2.8,8.6,1.6,7.2,0.8 C4.7-0.6,1.7-0.1,0.5,2C0,3-0.1,4,0.2,5.1c0.4,1.3,1.3,2.6,2.7,3.4C3.5,8.8,4.1,9,4.8,9.1v0c0,0,0,0,0,0c0.1,0,0.1,0,0.2,0 c4,0.6,6,1.7,7,2.5c-1,0.8-3,1.9-7,2.5c-0.1,0-0.1,0-0.2,0c0,0,0,0,0,0l0,0c-0.6,0.1-1.3,0.3-1.9,0.7c-1.4,0.8-2.3,2-2.7,3.4 c-0.3,1-0.2,2.1,0.3,3.1c1.2,2.1,4.2,2.7,6.7,1.2c1.4-0.8,2.3-2,2.7-3.4c0.3-1,0.2-2.1-0.3-3l4.8-2.8c3.4,1.7,11.1,5.6,12.3,6.2 c1.6,0.9,3.4-0.7,3.4-0.7l-12.7-7.3L30.1,4.4z M7.5,6C7,7,5.4,7.2,4,6.4C3.2,5.9,2.6,5.2,2.4,4.5C2.3,4.1,2.3,3.6,2.6,3.2 c0.5-1,2.2-1.1,3.5-0.3C6.9,3.3,7.4,4,7.6,4.8C7.7,5.1,7.8,5.6,7.5,6z M7.6,18.6c-0.2,0.8-0.8,1.5-1.6,1.9c-1.4,0.8-3,0.6-3.5-0.3 c-0.3-0.4-0.2-0.9-0.1-1.3C2.6,18.1,3.2,17.4,4,17c1.4-0.8,3-0.6,3.5,0.3C7.8,17.8,7.7,18.2,7.6,18.6z"/>
+							</svg>
+						</figure>
+						<!-- Scissor Svg -->
+						<figure class="position-absolute bottom-0 end-0 mb-n3 me-3">
+							<svg class="pb-1" width="30.1px" height="23.4px" viewBox="0 0 30.1 23.4" style="enable-background:new 0 0 30.1 23.4;" xml:space="preserve">
+								<path class="fill-white" d="M0,19c0,0,1.9,1.6,3.4,0.7c1.2-0.7,8.8-4.6,12.2-6.3l4.8,2.7c-0.5,0.9-0.6,2-0.3,3c0.4,1.3,1.3,2.5,2.7,3.3 c2.5,1.4,5.5,0.9,6.7-1.3c0.5-0.9,0.6-2,0.3-3.1c-0.4-1.3-1.3-2.5-2.7-3.3c-0.6-0.3-1.3-0.6-1.9-0.7l0,0c0,0,0,0,0,0 c-0.1,0-0.1,0-0.2,0c-4-0.6-6-1.7-7-2.5c1-0.8,3-1.9,7-2.5c0.1,0,0.1,0,0.2,0c0,0,0,0,0,0l0,0C26,9,26.6,8.7,27.2,8.4 c1.4-0.8,2.3-2.1,2.7-3.4c0.3-1,0.2-2.1-0.4-3.1c-1.2-2.1-4.2-2.6-6.7-1.2c-1.4,0.8-2.3,2.1-2.7,3.4c-0.3,1-0.2,2.1,0.3,3L15.7,10 C12.3,8.3,4.6,4.5,3.4,3.8C1.8,2.9,0,4.5,0,4.5l12.7,7.2L0,19z M22.6,17.3c0.5-1,2.1-1.1,3.5-0.4c0.8,0.4,1.4,1.2,1.6,1.9 c0.1,0.3,0.2,0.8-0.1,1.3c-0.5,1-2.1,1.1-3.5,0.4c-0.8-0.5-1.4-1.2-1.6-1.9C22.4,18.2,22.4,17.7,22.6,17.3z M22.4,4.7 C22.6,4,23.2,3.3,24,2.8c1.3-0.8,3-0.6,3.5,0.3c0.3,0.4,0.2,0.9,0.1,1.3c-0.2,0.8-0.8,1.5-1.6,1.9c-1.3,0.8-3,0.6-3.5-0.3 C22.3,5.6,22.3,5.1,22.4,4.7z"/>
+							</svg>
+						</figure>
+
+						<!-- Title -->
+						<h4 class="text-white">우리는 논벼, 밭작물, 채소, 과수, 원예, 축산 등의 농사정보를 제공하여 </h4>
+						<!-- Content -->
+						<div class="d-flex justify-content-between flex-wrap">
+							<h4 class="fw-light text-white mb-0">영농활동의 효율성 제고를 위해 노력하고 있습니다.</h4>
+							<div class="text-warning fs-4 stretched-link">팜스터치</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Offer action box END -->
+
+
+<!-- =======================
+Category START -->
+<Section>
+	<div class="container">
+		<div class="row g-4 align-items-center">
+
+			<!-- Title -->
+			<div class="col-lg-2">
+				<h4>Browse by Category</h4>
+				<a href="#" class="h6 fw-normal text-success mb-0">메인페이지 <i class="bi bi-arrow-right"></i></a>
+			</div>
+
+			<!-- Category START -->
+			<div class="col-lg-10">
+				<!-- Slider START -->
+				<div class="tiny-slider arrow-round arrow-xs arrow-dark">
+					<div class="tiny-slider-inner" data-autoplay="true" data-arrow="true" data-edge="2" data-dots="false" data-items-xl="5" data-items-lg="3" data-items-sm="2" data-items-xs="1">
+						<!-- Slider item -->
+						<div>
+							<div class="card card-body bg-light text-center align-items-center">
+								<!-- Icon -->
+								<div class="icon-xl bg-mode rounded-circle mb-3">
+									<figure>
+										<div width="47.9px" height="47.3px" viewBox="0 0 47.9 47.3" style="enable-background:new 0 0 47.9 47.3;" xml:space="preserve">
+											
+											<img src="https://img.icons8.com/stickers/100/null/rice-bowl.png" style="height: 2.813rem; width: 2.813rem;"/>
+										</div>
+									</figure>
+								</div>
+								<h6 class="mb-0"><a href="#" class="stretched-link">농가맛집</a></h6>
+							</div>
+						</div>
+
+						<!-- Slider item -->
+						<div>
+							<div class="card card-body bg-light text-center align-items-center">
+								<!-- Icon -->
+								<div class="icon-xl bg-mode rounded-circle mb-3">
+									<figure>
+										<div width="43.4px" height="51px" viewBox="0 0 43.4 51" style="enable-background:new 0 0 43.4 51;" xml:space="preserve">
+											<img src="https://img.icons8.com/stickers/100/null/hand-planting.png" style="height: 2.813rem; width: 2.813rem;"/>
+										</div>
+									</figure>
+								</div>
+								<h6 class="mb-0"><a href="#" class="stretched-link">약초정보</a></h6>
+							</div>
+						</div>
+
+						<!-- Slider item -->
+						<div>
+							<div class="card card-body bg-light text-center align-items-center">
+								<!-- Icon -->
+								<div class="icon-xl bg-mode rounded-circle mb-3">
+									<figure>
+										<div width="43.7px" height="38.7px" viewBox="0 0 43.7 38.7" style="enable-background:new 0 0 43.7 38.7;" xml:space="preserve">
+											<img src="https://img.icons8.com/stickers/100/null/spa-flower.png" style="height: 2.813rem; width: 2.813rem;"/>
+										</div>
+									</figure>
+								</div>
+								<h6 class="mb-0"><a href="#" class="stretched-link">품종정보</a></h6>
+							</div>
+						</div>
+
+						<!-- Slider item -->
+						<div>
+							<div class="card card-body bg-light text-center align-items-center">
+								<!-- Icon -->
+								<div class="icon-xl bg-mode rounded-circle mb-3">
+									<figure>
+										<div width="44px" height="44px" viewBox="0 0 44 44" style="enable-background:new 0 0 44 44;" xml:space="preserve">
+											<img src="https://img.icons8.com/stickers/100/null/video-gallery.png" style="height: 2.813rem; width: 2.813rem;"/>
+										</div>
+									</figure>
+								</div>
+								<h6 class="mb-0"><a href="#" class="stretched-link">농업기술동영상</a></h6>
+							</div>
+						</div>
+
+						<!-- Slider item -->
+						<div>
+							<div class="card card-body bg-light text-center align-items-center">
+								<!-- Icon -->
+								<div class="icon-xl bg-mode rounded-circle mb-3">
+									<figure>
+										<div width="42.7px" height="42.7px" viewBox="0 0 42.7 42.7" style="enable-background:new 0 0 42.7 42.7;" xml:space="preserve">
+											<img src="https://img.icons8.com/stickers/100/null/diary.png" style="height: 2.813rem; width: 2.813rem;">
+										</div>
+									</figure>
+								</div>
+								<h6 class="mb-0"><a href="#" class="stretched-link">농업기술+</a></h6>
+							</div>
+						</div>
+
+						<!-- Slider item -->
+						<div>
+							<div class="card card-body bg-light text-center align-items-center">
+								<!-- Icon -->
+								<div class="icon-xl bg-mode rounded-circle mb-3">
+									<figure>
+										<div width="46.6px" height="53.3px" viewBox="0 0 46.6 53.3" style="enable-background:new 0 0 46.6 53.3;" xml:space="preserve">
+											<img src="https://img.icons8.com/stickers/100/null/garden.png" style="height: 2.813rem; width: 2.813rem;"/>	
+										</div>
+									</figure>
+								</div>
+								<h6 class="mb-0"><a href="#" class="stretched-link">정원식물</a></h6>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<!-- Category END -->
+		</div>
+	</div>
+</Section>
+<!-- =======================
+Category END -->
+
+
+
+
+
+
+
+<!-- =======================
+Content START -->
+<section class="pt-0" style="margin-bottom: 50px;">
+	<div class="container vstack gap-4">
+		<!-- Invoice history START -->
+		<div class="row">
+			<div class="col-12">
+				<div class="card border rounded-3">
+					<!-- Card header START -->
+					<div class="card-header border-bottom">
+						<h5 class="card-header-title"><img src="https://img.icons8.com/stickers/100/null/search-folder.png" style="height: 2.5rem;"/> 주간 농사 정보</h5>
+					</div>
+					<!-- Card header END -->
+
+					<!-- Card body START -->
+					<div class="card-body">
+						<!-- Search and select START -->
+						<div class="row g-3 align-items-center justify-content-between mb-3">
+							<!-- Search -->
+							<div class="col-md-8">
+								<form class="rounded position-relative">
+									<input class="form-control pe-5" type="text" placeholder="Search" aria-label="Search">
+									<button class="btn border-0 px-3 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6"></i></button>
+								</form>
+							</div>
+
+							<!-- Select option -->
+							<div class="col-md-3">
+								<!-- Short by filter -->
+								<form>
+									<select class="form-select js-choice" aria-label=".form-select-sm">
+										<option value="">Sort by</option>
+										<option>Free</option>
+										<option>Newest</option>
+										<option>Oldest</option>
+									</select>
+								</form>
+							</div>
+						</div>
+						<!-- Search and select END -->
+
+						<!-- Hotel room list START -->
+						<div class="table-responsive border-0">
+							<table class="table align-middle p-4 mb-0 table-hover table-shrink" style="text-align: center;">
+								<!-- Table head -->
+								<thead class="table-success">
+									<tr>
+										<th scope="col" class="border-0 rounded-start">#</th>
+										<th scope="col" class="border-0">제목</th>
+										<th scope="col" class="border-0">작성자</th>
+										<th scope="col" class="border-0">등록일</th>
+										<th scope="col" class="border-0 rounded-end">조회수</th>
+										<th scope="col" class="border-0 rounded-end">첨부</th>
+									</tr>
+								</thead>
+
+								<!-- Table body START -->
+								<tbody class="border-top-0">
+									<!-- Table item -->
+									<tr>
+										<td> 682 </td>
+										<td>
+											<a href="http://www.nongsaro.go.kr/portal/contentsFileView.do?ep=kt5noEZ9eEntUnZaWyCC0aF1juab8B2M@r/xMBcjs5BtyvGH/qhCuqmdMsUch4d/" target="_blank"> 
+												주간농사정보 제 5호 (2023.01.30. ~ 02.05.) 
+											</a>
+											<!-- Dropdown icon -->
+											<a href="#" class="h6 mb-0" role="button" id="dropdownShare1" data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="bi bi-info-circle-fill"></i>
+											</a>
+											<!-- Dropdown items -->
+											<ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare1">
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">cntntsNo</span>
+														<span class="h6 mb-0 small">242810</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="me-4 small">fileSeCode</span>
+														<span class="text-danger small">185001</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">fileName</span>
+														<span class="h6 mb-0 small">주간농사정보 제5호 (2023.01.30.~02.05.).hwpx</span>
+													</div>
+												</li>
+											</ul>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">변재완</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Download"><i class="bi bi-cloud-download"></i></a> </td>
+									</tr>
+									<!-- Table item End -->
+									<!-- Table item -->
+									<tr>
+										<td> 682 </td>
+										<td> 
+											<a href="http://www.nongsaro.go.kr/portal/contentsFileView.do?ep=kt5noEZ9eEntUnZaWyCC0aF1juab8B2M@r/xMBcjs5BtyvGH/qhCuqmdMsUch4d/" target="_blank"> 
+												주간농사정보 제 5호 (2023.01.30. ~ 02.05.) 
+											</a>
+											<!-- Dropdown icon -->
+											<a href="#" class="h6 mb-0" role="button" id="dropdownShare1" data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="bi bi-info-circle-fill"></i>
+											</a>
+											<!-- Dropdown items -->
+											<ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare1">
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">cntntsNo</span>
+														<span class="h6 mb-0 small">242810</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="me-4 small">fileSeCode</span>
+														<span class="text-danger small">185001</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">fileName</span>
+														<span class="h6 mb-0 small">주간농사정보 제5호 (2023.01.30.~02.05.).hwpx</span>
+													</div>
+												</li>
+											</ul>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">변재완</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Download"><i class="bi bi-cloud-download"></i></a> </td>
+									</tr>
+									<!-- Table item End -->
+									<!-- Table item -->
+									<tr>
+										<td> 682 </td>
+										<td> 
+											<a href="http://www.nongsaro.go.kr/portal/contentsFileView.do?ep=kt5noEZ9eEntUnZaWyCC0aF1juab8B2M@r/xMBcjs5BtyvGH/qhCuqmdMsUch4d/" target="_blank"> 
+												주간농사정보 제 5호 (2023.01.30. ~ 02.05.) 
+											</a>
+											<!-- Dropdown icon -->
+											<a href="#" class="h6 mb-0" role="button" id="dropdownShare1" data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="bi bi-info-circle-fill"></i>
+											</a>
+											<!-- Dropdown items -->
+											<ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare1">
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">cntntsNo</span>
+														<span class="h6 mb-0 small">242810</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="me-4 small">fileSeCode</span>
+														<span class="text-danger small">185001</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">fileName</span>
+														<span class="h6 mb-0 small">주간농사정보 제5호 (2023.01.30.~02.05.).hwpx</span>
+													</div>
+												</li>
+											</ul>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">변재완</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Download"><i class="bi bi-cloud-download"></i></a> </td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td> 682 </td>
+										<td> 
+											<a href="http://www.nongsaro.go.kr/portal/contentsFileView.do?ep=kt5noEZ9eEntUnZaWyCC0aF1juab8B2M@r/xMBcjs5BtyvGH/qhCuqmdMsUch4d/" target="_blank"> 
+												주간농사정보 제 5호 (2023.01.30. ~ 02.05.) 
+											</a>
+											<!-- Dropdown icon -->
+											<a href="#" class="h6 mb-0" role="button" id="dropdownShare1" data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="bi bi-info-circle-fill"></i>
+											</a>
+											<!-- Dropdown items -->
+											<ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare1">
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">cntntsNo</span>
+														<span class="h6 mb-0 small">242810</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="me-4 small">fileSeCode</span>
+														<span class="text-danger small">185001</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">fileName</span>
+														<span class="h6 mb-0 small">주간농사정보 제5호 (2023.01.30.~02.05.).hwpx</span>
+													</div>
+												</li>
+											</ul>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">변재완</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Download"><i class="bi bi-cloud-download"></i></a> </td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td> 682 </td>
+										<td> 
+											<a href="http://www.nongsaro.go.kr/portal/contentsFileView.do?ep=kt5noEZ9eEntUnZaWyCC0aF1juab8B2M@r/xMBcjs5BtyvGH/qhCuqmdMsUch4d/" target="_blank"> 
+												주간농사정보 제 5호 (2023.01.30. ~ 02.05.) 
+											</a>
+											<!-- Dropdown icon -->
+											<a href="#" class="h6 mb-0" role="button" id="dropdownShare1" data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="bi bi-info-circle-fill"></i>
+											</a>
+											<!-- Dropdown items -->
+											<ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare1">
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">cntntsNo</span>
+														<span class="h6 mb-0 small">242810</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="me-4 small">fileSeCode</span>
+														<span class="text-danger small">185001</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">fileName</span>
+														<span class="h6 mb-0 small">주간농사정보 제5호 (2023.01.30.~02.05.).hwpx</span>
+													</div>
+												</li>
+											</ul>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">변재완</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Download"><i class="bi bi-cloud-download"></i></a> </td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td> 682 </td>
+										<td> 
+											<a href="http://www.nongsaro.go.kr/portal/contentsFileView.do?ep=kt5noEZ9eEntUnZaWyCC0aF1juab8B2M@r/xMBcjs5BtyvGH/qhCuqmdMsUch4d/" target="_blank"> 
+												주간농사정보 제 5호 (2023.01.30. ~ 02.05.) 
+											</a>
+											<!-- Dropdown icon -->
+											<a href="#" class="h6 mb-0" role="button" id="dropdownShare1" data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="bi bi-info-circle-fill"></i>
+											</a>
+											<!-- Dropdown items -->
+											<ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare1">
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">cntntsNo</span>
+														<span class="h6 mb-0 small">242810</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="me-4 small">fileSeCode</span>
+														<span class="text-danger small">185001</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">fileName</span>
+														<span class="h6 mb-0 small">주간농사정보 제5호 (2023.01.30.~02.05.).hwpx</span>
+													</div>
+												</li>
+											</ul>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">변재완</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Download"><i class="bi bi-cloud-download"></i></a> </td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td> 682 </td>
+										<td> 
+											<a href="http://www.nongsaro.go.kr/portal/contentsFileView.do?ep=kt5noEZ9eEntUnZaWyCC0aF1juab8B2M@r/xMBcjs5BtyvGH/qhCuqmdMsUch4d/" target="_blank"> 
+												주간농사정보 제 5호 (2023.01.30. ~ 02.05.) 
+											</a>
+											<!-- Dropdown icon -->
+											<a href="#" class="h6 mb-0" role="button" id="dropdownShare1" data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="bi bi-info-circle-fill"></i>
+											</a>
+											<!-- Dropdown items -->
+											<ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare1">
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">cntntsNo</span>
+														<span class="h6 mb-0 small">242810</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="me-4 small">fileSeCode</span>
+														<span class="text-danger small">185001</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">fileName</span>
+														<span class="h6 mb-0 small">주간농사정보 제5호 (2023.01.30.~02.05.).hwpx</span>
+													</div>
+												</li>
+											</ul>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">변재완</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Download"><i class="bi bi-cloud-download"></i></a> </td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td> 682 </td>
+										<td> 
+											<a href="http://www.nongsaro.go.kr/portal/contentsFileView.do?ep=kt5noEZ9eEntUnZaWyCC0aF1juab8B2M@r/xMBcjs5BtyvGH/qhCuqmdMsUch4d/" target="_blank"> 
+												주간농사정보 제 5호 (2023.01.30. ~ 02.05.) 
+											</a>
+											<!-- Dropdown icon -->
+											<a href="#" class="h6 mb-0" role="button" id="dropdownShare1" data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="bi bi-info-circle-fill"></i>
+											</a>
+											<!-- Dropdown items -->
+											<ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare1">
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">cntntsNo</span>
+														<span class="h6 mb-0 small">242810</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="me-4 small">fileSeCode</span>
+														<span class="text-danger small">185001</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">fileName</span>
+														<span class="h6 mb-0 small">주간농사정보 제5호 (2023.01.30.~02.05.).hwpx</span>
+													</div>
+												</li>
+											</ul>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">변재완</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Download"><i class="bi bi-cloud-download"></i></a> </td>
+									</tr>
+									<!-- Table item End -->
+									
+									<!-- Table item -->
+									<tr>
+										<td> 682 </td>
+										<td> 
+											<a href="http://www.nongsaro.go.kr/portal/contentsFileView.do?ep=kt5noEZ9eEntUnZaWyCC0aF1juab8B2M@r/xMBcjs5BtyvGH/qhCuqmdMsUch4d/" target="_blank"> 
+												주간농사정보 제 5호 (2023.01.30. ~ 02.05.) 
+											</a>
+											<!-- Dropdown icon -->
+											<a href="#" class="h6 mb-0" role="button" id="dropdownShare1" data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="bi bi-info-circle-fill"></i>
+											</a>
+											<!-- Dropdown items -->
+											<ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare1">
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">cntntsNo</span>
+														<span class="h6 mb-0 small">242810</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="me-4 small">fileSeCode</span>
+														<span class="text-danger small">185001</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">fileName</span>
+														<span class="h6 mb-0 small">주간농사정보 제5호 (2023.01.30.~02.05.).hwpx</span>
+													</div>
+												</li>
+											</ul>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">변재완</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Download"><i class="bi bi-cloud-download"></i></a> </td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td> 682 </td>
+										<td> 
+											<a href="http://www.nongsaro.go.kr/portal/contentsFileView.do?ep=kt5noEZ9eEntUnZaWyCC0aF1juab8B2M@r/xMBcjs5BtyvGH/qhCuqmdMsUch4d/" target="_blank"> 
+												주간농사정보 제 5호 (2023.01.30. ~ 02.05.) 
+											</a>
+											<!-- Dropdown icon -->
+											<a href="#" class="h6 mb-0" role="button" id="dropdownShare1" data-bs-toggle="dropdown" aria-expanded="false">
+												<i class="bi bi-info-circle-fill"></i>
+											</a>
+											<!-- Dropdown items -->
+											<ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare1">
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">cntntsNo</span>
+														<span class="h6 mb-0 small">242810</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="me-4 small">fileSeCode</span>
+														<span class="text-danger small">185001</span>
+													</div>
+													<hr class="my-1"> <!-- Divider -->
+												</li>
+												<li>
+													<div class="d-flex justify-content-between">
+														<span class="small">fileName</span>
+														<span class="h6 mb-0 small">주간농사정보 제5호 (2023.01.30.~02.05.).hwpx</span>
+													</div>
+												</li>
+											</ul>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">변재완</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> <a href="#" class="btn btn-light btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Download"><i class="bi bi-cloud-download"></i></a> </td>
+									</tr>
+									<!-- Table item End -->
+
+									
+
+									
+								</tbody>
+								<!-- Table body END -->
+							</table>
+						</div>
+						<!-- Hotel room list END -->
+					</div>
+					<!-- Card body END -->
+
+					<!-- Card footer START -->
+					<div class="card-footer pt-0">
+						<!-- Pagination and content -->
+						<div class="d-sm-flex justify-content-sm-between align-items-sm-center">
+							<!-- Content -->
+							<p class="mb-sm-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
+							<!-- Pagination -->
+							<nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
+								<ul class="pagination pagination-sm pagination-primary-soft mb-0">
+									<li class="page-item">
+										<a class="page-link" href="#" tabindex="-1">Prev</a>
+									</li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item active"><a class="page-link" href="#">2</a></li>
+									<li class="page-item disabled"><a class="page-link" href="#">..</a></li>
+									<li class="page-item"><a class="page-link" href="#">15</a></li>
+									<li class="page-item">
+										<a class="page-link" href="#">Next</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- Card footer END -->
+				</div>
+			</div>
+		</div>
+		<!-- Invoice history END -->
+	</div>
+</section>
+<!-- =======================
+Content END -->
+
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- footer 시작 -->
+<footer th:replace="~{common/layout2 :: #footer}"></footer>
+</body>
+</html>

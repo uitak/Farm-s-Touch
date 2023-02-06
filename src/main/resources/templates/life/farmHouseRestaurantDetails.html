@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+
+
+<!-- Header END -->	
+<!-- ***************************************************************** MAIN CONTENT START ************************************************************************* -->
+<main>
+
+<!-- =======================
+Main banner START -->
+<section class="py-0">
+	<div class="container-fluid px-0">
+		<!-- Slider START -->
+		<div class="tiny-slider arrow-round arrow-blur">
+			<div class="tiny-slider-inner" data-autoplay="true" data-arrow="true" data-gutter="0" data-edge="0" data-dots="false" data-items="3" data-items-md="2" data-items-xs="1">
+				<!-- Slider item -->
+				<div>
+					<a class="w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/farmstouch/example/006.jpg">
+						<div class="card card-element-hover card-overlay-hover rounded-0 overflow-hidden">
+							<!-- Image -->
+							<img src="assets/images/farmstouch/example/006.jpg" class="" alt="" style="height: 23.75rem;">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Slider item -->
+				<div>
+					<a class="w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/farmstouch/example/007.jpg">
+						<div class="card card-element-hover card-overlay-hover rounded-0 overflow-hidden">
+							<!-- Image -->
+							<img src="assets/images/farmstouch/example/007.jpg" class="" alt="" style="height: 23.75rem;">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Slider item -->
+				<div>
+					<a class="w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/farmstouch/example/008.jpg">
+						<div class="card card-element-hover card-overlay-hover rounded-0 overflow-hidden">
+							<!-- Image -->
+							<img src="assets/images/farmstouch/example/008.jpg" class="" alt="" style="height: 23.75rem;">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Slider item -->
+				<div>
+					<a class="w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/farmstouch/example/009.jpg">
+						<div class="card card-element-hover card-overlay-hover rounded-0 overflow-hidden">
+							<!-- Image -->
+							<img src="assets/images/farmstouch/example/009.jpg" class="" alt="" style="height: 23.75rem;">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Slider item -->
+				<div>
+					<a class="w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/farmstouch/example/010.jpg">
+						<div class="card card-element-hover card-overlay-hover rounded-0 overflow-hidden">
+							<!-- Image -->
+							<img src="assets/images/farmstouch/example/010.jpg" class="" alt="" style="height: 23.75rem;">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- Slider START -->
+	</div>
+</section>
+<!-- =======================
+Main banner END -->
+
+<!-- =======================
+Title and tabs START -->
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="card bg-light p-0 pb-0">
+					<!-- Card body -->
+					<div class="card-body d-flex justify-content-between flex-wrap">
+						<!-- Title and badge -->
+						<div>
+							<!-- Badge -->
+							<div class="badge text-bg-dark"><i class="fa-solid fa-utensils fa-fw text-warning"></i> 농가맛집</div>
+							<div class="badge text-bg-dark"><i class="fa-solid fa-map-location-dot fa-fw text-warning"></i> 밀양시</div>
+							<div class="badge text-bg-dark"><i class="fas fa-star fa-fw text-warning"></i> 4.5</div>
+							
+							<!-- Title -->
+							<h1 class="h3 mt-2 mb-1" style="padding: 10px 0px;">연담(蓮談)</h1>
+							<p class="mb-2 mb-sm-0"><i class="bi bi-geo-alt me-1 text-primary"></i>경남 밀양시 상동면 상동로 576 <a href="#" class="ms-2 text-decoration-underline" data-bs-toggle="modal" data-bs-target="#mapmodal">
+								<i class="bi bi-eye-fill me-1"></i>View On Map
+							</a></p>
+						</div>
+						<!-- Buttons -->
+						<ul class="list-inline mb-0">
+							<!-- wishlist -->
+							<li class="list-inline-item">
+								<a href="#" class="btn btn-sm btn-white px-2"><i class="fa-solid fa-fw fa-heart"></i></a>
+							</li>
+							<!-- Share -->
+							<li class="list-inline-item dropdown">
+								<!-- Share button -->
+								<a href="#" class="btn btn-sm btn-white px-2" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa-solid fa-fw fa-share-alt"></i>
+								</a>
+								<!-- dropdown button -->
+								<ul class="dropdown-menu min-w-auto shadow rounded" aria-labelledby="dropdownShare">
+									<li><a class="dropdown-item" href="#"><i class="fab fa-twitter-square me-2"></i>Twitter</a></li>
+									<li><a class="dropdown-item" href="#"><i class="fab fa-facebook-square me-2"></i>Facebook</a></li>
+									<li><a class="dropdown-item" href="#"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
+									<li><a class="dropdown-item" href="#"><i class="fa-solid fa-copy me-2"></i>Copy link</a></li>
+								</ul>
+							</li>
+							<!-- Report -->
+							<li class="list-inline-item">
+								<a href="#" class="btn btn-sm btn-white px-2"><i class="bi bi-exclamation-triangle-fill fa-fw"></i></a>
+							</li>
+						</ul>
+					</div>
+					<!-- Card footer -->
+					<div class="card-footer bg-transparent border-top py-0">
+						<ul class="nav nav-tabs nav-bottom-line nav-responsive border-0" role="tablist">
+							<li class="nav-item"> <a class="nav-link mb-0 active" data-bs-toggle="tab" href="#tab-1">상세정보</a> </li>
+							<!-- <li class="nav-item"> <a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-2">Deals</a> </li> -->
+							<!-- <li class="nav-item"> <a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-3">지도 및 요약정보</a> </li> -->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Title and tabs END -->
+
+<!-- =======================
+Content START -->
+<section class="pt-0">
+	<div class="container">
+		<!-- Tabs contents START -->
+		<div class="tab-content mb-0" id="tour-pills-tabContent">
+
+			<!-- Content item START -->
+			<div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+				<div class="row g-4 g-lg-5">
+					<!-- Left side START -->
+					<div class="col-lg-7 col-xl-8">
+						<!-- Card START -->
+						<div class="card bg-transparent mb-4">
+							<!-- Card header -->
+							<div class="card-header bg-transparent border-bottom px-0 pt-0">
+								<h4 class="mb-0">맛집 소개</h4>
+							</div>
+							<!-- Card body -->
+							<div class="card-body px-0 pb-0">
+								<h6 style="color: green;">연담(蓮談) | 해맑은 밀양의 기운을 담은 건강한 맛을 나누는 곳</h6>
+								<p class="mb-3">해맑은 밀양의 기운을 담은 각종 자연 재료에 숙수의 세월 깊은
+									손맛을 더해 건강한 밥상을 선보이는 한식전문점으로 김치를 담
+									글 때 말고는 마늘을 전혀 사용하지 않고 음식의 간을 맞출 때도
+									어간장과 천일염을 윤기가 나도록 볶은 소금만을 사용하며 들기름은 100%, 국산으로 인공감미료를 사용하지 않은 자연식 음식점
+									입니다.</p>
+
+								<!-- <p class="mb-0">Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do. Water timed folly right aware if oh truth. Large above be to means. Dashwood does provide stronger is.</p> -->
+							</div>
+						</div>
+						<!-- Card END -->
+
+<!-- *******************************************************************영업시간*************************************************************** -->
+<!-- Card START -->
+<div class="card bg-transparent mb-4">
+	<!-- Card header -->
+	<div class="card-header bg-transparent border-bottom px-0 pt-0">
+		<h4 class="mb-0">영업 시간</h4>
+	</div>
+	<!-- Card body -->
+	<div class="card-body px-0 pb-0" style="margin-bottom: 1.875rem;" >
+		<div class="card shadow">
+			<!-- Card header -->
+
+			<div class="card-body" style="background-color:#daf0da; border-radius: 0.938rem;" >
+				<ul class="list-group list-group-borderless mb-0">
+					<li class="list-group-item d-flex justify-content-between">
+						<span style="color: red;"><i class="fa-solid fa-hashtag"></i> 쉬는 날 </span>
+						<span>매주 월요일</span>
+					</li>
+					<li class="list-group-item py-0"><hr class="my-1"></li>
+					<li class="list-group-item d-flex justify-content-between">
+						<span style="color: blue;"><i class="fa-solid fa-hashtag"></i> 영업하는 날 </span>
+						<span style="text-align: right;">11:00 ~ 15:00
+						<br>저녁 예약제(단체예약시 10인이상)</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Card END -->						
+											
+
+						<!-- Card START -->
+						<div class="card bg-transparent mb-4">
+							<!-- Card header -->
+							<div class="card-header bg-transparent border-bottom px-0 pt-0">
+								<h4 class="mb-0">취급 메뉴</h4>
+							</div>
+							<!-- Card body -->
+							<div class="card-body px-0 pb-0">
+								<p class="mb-3">연담정식: 연을 주요 테마로 자극적인 양념을 최소화한 자연식 위주상차림(연잎밥외 찬 15종)
+									연수육, 밀양강 은어튀김, 오색비빔밥, 황태찹쌀구이
+									테이크아웃제품: 새미보석양갱, 찹쌀만(가득)연잎밥, 연잎밥도시락</p>
+
+							</div>
+						</div>
+						<!-- Card END -->
+
+						<!-- Card START -->
+						<div class="card bg-transparent mb-4">
+							<!-- Card header -->
+							<div class="card-header bg-transparent border-bottom px-0 pt-0">
+								<h4 class="mb-0">체험 프로그램</h4>
+							</div>
+							<!-- Card body -->
+							<div class="card-body px-0 pb-0">
+								<p class="mb-3">떡, 한과숙수(인간문화재38호 궁중병과원 영남지회장) : 다과(떡)만들기 체험(계절별 식재료 이용), 사전예약</p>
+
+							</div>
+						</div>
+						<!-- Card END -->
+
+						<!-- Card START -->
+						<div class="card bg-transparent mb-4">
+							<!-- Card header -->
+							<div class="card-header bg-transparent border-bottom px-0 pt-0">
+								<h4 class="mb-0">주변 관광/볼거리</h4>
+							</div>
+							<!-- Card body -->
+							<div class="card-body px-0 pb-0">
+								<p class="mb-3">산내면 얼음골, 단장면 표충사, 부북면 위양못, 밀양 영남루 등</p>
+
+							</div>
+						</div>
+						<!-- Card END -->
+
+						<!-- Card START -->
+						<div class="card bg-transparent">
+							<!-- Card header -->
+							<div class="card-header bg-transparent border-bottom px-0">
+								<h4 class="mb-0">맛집 사진</h4>
+							</div>
+							<!-- Card body -->
+							<div class="card-body px-0 pb-0">
+								<div class="row g-4">
+									<div class="col-md-4">
+										<a class="w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/farmstouch/example/006.jpg">
+											<div class="card card-element-hover card-overlay-hover overflow-hidden">
+												<!-- Image -->
+												<img src="assets/images/farmstouch/example/006.jpg" class="card-img" alt="" style="height: 10.625rem;">
+												<!-- Full screen button -->
+												<div class="hover-element w-100 h-100">
+													<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+												</div>
+											</div>
+										</a>
+									</div>
+
+									<div class="col-md-4">
+										<a class="w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/farmstouch/example/007.jpg">
+											<div class="card card-element-hover card-overlay-hover overflow-hidden">
+												<!-- Image -->
+												<img src="assets/images/farmstouch/example/007.jpg" class="card-img" alt="" style="height: 10.625rem;">
+												<!-- Full screen button -->
+												<div class="hover-element w-100 h-100">
+													<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+												</div>
+											</div>
+										</a>
+									</div>
+
+									<div class="col-md-4">
+										<a class="w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/farmstouch/example/008.jpg">
+											<div class="card card-element-hover card-overlay-hover overflow-hidden">
+												<!-- Image -->
+												<img src="assets/images/farmstouch/example/008.jpg" class="card-img" alt="" style="height: 10.625rem;">
+												<!-- Full screen button -->
+												<div class="hover-element w-100 h-100">
+													<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+												</div>
+											</div>
+										</a>
+									</div>
+
+									<div class="col-md-4">
+										<a class="w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/farmstouch/example/009.jpg">
+											<div class="card card-element-hover card-overlay-hover overflow-hidden">
+												<!-- Image -->
+												<img src="assets/images/farmstouch/example/009.jpg" class="card-img" alt="" style="height: 10.625rem;">
+												<!-- Full screen button -->
+												<div class="hover-element w-100 h-100">
+													<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+												</div>
+											</div>
+										</a>
+									</div>
+
+									<div class="col-md-4">
+										<a class="w-100 h-100" data-glightbox data-gallery="gallery" href="assets/images/farmstouch/example/010.jpg">
+											<div class="card card-element-hover card-overlay-hover overflow-hidden">
+												<!-- Image -->
+												<img src="assets/images/farmstouch/example/010.jpg" class="card-img" alt="" style="height: 10.625rem;">
+												<!-- Full screen button -->
+												<div class="hover-element w-100 h-100">
+													<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+												</div>
+											</div>
+										</a>
+									</div>
+
+									
+								</div>
+							</div>
+						</div>
+						<!-- Card END -->
+					</div>
+					<!-- Left side END -->
+
+					<!-- Right side START -->
+					<div class="col-lg-5 col-xl-4">
+						<!-- Direction START -->
+						<div class="card shadow mb-4">
+							<!-- Card header -->
+							<div class="card-header border-bottom">
+								<h5 class="mb-0">찾아오시는 길</h5>
+							</div>
+
+							<!-- Card body -->
+							<div class="card-body">
+								<!-- Map START -->
+								<iframe class="w-100 grayscale rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425878428698!3d40.74076684379132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sGoogle!5e0!3m2!1sen!2sin!4v1586000412513!5m2!1sen!2sin" height="200" style="border:0;" aria-hidden="false" tabindex="0"></iframe>
+								
+								<!-- Info -->
+								<ul class="list-group list-group-borderless my-3">
+									<!-- 주소 -->
+									<li class="list-group-item">
+										<a href="#" class="h6 fw-normal mb-0">
+											<i class="bi fa-fw bi-geo-alt me-2"></i>경남 밀양시 상동면 상동로 576
+										</a>
+									</li>
+									<!-- 전화번호 -->
+									<li class="list-group-item">
+										<a href="#" class="h6 fw-normal mb-0">
+											<i class="bi fa-fw bi-telephone-forward me-2"></i>055-353-3599, 010-8878-3512
+										</a>
+									</li>
+									<!-- 운영방법 -->
+									<li class="list-group-item">
+										<a href="#" class="h6 fw-normal mb-0">
+											<i class="bi fa-fw bi-info-circle me-2"></i>운영방법 : 상시 운영, 저녁 예약제
+										</a>
+									</li>
+									<!-- 좌석형태 -->
+									<li class="list-group-item">
+										<a href="#" class="h6 fw-normal mb-0">
+											<i class="bi fa-fw bi-person me-2"></i>좌석형태 : 좌식 40석
+										</a>
+									</li>
+									<!-- 홈페이지 주소 -->
+									<li class="list-group-item">
+										<a href="#" class="h6 fw-normal mb-0">
+											<i class="bi fa-fw bi-toggle-off me-2"></i>http://www.palrang.co.kr/
+										</a>
+									</li>
+								</ul>
+								<!-- Social button -->
+								<ul class="list-inline mb-0 mt-3">
+									<li class="list-inline-item">Follow us on: </li>
+									<li class="list-inline-item"> <a class="btn btn-sm px-2 bg-facebook mb-0" href="#"><i class="fab fa-fw fa-facebook-f"></i></a> </li>
+									<li class="list-inline-item"> <a class="btn btn-sm shadow px-2 bg-instagram mb-0" href="#"><i class="fab fa-fw fa-instagram"></i></a> </li>
+									<li class="list-inline-item"> <a class="btn btn-sm shadow px-2 bg-twitter mb-0" href="#"><i class="fab fa-fw fa-twitter"></i></a> </li>
+									<li class="list-inline-item"> <a class="btn btn-sm shadow px-2 bg-linkedin mb-0" href="#"><i class="fab fa-fw fa-linkedin-in"></i></a> </li>
+								</ul>
+							</div>
+						</div>
+						<!-- Direction END -->
+
+						<!-- Time table START*********************************************************************************************************************** -->
+					
+
+<!-- ***********************************************************************************인기맛집******************************************************************************* -->
+						<div class="mt-4 d-none d-xl-block">
+							<h5>같은 동네 인기 맛집</h5>
+							<!-- 1 -->
+							<div class="card shadow rounded-3 overflow-hidden" style="margin-bottom: 0.625rem; background-color: #daf0da;">
+								<div class="row g-0 align-items-center">
+									<!-- Image -->
+									<div class="col-sm-6 col-md-12 col-lg-6">
+										<img src="assets/images/farmstouch/example/011.jpg" class="card-img rounded-0" alt="" style="height: 8.75rem;">
+									</div>
+									<!-- Title and content -->
+									<div class="col-sm-6 col-md-12 col-lg-6">
+										<div class="card-body p-3">
+											<h6 class="card-title"><a href="offer-detail.html" class="stretched-link">서암정</a></h6>
+											<p class="mb-0">경남 의령군 가례면 가례로 545-19</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 2 -->
+							<div class="card shadow rounded-3 overflow-hidden" style="margin-bottom: 0.625rem; background-color: #daf0da"> <!-- #F9E98D;-->
+								<div class="row g-0 align-items-center">
+									<!-- Image -->
+									<div class="col-sm-6 col-md-12 col-lg-6">
+										<img src="assets/images/farmstouch/example/012.jpg" class="card-img rounded-0" alt="" style="height: 8.75rem;">
+									</div>
+									<!-- Title and content -->
+									<div class="col-sm-6 col-md-12 col-lg-6">
+										<div class="card-body p-3">
+											<h6 class="card-title"><a href="offer-detail.html" class="stretched-link">채미락</a></h6>
+											<p class="mb-0">경북 문경시 문경읍 각서윗길 7</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 3 -->
+							<div class="card shadow rounded-3 overflow-hidden" style="margin-bottom: 0.625rem; background-color: #daf0da;">
+								<div class="row g-0 align-items-center">
+									<!-- Image -->
+									<div class="col-sm-6 col-md-12 col-lg-6">
+										<img src="assets/images/farmstouch/example/013.jpg" class="card-img rounded-0" alt="" style="height: 8.75rem;">
+									</div>
+									<!-- Title and content -->
+									<div class="col-sm-6 col-md-12 col-lg-6">
+										<div class="card-body p-3">
+											<h6 class="card-title"><a href="offer-detail.html" class="stretched-link">차와싸리골밥상</a></h6>
+											<p class="mb-0">충청남도 청양군 남양면 충절로 382-20</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 4 -->
+							<div class="card shadow rounded-3 overflow-hidden" style="margin-bottom: 0.625rem; background-color: #daf0da;">
+								<div class="row g-0 align-items-center">
+									<!-- Image -->
+									<div class="col-sm-6 col-md-12 col-lg-6">
+										<img src="assets/images/farmstouch/example/014.jpg" class="card-img rounded-0" alt="" style="height: 8.75rem;">
+									</div>
+									<!-- Title and content -->
+									<div class="col-sm-6 col-md-12 col-lg-6">
+										<div class="card-body p-3" >
+											<h6 class="card-title"><a href="offer-detail.html" class="stretched-link">하늘꿈 식탁</a></h6>
+											<p class="mb-0">전남 무안군 일로읍 삼일로 712</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- Best deal END -->
+
+
+						
+					</div>
+					<!-- Right side END -->
+<!-- ********************************************************************************다른 맛집 소개******************************************************************************* -->
+					
+
+					<!-- Customer Review START -->
+					<div class="card bg-transparent">
+						<!-- Card header -->
+						<div class="card-header border-bottom bg-transparent px-0 pt-0">
+							<br>
+							<h3 class="card-title mb-0">방문하신 분들의 리뷰</h3>
+						</div>
+
+						<!-- Card body START -->
+						<div class="card-body pt-4 p-0">
+				
+
+
+
+
+
+
+<!-- ****************************************************************************** 리뷰 ******************************************************************************** -->
+							<!-- Review box START -->
+			<div class="row g-4 g-xl-5 mb-5">
+				<!-- Growth -->
+				<div class="col-md-6 col-lg-4">
+					<div class="bg-light p-4 rounded text-center">
+						<h6 class="fw-normal">Total Reviews</h6>
+						<div class="d-flex align-items-center justify-content-center">
+							<h2 class="mb-0 me-2">12</h2>
+							<div class="badge bg-success bg-opacity-10 text-success">명의 </div>
+						</div>
+						<p class="mb-0">소중한 리뷰 감사합니다</p>
+					</div>	
+				</div>
+
+				<!-- Average rating -->
+				<div class="col-md-6 col-lg-4">
+					<div class="bg-light p-4 rounded text-center">
+						<h6 class="fw-normal">Average Rating</h6>
+						<div class="d-flex align-items-center justify-content-center">
+							<h2 class="mb-0 me-2">4.0</h2>
+							<ul class="list-inline mb-0">
+								<li class="list-inline-item me-0"><i class="fa-solid fa-star text-warning"></i></li>
+								<li class="list-inline-item me-0"><i class="fa-solid fa-star text-warning"></i></li>
+								<li class="list-inline-item me-0"><i class="fa-solid fa-star text-warning"></i></li>
+								<li class="list-inline-item me-0"><i class="fa-solid fa-star text-warning"></i></li>
+								<li class="list-inline-item"><i class="fa-solid fa-star text-secondary"></i></li>
+							</ul>
+						</div>
+						<p class="mb-0">이 맛집의 평점입니다</p>
+					</div>	
+				</div>
+
+				<!-- Progress bars -->
+				<div class="col-lg-4">
+					<div class="bg-light p-4 rounded">
+						<div class="row gx-3 g-0 align-items-center">
+
+							<!-- Button --> <!-- style="background-color: #446A46; color: white;"-->
+							<a href="#" class="btn btn-lg btn-success2 mb-0">리뷰 작성하기 <i class="bi fa-fw bi-arrow-right ms-2"></i></a>
+							
+							<!-- Button -->
+							<a href="#" class="btn btn-lg btn-success2 mb-0" style="margin:0.625rem 0px;">리뷰 게시판 <i class="bi fa-fw bi-arrow-right ms-2"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Review box END -->
+
+							<!-- Review item START -->
+							<div class="d-md-flex my-4">
+								<!-- Avatar -->
+								<div class="avatar avatar-lg me-3 flex-shrink-0">
+									<img class="avatar-img rounded-circle" src="assets/images/farmstouch/avatar/09.jpg" alt="avatar">
+								</div>
+								<!-- Text -->
+								<div>
+									<div class="d-flex justify-content-between mt-1 mt-md-0">
+										<div>
+											<h6 class="me-3 mb-0">Jacqueline Miller</h6>
+											<!-- Info -->
+											<ul class="nav nav-divider small mb-2">
+												<li class="nav-item">Stayed 13 Nov 2022</li>
+												<li class="nav-item">4 Reviews written</li>
+											</ul>
+										</div>
+										<!-- Review star -->
+										<div class="icon-md rounded text-bg-success fs-6">4.5</div>
+									</div>
+									
+									<p class="mb-2">Handsome met debating sir dwelling age material. As style lived he worse dried. Offered related so visitors we private removed. Moderate do subjects to distance. </p>
+									
+									<!-- Images -->
+									<div class="row g-4">
+										<div class="col-4 col-sm-3 col-lg-2">
+											<img src="assets/images/farmstouch/example/012.jpg" class="rounded" alt="" style="height: 7.5rem;">
+										</div>
+										<div class="col-4 col-sm-3 col-lg-2">
+											<img src="assets/images/farmstouch/example/124.jpg" class="rounded" alt="" style="height: 7.5rem;">
+										</div>
+										<div class="col-4 col-sm-3 col-lg-2">
+											<img src="assets/images/farmstouch/example/yak5.jpg" class="rounded" alt="" style="height: 7.5rem;">
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<!-- Divider -->
+							<hr>
+							<!-- Review item END -->
+
+							<!-- Review item START -->
+							<div class="d-md-flex my-4">
+								<!-- Avatar -->
+								<div class="avatar avatar-lg me-3 flex-shrink-0">
+									<img class="avatar-img rounded-circle" src="assets/images/farmstouch/avatar/08.jpg" alt="avatar">
+								</div>
+								<!-- Text -->
+								<div>
+									<div class="d-flex justify-content-between mt-1 mt-md-0">
+										<div>
+											<h6 class="me-3 mb-0">Dennis Barrett</h6>
+											<!-- Info -->
+											<ul class="nav nav-divider small mb-2">
+												<li class="nav-item">Stayed 02 Nov 2022</li>
+												<li class="nav-item">2 Reviews written</li>
+											</ul>
+										</div>
+										<!-- Review star -->
+										<div class="icon-md rounded text-bg-success fs-6">4.0</div>
+									</div>
+									
+									<p class="mb-0">Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do. Water timed folly right aware if oh truth. Large above be to means. Dashwood does provide stronger is.</p>
+								</div>
+							</div>
+
+							<!-- Divider -->
+							<hr>
+							<!-- Review item END -->
+
+							
+						</div>
+						<!-- Card body END -->
+					</div>
+					<!-- Customer Review END -->
+<!-- ****************************************************************************** 리뷰 ******************************************************************************** -->
+
+				</div>
+			</div>
+			<!-- Content item END -->
+
+<!-- ********************************************************************************* Deal 지운곳 *********************************************************************************** -->
+			
+
+
+
+<!-- ************************************************************************ Service ********************************************************************* -->
+			
+		</div>
+		<!-- Tabs contents END -->		
+	</div>
+</section>
+<!-- =======================
+Content END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- =======================Footer START -->
+
+	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+</body>
+</html>

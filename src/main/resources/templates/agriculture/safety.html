@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+
+
+<!-- Header END -->	
+	
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Menu item START -->
+
+<section class="pt-0">
+	<div class="container-fluid px-0">
+		<!-- Background image -->
+		<div class="p-3 p-sm-5" style="background-image: url(assets/images/farmstouch/safetybg.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover; height: 27rem;">
+			<!-- Banner title -->
+			<div class="row"> 
+				<div class="col-md-10 mx-auto text-center"> 
+					<h1 class="text-center text-white mt-7" style="text-shadow:0.125rem 0.125rem 0.125rem #093b15; color: white;">농업기계 안전 이용지침</h1>
+					<h4 class="text-center text-white" style="text-shadow:0.125rem 0.125rem 0.125rem #093b15; color: white;">Agricultural Machine Safety Guidelines</h4>
+				</div>
+			</div>
+
+			<!-- Booking from END -->
+		</div>
+	</div>
+</section>
+
+
+
+
+
+<!-- =======================
+Menu item END -->
+	
+<!-- =======================
+Content START -->
+<section class="pt-0">
+	<div class="container vstack gap-4">
+		<!-- Title START -->
+		<div class="row">
+			<div class="col-12">
+				<h1 class="fs-4 mb-0"><i class="bi bi-journals fa-fw me-1"></i>농업기계 안전이용 지침</h1>
+				
+			</div>
+		</div>
+		<!-- Title END -->
+
+		<!-- Counter START -->
+		<!-- <div class="row g-4"> -->
+			
+			<!-- Earning item -->
+			<!-- <div class="col-md-6 col-xl-4">
+				<div class="card card-body border p-4 h-100">
+					<h6>Earning
+						<a tabindex="0" class="h6 mb-0" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="top" data-bs-content="After US royalty withholding tax" data-bs-original-title="" title="">
+							<i class="bi bi-info-circle-fill small"></i>
+						</a>
+					</h6>
+					<h2 class="text-success">$25,869</h2>
+					<p class="mb-2"><span class="text-primary me-1">0.20%<i class="bi bi-arrow-up"></i></span>vs last month</p>
+					<div class="mt-auto text-primary-hover"><a href="#" class="text-decoration-underline p-0 mb-0">View statement</a></div>
+				</div>
+			</div> -->
+
+			<!-- Booked Rooms item -->
+			<!-- <div class="col-md-6 col-xl-4">
+				<div class="card card-body border p-4 h-100">
+					<h6>Booked Rooms</h6>
+					<h2 class="text-info">58</h2>
+					<p class="mb-2"><span class="text-danger me-1">102</span>Total Rooms</p>
+					<div class="mt-auto text-primary-hover"><a href="#" class="text-decoration-underline p-0 mb-0">View Bookings</a></div>
+				</div>
+			</div> -->
+
+			<!-- Available Rooms item -->
+			<!-- <div class="col-md-6 col-xl-4">
+				<div class="card card-body border p-4 h-100">
+					<h6>Available Rooms</h6>
+					<h2 class="text-warning">42</h2>
+					<p class="mb-2"><span class="text-danger me-1">102</span>Total Rooms</p>
+					<div class="mt-auto text-primary-hover"><a href="#" class="text-decoration-underline p-0 mb-0">View Rooms</a></div>
+				</div>
+			</div>
+
+		</div> -->
+		<!-- Counter END -->
+
+		<!-- Listing table START -->
+		<div class="row">
+			<div class="col-12">
+
+				<div class="card border">
+					<!-- Card header -->
+					<!-- <div class="card-header border-bottom">
+						<h5 class="card-header-title">My Listings <span class="badge bg-primary bg-opacity-10 text-primary ms-2">5 Items</span></h5>
+						<div class="col-md-8">
+							<div class="rounded position-relative">
+								<input class="form-control pe-5" type="search" placeholder="Search" aria-label="Search">
+								<button class="btn border-0 px-3 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6"></i></button>
+							</div>
+						</div>
+					</div> -->
+					<div class="card-header border-bottom">
+						<!-- Search and select START -->
+
+						<div class="row g-3 align-items-center justify-content-between">
+							<!-- Select option -->
+							<div class="col-md-4">
+								<!-- Short by filter -->
+								<h5 class="card-header-title">농작업 안전 일반사항<span class="badge bg-success bg-opacity-10 text-success ms-2">5 Items</span></h5>
+							</div>
+							<!-- Search -->
+							<div class="col-md-5">
+								<div class="rounded position-relative">
+									<input class="form-control pe-5" type="search" placeholder="Search" aria-label="Search">
+									<button class="btn border-0 px-3 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6"></i></button>
+								</div>
+							</div>
+						
+							
+						</div>
+					</div>
+					
+
+
+					<!-- 아코디언 시작-->
+					<div class="accordion" id="accordionPanelsStayOpenExample">
+
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="panelsStayOpen-headingOne">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+									aria-controls="panelsStayOpen-collapseOne"> <!-- aria-expanded="true"-->
+									<!-- 1 -->
+
+									<div class="row g-4">
+										<!-- Card img -->
+										<div class="col-md-3 col-lg-2">
+											<img src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg"
+												class="card-img rounded-2" alt="Card image" style="width: 18.75rem;">
+										</div>
+					
+										<!-- Card body -->
+										<div class="col-md-9 col-lg-10">
+											<div class="card-body position-relative d-flex flex-column p-0 h-100"
+												style="margin-left: 1.875rem;">
+												<!-- Title -->
+												<h5 class="card-title mb-0 me-5">콤바인이 후진하다 잡초에 덮여진 논둑을 넘어 낭떠러지로
+														전복</h5>
+												<small><i class="bi bi-truck me-2"></i>콤바인</small>
+					
+												<!-- Price and Button -->
+												<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
+													<!-- Button -->
+													<div class="d-flex align-items-center">
+														<span class="mb-0 me-2">농작업 안전 일반사항</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 1-->
+								</button>
+							</h2>
+							
+							<!-- 밑에 내용 -->
+							<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+								aria-labelledby="panelsStayOpen-headingOne">
+								<div class="accordion-body list-view" style="margin-left: 1.875rem;">
+									<ul>
+										<li style="margin-bottom: 1.25rem;">
+											<strong >안전사고 구분</strong>
+											<p>농작업 안전 일반사항</p>
+										</li>
+					
+										<li style="margin-bottom: 1.25rem;">
+											<strong>내용</strong>
+											<p>·위험지역에서 후진할 때는 유도자를 두어 신호에 따라 저속으로 진행한다.</p>
+											<p>·위험지역에서 작업할 때는 운전자는 미리 주변 환경을 잘 살펴보고 농기계를 조작하도록 한다.</p>
+										</li>
+										<li style="margin-bottom: 1.25rem;">
+											<strong>사례이미지</strong>
+											<div class="img-temp">
+												<dl id="zoomList" style="position: relative; display: block;">
+													<!-- <dt>대표이미지</dt> -->
+													<dd class="pic"><img
+															src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg" alt=""
+															class="img" data-pop="34798_MF_ATTACH_01.jpg"
+															style="width:21.875rem; height:12.5rem;" /></dd>
+												</dl>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+									aria-controls="panelsStayOpen-collapseTwo"> <!-- aria-expanded="true"-->
+									<!-- 1 -->
+
+									<div class="row g-4">
+										<!-- Card img -->
+										<div class="col-md-3 col-lg-2">
+											<img src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg"
+												class="card-img rounded-2" alt="Card image" style="width: 18.75rem;">
+										</div>
+					
+										<!-- Card body -->
+										<div class="col-md-9 col-lg-10">
+											<div class="card-body position-relative d-flex flex-column p-0 h-100"
+												style="margin-left: 1.875rem;">
+												<!-- Title -->
+												<h5 class="card-title mb-0 me-5">콤바인이 후진하다 잡초에 덮여진 논둑을 넘어 낭떠러지로
+														전복</h5>
+												<small><i class="bi bi-truck me-2"></i>콤바인</small>
+					
+												<!-- Price and Button -->
+												<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
+													<!-- Button -->
+													<div class="d-flex align-items-center">
+														<span class="mb-0 me-2">농작업 안전 일반사항</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 1-->
+								</button>
+							</h2>
+							
+							<!-- 밑에 내용 -->
+							<div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+								aria-labelledby="panelsStayOpen-headingTwo">
+								<div class="accordion-body list-view" style="margin-left: 1.875rem;">
+									<ul>
+										<li style="margin-bottom: 1.25rem;">
+											<strong >안전사고 구분</strong>
+											<p>농작업 안전 일반사항</p>
+										</li>
+					
+										<li style="margin-bottom: 1.25rem;">
+											<strong>내용</strong>
+											<p>·위험지역에서 후진할 때는 유도자를 두어 신호에 따라 저속으로 진행한다.</p>
+											<p>·위험지역에서 작업할 때는 운전자는 미리 주변 환경을 잘 살펴보고 농기계를 조작하도록 한다.</p>
+										</li>
+										<li style="margin-bottom: 1.25rem;">
+											<strong>사례이미지</strong>
+											<div class="img-temp">
+												<dl id="zoomList" style="position: relative; display: block;">
+													<!-- <dt>대표이미지</dt> -->
+													<dd class="pic"><img
+															src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg" alt=""
+															class="img" data-pop="34798_MF_ATTACH_01.jpg"
+															style="width:21.875rem; height:12.5rem;" /></dd>
+												</dl>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="panelsStayOpen-headingThree">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+									aria-controls="panelsStayOpen-collapseThree"> <!-- aria-expanded="true"-->
+									<!-- 1 -->
+
+									<div class="row g-4">
+										<!-- Card img -->
+										<div class="col-md-3 col-lg-2">
+											<img src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg"
+												class="card-img rounded-2" alt="Card image" style="width: 18.75rem;">
+										</div>
+					
+										<!-- Card body -->
+										<div class="col-md-9 col-lg-10">
+											<div class="card-body position-relative d-flex flex-column p-0 h-100"
+												style="margin-left: 1.875rem;">
+												<!-- Title -->
+												<h5 class="card-title mb-0 me-5">콤바인이 후진하다 잡초에 덮여진 논둑을 넘어 낭떠러지로
+														전복</h5>
+												<small><i class="bi bi-truck me-2"></i>콤바인</small>
+					
+												<!-- Price and Button -->
+												<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
+													<!-- Button -->
+													<div class="d-flex align-items-center">
+														<span class="mb-0 me-2">농작업 안전 일반사항</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 1-->
+								</button>
+							</h2>
+							
+							<!-- 밑에 내용 -->
+							<div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+								aria-labelledby="panelsStayOpen-headingThree">
+								<div class="accordion-body list-view" style="margin-left: 1.875rem;">
+									<ul>
+										<li style="margin-bottom: 1.25rem;">
+											<strong >안전사고 구분</strong>
+											<p>농작업 안전 일반사항</p>
+										</li>
+					
+										<li style="margin-bottom: 1.25rem;">
+											<strong>내용</strong>
+											<p>·위험지역에서 후진할 때는 유도자를 두어 신호에 따라 저속으로 진행한다.</p>
+											<p>·위험지역에서 작업할 때는 운전자는 미리 주변 환경을 잘 살펴보고 농기계를 조작하도록 한다.</p>
+										</li>
+										<li style="margin-bottom: 1.25rem;">
+											<strong>사례이미지</strong>
+											<div class="img-temp">
+												<dl id="zoomList" style="position: relative; display: block;">
+													<!-- <dt>대표이미지</dt> -->
+													<dd class="pic"><img
+															src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg" alt=""
+															class="img" data-pop="34798_MF_ATTACH_01.jpg"
+															style="width:21.875rem; height:12.5rem;" /></dd>
+												</dl>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="panelsStayOpen-headingFour">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+									aria-controls="panelsStayOpen-collapseFour"> <!-- aria-expanded="true"-->
+									<!-- 1 -->
+
+									<div class="row g-4">
+										<!-- Card img -->
+										<div class="col-md-3 col-lg-2">
+											<img src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg"
+												class="card-img rounded-2" alt="Card image" style="width: 18.75rem;">
+										</div>
+					
+										<!-- Card body -->
+										<div class="col-md-9 col-lg-10">
+											<div class="card-body position-relative d-flex flex-column p-0 h-100"
+												style="margin-left: 1.875rem;">
+												<!-- Title -->
+												<h5 class="card-title mb-0 me-5">콤바인이 후진하다 잡초에 덮여진 논둑을 넘어 낭떠러지로
+														전복</h5>
+												<small><i class="bi bi-truck me-2"></i>콤바인</small>
+					
+												<!-- Price and Button -->
+												<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
+													<!-- Button -->
+													<div class="d-flex align-items-center">
+														<span class="mb-0 me-2">농작업 안전 일반사항</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 1-->
+								</button>
+							</h2>
+							
+							<!-- 밑에 내용 -->
+							<div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+								aria-labelledby="panelsStayOpen-headingFour">
+								<div class="accordion-body list-view" style="margin-left: 1.875rem;">
+									<ul>
+										<li style="margin-bottom: 1.25rem;">
+											<strong >안전사고 구분</strong>
+											<p>농작업 안전 일반사항</p>
+										</li>
+					
+										<li style="margin-bottom: 1.25rem;">
+											<strong>내용</strong>
+											<p>·위험지역에서 후진할 때는 유도자를 두어 신호에 따라 저속으로 진행한다.</p>
+											<p>·위험지역에서 작업할 때는 운전자는 미리 주변 환경을 잘 살펴보고 농기계를 조작하도록 한다.</p>
+										</li>
+										<li style="margin-bottom: 1.25rem;">
+											<strong>사례이미지</strong>
+											<div class="img-temp">
+												<dl id="zoomList" style="position: relative; display: block;">
+													<!-- <dt>대표이미지</dt> -->
+													<dd class="pic"><img
+															src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg" alt=""
+															class="img" data-pop="34798_MF_ATTACH_01.jpg"
+															style="width:21.875rem; height:12.5rem;" /></dd>
+												</dl>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="panelsStayOpen-headingFive">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+									aria-controls="panelsStayOpen-collapseFive"> <!-- aria-expanded="true"-->
+									<!-- 1 -->
+
+									<div class="row g-4">
+										<!-- Card img -->
+										<div class="col-md-3 col-lg-2">
+											<img src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg"
+												class="card-img rounded-2" alt="Card image" style="width: 18.75rem;">
+										</div>
+					
+										<!-- Card body -->
+										<div class="col-md-9 col-lg-10">
+											<div class="card-body position-relative d-flex flex-column p-0 h-100"
+												style="margin-left: 1.875rem;">
+												<!-- Title -->
+												<h5 class="card-title mb-0 me-5">콤바인이 후진하다 잡초에 덮여진 논둑을 넘어 낭떠러지로
+														전복</h5>
+												<small><i class="bi bi-truck me-2"></i>콤바인</small>
+					
+												<!-- Price and Button -->
+												<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
+													<!-- Button -->
+													<div class="d-flex align-items-center">
+														<span class="mb-0 me-2">농작업 안전 일반사항</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 1-->
+								</button>
+							</h2>
+							
+							<!-- 밑에 내용 -->
+							<div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
+								aria-labelledby="panelsStayOpen-headingFive">
+								<div class="accordion-body list-view" style="margin-left: 1.875rem;">
+									<ul>
+										<li style="margin-bottom: 1.25rem;">
+											<strong >안전사고 구분</strong>
+											<p>농작업 안전 일반사항</p>
+										</li>
+					
+										<li style="margin-bottom: 1.25rem;">
+											<strong>내용</strong>
+											<p>·위험지역에서 후진할 때는 유도자를 두어 신호에 따라 저속으로 진행한다.</p>
+											<p>·위험지역에서 작업할 때는 운전자는 미리 주변 환경을 잘 살펴보고 농기계를 조작하도록 한다.</p>
+										</li>
+										<li style="margin-bottom: 1.25rem;">
+											<strong>사례이미지</strong>
+											<div class="img-temp">
+												<dl id="zoomList" style="position: relative; display: block;">
+													<!-- <dt>대표이미지</dt> -->
+													<dd class="pic"><img
+															src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg" alt=""
+															class="img" data-pop="34798_MF_ATTACH_01.jpg"
+															style="width:21.875rem; height:12.5rem;" /></dd>
+												</dl>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="panelsStayOpen-headingSix">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
+									aria-controls="panelsStayOpen-collapseSix"> <!-- aria-expanded="true"-->
+									<!-- 1 -->
+
+									<div class="row g-4">
+										<!-- Card img -->
+										<div class="col-md-3 col-lg-2">
+											<img src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg"
+												class="card-img rounded-2" alt="Card image" style="width: 18.75rem;">
+										</div>
+					
+										<!-- Card body -->
+										<div class="col-md-9 col-lg-10">
+											<div class="card-body position-relative d-flex flex-column p-0 h-100"
+												style="margin-left: 30px;">
+												<!-- Title -->
+												<h5 class="card-title mb-0 me-5">콤바인이 후진하다 잡초에 덮여진 논둑을 넘어 낭떠러지로
+														전복</h5>
+												<small><i class="bi bi-truck me-2"></i>콤바인</small>
+					
+												<!-- Price and Button -->
+												<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
+													<!-- Button -->
+													<div class="d-flex align-items-center">
+														<span class="mb-0 me-2">농작업 안전 일반사항</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 1-->
+								</button>
+							</h2>
+							
+							<!-- 밑에 내용 -->
+							<div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse"
+								aria-labelledby="panelsStayOpen-headingSix">
+								<div class="accordion-body list-view" style="margin-left: 1.875rem;">
+									<ul>
+										<li style="margin-bottom: 1.25rem;">
+											<strong >안전사고 구분</strong>
+											<p>농작업 안전 일반사항</p>
+										</li>
+					
+										<li style="margin-bottom: 1.25rem;">
+											<strong>내용</strong>
+											<p>·위험지역에서 후진할 때는 유도자를 두어 신호에 따라 저속으로 진행한다.</p>
+											<p>·위험지역에서 작업할 때는 운전자는 미리 주변 환경을 잘 살펴보고 농기계를 조작하도록 한다.</p>
+										</li>
+										<li style="margin-bottom: 1.25rem;">
+											<strong>사례이미지</strong>
+											<div class="img-temp">
+												<dl id="zoomList" style="position: relative; display: block;">
+													<!-- <dt>대표이미지</dt> -->
+													<dd class="pic"><img
+															src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg" alt=""
+															class="img" data-pop="34798_MF_ATTACH_01.jpg"
+															style="width:21.875rem; height:12.5rem;" /></dd>
+												</dl>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="panelsStayOpen-headingSeven">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false"
+									aria-controls="panelsStayOpen-collapseSeven"> <!-- aria-expanded="true"-->
+									<!-- 1 -->
+
+									<div class="row g-4">
+										<!-- Card img -->
+										<div class="col-md-3 col-lg-2">
+											<img src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg"
+												class="card-img rounded-2" alt="Card image" style="width: 18.75rem;">
+										</div>
+					
+										<!-- Card body -->
+										<div class="col-md-9 col-lg-10">
+											<div class="card-body position-relative d-flex flex-column p-0 h-100"
+												style="margin-left: 1.875rem;">
+												<!-- Title -->
+												<h5 class="card-title mb-0 me-5">콤바인이 후진하다 잡초에 덮여진 논둑을 넘어 낭떠러지로
+														전복</h5>
+												<small><i class="bi bi-truck me-2"></i>콤바인</small>
+					
+												<!-- Price and Button -->
+												<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
+													<!-- Button -->
+													<div class="d-flex align-items-center">
+														<span class="mb-0 me-2">농작업 안전 일반사항</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 1-->
+								</button>
+							</h2>
+							
+							<!-- 밑에 내용 -->
+							<div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse"
+								aria-labelledby="panelsStayOpen-headingSeven">
+								<div class="accordion-body list-view" style="margin-left: 1.875rem;">
+									<ul>
+										<li style="margin-bottom: 1.25rem;">
+											<strong >안전사고 구분</strong>
+											<p>농작업 안전 일반사항</p>
+										</li>
+					
+										<li style="margin-bottom: 1.25rem;">
+											<strong>내용</strong>
+											<p>·위험지역에서 후진할 때는 유도자를 두어 신호에 따라 저속으로 진행한다.</p>
+											<p>·위험지역에서 작업할 때는 운전자는 미리 주변 환경을 잘 살펴보고 농기계를 조작하도록 한다.</p>
+										</li>
+										<li style="margin-bottom: 1.25rem;">
+											<strong>사례이미지</strong>
+											<div class="img-temp">
+												<dl id="zoomList" style="position: relative; display: block;">
+													<!-- <dt>대표이미지</dt> -->
+													<dd class="pic"><img
+															src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg" alt=""
+															class="img" data-pop="34798_MF_ATTACH_01.jpg"
+															style="width:21.875rem; height:12.5rem;" /></dd>
+												</dl>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="panelsStayOpen-headingEight">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false"
+									aria-controls="panelsStayOpen-collapseEight"> <!-- aria-expanded="true"-->
+									<!-- 1 -->
+
+									<div class="row g-4">
+										<!-- Card img -->
+										<div class="col-md-3 col-lg-2">
+											<img src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg"
+												class="card-img rounded-2" alt="Card image" style="width: 18.75rem;">
+										</div>
+					
+										<!-- Card body -->
+										<div class="col-md-9 col-lg-10">
+											<div class="card-body position-relative d-flex flex-column p-0 h-100"
+												style="margin-left: 1.875rem;">
+												<!-- Title -->
+												<h5 class="card-title mb-0 me-5">콤바인이 후진하다 잡초에 덮여진 논둑을 넘어 낭떠러지로
+														전복</h5>
+												<small><i class="bi bi-truck me-2"></i>콤바인</small>
+					
+												<!-- Price and Button -->
+												<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
+													<!-- Button -->
+													<div class="d-flex align-items-center">
+														<span class="mb-0 me-2">농작업 안전 일반사항</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- 1-->
+								</button>
+							</h2>
+							
+							<!-- 밑에 내용 -->
+							<div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse"
+								aria-labelledby="panelsStayOpen-headingEight">
+								<div class="accordion-body list-view" style="margin-left: 1.875rem;">
+									<ul>
+										<li style="margin-bottom: 1.25rem;">
+											<strong >안전사고 구분</strong>
+											<p>농작업 안전 일반사항</p>
+										</li>
+					
+										<li style="margin-bottom: 1.25rem;">
+											<strong>내용</strong>
+											<p>·위험지역에서 후진할 때는 유도자를 두어 신호에 따라 저속으로 진행한다.</p>
+											<p>·위험지역에서 작업할 때는 운전자는 미리 주변 환경을 잘 살펴보고 농기계를 조작하도록 한다.</p>
+										</li>
+										<li style="margin-bottom: 1.25rem;">
+											<strong>사례이미지</strong>
+											<div class="img-temp">
+												<dl id="zoomList" style="position: relative; display: block;">
+													<!-- <dt>대표이미지</dt> -->
+													<dd class="pic"><img
+															src="https://www.nongsaro.go.kr/cms_contents/752/34798_MF_ATTACH_01.jpg" alt=""
+															class="img" data-pop="34798_MF_ATTACH_01.jpg"
+															style="width:21.875rem; height:12.5rem;" /></dd>
+												</dl>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<!-- 아코디언 끝-->
+				</div>
+			</div>
+		</div>
+		<!-- Listing table END -->
+
+									<!-- Pagination -->
+									<nav class="d-flex justify-content-center mt-4" aria-label="navigation" >
+										<ul class="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+											<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i
+														class="fa-solid fa-angle-left"></i></a></li>
+											<li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
+											<li class="page-item mb-0 active" ><a class="page-link" href="#">2</a></li>
+											<li class="page-item mb-0"><a class="page-link" href="#">..</a></li>
+											<li class="page-item mb-0"><a class="page-link" href="#">6</a></li>
+											<li class="page-item mb-0"><a class="page-link" href="#"><i
+														class="fa-solid fa-angle-right"></i></a></li>
+										</ul>
+									</nav>
+	</div>
+</section>
+<!-- =======================
+Content END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- footer 시작 -->
+<footer th:replace="~{common/layout2 :: #footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+
+
+<!-- Header END -->	
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main Banner START -->
+<section class="pt-0 mt-3">
+	<div class="container position-relative">
+		<!-- Bg image -->
+		<div class="rounded-3 p-4 p-sm-5" style="background-image: url(assets/images/farmstouch/bloom-1835391.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+			<!-- Banner title -->
+			<div class="row justify-content-between pt-0 pb-5"> 
+				<div class="col-md-7 col-lg-8 col-xxl-7 pb-5 mb-0 mb-lg-5"> 
+					<h2 class="text-white">식물 분양 게시판</h2>
+					<p class="text-white mb-0">팜스터치에서 안전하게 농산물 직거래하고 돈 절약하기 </p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Main Banner END -->
+
+<!-- =======================
+About content START -->
+<section class="pt-0 pt-lg-5 mt-n5">
+	<div class="container">
+		<!-- Services START -->
+		<div class="row g-4">
+			<!-- Service item -->
+			<div class="col-sm-6 col-lg-3">
+				<div class="icon-lg bg-orange bg-opacity-10 text-orange rounded-2"><img src="assets/images/farmstouch/free-icon-interaction-1589051.png" class="" alt=""></div>
+				<h5 class="mt-2">내게 필요한 식물 검색</h5>
+				<p class="mb-0">분양중인 다양한 식물 확인</p>
+			</div>
+
+			<!-- Service item -->
+			<div class="col-sm-6 col-lg-3">
+				<div class="icon-lg bg-success bg-opacity-10 text-success rounded-2"><img src="assets/images/farmstouch/free-icon-approval-1721931.png" class="" alt=""></div>
+				<h5 class="mt-2">게시글 내용 확인</h5>
+				<p class="mb-0">원하는 거래인지 꼼꼼하게 확인하기</p>
+			</div>
+
+			<!-- Service item -->
+			<div class="col-sm-6 col-lg-3">
+				<div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-2"><img src="assets/images/farmstouch/free-icon-whatsapp-1383336.png" class="" alt=""></div>
+				<h5 class="mt-2">판매자에게 문의</h5>
+				<p class="mb-0">거래 전 의심 계좌와 전화번호 조회</p>
+			</div>
+
+			<!-- Service item -->
+			<div class="col-sm-6 col-lg-3">
+				<div class="icon-lg bg-info bg-opacity-10 text-info rounded-2"><img src="assets/images/farmstouch/free-icon-support-1189206.png" class="" alt=""></div>
+				<h5 class="mt-2">거래 성사</h5>
+				<p class="mb-0">원하는 식물 직거래 완료!</p>
+			</div>
+		</div>
+		<!-- Services END -->
+	</div>
+</section>
+<!-- =======================
+About content END -->
+
+<!-- =======================
+Content START -->
+<section class="pt-0 mt-0" style="margin-bottom: 3.125rem;">
+	<div class="container vstack gap-4">
+		<!-- Invoice history START -->
+		<div class="row">
+			<div class="col-12">
+				<div class="card border rounded-3">
+					<!-- Card header START -->
+					<div class="card-header border-bottom">
+						<h5 class="card-header-title"><img src="assets/images/farmstouch/free-icon-loupe-751463.png" style="height: 2.5rem;"/> &nbsp; 식물 분양 게시판 둘러보기</h5>
+					</div>
+					<!-- Card header END -->
+
+					<!-- Card body START -->
+					<div class="card-body">
+						<!-- Search and select START -->
+						<div class="row g-3 align-items-center justify-content-between mb-3">
+							<!-- Search -->
+							<div class="col-md-8">
+								<form class="rounded position-relative">
+									<input class="form-control pe-5" type="text" placeholder="검색하기" aria-label="Search">
+									<button class="btn border-0 px-3 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6"></i></button>
+								</form>
+							</div>
+
+							<!-- Select option -->
+							<div class="col-md-3">
+								<!-- Short by filter -->
+								<form>
+									<select class="form-select js-choice" aria-label=".form-select-sm">
+										<option value="">정렬하기</option>
+										<option>최신순</option>
+										<option>조회순</option>
+									</select>
+								</form>
+							</div>
+						</div>
+						<!-- Search and select END -->
+
+						<!-- Hotel room list START -->
+						<div class="table-responsive border-0">
+							<table class="table align-middle p-4 mb-0 table-hover table-shrink" style="text-align: center;">
+								<!-- Table head -->
+								<thead class="table-success">
+									<tr>
+										<th scope="col" class="border-0 rounded-start"></th>
+										<th scope="col" class="border-0">제목</th>
+										<th scope="col" class="border-0">판매여부</th>
+										<th scope="col" class="border-0">등록일</th>
+										<th scope="col" class="border-0">조회수</th>
+										<th scope="col" class="border-0 rounded-end">작성자</th>
+									</tr>
+								</thead>
+
+								<!-- Table body START -->
+								<tbody class="border-top-0">
+
+									<!-- Table item -->
+									<tr>
+										<td><img src="assets/images/farmstouch/cactus-6679665.jpg" class="" alt="" style="width: 3.75rem; height: 3.75rem;"></td>
+										<td>
+											<a href="#" target="_blank" class="text-black"> 
+												새상품) 오늘 갓들여온 장봉도 자연산 햇곱창돌김 100장 (500g)
+											</a>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">판매중</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> Onelove</td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td><img src="assets/images/farmstouch/cactus-6679665.jpg" class="" alt="" style="width: 3.75rem; height: 3.75rem;"></td>
+										<td>
+											<a href="#" target="_blank" class="text-black" > 
+												맛은자신합니다 안면도 꿀고구마
+											</a>
+										</td>
+										<td> <div class="badge bg-danger bg-opacity-10 text-danger">판매완료</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> Onelove</td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td><img src="assets/images/farmstouch/cactus-6679665.jpg" class="" alt="" style="width: 3.75rem; height: 3.75rem;"></td>
+										<td>
+											<a href="#" target="_blank" class="text-black" > 
+												해풍머금은 안면도 꿀고구마
+											</a>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">판매중</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> Onelove</td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td><img src="assets/images/farmstouch/cactus-6679665.jpg" class="" alt="" style="width: 3.75rem; height: 3.75rem;"></td>
+										<td>
+											<a href="#" target="_blank" class="text-black" > 
+												인디언감자(아피오스) 분말 판매합니다.
+											</a>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">판매중</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> Onelove</td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td><img src="assets/images/farmstouch/cactus-6679665.jpg" class="" alt="" style="width: 3.75rem; height: 3.75rem;"></td>
+										<td>
+											<a href="#" target="_blank" class="text-black" > 
+												엄청 맵고 좋은 하우스 청양손꼭무
+											</a>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">판매중</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> Onelove</td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td><img src="assets/images/farmstouch/cactus-6679665.jpg" class="" alt="" style="width: 3.75rem; height: 3.75rem;"></td>
+										<td>
+											<a href="#" target="_blank" class="text-black" > 
+												지금 식재하고 봄에 아름다운꽃보기 화훼류구근
+											</a>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">판매중</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> Onelove</td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td><img src="assets/images/farmstouch/cactus-6679665.jpg" class="" alt="" style="width: 3.75rem; height: 3.75rem;"></td>
+										<td>
+											<a href="#" target="_blank" class="text-black" > 
+												해풍머금은 안면도 꿀고구마
+											</a>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">판매중</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> Onelove</td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td><img src="assets/images/farmstouch/cactus-6679665.jpg" class="" alt="" style="width: 3.75rem; height: 3.75rem;"></td>
+										<td>
+											<a href="#" target="_blank" class="text-black" > 
+												전국최저가!! 내손으로 수작업 달고기포 판매합니다.
+											</a>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">판매중</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> Onelove</td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td><img src="assets/images/farmstouch/cactus-6679665.jpg" class="" alt="" style="width: 3.75rem; height: 3.75rem;"></td>
+										<td>
+											<a href="#" target="_blank" class="text-black" > 
+												알토란이랑 적두팥이랑 쥐눈이콩이랑
+											</a>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">판매중</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> Onelove</td>
+									</tr>
+									<!-- Table item End -->
+
+									<!-- Table item -->
+									<tr>
+										<td><img src="assets/images/farmstouch/cactus-6679665.jpg" class="" alt="" style="width: 3.75rem; height: 3.75rem;"></td>
+										<td>
+											<a href="#" target="_blank" class="text-black" > 
+												새콤달콤 노지 한라봉 하우스 천혜향 판매해요
+											</a>
+										</td>
+										<td> <div class="badge bg-success bg-opacity-10 text-success">판매중</div> </td>
+										<td> 2023-01-25 </td>
+										<td> 612 </td>
+										<td> Onelove</td>
+									</tr>
+									<!-- Table item End -->
+
+
+
+									
+								</tbody>
+								<!-- Table body END -->
+							</table>
+						</div>
+						<!-- Hotel room list END -->
+					</div>
+					<!-- Card body END -->
+
+					<!-- Card footer START -->
+					<div class="card-footer pt-0">
+						<!-- Pagination and content -->
+						<div class="d-sm-flex justify-content-sm-between align-items-sm-center">
+							<!-- Content -->
+							<p class="mb-sm-0 text-center text-sm-start"></p>
+							<!-- Pagination -->
+							<nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
+								<ul class="pagination pagination-sm pagination-primary-soft mb-0">
+									<li class="page-item">
+										<a class="page-link" href="#" tabindex="-1">Prev</a>
+									</li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item active"><a class="page-link" href="#">2</a></li>
+									<li class="page-item disabled"><a class="page-link" href="#">..</a></li>
+									<li class="page-item"><a class="page-link" href="#">15</a></li>
+									<li class="page-item">
+										<a class="page-link" href="#">Next</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- Card footer END -->
+				</div>
+			</div>
+		</div>
+		<!-- Invoice history END -->
+	</div>
+</section>
+<!-- =======================
+Content END -->
+
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+<!-- footer 시작 -->
+<footer th:replace="~{common/layout2 :: #footer}"></footer>
+</body>
+</html>

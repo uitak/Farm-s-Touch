@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+
+
+<!-- Header END -->	
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+<!-- =======================
+Main Banner START -->
+<section class="pt-0 mt-0">
+	<div class="container-fluid px-0">
+		<!-- Background image -->
+		<div class=" p-3 p-sm-5" style="background-image: url(assets/images/farmstouch/v1.jpg); background-position: center -17rem; background-repeat: no-repeat; background-size: cover; height: 27rem;">
+			<!-- Banner title -->
+			<div class="row my-2 my-xl-5"> 
+				<div class="col-md-1 mx-auto"></div>
+				<div class="col-md-4 mx-auto"> 
+					<h1 class="text-center  text-center" style="text-shadow:1px 1px 1px white; color:#4d3f15; ">품종 검색</h1>
+					<h5 class="text-center  text-center" style="text-shadow:2px 2px 2px #6B591D; color:#FDFAF6; ">Seed information search</h5>
+				</div>
+				
+					
+			</div>
+
+			
+		</div>
+	</div>
+</section>
+<!-- =======================
+Main Banner END -->
+	
+<!-- =======================
+Title and Tabs START -->
+<section class="pt-0 pb-4 mt-n9">
+	<div class="container position-relative">
+
+		<!-- Collapse body START -->
+		<div class="" id="">
+			<div class="card card-body bg-light p-4 mt-4 z-index-9">
+
+				<!-- Form START -->
+				<form class="row g-4">
+
+					<!-- Check box item -->
+					<div class="col-12">
+						<div class="form-control-borderless">
+							<label class="form-label">분류</label>
+							<div class="row g-3">
+								<!-- checkbox -->
+								<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+										<label class="form-check-label h6 fw-light mb-0" for="flexCheckDefault">
+											식량작물
+										</label>
+									</div>
+								</div>
+
+								<!-- checkbox -->
+								<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+										<label class="form-check-label h6 fw-light mb-0" for="flexCheckDefault2">
+											특용작물
+										</label>
+									</div>
+								</div>
+
+								<!-- checkbox -->
+								<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
+											<label class="form-check-label h6 fw-light mb-0" for="flexCheckDefault3">
+												채소
+											</label>
+									</div>
+								</div>
+
+								<!-- checkbox -->
+								<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
+											<label class="form-check-label h6 fw-light mb-0" for="flexCheckDefault4">
+												과수
+											</label>
+									</div>
+								</div>
+
+								<!-- checkbox -->
+								<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault11">
+											<label class="form-check-label h6 fw-light mb-0" for="flexCheckDefault11">
+												화훼
+											</label>
+									</div>
+								</div>
+
+								<!-- checkbox -->
+								<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault12">
+											<label class="form-check-label h6 fw-light mb-0" for="flexCheckDefault12">
+												녹비작물 
+											</label>
+									</div>
+								</div>
+							</div> <!-- Row END -->
+						</div>
+					</div>
+
+					<!-- Input item -->
+					<div class="col-md-6 col-lg-4">
+						<div class="form-control-borderless">
+							<label class="form-label">품종명</label>
+							<input type="text" class="form-control form-control-lg">
+						</div>
+					</div>
+
+					<!-- Select item -->
+					<div class="col-md-6 col-lg-4">
+						<div class="form-size-lg form-control-borderless">
+							<label class="form-label">작물분류</label>
+							<select class="form-select js-choice border-0">
+								<option value="">벼</option>
+								<option>맥류</option>
+								<option>두류</option>
+								<option>잡곡류</option>
+								<option>서류</option>
+							</select>
+						</div>
+					</div>
+
+					<!-- Select item -->
+					<div class="col-md-6 col-lg-4">
+						<div class="form-size-lg form-control-borderless">
+							<label class="form-label">육성연도</label>
+							<select class="form-select js-choice border-0">
+								<option value="">선택하세요</option>
+								<option>2023</option>
+								<option>2022</option>
+								<option>2021</option>
+								<option>2020</option>
+								<option>2019</option>
+								<option>2018</option>
+								<option>2017</option>
+								<option>2016</option>
+								<option>2015</option>
+								<option>2014</option>
+								<option>2013</option>
+								<option>2012</option>
+								<option>2011</option>
+								<option>2010</option>
+								<option>2009</option>
+								<option>2008</option>
+								<option>2007</option>
+								<option>2006</option>
+								<option>2005</option>
+								<option>2004</option>
+								<option>2003</option>
+								<option>2002</option>
+								<option>2001</option>
+								<option>2000</option>
+							</select>
+						</div>
+					</div>
+
+					<!-- Button -->
+					<div class="text-end align-items-center">
+						<button class="btn btn-link p-0 mb-0" style="color: #446A46;">취소</button>
+						<button class="btn btn-success2 mb-0 ms-3">조회</button>
+					</div>
+				</form>
+				<!-- Form END -->
+			</div>
+		</div>
+		<!-- Collapse body END -->
+
+	</div>
+</section>
+<!-- =======================
+Title and Tabs END -->
+
+<!-- =======================
+품종 grid START -->
+<section class="pt-0">
+	<div class="container">
+		<div class="row g-4">
+
+			<!-- Card item START -->
+			<div class="col-md-6 col-xl-4">
+				<div class="card shadow p-2 pb-0 h-100">
+					<!-- Image -->
+					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220105%2F%EC%B0%B8%EB%88%84%EB%A6%AC.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
+
+					<!-- Card body START -->
+					<div class="card-body px-3 pb-0">
+
+						<!-- Title -->
+						<h5 class="card-title"><a href="hotel-detail.html">사하라(Boseokchal)</a></h5>
+
+						<!-- List -->
+						<ul class="nav nav-divider mb-2 mb-sm-3">
+							<li class="nav-item">장미</li>
+						</ul>
+					</div>
+					<!-- Card body END -->
+
+					<!-- Card footer START-->
+					<div class="card-footer pt-0">
+						<!-- Price and Button -->
+						<div class="d-sm-flex justify-content-sm-between align-items-center">
+							<!-- Price -->
+							<div class="d-flex align-items-center">
+								<h5 class="fw-normal text-success mb-0 me-1"></h5>
+								<span class="mb-0 me-2"></span>
+							</div>
+							<!-- Button -->
+							<div class="mt-2 mt-sm-0 z-index-2 text-end">
+								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
+							</div>                  
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Card item END -->
+
+			<!-- Card item START -->
+			<div class="col-md-6 col-xl-4">
+				<div class="card shadow p-2 pb-0 h-100">
+					<!-- Image -->
+					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220105%2F%EC%B0%B8%EB%88%84%EB%A6%AC.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
+
+					<!-- Card body START -->
+					<div class="card-body px-3 pb-0">
+
+						<!-- Title -->
+						<h5 class="card-title"><a href="hotel-detail.html">반짜기(Banjjagi)</a></h5>
+
+						<!-- List -->
+						<ul class="nav nav-divider mb-2 mb-sm-3">
+							<li class="nav-item">국화 > 스프레이</li>
+						</ul>
+					</div>
+					<!-- Card body END -->
+
+					<!-- Card footer START-->
+					<div class="card-footer pt-0">
+						<!-- Price and Button -->
+						<div class="d-sm-flex justify-content-sm-between align-items-center">
+							<!-- Price -->
+							<div class="d-flex align-items-center">
+								<h5 class="fw-normal text-success mb-0 me-1"></h5>
+								<span class="mb-0 me-2"></span>
+							</div>
+							<!-- Button -->
+							<div class="mt-2 mt-sm-0 z-index-2">
+								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
+							</div>                  
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Card item END -->
+
+			<!-- Card item START -->
+			<div class="col-md-6 col-xl-4">
+				<div class="card shadow p-2 pb-0 h-100">
+					<!-- Image -->
+					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220105%2F%EC%B0%B8%EB%88%84%EB%A6%AC.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
+
+					<!-- Card body START -->
+					<div class="card-body px-3 pb-0">
+
+						<!-- Title -->
+						<h5 class="card-title"><a href="hotel-detail.html">금빛누리(Geumbitnuli)</a></h5>
+
+						<!-- List -->
+						<ul class="nav nav-divider mb-2 mb-sm-3">
+							<li class="nav-item">국화 > 스탠다드</li>
+						</ul>
+					</div>
+					<!-- Card body END -->
+
+					<!-- Card footer START-->
+					<div class="card-footer pt-0">
+						<!-- Price and Button -->
+						<div class="d-sm-flex justify-content-sm-between align-items-center">
+							<!-- Price -->
+							<div class="d-flex align-items-center">
+								<h5 class="fw-normal text-success mb-0 me-1"></h5>
+								<span class="mb-0 me-2"></span>
+							</div>
+							<!-- Button -->
+							<div class="mt-2 mt-sm-0 z-index-2">
+								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
+							</div>                  
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Card item END -->
+
+			<!-- Card item START -->
+			<div class="col-md-6 col-xl-4">
+				<div class="card shadow p-2 pb-0 h-100">
+					<!-- Image -->
+					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220107%2F%EC%84%B1%EC%88%99+%EC%A0%84%EA%B2%BD_%EB%B0%80%EC%96%91361%ED%98%B8.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
+
+					<!-- Card body START -->
+					<div class="card-body px-3 pb-0">
+
+						<!-- Title -->
+						<h5 class="card-title"><a href="hotel-detail.html">장풍(Jangpung)</a></h5>
+
+						<!-- List -->
+						<ul class="nav nav-divider mb-2 mb-sm-3">
+							<li class="nav-item">콩</li>
+						</ul>
+					</div>
+					<!-- Card body END -->
+
+					<!-- Card footer START-->
+					<div class="card-footer pt-0">
+						<!-- Price and Button -->
+						<div class="d-sm-flex justify-content-sm-between align-items-center">
+							<!-- Price -->
+							<div class="d-flex align-items-center">
+								<h5 class="fw-normal text-success mb-0 me-1"></h5>
+								<span class="mb-0 me-2"></span>
+							</div>
+							<!-- Button -->
+							<div class="mt-2 mt-sm-0">
+								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
+							</div>                  
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Card item END -->
+
+			<!-- Card item START -->
+			<div class="col-md-6 col-xl-4">
+				<div class="card shadow p-2 pb-0 h-100">
+					<!-- Image -->
+					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220107%2F%EC%84%B1%EC%88%99%EC%A0%84%EA%B2%BD_%EC%84%A0%EC%98%AC_%EC%83%88%EC%98%AC%EC%BD%A9_%EC%9D%B4%EB%A6%842.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
+
+					<!-- Card body START -->
+					<div class="card-body px-3 pb-0">
+
+						<!-- Title -->
+						<h5 class="card-title"><a href="hotel-detail.html">선올(Seonol)</a></h5>
+
+						<!-- List -->
+						<ul class="nav nav-divider mb-2 mb-sm-3">
+							<li class="nav-item">콩</li>
+						</ul>
+					</div>
+					<!-- Card body END -->
+
+					<!-- Card footer START-->
+					<div class="card-footer pt-0">
+						<!-- Price and Button -->
+						<div class="d-sm-flex justify-content-sm-between align-items-center">
+							<!-- Price -->
+							<div class="d-flex align-items-center">
+								<h5 class="fw-normal text-success mb-0 me-1"></h5>
+								<span class="mb-0 me-2"></span>
+							</div>
+							<!-- Button -->
+							<div class="mt-2 mt-sm-0">
+								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
+							</div>                  
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Card item END -->
+
+			<!-- Card item START -->
+			<div class="col-md-6 col-xl-4">
+				<div class="card shadow p-2 pb-0 h-100">
+					<!-- Image -->
+					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220105%2F%EC%B0%B8%EB%88%84%EB%A6%AC.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
+
+					<!-- Card body START -->
+					<div class="card-body px-3 pb-0">
+
+						<!-- Title -->
+						<h5 class="card-title"><a href="hotel-detail.html">소미(Somi)</a></h5>
+
+						<!-- List -->
+						<ul class="nav nav-divider mb-2 mb-sm-3">
+							<li class="nav-item">콩</li>
+						</ul>
+					</div>
+					<!-- Card body END -->
+
+					<!-- Card footer START-->
+					<div class="card-footer pt-0">
+						<!-- Price and Button -->
+						<div class="d-sm-flex justify-content-sm-between align-items-center">
+							<!-- Price -->
+							<div class="d-flex align-items-center">
+								<h5 class="fw-normal text-success mb-0 me-1"></h5>
+								<span class="mb-0 me-2"></span>
+							</div>
+							<!-- Button -->
+							<div class="mt-2 mt-sm-0">
+								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
+							</div>                  
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- Card item END -->
+
+			<!-- Card item START -->
+			<div class="col-md-6 col-xl-4">
+				<div class="card shadow p-2 pb-0 h-100">
+					<!-- Image -->
+					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220105%2F%EC%B0%B8%EB%88%84%EB%A6%AC.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
+
+					<!-- Card body START -->
+					<div class="card-body px-3 pb-0">
+
+						<!-- Title -->
+						<h5 class="card-title"><a href="hotel-detail.html">후산(Husan)</a></h5>
+
+						<!-- List -->
+						<ul class="nav nav-divider mb-2 mb-sm-3">
+							<li class="nav-item">마늘</li>
+						</ul>
+					</div>
+					<!-- Card body END -->
+
+					<!-- Card footer START-->
+					<div class="card-footer pt-0">
+						<!-- Price and Button -->
+						<div class="d-sm-flex justify-content-sm-between align-items-center">
+							<!-- Price -->
+							<div class="d-flex align-items-center">
+								<h5 class="fw-normal text-success mb-0 me-1"></h5>
+								<span class="mb-0 me-2"></span>
+							</div>
+							<!-- Button -->
+							<div class="mt-2 mt-sm-0">
+								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
+							</div>                  
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Card item END -->
+
+			<!-- Card item START -->
+			<div class="col-md-6 col-xl-4">
+				<div class="card shadow p-2 pb-0 h-100">
+					<!-- Image -->
+					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220105%2F%EC%B0%B8%EB%88%84%EB%A6%AC.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
+
+					<!-- Card body START -->
+					<div class="card-body px-3 pb-0">
+
+						<!-- Title -->
+						<h5 class="card-title"><a href="hotel-detail.html">참누리(Chamnuri)</a></h5>
+
+						<!-- List -->
+						<ul class="nav nav-divider mb-2 mb-sm-3">
+							<li class="nav-item">논벼 > 일반벼</li>
+						</ul>
+					</div>
+					<!-- Card body END -->
+
+					<!-- Card footer START-->
+					<div class="card-footer pt-0">
+						<!-- Price and Button -->
+						<div class="d-sm-flex justify-content-sm-between align-items-center">
+							<!-- Price -->
+							<div class="d-flex align-items-center">
+								<h5 class="fw-normal text-success mb-0 me-1"></h5>
+								<span class="mb-0 me-2"></span>
+							</div>
+							<!-- Button -->
+							<div class="mt-2 mt-sm-0">
+								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
+							</div>                  
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Card item END -->
+
+			<!-- Card item START -->
+			<div class="col-md-6 col-xl-4">
+				<div class="card shadow p-2 pb-0 h-100">
+					<!-- Image -->
+					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220105%2F%EC%B0%B8%EB%88%84%EB%A6%AC.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
+
+					<!-- Card body START -->
+					<div class="card-body px-3 pb-0">
+
+						<!-- Title -->
+						<h5 class="card-title"><a href="hotel-detail.html">핑커몬드(Pinker Mond)</a></h5>
+
+						<!-- List -->
+						<ul class="nav nav-divider mb-2 mb-sm-3">
+							<li class="nav-item">백합(나리)</li>
+						</ul>
+					</div>
+					<!-- Card body END -->
+
+					<!-- Card footer START-->
+					<div class="card-footer pt-0">
+						<!-- Price and Button -->
+						<div class="d-sm-flex justify-content-sm-between align-items-center">
+							<!-- Price -->
+							<div class="d-flex align-items-center">
+								<h5 class="fw-normal text-success mb-0 me-1"></h5>
+								<span class="mb-0 me-2"></span>
+							</div>
+							<!-- Button -->
+							<div class="mt-2 mt-sm-0">
+								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
+							</div>                  
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Card item END -->
+
+		</div> <!-- Row END -->
+
+		<!-- Pagination -->
+		<div class="row">
+			<div class="col-12">
+				<nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
+					<ul class="pagination pagination-primary-soft2 d-inline-block d-md-flex rounded mb-0">
+						<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fa-solid fa-angle-left"></i></a></li>
+						<li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
+						<li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
+						<li class="page-item mb-0"><a class="page-link" href="#">..</a></li>
+						<li class="page-item mb-0"><a class="page-link" href="#">6</a></li>
+						<li class="page-item mb-0"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Hotel grid END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- =======================Footer START -->
+
+	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+</body>
+</html>

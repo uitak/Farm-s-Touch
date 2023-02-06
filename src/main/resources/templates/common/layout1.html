@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<head th:fragment="head">
+<title>팜스터치(Farm's Touch)</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Booking - Multipurpose Online Booking Theme">
+
+	<!-- Dark mode -->
+	<script type="text/javascript">
+		var theme = localStorage.getItem('data-theme');
+		var root = document.documentElement;
+		if (theme === 'dark' && theme !== undefined) {
+			root.classList.add('dark-mode');
+		} else {
+			root.classList.remove('dark-mode');
+		}
+		
+	</script>
+
+	<!-- Favicon -->
+	<!-- <link rel="shortcut icon" href="assets/images/farmstouch/logo9999.png"> -->
+	<link rel="shortcut icon" href="assets/images/farmstouch/logo/flo.png">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/tiny-slider/tiny-slider.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/glightbox/css/glightbox.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/choices/css/choices.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/flatpickr/css/flatpickr.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style2.css">
+
+</head>
+
+<body>
+	<header id="header" class="navbar-light header-sticky">
+	<!-- Logo Nav START -->
+	<nav class="navbar navbar-expand-xl">
+		<div class="container">
+			<!-- Logo START -->
+			<a class="navbar-brand" href="index.html">
+				<img class="light-mode-item navbar-brand-item" src="assets/images/farmstouch/logo/farmslogo1.PNG" alt="logo" style="width: 7.5rem; height: 3.75rem; margin: -1.875rem auto">
+				<img class="dark-mode-item navbar-brand-item" src="assets/images/farmstouch/logo/farmslogo2.png" alt="logo"  style="width: 7.5rem; height: 3.75rem; margin: -1.875rem auto">
+				<!-- <img class="light-mode-item navbar-brand-item" src="assets/images/farmstouch/logo89.png" alt="logo" style="width: 120px; height: 60px; margin: -30px auto">
+				<img class="dark-mode-item navbar-brand-item" src="assets/images/farmstouch/logo89.png" alt="logo"  style="width: 120px; height: 60px; margin: -30px auto"> -->
+			</a>
+			<!-- Logo END -->
+
+			<!-- Responsive navbar toggler -->
+			<button class="navbar-toggler ms-auto ms-sm-0 p-0 p-sm-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-animation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</span>
+        			<span class="d-none d-sm-inline-block small">Menu</span>
+			</button>
+
+			<!-- Responsive category toggler -->
+			<button class="navbar-toggler ms-sm-auto mx-3 me-md-0 p-0 p-sm-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCategoryCollapse" aria-controls="navbarCategoryCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="bi bi-grid-3x3-gap-fill fa-fw"></i><span class="d-none d-sm-inline-block small">Category</span>
+			</button>
+
+			<!-- Main navbar START -->
+			<div class="navbar-collapse collapse" id="navbarCollapse">
+				<ul class="navbar-nav navbar-nav-scroll me-auto">
+
+					<!-- Nav item Listing -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" style="font-size: 1.2rem;" href="#" id="listingMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">농사</a>
+						<ul class="dropdown-menu" aria-labelledby="listingMenu">
+							<!-- Dropdown submenu -->
+							
+					<li> <a class="dropdown-item" href="index.html">농작물</a></li>
+					
+					<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">농기계</a>
+								<ul class="dropdown-menu" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="sign-in.html">농기계 시청각 자료</a></li>
+									<li> <a class="dropdown-item" href="sign-up.html">안전 사용 지침</a></li>
+								</ul>
+							</li>
+
+					<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="#">농업기술</a>
+								<ul class="dropdown-menu" data-bs-popper="none">
+									<li> <a class="dropdown-item" href="sign-in.html">농업기술 정보</a></li>
+									<li> <a class="dropdown-item" href="sign-up.html">농업기술 더하기 나누기</a></li>
+									<li> <a class="dropdown-item" href="sign-up.html">주간 농사 정보</a></li>
+								</ul>
+							</li>
+
+							
+						</ul>
+					</li>
+
+					<!-- Nav item Pages -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" style=" font-size: 1.2rem;" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">식물</a>
+						<ul class="dropdown-menu" aria-labelledby="pagesMenu">
+
+							<li> <a class="dropdown-item" href="contact-2.html">추천 식물</a></li>
+							<li> <a class="dropdown-item" href="@{/plant/gardenList}">정원 식물</a></li>
+							<li> <a class="dropdown-item" href="contact.html">다육 식물</a></li>
+							<li> <a class="dropdown-item" href="contact.html">자랑 게시판</a></li>
+						</ul>
+					</li>
+
+					<!-- Nav item Account -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" style="font-size: 1.2rem;" href="#" id="accounntMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">농촌활동</a>
+						<ul class="dropdown-menu" aria-labelledby="accounntMenu">
+							<li> <a class="dropdown-item" href="admin-dashboard.html">농가 맛집</a> </li>
+							<li> <a class="dropdown-item" href="admin-dashboard.html">약초 정보</a> </li>
+							<li> <a class="dropdown-item" href="admin-dashboard.html">농촌 교육 농장</a> </li>
+						</ul>
+					</li>
+
+					<!-- Nav item Account -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" style="font-size: 1.2rem;" href="#" id="accounntMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">커뮤니티</a>
+						<ul class="dropdown-menu" aria-labelledby="accounntMenu">
+							<li> <a class="dropdown-item" href="admin-dashboard.html">농산물 직거래 장터</a> </li>
+							<li> <a class="dropdown-item" href="admin-dashboard.html">식물 분양 장터</a> </li>
+							<li> <a class="dropdown-item" href="admin-dashboard.html">공지사항</a> </li>
+							<li> <a class="dropdown-item" href="admin-dashboard.html">이벤트</a> </li>
+						</ul>
+					</li>
+
+				</ul>
+			</div>
+			<!-- Main navbar END -->
+
+			<!-- Nav category menu START -->
+			<div class="navbar-collapse collapse" id="navbarCategoryCollapse">
+				<ul class="navbar-nav navbar-nav-scroll nav-pills-primary-soft text-center ms-auto p-2 p-xl-0">
+					<!-- Nav item Tour -->
+					<li class="nav-item"> <a class="nav-link" href="index-tour.html"><i class="fa-solid fa-shop me-2"></i>쇼핑몰</a> </li>
+
+					<!-- Nav item Cabs -->
+					<li class="nav-item"> <a class="nav-link" href="index-cab.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>로그아웃</a></li>
+				</ul>
+			</div>
+			<!-- Nav category menu END -->
+
+			<!-- Profile and Notification START -->
+			<ul class="nav flex-row align-items-center list-unstyled ms-xl-auto">
+
+				<!-- Notification dropdown START -->
+				<li class="nav-item dropdown ms-0 ms-md-3">
+					<!-- Notification button -->
+					<a class="nav-notification btn btn-light p-0 mb-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+						<img src="https://img.icons8.com/stickers/100/null/shopping-basket-success.png" style="width: 1.875rem;"/>
+					</a>
+					<!-- Notification dote -->
+					<span class="notif-badge animation-blink"></span>
+
+
+<!-- =============================================================================== 알람창 =================================================================================== -->
+<!-- ==============================================================알림창 안되면 장바구니 버튼으로 교체 ====================================================== -->					
+					<!-- Notification dropdown menu START -->
+					<div class="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md shadow-lg p-0">
+						<div class="card bg-transparent">
+							<!-- Card header -->
+							<div class="card-header bg-transparent d-flex justify-content-between align-items-center border-bottom">
+								<h6 class="m-0">장바구니 <span class="badge bg-danger bg-opacity-10 text-danger ms-2">4 new</span></h6>
+								<a class="small" href="#">장바구니 구경하기</a>
+							</div>
+
+							<!-- Card body START -->
+							<div class="card-body p-0">
+								<ul class="list-group list-group-flush list-unstyled p-2">
+									<!-- Notification item -->
+									<li>
+										<a href="#" class="list-group-item list-group-item-action rounded notif-unread border-0 mb-1 p-3">
+											<h6 class="mb-2">New! Booking flights from New York ✈️</h6>
+											<p class="mb-0 small">Find the flexible ticket on flights around the world. Start searching today</p>
+											<span>Wednesday</span>
+										</a>
+									</li>
+									<!-- Notification item -->
+									<li>
+										<a href="#" class="list-group-item list-group-item-action rounded border-0 mb-1 p-3">
+											<h6 class="mb-2">Sunshine saving are here 🌞 save 30% or more on a stay</h6>
+											<span>15 Nov 2022</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- Card body END -->
+
+							<!-- Card footer -->
+							<div class="card-footer bg-transparent text-center border-top">
+								<a href="#" class="btn btn-sm btn-link mb-0 p-0 small">쇼핑몰 넘어가기</a>
+							</div>
+						</div>
+					</div>
+					<!-- Notification dropdown menu END -->
+				</li>
+				<!-- Notification dropdown END -->
+
+<!-- ========================================================================= 사람 프로필 ================================================================== -->				
+				<!-- Profile dropdown START -->
+				<li class="nav-item ms-3 dropdown">
+					<!-- Avatar -->
+					<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+						<img class="avatar-img rounded-2" src="assets/images/farmstouch/avatar/ava01.png" alt="avatar">
+					</a>
+
+					<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
+						<!-- Profile info -->
+						<li class="px-3 mb-3">
+							<div class="d-flex align-items-center">
+								<!-- Avatar -->
+								<div class="avatar me-3">
+									<img class="avatar-img rounded-circle shadow" src="assets/images/farmstouch/avatar/ava01.png" alt="avatar">
+								</div>
+								<div>
+									<a class="h6 mt-2 mt-sm-0" href="#">팜스터치</a>
+									<p class="small m-0">farmstouch@gmail.com</p>
+								</div>
+							</div>
+						</li>
+
+						<!-- Links -->
+						<li> <hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="#"><i class="bi bi-list-check fa-fw me-2"></i>마이페이지</a></li>
+						<li><a class="dropdown-item" href="#"><i class="bi bi-bookmark-check fa-fw me-2"></i>즐겨찾기</a></li>
+						<li><a class="dropdown-item" href="#"><i class="bi bi-heart fa-fw me-2"></i>나의 성향은</a></li>
+						<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>고객센터</a></li>
+						<li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>로그아웃</a></li>
+						<li> <hr class="dropdown-divider"></li>
+
+						<!-- Dark mode switch START -->
+						<li>
+							<div class="modeswitch-wrap" id="darkModeSwitch">
+								<div class="modeswitch-item">
+									<div class="modeswitch-icon"></div>
+								</div>
+								<span>Dark mode</span>
+							</div>
+						</li> 
+						<!-- Dark mode switch END -->
+					</ul>
+				</li>
+				<!-- Profile dropdown END -->
+			</ul>
+			<!-- Profile and Notification START -->
+
+		</div>
+	</nav>
+	<!-- Logo Nav END -->
+	
+	</header>
+		
+	<footer id="footer" class="pt-5" style="background-color: #446A46; font-family:'Poppins', sans-serif;">
+	
+		<div class="container"  style="margin-top: -2.5rem; margin-bottom: -1.875rem;">
+		<!-- Row START -->
+		<div class="row g-4">
+
+			<!-- Widget 1 START -->
+			<div class="col-lg-3">
+				<!-- logo -->
+				<a href="index.html">
+					<img class="h-60px" src="assets/images/farmstouch/logo/farmslogo2.png" alt="logo" style="margin-top: -0.625rem;"/>
+				</a>
+				<!-- <p class="my-3 text-muted">초보 농부들을 위한 온라인 지침서 농작물 종합 포털 팜스터치 입니다.</p> -->
+				<p class="text-muted mt-0 mb-2">Subscribe to Our Newsletter</p>
+					<!-- Newsletter -->
+					<form class="bg-body rounded-2 p-2">
+						<div class="input-group">
+							<input class="form-control border-0 me-1" type="email" placeholder="Enter your email">
+							<button type="button" class="btn btn-success rounded-2 mb-0"><i class="bi bi-send"></i></button>
+						</div>
+					</form>
+				</p>
+				<p class="mb-2"><a href="#" class="text-muted text-primary-hover"><i class="bi bi-telephone me-2"></i>+1234 568 963</a> </p>
+				<p class="mb-0"><a href="#" class="text-muted text-primary-hover"><i class="bi bi-envelope me-2"></i>farmsTouch@gmail.com</a></p>
+				
+			</div>
+			<!-- Widget 1 END -->
+
+			<!-- Widget 2 START -->
+			<div class="col-lg-8 ms-auto">
+				<div class="row g-4">
+					<!-- Link block -->
+					<div class="col-6 col-md-3">
+						<h5 class="text-white mb-2 mb-md-4">Search</h5>
+						<ul class="nav flex-column text-primary-hover">
+							<li class="nav-item"><a class="nav-link text-muted" href="#">농작물</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="#">정원식물</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="#">다육식물</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="#">품종정보</a></li>
+
+						</ul>
+					</div>
+
+					<!-- Link block -->
+					<div class="col-6 col-md-3">
+						<h5 class="text-white mb-2 mb-md-4">Information</h5>
+						<ul class="nav flex-column text-primary-hover">
+							<li class="nav-item"><a class="nav-link text-muted" href="#">농기계</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="#">농사기술</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="#">농가맛집</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="#">약초정보</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="#">농촌체험활동</a></li>
+
+						</ul>
+					</div>
+									
+					<!-- Link block -->
+					<div class="col-6 col-md-3">
+						<h5 class="text-white mb-2 mb-md-4">Community</h5>
+						<ul class="nav flex-column text-primary-hover">
+							<li class="nav-item"><a class="nav-link text-muted" href="#">공지사항</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="#">식물 자랑 게시판</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" href="#">농산물 직거래 게시판</a></li>
+
+						</ul>
+					</div>
+
+					<!-- Link block -->
+					<div class="col-6 col-md-3">
+						<h5 class="text-white mb-2 mb-md-4">Member</h5>
+						<ul class="nav flex-column text-primary-hover">
+							<li class="nav-item"><a class="nav-link text-muted"><i class="fa-solid fa-star me-2"></i>김현우</a></li>
+							<li class="nav-item"><a class="nav-link text-muted"><i class="fa-solid fa-star me-2"></i>김지연</a></li>
+							<li class="nav-item"><a class="nav-link text-muted"><i class="fa-solid fa-star me-2"></i>박은성</a></li>
+							<li class="nav-item"><a class="nav-link text-muted"><i class="fa-solid fa-star me-2"></i>송승현</a></li>
+							<li class="nav-item"><a class="nav-link text-muted"><i class="fa-solid fa-star me-2"></i>정의탁</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- Widget 2 END -->
+
+		</div><!-- Row END -->
+
+		
+
+		<!-- Divider -->
+		<hr class="mt-4 mb-0">
+
+		<!-- Bottom footer -->
+		<div class="row">
+			<div class="container">
+				<div class="d-lg-flex justify-content-between align-items-center py-3 text-center text-lg-start">
+					<!-- copyright text -->
+					<div class="text-warning text-primary-hover"> Copyrights <a href="#" class="text-warning">©2023 Farm's Touch</a>. All rights reserved. </div>
+					<!-- copyright links-->
+					<div class="nav mt-2 mt-lg-0">
+						<ul class="list-inline text-primary-hover mx-auto mb-0">
+							<li class="list-inline-item me-0"><a class="nav-link py-1 text-warning" href="#">Privacy policy</a></li>
+							<li class="list-inline-item me-0"><a class="nav-link py-1 text-warning" href="#">Terms and conditions</a></li>
+							<li class="list-inline-item me-0"><a class="nav-link py-1 text-warning pe-0" href="#">Refund policy</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Back to top -->
+	<div class="back-top"></div>
+	<!-- Bootstrap JS -->
+	<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Vendors -->
+	<script src="assets/vendor/tiny-slider/tiny-slider.js"></script>
+	<script src="assets/vendor/glightbox/js/glightbox.js"></script>
+	<script src="assets/vendor/choices/js/choices.min.js"></script>
+	<script src="assets/vendor/flatpickr/js/flatpickr.min.js"></script>
+	<!-- ThemeFunctions -->
+	<script src="assets/js/functions.js"></script>
+	</footer>
+</body>
+</html>

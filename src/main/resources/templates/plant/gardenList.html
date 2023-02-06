@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+	<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main Banner START -->
+<section class="pt-0 mt-3">
+	<div class="container">
+		<!-- Background image -->
+		<div class="rounded-3 p-3 p-sm-5" style="background-image: url(assets/images/farmstouch/q1.jpg); background-position: 0 center; background-repeat: no-repeat; background-size: cover;">
+			<!-- Banner title -->
+			<div class="row my-2 my-xl-5"> 
+				
+				<div class="col-md-5 mx-auto rounded-3" > 
+					<h1 class="text-center" style="text-shadow:2px 2px 2px #285430; color: white;">정원식물 검색</h1>
+				</div>
+				<div class="col-md-6 mx-auto" ></div>
+			</div>
+
+			<!-- Booking from START -->
+			<form class="bg-mode shadow rounded-3 position-relative p-4 pe-md-5 pb-5 pb-md-4 mb-4">
+				<div class="row g-4 align-items-center">
+					<!-- Location -->
+					<div class="col-lg-10">
+						<div class="form-control-border form-control-transparent form-fs-md d-flex">
+							<!-- Icon -->
+							<i class="bi bi-flower3 fs-3 me-2 mt-2" style="color:var(--bs-success)"></i>
+							<!-- Select input -->
+							<div class="flex-grow-1">
+								<label class="form-label">검색</label>
+								<input type="text" class="form-control form-control-lg form-guest-selector" placeholder="검색어를 입력하세요." value="" id="">
+							</div>
+						</div>
+					</div>
+                    <div class="col-lg-2">
+						<div class="form-control-border form-control-transparent form-fs-md d-flex">
+							<!-- Select input -->
+							<div class="flex-grow-1">
+								<label class="form-label">분류</label>
+								<select class="form-select js-choice" data-search-enabled="true">
+									<option value="">분류명</option>
+									<option selected>이름</option>
+									<option>North Dakota, Canada</option>
+									<option>West Virginia, Paris</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					
+
+					<!-- Guest -->
+					
+				</div>
+				<!-- Button -->
+				<div class="btn-position-md-middle">
+					<a  class="icon-lg btn btn-round btn-success mb-0" href="#"><i class="bi bi-search fa-fw"></i></a>
+				</div>
+			</form>
+			<!-- Booking from END -->
+		</div>
+	</div>
+</section>
+<!-- =======================
+Main Banner END -->
+
+<!-- =======================
+Hotel list START -->
+<section class="pt-0">
+	<div class="container">
+		
+
+		<div class="row">
+			<!-- Left sidebar START -->
+			<aside class="col-xl-4 col-xxl-3">
+				<!-- Responsive offcanvas body START -->
+				<div class="offcanvas-xl offcanvas-end" tabindex="-1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
+					<div class="offcanvas-header">
+						<h5 class="offcanvas-title" id="offcanvasSidebarLabel">Advance Filters</h5>
+						<button  type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasSidebar" aria-label="Close"></button>
+					</div>
+					<div class="offcanvas-body flex-column p-3 p-xl-0">
+						<form class="rounded-3 shadow">
+							<!-- Hotel type START -->
+							<div class="card card-body rounded-0 rounded-top p-4">
+								<!-- Title -->
+								<h6 class="mb-2">냄새</h6>
+								<!-- Hotel Type group -->
+								<div class="col-12">
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="hotelType1">
+										<label class="form-check-label" for="hotelType1">전체</label>
+									</div>
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="hotelType2">
+										<label class="form-check-label" for="hotelType2">강함</label>
+									</div>
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="hotelType3">
+										<label class="form-check-label" for="hotelType3">중간</label>
+									</div>
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="hotelType4">
+										<label class="form-check-label" for="hotelType4">약함</label>
+									</div>
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="hotelType5">
+										<label class="form-check-label" for="hotelType5">거의 없음</label>
+									</div>
+									<!-- Checkbox -->
+									
+									
+									
+									
+								</div>
+							</div>
+							<!-- Hotel type END -->
+
+							<hr class="my-0"> <!-- Divider -->
+
+							<!-- Price range START -->
+							<div class="card card-body rounded-0 p-4">
+								<!-- Title -->
+								<h6 class="mb-2">생육 속도</h6>
+								<!-- Price range group -->
+								<div class="col-12">
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="priceRange1">
+										<label class="form-check-label" for="priceRange1">빠름</label>
+									</div>
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="priceRange2">
+										<label class="form-check-label" for="priceRange2">보통</label>
+									</div>
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="priceRange3">
+										<label class="form-check-label" for="priceRange3">느림</label>
+									</div>
+									<!-- Checkbox -->
+									
+								</div>
+							</div>
+							<!-- Price range END -->
+
+							<hr class="my-0"> <!-- Divider -->
+
+							<!-- Popular type START -->
+							<div class="card card-body rounded-0 p-4">
+								<!-- Title -->
+								<h6 class="mb-2">생육 온도</h6>
+								<!-- Popular Type group -->
+								<div class="col-12">
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="popolarType1">
+										<label class="form-check-label" for="popolarType1">10~15℃</label>
+									</div>
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="popolarType2">
+										<label class="form-check-label" for="popolarType2">16~20℃</label>
+									</div>
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="popolarType3">
+										<label class="form-check-label" for="popolarType3">21~25℃</label>
+									</div>
+                                    <div class="form-check">
+										<input class="form-check-input" type="checkbox" value="" id="popolarType4">
+										<label class="form-check-label" for="popolarType4">26~30℃</label>
+									</div>
+								</div>
+							</div>
+							<!-- Popular type END -->
+
+							<hr class="my-0"> <!-- Divider -->
+
+							<!-- Customer Rating START -->
+							<div class="card card-body rounded-0 p-4">
+								<!-- Title -->
+								<h6 class="mb-2">관리 수준</h6>
+								<!-- Customer Rating group -->
+								<ul class="list-inline mb-0 g-3">
+									<!-- Item -->
+									<li class="list-inline-item mb-0">
+										<input type="checkbox" class="btn-check" id="btn-check-c1">
+										<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-c1">초보자</label>
+									</li>
+									<!-- Item -->
+									<li class="list-inline-item mb-0">
+										<input type="checkbox" class="btn-check" id="btn-check-c2">
+										<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-c2">경험자</label>
+									</li>
+									<!-- Item -->
+									<li class="list-inline-item mb-0">
+										<input type="checkbox" class="btn-check" id="btn-check-c3">
+										<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-c3">전문가</label>
+									</li>
+									<!-- Item -->
+									
+								</ul>
+							</div>
+							<!-- Customer Rating END -->
+
+							<hr class="my-0"> <!-- Divider -->
+
+							<!-- Rating Star START -->
+							<div class="card card-body rounded-0 p-4">
+								<!-- Title -->
+								<h6 class="mb-2">평점</h6>
+								<!-- Rating Star group -->
+								<ul class="list-inline mb-0 g-3">
+									<!-- Item -->
+									<li class="list-inline-item mb-0">
+										<input type="checkbox" class="btn-check" id="btn-check-6">
+										<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-6">1<i class="bi bi-star-fill"></i></label>
+									</li>
+									<!-- Item -->
+									<li class="list-inline-item mb-0">
+										<input type="checkbox" class="btn-check" id="btn-check-7">
+										<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-7">2<i class="bi bi-star-fill"></i></label>
+									</li>
+									<!-- Item -->
+									<li class="list-inline-item mb-0">
+										<input type="checkbox" class="btn-check" id="btn-check-8">
+										<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-8">3<i class="bi bi-star-fill"></i></label>
+									</li>
+									<!-- Item -->
+									<li class="list-inline-item mb-0">
+										<input type="checkbox" class="btn-check" id="btn-check-15">
+										<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-15">4<i class="bi bi-star-fill"></i></label>
+									</li>
+									<!-- Item -->
+									<li class="list-inline-item mb-0">
+										<input type="checkbox" class="btn-check" id="btn-check-16">
+										<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-16">5<i class="bi bi-star-fill"></i></label>
+									</li>
+								</ul>
+							</div>
+							<!-- Rating Star END -->
+
+							<hr class="my-0"> <!-- Divider -->
+
+							<!-- Amenities START -->
+							<div class="card card-body rounded-0 rounded-bottom p-4">
+								<!-- Title -->
+								<h6 class="mb-2">물주기</h6>
+								<!-- Amenities group -->
+								<div class="col-12">
+									<!-- Checkbox -->
+									<select class="form-select js-choice border-0">
+                                        <option value="">물주기 옵션</option>
+                                        <option>Recently search</option>
+                                        <option>Most popular</option>
+                                        <option>Top rated</option>
+                                    </select>
+									
+								</div>
+                                
+							</div>
+							<!-- Amenities END -->
+						</form><!-- Form End -->
+					</div>
+					<!-- Buttons -->
+					<div class="d-flex justify-content-between p-2 p-xl-0 mt-xl-4">
+						<button class="btn btn-link p-0 mb-0">Clear all</button>
+						<button class="btn btn-success mb-0">Filter Result</button>
+					</div>
+				</div>
+				<!-- Responsive offcanvas body END -->
+			</aside>
+			<!-- Left sidebar END -->
+
+			<!-- Main content START -->
+			<div class="col-xl-8 col-xxl-9">
+				<div class="vstack gap-4">
+
+					<!-- Card item START -->
+					<div class="card shadow p-2">
+						<div class="row g-0">
+							<!-- Card img -->
+							<div class="col-md-5" style="text-align: center;">
+								<img src="http://www.nongsaro.go.kr/cms_contents/301/12938_MF_ATTACH_01.jpg" style="height:15rem; width:20rem;"class="card-img rounded-2" alt="Card image">
+							</div>
+
+							<!-- Card body -->
+							<div class="col-md-7">
+								<div class="card-body py-md-2 d-flex flex-column h-100">
+
+									<!-- Rating and buttons -->
+									<div class="d-flex justify-content-between align-items-center">
+										<ul class="list-inline mb-0">
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star-half-alt text-warning"></i></li>
+										</ul>
+
+										<ul class="list-inline mb-0 z-index-2">
+											<!-- Heart icon -->
+											<li class="list-inline-item">
+												<a href="#" class="btn btn-sm btn-round btn-light"><i class="fa-solid fa-fw fa-heart"></i></a>
+											</li>
+											<!-- Share icon -->
+											<li class="list-inline-item dropdown">
+												<!-- Share button -->
+												<a href="#" class="btn btn-sm btn-round btn-light" role="button" id="dropdownShare2" data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="fa-solid fa-fw fa-share-alt"></i>
+												</a>
+												<!-- dropdown button -->
+												<ul class="dropdown-menu dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare2">
+													<li><a class="dropdown-item" href="#"><i class="fab fa-twitter-square me-2"></i>Twitter</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fab fa-facebook-square me-2"></i>Facebook</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fa-solid fa-copy me-2"></i>Copy link</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+
+									<!-- Title -->
+									<h5 class="card-title mb-1"><a href="hotel-detail.html">가울테리아</a></h5>
+									<small><i class="fa fa-leaf me-2"></i>Gaultheria procumbens</small>
+									<!-- Amenities -->
+									<ul class="nav nav-divider mt-3">
+										<li class="nav-item">태그 혹은 설명</li>
+									</ul>
+
+									<!-- List -->
+									
+									
+									<!-- Price and Button -->
+									<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
+										<!-- Button -->
+										<div class="d-flex align-items-center">
+											
+										</div>
+										<!-- Price -->
+										<div class="mt-3 mt-sm-0">
+											<a href="hotel-detail.html" class="btn btn-sm btn-dark mb-0 w-100">상세 보기</a>    
+										</div>                  
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Card item END -->
+
+					<!-- Card item START -->
+					<div class="card shadow p-2">
+						<div class="row g-0">
+							<!-- Card img -->
+							<div class="col-md-5" style="text-align: center;">
+								<img src="http://www.nongsaro.go.kr/cms_contents/301/12954_MF_ATTACH_01.jpg" style="height:15rem; width:20rem;" class="card-img rounded-2" alt="Card image">
+							</div>
+
+							<!-- Card body -->
+							<div class="col-md-7">
+								<div class="card-body py-md-2 d-flex flex-column h-100">
+
+									<!-- Rating and buttons -->
+									<div class="d-flex justify-content-between align-items-center">
+										<ul class="list-inline mb-0">
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star-half-alt text-warning"></i></li>
+										</ul>
+
+										<ul class="list-inline mb-0 z-index-2">
+											<!-- Heart icon -->
+											<li class="list-inline-item">
+												<a href="#" class="btn btn-sm btn-round btn-light"><i class="fa-solid fa-fw fa-heart"></i></a>
+											</li>
+											<!-- Share icon -->
+											<li class="list-inline-item dropdown">
+												<!-- Share button -->
+												<a href="#" class="btn btn-sm btn-round btn-light" role="button" id="dropdownShare2" data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="fa-solid fa-fw fa-share-alt"></i>
+												</a>
+												<!-- dropdown button -->
+												<ul class="dropdown-menu dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare2">
+													<li><a class="dropdown-item" href="#"><i class="fab fa-twitter-square me-2"></i>Twitter</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fab fa-facebook-square me-2"></i>Facebook</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fa-solid fa-copy me-2"></i>Copy link</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+
+									<!-- Title -->
+									<h5 class="card-title mb-1"><a href="hotel-detail.html">개운죽</a></h5>
+									<small><i class="fa fa-leaf me-2"></i>식물학명 or 식물영명 or 과명</small>
+									<!-- Amenities -->
+									<ul class="nav nav-divider mt-3">
+										<li class="nav-item">태그 혹은 설명</li>
+									</ul>
+
+									<!-- List -->
+									<ul class="list-group list-group-borderless small mb-0 mt-2">
+										
+									</ul>
+									
+									<!-- Price and Button -->
+									<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
+										<!-- Button -->
+										<div class="d-flex align-items-center">
+										</div>
+										<!-- Price -->
+										<div class="mt-3 mt-sm-0">
+											<a href="hotel-detail.html" class="btn btn-sm btn-dark mb-0 w-100">상세 보기</a>    
+										</div>                  
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Card item END -->
+
+					<!-- Card item START -->
+					<div class="card shadow p-2">
+						<div class="row g-0">
+							<!-- Card img -->
+							<div class="col-md-5" style="text-align: center;">
+								<img src="http://www.nongsaro.go.kr/cms_contents/301/12955_MF_ATTACH_01.jpg" style="height:15rem; width:20rem;" class="card-img rounded-2" alt="Card image">
+							</div>
+
+							<!-- Card body -->
+							<div class="col-md-7">
+								<div class="card-body py-md-2 d-flex flex-column h-100 position-relative">
+
+									<!-- Rating and buttons -->
+									<div class="d-flex justify-content-between align-items-center">
+										<ul class="list-inline mb-0">
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star-half-alt text-warning"></i></li>
+										</ul>
+
+										<ul class="list-inline mb-0 z-index-2">
+											<!-- Heart icon -->
+											<li class="list-inline-item">
+												<a href="#" class="btn btn-sm btn-round btn-light"><i class="fa-solid fa-fw fa-heart"></i></a>
+											</li>
+											<!-- Share icon -->
+											<li class="list-inline-item dropdown">
+												<!-- Share button -->
+												<a href="#" class="btn btn-sm btn-round btn-light" role="button" id="dropdownShare3" data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="fa-solid fa-fw fa-share-alt"></i>
+												</a>
+												<!-- dropdown button -->
+												<ul class="dropdown-menu dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare3">
+													<li><a class="dropdown-item" href="#"><i class="fab fa-twitter-square me-2"></i>Twitter</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fab fa-facebook-square me-2"></i>Facebook</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fa-solid fa-copy me-2"></i>Copy link</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+
+									<!-- Title -->
+									<h5 class="card-title mb-1"><a href="hotel-detail.html">골드크레스트 '윌마'</a></h5>
+									<small><i class="fa fa-leaf me-2"></i>식물학명 or 식물영명 or 과명</small>
+									<!-- Amenities -->
+									<ul class="nav nav-divider mt-3">
+										<li class="nav-item">태그 혹은 설명</li>
+									</ul>
+
+									<!-- List -->
+									<ul class="list-group list-group-borderless small mb-0 mt-2">
+										
+									</ul>
+									
+									<!-- Price and Button -->
+									<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
+										<!-- Button -->
+										<div class="d-flex align-items-center">
+										
+										</div>
+										<!-- Price -->
+										<div class="mt-3 mt-sm-0">
+											<a href="hotel-detail.html" class="btn btn-sm btn-dark mb-0 w-100">상세 보기</a>    
+										</div>                  
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Card item END -->
+
+					<!-- Card item START -->
+					<div class="card shadow p-2">
+						<div class="row g-0">
+							<!-- Card img -->
+							<div class="col-md-5" style="text-align: center;">
+								<img src="http://www.nongsaro.go.kr/cms_contents/301/12957_MF_ATTACH_01.jpg" style="height:15rem; width:20rem;" class="card-img rounded-2" alt="Card image">
+							</div>
+
+							<!-- Card body -->
+							<div class="col-md-7">
+								<div class="card-body py-md-2 d-flex flex-column h-100 position-relative">
+
+									<!-- Rating and buttons -->
+									<div class="d-flex justify-content-between align-items-center">
+										<ul class="list-inline mb-0">
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star-half-alt text-warning"></i></li>
+										</ul>
+
+										<ul class="list-inline mb-0 z-index-2">
+											<!-- Heart icon -->
+											<li class="list-inline-item">
+												<a href="#" class="btn btn-sm btn-round btn-light"><i class="fa-solid fa-fw fa-heart"></i></a>
+											</li>
+											<!-- Share icon -->
+											<li class="list-inline-item dropdown">
+												<!-- Share button -->
+												<a href="#" class="btn btn-sm btn-round btn-light" role="button" id="dropdownShare3" data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="fa-solid fa-fw fa-share-alt"></i>
+												</a>
+												<!-- dropdown button -->
+												<ul class="dropdown-menu dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare3">
+													<li><a class="dropdown-item" href="#"><i class="fab fa-twitter-square me-2"></i>Twitter</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fab fa-facebook-square me-2"></i>Facebook</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fa-solid fa-copy me-2"></i>Copy link</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+
+									<!-- Title -->
+									<h5 class="card-title mb-1"><a href="hotel-detail.html">공작야자</a></h5>
+									<small><i class="fa fa-leaf me-2"></i>식물학명 or 식물영명 or 과명</small>
+									<!-- Amenities -->
+									<ul class="nav nav-divider mt-3">
+										<li class="nav-item">태그 혹은 설명</li>
+									</ul>
+
+									<!-- List -->
+									<ul class="list-group list-group-borderless small mb-0 mt-2">
+										
+									</ul>
+									
+									<!-- Price and Button -->
+									<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
+										<!-- Button -->
+										<div class="d-flex align-items-center">
+											
+										</div>
+										<!-- Price -->
+										<div class="mt-3 mt-sm-0">
+											<a href="hotel-detail.html" class="btn btn-sm btn-dark mb-0 w-100">상세 보기</a>    
+										</div>                  
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Card item END -->
+
+					<!-- Card item START -->
+					<div class="card shadow p-2">
+						<div class="row g-0">
+							<!-- Card img -->
+							<div class="col-md-5" style="text-align: center;">
+								<img src="http://www.nongsaro.go.kr/cms_contents/301/12962_MF_ATTACH_01.jpg" style="height:15rem; width:20rem;" class="card-img rounded-2" alt="Card image">
+							</div>
+
+							<!-- Card body -->
+							<div class="col-md-7">
+								<div class="card-body py-md-2 d-flex flex-column h-100 position-relative">
+
+									<!-- Rating and buttons -->
+									<div class="d-flex justify-content-between align-items-center">
+										<ul class="list-inline mb-0">
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fa-solid fa-star-half-alt text-warning"></i></li>
+										</ul>
+
+										<ul class="list-inline mb-0 z-index-2">
+											<!-- Heart icon -->
+											<li class="list-inline-item">
+												<a href="#" class="btn btn-sm btn-round btn-light"><i class="fa-solid fa-fw fa-heart"></i></a>
+											</li>
+											<!-- Share icon -->
+											<li class="list-inline-item dropdown">
+												<!-- Share button -->
+												<a href="#" class="btn btn-sm btn-round btn-light" role="button" id="dropdownShare3" data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="fa-solid fa-fw fa-share-alt"></i>
+												</a>
+												<!-- dropdown button -->
+												<ul class="dropdown-menu dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare3">
+													<li><a class="dropdown-item" href="#"><i class="fab fa-twitter-square me-2"></i>Twitter</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fab fa-facebook-square me-2"></i>Facebook</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
+													<li><a class="dropdown-item" href="#"><i class="fa-solid fa-copy me-2"></i>Copy link</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+
+									<!-- Title -->
+									<h5 class="card-title mb-1"><a href="hotel-detail.html">관엽베고니아</a></h5>
+									<small><i class="fa fa-leaf me-2"></i>식물학명 or 식물영명 or 과명</small>
+									<!-- Amenities -->
+									<ul class="nav nav-divider mt-3">
+										<li class="nav-item">태그 혹은 설명</li>
+									</ul>
+
+									<!-- List -->
+									<ul class="list-group list-group-borderless small mb-0 mt-2">
+										
+									</ul>
+									
+									<!-- Price and Button -->
+									<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
+										<!-- Button -->
+										<div class="d-flex align-items-center">
+											
+										</div>
+										<!-- Price -->
+										<div class="mt-3 mt-sm-0">
+											<a href="hotel-detail.html" class="btn btn-sm btn-dark mb-0 w-100">상세 보기</a>    
+										</div>                  
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Card item END -->
+
+					<!-- Pagination -->
+					<nav class="d-flex justify-content-center" aria-label="navigation">
+						<ul class="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+							<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fa-solid fa-angle-left"></i></a></li>
+							<li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
+							<li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
+							<li class="page-item mb-0"><a class="page-link" href="#">..</a></li>
+							<li class="page-item mb-0"><a class="page-link" href="#">6</a></li>
+							<li class="page-item mb-0"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+						</ul>
+					</nav>
+
+				</div>
+			</div>
+			<!-- Main content END -->
+		</div> <!-- Row END -->
+	</div>
+</section>
+<!-- =======================
+Hotel list END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+</body>
+</html>

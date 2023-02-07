@@ -1,99 +1,164 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="head" th:replace="~{common/layout :: head}"></head>
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
 
 <body>
-<header th:replace="~{common/layout :: #header}"></header>
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
 
-<style>
-	section #enroll-container {text-align: center;}
-	section #enroll-container input {margin: 3px;}
-	section #enroll-container table {margin: 0 auto;}
-	section #enroll-container table th {padding: 0 10px; text-align: right;}
-	section #enroll-container table td {padding: 0 10px;text-align: left;}
-</style>
 
-<section id="content">
-	<h3 align="center">회원가입 정보</h3>
-		<form id="enroll-container" name="memberEnrollFrm" th:action="@{/member/enroll}" method="post">
-			<table>
-				<tr>
-					<th>아이디</th>
-					<td>
-						<input type="text" name="id" id="newId" placeholder="아이디 (4글자 이상)" required />
-						<input type="button" id="checkDuplicate" value="중복검사"/>
-					</td>
-				</tr>			
-				<tr>
-					<th>패스워드</th>
-					<td>
-						<input type="password" name="password" id="pass1" required />
-					</td>
-				</tr>			
-				<tr>
-					<th>패스워드 확인</th>
-					<td>
-						<input type="password" id="pass2" required />
-					</td>
-				</tr>		
-				<tr>
-					<th>이름</th>
-					<td>
-						<input type="text" name="name" required />
-					</td>
-				</tr>		
-				<tr>
-					<th>전화번호</th>
-					<td>
-						<input type="tel" name="phone" maxlength="11" placeholder="(-없이)01012345678" />
-					</td>
-				</tr>		
-				<tr>
-					<th>이메일</th>
-					<td>
-						<input type="email" name="email" />
-					</td>
-				</tr>		
-				<tr>
-					<th>주소</th>
-					<td>
-						<input type="text" name="address" />
-					</td>
-				</tr>
-				<tr>
-					<th>취미</th>
-					<td>
-						<label><input type="checkbox" name="hobby" value="운동"/>운동</label>
-						<label><input type="checkbox" name="hobby" value="등산"/>등산</label>
-						<label><input type="checkbox" name="hobby" value="독서"/>독서</label>
-						<label><input type="checkbox" name="hobby" value="게임"/>게임</label>
-						<label><input type="checkbox" name="hobby" value="여행"/>여행</label>
-					</td>
-				</tr>
-			</table>
-			<input type="submit" id="enrollSubmit" value="가입"/>
-			<input type="reset" value="취소"/>
-		</form>
+<!-- Header END -->	
 
-<script type="text/javascript">
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+	
+<!-- =======================
+Main Content START -->
+<section>
+	<div class="container h-100 d-flex px-0 px-sm-4">
+		<div class="row justify-content-center align-items-center m-auto">
+			<div class="col-12">
+				<div class="bg-mode shadow rounded-3 overflow-hidden">
+					<div class="row g-0">
+						<!-- Vector Image -->
+						<div class="col-lg-6 d-md-flex align-items-center order-2 order-lg-1">
+							<div class="p-3 p-lg-5">
+								<img src="/assets/images/element/signin.svg" alt="">
+							</div>
+							<!-- Divider -->
+							<div class="vr opacity-1 d-none d-lg-block"></div>
+						</div>
+		
+						<!-- Information -->
+						<div class="col-lg-6 order-1 d-md-flex">
+							<div class="p-4 p-sm-6">
+								<!-- Logo -->
+								<a href="index.html">
+									<img class="h-50px mb-4" src="/assets/images/logo-icon.svg" alt="logo">
+								</a>
+								<!-- Title -->
+								<h1 class="mb-2 h3">Create new account</h1>
+								<p class="mb-0">Already a member?<a href="sign-in.html"> Log in</a></p>
+		
+								<!-- Form START -->
+								<form class="mt-4 text-start" th:action="@{/member/enroll}" th:object="${member}" method="post">
+									<!-- Id -->
+									<div class="mb-3">
+										<label class="form-label">Enter Id</label>
+										<input type="text" class="form-control" id="newId" th:field="*{id}" required>
+										<input type="button" id="checkDuplicate" value="중복검사">
+									</div>
+
+									<!-- Password -->
+									<div class="mb-3 position-relative">
+										<label class="form-label">Enter Password</label>
+										<input class="form-control fakepassword" type="password" th:field="*{password}" id="psw-input" required>
+										<span class="position-absolute top-50 end-0 translate-middle-y p-0 mt-3">
+											<i class="fakepasswordicon fas fa-eye-slash cursor-pointer p-2"></i>
+										</span>
+									</div>
+									<!-- Confirm Password -->
+									<div class="mb-3">
+										<label class="form-label">Confirm Password</label>
+										<input type="password" class="form-control" id="pass2" required>
+									</div>
+
+									<!-- Email -->									
+									<div class="mb-3">
+										<label class="form-label">Enter Email</label>
+										<input type="email" class="form-control" th:field="*{email}" required>
+									</div>
+									
+									<!-- Name -->									
+									<div class="mb-3">
+										<label class="form-label">Enter Name</label>
+										<input type="text" class="form-control" th:field="*{name}">
+									</div>
+
+									<!-- Phone -->									
+									<div class="mb-3">
+										<label class="form-label">Enter Phone</label>
+										<input type="text" class="form-control" th:field="*{phone}">
+									</div>
+
+									<!-- Address -->									
+									<div class="mb-3">
+										<label class="form-label">Enter Address</label>
+										<input type="text" class="form-control" th:field="*{address}">
+									</div>
+
+
+									<!-- Remember me -->
+									<div class="mb-3">
+										<input type="checkbox" class="form-check-input" id="rememberCheck">
+										<label class="form-check-label" for="rememberCheck">Keep me signed in</label>
+									</div>
+									<!-- Button -->
+									<div><button type="submit" class="btn btn-primary w-100 mb-0" id="enrollSubmit">Sign up</button></div>
+		
+									<!-- Divider -->
+									<div class="position-relative my-4">
+										<hr>
+										<p class="small position-absolute top-50 start-50 translate-middle bg-mode px-1 px-sm-2">Or sign in with</p>
+									</div>
+		
+									<!-- Google and facebook button -->
+									<div class="vstack gap-3">
+										<a href="#" class="btn btn-light mb-0"><i class="fab fa-fw fa-google text-google-icon me-2"></i>Sign in with Google</a>
+										<a href="#" class="btn btn-light mb-0"><i class="fab fa-fw fa-facebook-f text-facebook me-2"></i>Sign in with Facebook</a>
+									</div>
+		
+									<!-- Copyright -->
+									<p class="mb-0 mt-3 text-center">©2022 <a target="_blank" href="https://www.webestica.com/">Webestica.</a> All rights reserved</p>
+								</form>
+								<!-- Form END -->
+							</div>		
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Main Content END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- footer 시작 -->
+<footer th:replace="~{common/layout2 :: #footer}"></footer>
+
+<script>
 	$(function() {
+		let newId = document.getElementById("newId");
+
 		$("#pass2").blur((event) => {
-			let pass1 = $("#pass1").val();			
+			let pass1 = $("#psw-input").val();			
 			let pass2 = $(event.target).val();
 			
 			if(pass1.trim() != pass2.trim()) {
 				alert("비밀번호가 일치하지 않습니다.");
 				
-				$("#pass1").val("");
+				$("#psw-input").val("");
 				$(event.target).val("");
-				$("#pass1").focus();
+				$("#psw-input").focus();
 			}
 		});
+
+		newId.addEventListener("focusin", () => {
+			newId.readOnly=false;
+			$(newId).css("background-color", "white");
+		})
     	
 	    $("#enrollSubmit").on("click", () => {
 	    	// TODO 전송하기 전에 각 영역에 유효성 검사로직을 추가하는 부분!
-	    	//return false;
+			if (newId.readOnly == false) {
+				alert("아이디 중복확인을 체크해주세요.");
+				return false;
+			}
 	    });
 	    
 	    // 아이디 중복을 확인하는 AJAX 코드
@@ -115,6 +180,8 @@
 	    				if(data.validate === true){
 	    					alert("이미 사용중인 아이디입니다.")
 	    				} else{
+							newId.readOnly=true;
+							$(newId).css("background-color", "#D8D8D8");
 	    					alert("사용 가능합니다.")
 	    				}
 	    			},
@@ -126,15 +193,6 @@
 	    });
 	});
 </script>
-</section>
-
-
-
-<footer th:replace="~{common/layout :: #footer}"></footer>
 
 </body>
 </html>
-
-
-
-

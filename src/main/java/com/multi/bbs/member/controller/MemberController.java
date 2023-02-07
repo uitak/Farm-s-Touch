@@ -30,14 +30,21 @@ public class MemberController {
 	@Autowired
 	private MemberService service;
 	
+	// END ##################################
+	@GetMapping("/login")
+	String login() {
+		return "/member/login";
+	}
+	
+	// END ##################################
 	@PostMapping("/login")
 	String login(Model model, String userId, String userPwd) {
 		log.info("id : " + userId + ", pwd : " + userPwd);
 		Member loginMember = service.login(userId, userPwd);
-		if(loginMember != null) { // 성공
-			model.addAttribute("loginMember", loginMember); // 세션에 저장되는 코드, @SessionAttributes
+		if(loginMember != null) {
+			model.addAttribute("loginMember", loginMember);
 			return "redirect:/";
-		}else { // 실패
+		}else {
 			model.addAttribute("msg", "아이디 패스워드가 잘못되었습니다.");
 			model.addAttribute("location", "/");
 			return "common/msg";
@@ -52,32 +59,32 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
+	// END ##################################
 	@GetMapping("/member/enroll")
-	public String enrollPage() {
-		log.info("가입 페이지 요청");
+	public String enrollPage(Model model, Member member) {
+		log.info("회원가입 페이지 요청");
+		model.addAttribute("member", member);
 		return "member/enroll";
 	}
 	
-	// 회원가입 
-	// ModelAndView 사용법, 가능하면 프로젝트에서는 스타일 통일할것! 현업 일부와 전저정부프레임워크 표준.
+	// END ##################################
 	@PostMapping("/member/enroll")
-	public String enroll(Model model, @ModelAttribute Member member) { // @ModelAttribute 생각가능
-		log.info("회원가입, member : " + member.toString());
+	public String enroll(Model model, Member member) {
+		System.out.println("회원가입, member : " + member.toString());
 
 		int result = service.save(member);
 		
-		if(result > 0) { // 성공
+		if(result > 0) {
 			model.addAttribute("msg", "회원가입에 성공하였습니다.");
 			model.addAttribute("location", "/");
-		}else { // 실패
+		}else {
 			model.addAttribute("msg", "회원가입에 실패하였습니다. 입력정보를 확인하세요.");
 			model.addAttribute ("location", "/");
 		}
 		return "common/msg";
 	}
 	
-
-	// AJAX 회원아이디 중복 검사부
+	// END ##################################
 	@GetMapping("/member/idCheck")
 	public ResponseEntity<Map<String, Object>> idCheck(String id){
 		log.info("아이디 중복 확인 : " + id);
@@ -116,16 +123,15 @@ public class MemberController {
 		return "common/msg";
 	}
 	
-	
 	@GetMapping("/member/view")
 	public String memberView() {
 		log.info("회원 정보 페이지 요청");
-		return "member/view";
+		return "member/myInfo";
 	}
 	
 	@GetMapping("/member/updatePwd")
 	public String updatePwdPage() {
-		return "member/updatePwd";
+		return "member/myPwd";
 	}
 	
 	@PostMapping("/member/updatePwd")
@@ -159,23 +165,4 @@ public class MemberController {
 		return  "/common/msg";
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

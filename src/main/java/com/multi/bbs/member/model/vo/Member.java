@@ -1,7 +1,5 @@
 package com.multi.bbs.member.model.vo;
 
-import java.util.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,6 +13,8 @@ public class Member {
 	private String password;
 	private String role;
 	private String name;
+	private String gender;
+	private String birth;
 	private String phone;
 	private String email;
 	private String address;

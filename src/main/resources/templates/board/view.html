@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="head" th:replace="~{common/layout :: head}"></head>
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
 
 <body>
-<header th:replace="~{common/layout :: #header}"></header>
+	<header th:replace="~{common/layout2 :: #header}"></header>
 
+	<!--
 <style>
     section>div#board-write-container{width:600px; margin:0 auto; text-align:center;}
     section>div#board-write-container h2{margin:10px 0;}
@@ -24,120 +26,232 @@
     table#tbl-comment sub.comment-writer {color:navy; font-size:14px}
     table#tbl-comment sub.comment-date {color:tomato; font-size:10px}
 </style>
+-->
 
-<section id="board-write-container">
-	<h2 align="center">게시글 상세조회</h2>
-	
-	<table id="tbl-board">
-		<tr>
-			<th>글번호</th>
-			<td>[[${board.bNo}]]</td>
-		</tr>
-		<tr>
-			<th>제 목</th>
-			<td>[[${board.title}]]</td>
-		</tr>
-		<tr>
-			<th>작성자</th>
-			<td>[[${board.id}]]</td>
-		</tr>
-		<tr>
-			<th>조회수</th>
-			<td>[[${board.readCount}]]</td>
-		</tr>
-		<tr>
-			<th>작성 시간</th>
-			<td> [[${#dates.format(board.createDate)}]] </td>
-		</tr>
-		<tr>
-			<th>첨부파일</th>
-			<td>
-				<th:block th:if="${board.originalFileName != null}">
-					<a th:href="|javascript:fileDownload('${board.originalFileName}','${board.renamedFileName}')|">
-						<img src="/images/file.png" width="20" height="20"/>
-						[[${board.originalFileName}]]				
-					</a><br>
-					<img alt="" style="width: 300px" th:src="|/board/file/${board.renamedFileName}|">
-					<script>
-						function fileDownload(oriname, rename) {
-							const url = "/board/fileDown";
-							
-							let oName = encodeURIComponent(oriname);
-							let rName = encodeURIComponent(rename);
-							
-							location.assign(url + "?oriname=" + oName + "&rename=" + rName);
-						}
-					</script>	
-				</th:block>
-				<th:block th:if="${board.originalFileName == null}">
-					<span> - </span>
-				</th:block>
-			</td>
-		</tr>
-		
-		
-		<tr>
-			<th>내 용</th>
-			<td><textarea  rows="15" cols="50" readonly >[[${board.content}]]</textarea></td>
-		</tr>
-		
-		<!-- 수정 / 삭제 기능 -->
-		<tr>
-			<th colspan="2">
-			<th:block th:if="${session.loginMember != null && 
-					(session.loginMember.id == board.id || session.loginMember.role == 'ROLE_ADMIN')}">
-					<button type="button" id="btnUpdate">수정</button>
-					<button type="button" id="btnDelete">삭제</button>
-			</th:block>
-			</th>
-		</tr>
-	</table>
-	
-	<!-- 리플 작성 Form -->
-	<div id="comment-container">
-    	<div class="comment-editor" align="center">
-    		<form action="/board/reply" method="post">
-    			<input type="hidden" name="bNo" th:value="${board.bNo}" />
-				<textarea name="content" id="replyContent" cols="55" rows="3"></textarea>
-				<button type="submit" id="btn-insert">등록</button>	  	
-    		</form>
-    	</div>
-   	</div>
-   	
-   	<!-- 리플 출력 -->
-	<table id="tbl-comment">
-		<th:block th:if="${replyList != null}">
-			<th:block  th:each="reply : ${replyList}"> 
-				<tr>
-					<td>
-						<sub class="comment-writer">[[${reply.id}]]</sub>
-						<sub class="comment-date">[[${#dates.format(reply.createDate)}]]</sub>	
-						<br>
-						[[${reply.content}]]
-					</td>
-					<td>
-						<th:block th:if="${session.loginMember != null && 
-							(session.loginMember.id == reply.id || session.loginMember.role == 'ROLE_ADMIN')}">
-							<button class="btn-delete" th:onclick="|deleteReply(${reply.rNo},${board.bNo});|" >삭제</button>
-						</th:block>
-					</td>
-				</tr>
-			</th:block>
-		</th:block>
-		
-		<th:block th:if="${replyList == null}">
-			<tr>
-				<td colspan="3" style="text-align: center;">등록된 리플이 없습니다.</td>
-			</tr>
-		</th:block>
-	</table>
-	
-</section>
+	<!-- =======================
+Main banner START -->
+	<section class="pt-0">
+		<!-- Background and title -->
+		<div class="container-fluid"
+			style="background-image:url(/assets/images/farmstouch/example/rey.PNG); background-position: center left; background-size: cover; height: 25rem;">
+			<div class="row" style="margin-bottom: 1.875rem;">
+			</div>
+		</div>
 
+		<div class="container" style="margin-top: -17.5rem;">
+			<!-- Banner title -->
+			<div class="row my-2 my-xl-5">
+				<div class="col-md-8 mx-auto">
+					<h1 class="text-left text-white"
+						style="margin-bottom: 50px; text-shadow:0.063rem 0.063rem 0.315rem #044a0e">게시글 조회</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- =======================
+Main banner START -->
 
+	<section id="board-write-container" class="py-4" style="margin-top: 2.5rem; margin-bottom: 3.5rem;">
 
-<footer th:replace="~{common/layout :: #footer}"></footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<!-- Chart START -->
+					<div class="card border">
+						<!-- Card body -->
+						<div class="card-body">
+
+							<!-- Form START -->
+							<!-- Main form -->
+							<div class="row">
+								<div class="col-12">
+									<!-- 제목 -->
+									<h6 class="my-2">제목</h6>
+									<div class="mb-3">
+										<p class="form-control">[[${board.title}]]</p>
+									</div>
+								</div>
+
+								<!-- 카테고리 줄 시작 -->
+								<div class="col-lg-3">
+									<!-- Message -->
+									<div class="mb-3">
+										<h6 class="my-2">카테고리</h6>
+										<p class="form-control" th:if="${board.dtype == 'plant'}">식물 분양 게시판</p>
+										<p class="form-control" th:if="${board.dtype == 'agriculture'}">농산품 직거래 게시판</p>
+										<!--<input class="form-control" value="식물 분양 게시판" readonly>-->
+									</div>
+								</div>
+
+								<div class="col-lg-3">
+									<!-- Message -->
+									<div class="mb-3">
+										<h6 class="my-2">판매여부</h6>
+										<p class="form-control" th:if="${board.whetherSales == 'Y'}">판매중</p>
+										<p class="form-control" th:if="${board.whetherSales == 'N'}">판매완료</p>
+										<!--
+										<select class="form-select" aria-label="Default select example"
+											name="whetherSales">
+											<option selected value="Y">판매중</option>
+											<option value="N">판매완료</option>
+										</select>
+										-->
+									</div>
+								</div>
+
+								<div class="col-lg-3">
+									<!-- Message -->
+									<div class="mb-3">
+										<h6 class="my-2">작성자</h6>
+										<p class="form-control">[[${board.writer}]]</p>
+									</div>
+								</div>
+
+								<div class="col-lg-3">
+									<!-- Message -->
+									<div class="mb-3">
+										<h6 class="my-2">작성시간</h6>
+										<p class="form-control"
+											th:text="${#dates.format(board.modifyDate, 'yyyy-MM-dd')}"></p>
+									</div>
+								</div>
+
+								<!-- 카테고리 줄 끝 -->
+
+								<!-- 본문 -->
+								<div class="col-12">
+									<div class="mb-3">
+										<h6 class="my-2">내용</h6>
+										<textarea class="form-control" rows="12"
+											readonly>[[${board.content}]]</textarea>
+									</div>
+								</div>
+
+								<!-- 첨부 파일 -->
+								<div class="col-12">
+									<div class="mb-3">
+										<div class="position-relative">
+											<h6 class="my-2">첨부 파일</h6>
+											<label class="w-100 form-control">
+												<span>
+													<th:block th:if="${board.originalFileName != null}">
+														<a th:href="|javascript:fileDownload('${board.originalFileName}','${board.renamedFileName}')|">
+															<img th:src="@{/image/image-file.png}" width="40" height="40" />
+															[[${board.originalFileName}]]
+														</a><br>
+														<img alt="" style="width: 200px" th:src="|/board/file/${board.renamedFileName}|">
+														<script>
+															function fileDownload(oriname, rename) {
+																const url = "/board/fileDown";
+
+																let oName = encodeURIComponent(oriname);
+																let rName = encodeURIComponent(rename);
+
+																location.assign(url + "?oriname=" + oName + "&rename=" + rName);
+															}
+														</script>
+													</th:block>
+
+													<th:block th:if="${board.originalFileName == null}">
+														<span> - </span>
+													</th:block>
+												</span>
+											</label>
+										</div>
+									</div>
+								</div>
+								<!-- 첨부 파일 끝 -->
+
+								<!-- 수정/삭제 기능 -->
+								<div class="col-12">
+									<div class="mt-3 row justify-content-evenly">
+										<th:block th:if="${session.loginMember != null && (session.loginMember.id == board.writer || session.loginMember.role == 'ROLE_ADMIN')}">
+											<button type="button" class="col-5 btn btn-success2 align-self-center" id="btnUpdate">수정</button>
+											<button type="button" class="col-5 btn btn-success2 align-self-center" id="btnDelete">삭제</button>
+										</th:block>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!-- Chart END -->
+				</div>
+
+				<!-- 리플 작성 Form -->				
+				<div class="col-12 mb-6 mt-4">
+					<div class="card border rounded-3" id="comment-container" text-align="center">
+						<div class="card-header border-bottom">
+							<h5 class="card-header-title">리뷰 작성하기</h5>
+						</div>
+						<form class="row align-items-center" action="/board/reply" method="post">
+							<div class="col-10">
+								<input type="hidden" name="bNo" th:value="${board.bNo}" />
+								<textarea class="form-control" name="content" id="replyContent" rows="3"></textarea>
+							</div>
+							<div class="col-2">
+								<button class="btn btn-success2 w-50 align-self-center" type="submit" id="btn-insert">등록</button>
+							</div>								
+						</form>
+					</div>
+				</div>
+
+				<!-- Review START -->
+					<div class="col-12">
+						<div class="card border rounded-3">
+							<!-- Card header START -->
+							<div class="card-header border-bottom">
+								<h5 class="card-header-title">댓글 보기</h5>
+							</div>
+							<!-- Card header END -->
+
+							<!-- Card body START -->
+							<div class="card-body">
+								<!-- Review item START -->
+								<th:block th:if="${replyList != null}">
+									<th:block th:each="reply : ${replyList}">
+										<div class="bg-light rounded p-3">
+											<!-- Review item START -->
+											<div class="d-sm-flex justify-content-between">
+												<!-- Avatar image -->
+												<div class="d-sm-flex align-items-center mb-3">
+													<img class="avatar avatar-md rounded-circle float-start me-3"
+														src="/assets/images/farmstouch/avatar/ava01.png" alt="avatar">
+													<!-- Title -->
+													<div>
+														<h6 class="m-0" 0>[[${reply.writer}]]</h6>
+														<span class="me-3 small">[[${#dates.format(reply.createDate)}]]</span>
+													</div>
+												</div>
+												<th:block
+													th:if="${session.loginMember != null && (session.loginMember.id == reply.writer || session.loginMember.role == 'ROLE_ADMIN')}">
+													<div class="col-2">
+														<button class="btn btn-success2 w-50 align-self-center" th:onclick="|deleteReply(${reply.rNo},${board.bNo});|">삭제</button>
+													</div>
+												</th:block>
+											</div>
+											<!-- Content -->
+											<p>[[${reply.content}]]</p>
+										</div>
+										<hr> <!-- Divider -->
+									</th:block>
+									<!-- Review item END -->
+								</th:block>
+
+								<th:block th:if="${replyList.isEmpty()}">
+									<p>등록된 댓글이 없습니다.</p>
+								</th:block>
+							</div>
+							<!-- Card body END -->
+						</div>
+					</div>
+				<!-- Review END -->
+	</section>
+
+	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+
 </body>
+
 </html>
 
 <script>
@@ -145,17 +259,17 @@
 		$("#btnUpdate").on("click", (e) => {
 			location.href = "/board/update?no=[[${board.bNo}]]";
 		});
-		
+
 		$("#btnDelete").on("click", (e) => {
-			if(confirm("정말로 게시글을 삭제 하시겠습니까?")) {
+			if (confirm("정말로 게시글을 삭제 하시겠습니까?")) {
 				location.replace("/board/delete?boardNo=[[${board.bNo}]]");
 			}
 		});
 	});
-	
-	function deleteReply(replyNo, boardNo){
+
+	function deleteReply(replyNo, boardNo) {
 		var url = "/board/replyDel?replyNo=";
-		var requestURL = url + replyNo +"&boardNo=" + boardNo;
+		var requestURL = url + replyNo + "&boardNo=" + boardNo;
 		location.replace(requestURL);
 	}
 </script>

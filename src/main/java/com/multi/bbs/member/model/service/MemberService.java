@@ -1,5 +1,8 @@
 package com.multi.bbs.member.model.service;
 
+import java.io.File;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.multi.bbs.member.model.mapper.MemberMapper;
 import com.multi.bbs.member.model.vo.Member;
@@ -66,11 +70,34 @@ public class MemberService {
 	}
 	
 	@Transactional(rollbackFor = Exception.class)
-	public int updatePwd(Member loginMember, String userPW) {
+	public int updatePwd(Member loginMember, String currentPwd, String newPwd) {
+		if (!pwEncoder.matches(currentPwd, loginMember.getPassword())) {
+			return -4;
+		}
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("mNo", "" + loginMember.getMNo());
-		map.put("password", pwEncoder.encode(userPW));
+		map.put("password", pwEncoder.encode(newPwd));
 		return mapper.updatePwd(map);
 	}
 	
+	public String saveFile(MultipartFile upFile, String savePath) {
+		
+		File folder = new File(savePath);
+		if(folder.exists() == false) {
+			folder.mkdir();
+		}
+		
+		String originalFileName = upFile.getOriginalFilename();
+		String reNameFileName = 
+					LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmssSSS"));
+		reNameFileName += originalFileName.substring(originalFileName.lastIndexOf("."));
+		String reNamePath = savePath + "/" + reNameFileName;
+		
+		try {
+			upFile.transferTo(new File(reNamePath));
+		} catch (Exception e) {
+			return null;
+		}
+		return reNameFileName;
+	}
 }

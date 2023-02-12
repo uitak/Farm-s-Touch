@@ -133,10 +133,10 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" style="font-size: 1.2rem;" href="#" id="accounntMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">커뮤니티</a>
 						<ul class="dropdown-menu" aria-labelledby="accounntMenu">
-							<li> <a class="dropdown-item" href="admin-dashboard.html">농산물 직거래 장터</a> </li>
-							<li> <a class="dropdown-item" href="admin-dashboard.html">식물 분양 장터</a> </li>
-							<li> <a class="dropdown-item" href="admin-dashboard.html">공지사항</a> </li>
-							<li> <a class="dropdown-item" href="admin-dashboard.html">이벤트</a> </li>
+							<li> <a class="dropdown-item" th:href="@{/board/agriculture/list}">농산물 직거래 장터</a> </li>
+							<li> <a class="dropdown-item" th:href="@{/board/plant/list}">식물 분양 장터</a> </li>
+							<li> <a class="dropdown-item" th:href="@{/}">공지사항</a> </li>
+							<li> <a class="dropdown-item" th:href="@{/}">이벤트</a> </li>
 						</ul>
 					</li>
 
@@ -231,7 +231,8 @@
 					<li class="nav-item ms-3 dropdown">
 						<!-- Avatar -->
 						<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
-							<img class="avatar-img rounded-2" src="/assets/images/farmstouch/avatar/ava01.png" alt="avatar">
+							<img th:if="${session.loginMember.imageUrl == null}" class="avatar-img rounded-2" src="/assets/images/farmstouch/avatar/ava02.png" alt="avatar">
+							<img th:if="${session.loginMember.imageUrl != null}" class="avatar-img rounded-2" th:src="|/member/file/${session.loginMember.imageUrl}|" alt="avatar">
 						</a>
 
 						<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
@@ -240,7 +241,8 @@
 								<div class="d-flex align-items-center">
 									<!-- Avatar -->
 									<div class="avatar me-3">
-										<img class="avatar-img rounded-circle shadow" src="/assets/images/farmstouch/avatar/ava01.png" alt="avatar">
+										<img th:if="${session.loginMember.imageUrl == null}" class="avatar-img rounded-circle shadow" src="/assets/images/farmstouch/avatar/ava01.png" alt="avatar">
+										<img th:if="${session.loginMember.imageUrl != null}" class="avatar-img rounded-circle shadow" th:src="|/member/file/${session.loginMember.imageUrl}|" alt="avatar">
 									</div>
 									<div>
 										<a class="h6 mt-2 mt-sm-0" href="#"><span th:text="${session.loginMember.id}"></span></a>
@@ -251,11 +253,11 @@
 
 							<!-- Links -->
 							<li> <hr class="dropdown-divider"></li>
-							<li><a class="dropdown-item" href="#"><i class="bi bi-list-check fa-fw me-2"></i>마이페이지</a></li>
+							<li><a class="dropdown-item" th:href="@{/member/view}"><i class="bi bi-list-check fa-fw me-2"></i>마이페이지</a></li>
 							<li><a class="dropdown-item" href="#"><i class="bi bi-bookmark-check fa-fw me-2"></i>즐겨찾기</a></li>
 							<li><a class="dropdown-item" href="#"><i class="bi bi-heart fa-fw me-2"></i>나의 성향은</a></li>
 							<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>고객센터</a></li>
-							<li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>로그아웃</a></li>
+							<li><a class="dropdown-item bg-danger-soft-hover" th:href="@{/logout}"><i class="bi bi-power fa-fw me-2"></i>로그아웃</a></li>
 							<li> <hr class="dropdown-divider"></li>
 
 							<!-- Dark mode switch START

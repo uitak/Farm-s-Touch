@@ -36,32 +36,43 @@ import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-@RequestMapping("/board") // 요청 url의 상위 url을 모두 처리할때 사용
+@RequestMapping("/board")
 @Controller
 public class BoardController {
 	
 	@Autowired
 	private BoardService service;
 	
-	final static private String savePath = "c:\\bbs\\";
+	final static private String savePath = "c:/multicampus/";
 	
-	@GetMapping("/list")
-	public String list(Model model, @RequestParam Map<String, String> paramMap) {
+	@GetMapping("/{category}/list")
+	public String list(Model model, @RequestParam Map<String, String> paramMap,
+					   @PathVariable String category) {
 		int page = 1;
-
-		// 탐색할 맵을 선언
+		
 		Map<String, String> searchMap = new HashMap<String, String>();
 		try {
+			if (category.equals("plant")) {
+				searchMap.put("dtype", "plant");
+			}
+			else if (category.equals("agriculture")) {
+				searchMap.put("dtype", "agriculture");
+			}
+			
+			// 게시판 목록에서 검색값이 들어온 경우.
 			String searchValue = paramMap.get("searchValue");
 			if(searchValue != null && searchValue.length() > 0) {
 				String searchType = paramMap.get("searchType");
 				searchMap.put(searchType, searchValue);
-			}else {
+			}
+			else {
 				paramMap.put("searchType", "all");
 			}
-			page = Integer.parseInt(paramMap.get("page"));
+			if (paramMap.get("page") != null) {
+				page = Integer.parseInt(paramMap.get("page"));
+			}
 		} catch (Exception e) {}
-		
+				
 		int boardCount = service.getBoardCount(searchMap);
 		PageInfo pageInfo = new PageInfo(page, 10, boardCount, 10);
 		List<Board> list = service.getBoardList(pageInfo, searchMap);
@@ -69,47 +80,59 @@ public class BoardController {
 		model.addAttribute("list", list);
 		model.addAttribute("paramMap", paramMap);
 		model.addAttribute("pageInfo", pageInfo);
-		return "board/list";
+		
+		if (category.equals("plant")) {
+			return "/board/plantSalesPostList";
+		}
+		else if (category.equals("agriculture")) {
+			return "/board/agricultureMarketPostList";
+		}
+		return "redirect:/error";
 	}
 	
-//	@RequestMapping("/board/view")
-	@RequestMapping("/view")
+	@GetMapping("/view")
 	public String view(Model model, @RequestParam("no") int no) {
 		Board board = service.findByNo(no);
 		if(board == null) {
-			return "redirect:error";
+			return "redirect:/error";
 		}
-		
 		model.addAttribute("board", board);
 		model.addAttribute("replyList", board.getReplyList());
-		return "board/view";
+		
+		return "/board/view";
 	}
-	
 	
 	@GetMapping("/error")
 	public String error() {
-		return "common/error";
+		return "/common/error";
 	}
 	
-	@GetMapping("/write")
-	public String writeView() {
-		return "board/write";
+	@GetMapping("{category}/write")
+	public String writeView(@PathVariable String category) {
+		if (category.equals("plant")) {
+			return "/board/plantPostWrite";
+		}
+		else if (category.equals("agriculture")) {
+			return "/board/agriculturePostWrite";
+		}
+		return "redirect:/error";
 	}
 	
-	@PostMapping("/write")
+	@PostMapping("{category}/write")
 	public String writeBoard(Model model, HttpSession session,
-			@SessionAttribute(name = "loginMember", required = false) Member loginMember,
+			@PathVariable String category,
 			@ModelAttribute Board board,
 			@RequestParam("upfile") MultipartFile upfile
 			) {
+		
 		log.info("게시글 작성 요청");
 		
-		board.setMNo(loginMember.getMNo());
+		board.setMNo(((Member)session.getAttribute("loginMember")).getMNo());
+		board.setDtype(category);
 		
-		// 파일 저장 로직
+		// 파일 저장.
 		if(upfile != null && upfile.isEmpty() == false) {
-			String renameFileName = service.saveFile(upfile, savePath); 
-			
+			String renameFileName = service.saveFile(upfile, savePath); 			
 			if(renameFileName != null) {
 				board.setOriginalFileName(upfile.getOriginalFilename());
 				board.setRenamedFileName(renameFileName);
@@ -121,22 +144,22 @@ public class BoardController {
 
 		if(result > 0) {
 			model.addAttribute("msg", "게시글이 등록 되었습니다.");
-			model.addAttribute("location", "/board/list");
+			model.addAttribute("location", "/board/" + category + "/list");
 		}else {
-			model.addAttribute("msg", "게시글 작성에 실패하였습니다.");
-			model.addAttribute("location", "/board/list");
+			model.addAttribute("msg", "게시글 작성 오류.");
+			model.addAttribute("location", "/board/" + category + "/list");
 		}
 		
 		return "common/msg";
 	}
 	
-	
-	@RequestMapping("/reply")
+	@PostMapping("/reply")
 	public String writeReply(Model model, 
 			@SessionAttribute(name = "loginMember", required = false) Member loginMember,
 			@ModelAttribute Reply reply
 			) {
 		reply.setMNo(loginMember.getMNo());
+		reply.setWriter(loginMember.getId());
 		log.info("리플 작성 요청 Reply : " + reply);
 		
 		int result = service.saveReply(reply);
@@ -152,7 +175,7 @@ public class BoardController {
 	
 	@RequestMapping("/delete")
 	public String deleteBoard(Model model,  HttpSession session,
-			@SessionAttribute(name = "loginMember", required = false) Member loginMember,
+			@SessionAttribute("loginMember") Member loginMember,
 			int boardNo
 			) {
 		log.info("게시글 삭제 요청 boardNo : " + boardNo);
@@ -163,7 +186,7 @@ public class BoardController {
 		}else {
 			model.addAttribute("msg", "게시글 삭제에 실패하였습니다.");
 		}
-		model.addAttribute("location", "/board/list");
+		model.addAttribute("location", "/");
 		return "common/msg";
 	}
 	
@@ -184,7 +207,6 @@ public class BoardController {
 		return "/common/msg";
 	}
 	
-	// http://localhost/mvc/board/update?no=27
 	@GetMapping("/update")
 	public String updateView(Model model,
 			@SessionAttribute(name = "loginMember", required = false) Member loginMember,
@@ -200,7 +222,7 @@ public class BoardController {
 	public String updateBoard(Model model, HttpSession session,
 			@SessionAttribute(name = "loginMember", required = false) Member loginMember,
 			@ModelAttribute Board board,
-			@RequestParam("reloadFile") MultipartFile reloadFile
+			@RequestParam(name = "reloadFile", required = false) MultipartFile reloadFile
 			) {
 		log.info("게시글 수정 요청");
 		
@@ -226,10 +248,10 @@ public class BoardController {
 
 		if(result > 0) {
 			model.addAttribute("msg", "게시글이 수정 되었습니다.");
-			model.addAttribute("location", "/board/list");
+			model.addAttribute("location", "/");
 		}else {
 			model.addAttribute("msg", "게시글 수정에 실패하였습니다.");
-			model.addAttribute("location", "/board/list");
+			model.addAttribute("location", "/");
 		}
 		
 		return "common/msg";

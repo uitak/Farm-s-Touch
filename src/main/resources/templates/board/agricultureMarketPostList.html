@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+	<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+About START -->
+<section class="pb-0 pb-xl-5">
+	<div class="container">
+		<div class="row g-4 justify-content-between align-items-center">
+			<!-- Left side START -->
+			<div class="col-lg-5 position-relative">
+				
+
+				<!-- Svg decoration -->
+				<figure class="position-absolute bottom-0 end-0 d-none d-md-block mb-n5 me-n4">
+					<svg height="400" class="fill-success opacity-2" viewBox="0 0 340 340">
+						<circle cx="194.2" cy="2.2" r="2.2"></circle>
+						<circle cx="2.2" cy="2.2" r="2.2"></circle>
+						<circle cx="218.2" cy="2.2" r="2.2"></circle>
+						<circle cx="26.2" cy="2.2" r="2.2"></circle>
+						<circle cx="242.2" cy="2.2" r="2.2"></circle>
+						<circle cx="50.2" cy="2.2" r="2.2"></circle>
+						<circle cx="266.2" cy="2.2" r="2.2"></circle>
+						<circle cx="74.2" cy="2.2" r="2.2"></circle>
+						<circle cx="290.2" cy="2.2" r="2.2"></circle>
+						<circle cx="98.2" cy="2.2" r="2.2"></circle>
+						<circle cx="314.2" cy="2.2" r="2.2"></circle>
+						<circle cx="122.2" cy="2.2" r="2.2"></circle>
+						<circle cx="338.2" cy="2.2" r="2.2"></circle>
+						<circle cx="146.2" cy="2.2" r="2.2"></circle>
+						<circle cx="170.2" cy="2.2" r="2.2"></circle>
+						<circle cx="194.2" cy="26.2" r="2.2"></circle>
+						<circle cx="2.2" cy="26.2" r="2.2"></circle>
+						<circle cx="218.2" cy="26.2" r="2.2"></circle>
+						<circle cx="26.2" cy="26.2" r="2.2"></circle>
+						<circle cx="242.2" cy="26.2" r="2.2"></circle>
+						<circle cx="50.2" cy="26.2" r="2.2"></circle>
+						<circle cx="266.2" cy="26.2" r="2.2"></circle>
+						<circle cx="74.2" cy="26.2" r="2.2"></circle>
+						<circle cx="290.2" cy="26.2" r="2.2"></circle>
+						<circle cx="98.2" cy="26.2" r="2.2"></circle>
+						<circle cx="314.2" cy="26.2" r="2.2"></circle>
+						<circle cx="122.2" cy="26.2" r="2.2"></circle>
+						<circle cx="338.2" cy="26.2" r="2.2"></circle>
+						<circle cx="146.2" cy="26.2" r="2.2"></circle>
+						<circle cx="170.2" cy="26.2" r="2.2"></circle>
+						<circle cx="194.2" cy="50.2" r="2.2"></circle>
+						<circle cx="2.2" cy="50.2" r="2.2"></circle>
+						<circle cx="218.2" cy="50.2" r="2.2"></circle>
+						<circle cx="26.2" cy="50.2" r="2.2"></circle>
+						<circle cx="242.2" cy="50.2" r="2.2"></circle>
+						<circle cx="50.2" cy="50.2" r="2.2"></circle>
+						<circle cx="266.2" cy="50.2" r="2.2"></circle>
+						<circle cx="74.2" cy="50.2" r="2.2"></circle>
+						<circle cx="290.2" cy="50.2" r="2.2"></circle>
+						<circle cx="98.2" cy="50.2" r="2.2"></circle>
+						<circle cx="314.2" cy="50.2" r="2.2"></circle>
+						<circle cx="122.2" cy="50.2" r="2.2"></circle>
+						<circle cx="338.2" cy="50.2" r="2.2"></circle>
+						<circle cx="146.2" cy="50.2" r="2.2"></circle>
+						<circle cx="170.2" cy="50.2" r="2.2"></circle>
+						<circle cx="194.2" cy="74.2" r="2.2"></circle>
+						<circle cx="2.2" cy="74.2" r="2.2"></circle>
+						<circle cx="218.2" cy="74.2" r="2.2"></circle>
+						<circle cx="26.2" cy="74.2" r="2.2"></circle>
+						<circle cx="242.2" cy="74.2" r="2.2"></circle>
+						<circle cx="50.2" cy="74.2" r="2.2"></circle>
+						<circle cx="266.2" cy="74.2" r="2.2"></circle>
+						<circle cx="74.2" cy="74.2" r="2.2"></circle>
+						<circle cx="290.2" cy="74.2" r="2.2"></circle>
+						<circle cx="98.2" cy="74.2" r="2.2"></circle>
+						<circle cx="314.2" cy="74.2" r="2.2"></circle>
+						<circle cx="122.2" cy="74.2" r="2.2"></circle>
+						<circle cx="338.2" cy="74.2" r="2.2"></circle>
+						<circle cx="146.2" cy="74.2" r="2.2"></circle>
+						<circle cx="170.2" cy="74.2" r="2.2"></circle>
+						<circle cx="194.2" cy="98.2" r="2.2"></circle>
+						<circle cx="2.2" cy="98.2" r="2.2"></circle>
+						<circle cx="218.2" cy="98.2" r="2.2"></circle>
+						<circle cx="26.2" cy="98.2" r="2.2"></circle>
+						<circle cx="242.2" cy="98.2" r="2.2"></circle>
+						<circle cx="50.2" cy="98.2" r="2.2"></circle>
+						<circle cx="266.2" cy="98.2" r="2.2"></circle>
+						<circle cx="74.2" cy="98.2" r="2.2"></circle>
+						<circle cx="290.2" cy="98.2" r="2.2"></circle>
+						<circle cx="98.2" cy="98.2" r="2.2"></circle>
+						<circle cx="314.2" cy="98.2" r="2.2"></circle>
+						<circle cx="122.2" cy="98.2" r="2.2"></circle>
+						<circle cx="338.2" cy="98.2" r="2.2"></circle>
+						<circle cx="146.2" cy="98.2" r="2.2"></circle>
+						<circle cx="170.2" cy="98.2" r="2.2"></circle>
+						<circle cx="194.2" cy="122.2" r="2.2"></circle>
+						<circle cx="2.2" cy="122.2" r="2.2"></circle>
+						<circle cx="218.2" cy="122.2" r="2.2"></circle>
+						<circle cx="26.2" cy="122.2" r="2.2"></circle>
+						<circle cx="242.2" cy="122.2" r="2.2"></circle>
+						<circle cx="50.2" cy="122.2" r="2.2"></circle>
+						<circle cx="266.2" cy="122.2" r="2.2"></circle>
+						<circle cx="74.2" cy="122.2" r="2.2"></circle>
+						<circle cx="290.2" cy="122.2" r="2.2"></circle>
+						<circle cx="98.2" cy="122.2" r="2.2"></circle>
+						<circle cx="314.2" cy="122.2" r="2.2"></circle>
+						<circle cx="122.2" cy="122.2" r="2.2"></circle>
+						<circle cx="338.2" cy="122.2" r="2.2"></circle>
+						<circle cx="146.2" cy="122.2" r="2.2"></circle>
+						<circle cx="170.2" cy="122.2" r="2.2"></circle>
+						<circle cx="194.2" cy="146.2" r="2.2"></circle>
+						<circle cx="2.2" cy="146.2" r="2.2"></circle>
+						<circle cx="218.2" cy="146.2" r="2.2"></circle>
+						<circle cx="26.2" cy="146.2" r="2.2"></circle>
+						<circle cx="242.2" cy="146.2" r="2.2"></circle>
+						<circle cx="50.2" cy="146.2" r="2.2"></circle>
+						<circle cx="266.2" cy="146.2" r="2.2"></circle>
+						<circle cx="74.2" cy="146.2" r="2.2"></circle>
+						<circle cx="290.2" cy="146.2" r="2.2"></circle>
+						<circle cx="98.2" cy="146.2" r="2.2"></circle>
+						<circle cx="314.2" cy="146.2" r="2.2"></circle>
+						<circle cx="122.2" cy="146.2" r="2.2"></circle>
+						<circle cx="338.2" cy="146.2" r="2.2"></circle>
+						<circle cx="146.2" cy="146.2" r="2.2"></circle>
+						<circle cx="170.2" cy="146.2" r="2.2"></circle>
+						<circle cx="194.2" cy="170.2" r="2.2"></circle>
+						<circle cx="2.2" cy="170.2" r="2.2"></circle>
+						<circle cx="218.2" cy="170.2" r="2.2"></circle>
+						<circle cx="26.2" cy="170.2" r="2.2"></circle>
+						<circle cx="242.2" cy="170.2" r="2.2"></circle>
+						<circle cx="50.2" cy="170.2" r="2.2"></circle>
+						<circle cx="266.2" cy="170.2" r="2.2"></circle>
+						<circle cx="74.2" cy="170.2" r="2.2"></circle>
+						<circle cx="290.2" cy="170.2" r="2.2"></circle>
+						<circle cx="98.2" cy="170.2" r="2.2"></circle>
+						<circle cx="314.2" cy="170.2" r="2.2"></circle>
+						<circle cx="122.2" cy="170.2" r="2.2"></circle>
+						<circle cx="338.2" cy="170.2" r="2.2"></circle>
+						<circle cx="146.2" cy="170.2" r="2.2"></circle>
+						<circle cx="170.2" cy="170.2" r="2.2"></circle>
+						<circle cx="194.2" cy="194.2" r="2.2"></circle>
+						<circle cx="2.2" cy="194.2" r="2.2"></circle>
+						<circle cx="218.2" cy="194.2" r="2.2"></circle>
+						<circle cx="26.2" cy="194.2" r="2.2"></circle>
+						<circle cx="242.2" cy="194.2" r="2.2"></circle>
+						<circle cx="50.2" cy="194.2" r="2.2"></circle>
+						<circle cx="266.2" cy="194.2" r="2.2"></circle>
+						<circle cx="74.2" cy="194.2" r="2.2"></circle>
+						<circle cx="290.2" cy="194.2" r="2.2"></circle>
+						<circle cx="98.2" cy="194.2" r="2.2"></circle>
+						<circle cx="314.2" cy="194.2" r="2.2"></circle>
+						<circle cx="122.2" cy="194.2" r="2.2"></circle>
+						<circle cx="338.2" cy="194.2" r="2.2"></circle>
+						<circle cx="146.2" cy="194.2" r="2.2"></circle>
+						<circle cx="170.2" cy="194.2" r="2.2"></circle>
+						<circle cx="194.2" cy="218.2" r="2.2"></circle>
+						<circle cx="2.2" cy="218.2" r="2.2"></circle>
+						<circle cx="218.2" cy="218.2" r="2.2"></circle>
+						<circle cx="26.2" cy="218.2" r="2.2"></circle>
+						<circle cx="242.2" cy="218.2" r="2.2"></circle>
+						<circle cx="50.2" cy="218.2" r="2.2"></circle>
+						<circle cx="266.2" cy="218.2" r="2.2"></circle>
+						<circle cx="74.2" cy="218.2" r="2.2"></circle>
+						<circle cx="290.2" cy="218.2" r="2.2"></circle>
+						<circle cx="98.2" cy="218.2" r="2.2"></circle>
+						<circle cx="314.2" cy="218.2" r="2.2"></circle>
+						<circle cx="122.2" cy="218.2" r="2.2"></circle>
+						<circle cx="338.2" cy="218.2" r="2.2"></circle>
+						<circle cx="146.2" cy="218.2" r="2.2"></circle>
+						<circle cx="170.2" cy="218.2" r="2.2"></circle>
+						<circle cx="194.2" cy="242.2" r="2.2"></circle>
+						<circle cx="2.2" cy="242.2" r="2.2"></circle>
+						<circle cx="218.2" cy="242.2" r="2.2"></circle>
+						<circle cx="26.2" cy="242.2" r="2.2"></circle>
+						<circle cx="242.2" cy="242.2" r="2.2"></circle>
+						<circle cx="50.2" cy="242.2" r="2.2"></circle>
+						<circle cx="266.2" cy="242.2" r="2.2"></circle>
+						<circle cx="74.2" cy="242.2" r="2.2"></circle>
+						<circle cx="290.2" cy="242.2" r="2.2"></circle>
+						<circle cx="98.2" cy="242.2" r="2.2"></circle>
+						<circle cx="314.2" cy="242.2" r="2.2"></circle>
+						<circle cx="122.2" cy="242.2" r="2.2"></circle>
+						<circle cx="338.2" cy="242.2" r="2.2"></circle>
+						<circle cx="146.2" cy="242.2" r="2.2"></circle>
+						<circle cx="170.2" cy="242.2" r="2.2"></circle>
+						<circle cx="194.2" cy="266.2" r="2.2"></circle>
+						<circle cx="2.2" cy="266.2" r="2.2"></circle>
+						<circle cx="218.2" cy="266.2" r="2.2"></circle>
+						<circle cx="26.2" cy="266.2" r="2.2"></circle>
+						<circle cx="242.2" cy="266.2" r="2.2"></circle>
+						<circle cx="50.2" cy="266.2" r="2.2"></circle>
+						<circle cx="266.2" cy="266.2" r="2.2"></circle>
+						<circle cx="74.2" cy="266.2" r="2.2"></circle>
+						<circle cx="290.2" cy="266.2" r="2.2"></circle>
+						<circle cx="98.2" cy="266.2" r="2.2"></circle>
+						<circle cx="314.2" cy="266.2" r="2.2"></circle>
+						<circle cx="122.2" cy="266.2" r="2.2"></circle>
+						<circle cx="338.2" cy="266.2" r="2.2"></circle>
+						<circle cx="146.2" cy="266.2" r="2.2"></circle>
+						<circle cx="170.2" cy="266.2" r="2.2"></circle>
+						<circle cx="194.2" cy="290.2" r="2.2"></circle>
+						<circle cx="2.2" cy="290.2" r="2.2"></circle>
+						<circle cx="218.2" cy="290.2" r="2.2"></circle>
+						<circle cx="26.2" cy="290.2" r="2.2"></circle>
+						<circle cx="242.2" cy="290.2" r="2.2"></circle>
+						<circle cx="50.2" cy="290.2" r="2.2"></circle>
+						<circle cx="266.2" cy="290.2" r="2.2"></circle>
+						<circle cx="74.2" cy="290.2" r="2.2"></circle>
+						<circle cx="290.2" cy="290.2" r="2.2"></circle>
+						<circle cx="98.2" cy="290.2" r="2.2"></circle>
+						<circle cx="314.2" cy="290.2" r="2.2"></circle>
+						<circle cx="122.2" cy="290.2" r="2.2"></circle>
+						<circle cx="338.2" cy="290.2" r="2.2"></circle>
+						<circle cx="146.2" cy="290.2" r="2.2"></circle>
+						<circle cx="170.2" cy="290.2" r="2.2"></circle>
+						<circle cx="194.2" cy="314.2" r="2.2"></circle>
+						<circle cx="2.2" cy="314.2" r="2.2"></circle>
+						<circle cx="218.2" cy="314.2" r="2.2"></circle>
+						<circle cx="26.2" cy="314.2" r="2.2"></circle>
+						<circle cx="242.2" cy="314.2" r="2.2"></circle>
+						<circle cx="50.2" cy="314.2" r="2.2"></circle>
+						<circle cx="266.2" cy="314.2" r="2.2"></circle>
+						<circle cx="74.2" cy="314.2" r="2.2"></circle>
+						<circle cx="290.2" cy="314.2" r="2.2"></circle>
+						<circle cx="98.2" cy="314.2" r="2.2"></circle>
+						<circle cx="314.2" cy="314.2" r="2.2"></circle>
+						<circle cx="122.2" cy="314.2" r="2.2"></circle>
+						<circle cx="338.2" cy="314.2" r="2.2"></circle>
+						<circle cx="146.2" cy="314.2" r="2.2"></circle>
+						<circle cx="170.2" cy="314.2" r="2.2"></circle>
+						<circle cx="194.2" cy="338.2" r="2.2"></circle>
+						<circle cx="2.2" cy="338.2" r="2.2"></circle>
+						<circle cx="218.2" cy="338.2" r="2.2"></circle>
+						<circle cx="26.2" cy="338.2" r="2.2"></circle>
+						<circle cx="242.2" cy="338.2" r="2.2"></circle>
+						<circle cx="50.2" cy="338.2" r="2.2"></circle>
+						<circle cx="266.2" cy="338.2" r="2.2"></circle>
+						<circle cx="74.2" cy="338.2" r="2.2"></circle>
+						<circle cx="290.2" cy="338.2" r="2.2"></circle>
+						<circle cx="98.2" cy="338.2" r="2.2"></circle>
+						<circle cx="314.2" cy="338.2" r="2.2"></circle>
+						<circle cx="122.2" cy="338.2" r="2.2"></circle>
+						<circle cx="338.2" cy="338.2" r="2.2"></circle>
+						<circle cx="146.2" cy="338.2" r="2.2"></circle>
+						<circle cx="170.2" cy="338.2" r="2.2"></circle>
+					</svg>
+				</figure>
+
+				<!-- Image -->
+				<img src="/assets/images/farmstouch/wheat-1845835.jpg" class="rounded-3 position-relative" alt="" style="width: 29.5rem; height: 32.5rem;">
+
+				
+			</div>
+			<!-- Left side END -->
+
+			<!-- Right side START -->
+			<div class="col-lg-6">
+				<h2 class="mb-0 mb-lg-0">농산물 직거래 장터</h2>
+				<p class="mb-3 mb-lg-5">팜스터치에서 안전하게 농산물 직거래하고 돈 절약하기 </p>
+
+				<!-- Features START -->
+				<div class="row g-4">
+					<!-- Item -->
+					<div class="col-sm-6">
+						<div class="icon-lg bg-success bg-opacity-10 text-success rounded-circle"><img src="/assets/images/farmstouch/free-icon-inspection-1769704.png" class="" alt=""></div>
+						<h5 class="mt-2">내게 필요한 농산물 검색</h5>
+						<p class="mb-0">판매중인 다양한 농산물 확인</p>
+					</div>
+					<!-- Item -->
+					<div class="col-sm-6">
+						<div class="icon-lg bg-danger bg-opacity-10 text-danger rounded-circle"><img src="/assets/images/farmstouch/free-icon-drawing-2950888.png" class="" alt=""></div>
+						<h5 class="mt-2">게시글 내용 확인</h5>
+						<p class="mb-0">원하는 거래인지 꼼꼼하게 확인하기</p>
+					</div>
+					<!-- Item -->
+					<div class="col-sm-6">
+						<div class="icon-lg bg-orange bg-opacity-10 text-orange rounded-circle"><img src="/assets/images/farmstouch/free-icon-communication-3950829.png" class="" alt=""></div>
+						<h5 class="mt-2">판매자에게 문의</h5>
+						<p class="mb-0">거래 전 의심 계좌와 전화번호 조회</p>
+					</div>
+					<!-- Item -->
+					<div class="col-sm-6">
+						<div class="icon-lg bg-info bg-opacity-10 text-info rounded-circle"><img src="/assets/images/farmstouch/free-icon-agreement-8630463.png" class="" alt=""></div>
+						<h5 class="mt-2">거래 성사</h5>
+						<p class="mb-0">안전하게 농산물 직거래 완료!</p>
+					</div>		
+				</div>
+				<!-- Features END -->
+
+			</div>
+			<!-- Right side END -->
+		</div>
+	</div>
+</section>
+<!-- =======================
+About END -->
+
+<!-- =======================
+Content START -->
+<section class="pt-0 mt-4" style="margin-bottom: 3.125rem;">
+	<div class="container vstack gap-4">
+		<!-- Invoice history START -->
+		<div class="row">
+			<div class="col-12">
+				<div class="card border rounded-3">
+					<!-- Card header START -->
+					<div class="card-header border-bottom" style="display: inline-block;">
+						<h5 class="card-header-title" style="float: left;"><img src="/assets/images/farmstouch/free-icon-irrigation-system-2263887.png" style="height: 2.5rem;"/> &nbsp; 농산물 직거래 장터 둘러보기</h5>
+						<a th:href="@{/board/agriculture/write}" class="btn btn-sm btn-success-soft" style="float: right;"><i class="fa-solid fa-pen-to-square"></i> 글작성</a>
+					</div>
+					<!-- Card header END -->
+
+					<!-- Card body START -->
+					<div class="card-body">
+						<!-- Search and select START -->
+						<form th:action="@{/board/agriculture/list}" method="get">
+							<div class="row g-3 align-items-center justify-content-between mb-3">
+							
+								<!-- Search -->
+								<div class="col-md-6 rounded position-relative">
+									
+									<input class="form-control pe-5" type="text" placeholder="검색하기" aria-label="Search" name="searchValue" id="searchValue" th:value="${param.searchValue}">
+									<button class="btn border-0 px-3 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit">
+										<i class="fas fa-search fs-6"></i>
+									</button>
+									
+								</div>
+
+								<div class="col-md-1 offset-md-3 rounded position-relative">
+									<p class="fs-5 text-end" style="margin:0px;">분류: </p>
+								</div>
+
+								<!-- Select option -->
+								<div class="col-md-2">
+									<!-- Short by filter -->
+									
+									<select class="form-select js-choice" aria-label=".form-select-sm" name="searchType">
+										<option value="all" th:selected="${paramMap.searchType == 'all'} ? 'selected' : null ">전체</option>
+										<option value="title" th:selected="${paramMap.searchType == 'title'} ? 'selected' : null ">제목</option>
+										<option value="content" th:selected="${paramMap.searchType == 'content'} ? 'selected' : null ">내용</option>
+										<option value="writer" th:selected="${paramMap.searchType == 'writer'} ? 'selected' : null ">작성자</option>
+									</select>
+									
+								</div>
+							</div>
+						</form>
+						
+						
+						<!-- Search and select END -->
+
+						<!-- list START -->
+						<div class="table-responsive border-0">
+							<table class="table align-middle p-4 mb-0 table-hover table-shrink" style="text-align: center;">
+								<!-- Table head -->
+								<thead class="table-success">
+									<tr>
+										<th scope="col" class="border-0 rounded-start"></th>
+										<th scope="col" class="border-0">제목</th>
+										<th scope="col" class="border-0">판매여부</th>
+										<th scope="col" class="border-0">등록일</th>
+										<th scope="col" class="border-0">조회수</th>
+										<th scope="col" class="border-0 rounded-end">작성자</th>
+									</tr>
+								</thead>
+
+								<!-- Table body START -->
+								<tbody class="border-top-0">
+
+									<th:block th:if="${list.isEmpty()}">
+										<tr>
+											<td colspan="6">조회된 글이 없습니다.</td>
+										</tr>
+									</th:block>
+									
+									<!-- Table item -->
+									<th:block th:if="${list != null}">
+										<tr th:each = "row : ${list}">
+											<td><img src="/image/no-image.png" class="" alt="" style="width: 3.75rem; height: 3.75rem;"></td>
+											<td>
+												<a th:href="@{/board/view(no = ${row.bNo})}" target="_blank" class="text-black"> 
+													<span th:text="${row.title}"></span>
+												</a>
+											</td>
+
+											<th:block th:if="${row.whetherSales == 'Y'}">
+												<td>
+													<div class="badge bg-success bg-opacity-10 text-success">판매중</div> 
+												</td>
+											</th:block>
+
+											<th:block th:if="${row.whetherSales == 'N'}">
+												<td>
+													<div class="badge bg-danger bg-opacity-10 text-danger">판매완료</div> 
+												</td>
+											</th:block>
+
+											<td th:text="${#dates.format(row.modifyDate, 'yyyy-MM-dd')}"></td>
+											<td th:text="${row.readCount}"></td>
+											<td th:text="${row.writer}"></td>
+										</tr>
+									<!-- Table item End -->
+									</th:block>
+
+								</tbody>
+								<!-- Table body END -->
+							</table>
+						</div>
+						<!-- Hotel room list END -->
+					</div>
+					<!-- Card body END -->
+
+					<!-- Card footer START -->
+					<div class="card-footer pt-0">
+						<!-- Pagination and content -->
+						<div class="d-sm-flex justify-content-sm-between align-items-sm-center">
+							<!-- Content -->
+							<p class="mb-sm-0 text-center text-sm-start"></p>
+
+							<!-- Pagination -->
+							<nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
+								<ul class="pagination pagination-sm pagination-primary-soft mb-0">
+									
+									<li class="page-item">
+										<button class="page-link" onclick="movePage('/board/agriculture/list?page=1');">Start</button>
+									</li>
+									<li class="page-item">
+										<button class="page-link" th:onclick="|movePage('/board/agriculture/list?page=${pageInfo.prevPage}');|">Prev</button>
+									</li>
+
+									<th:block th:each="num, status : ${#numbers.sequence(pageInfo.startPage, pageInfo.endPage)}">
+										<th:block th:if="${status.current == pageInfo.currentPage}">
+											<li class="page-item active">
+												<button class="page-link" disabled>
+													[[${status.current}]]
+												</button>
+											</li>
+										</th:block>
+										<th:block th:if="${num != 0 && status.current != pageInfo.currentPage}">
+											<li class="page-item">
+												<button class="page-link" th:onclick="|movePage('/board/agriculture/list?page=${status.current}');|">
+													[[${status.current}]]
+												</button>
+											</li>
+										</th:block>
+									</th:block>
+
+									<li class="page-item">
+										<button class="page-link" th:onclick="|movePage('/board/agriculture/list?page=${pageInfo.nextPage}');|">Next</button>
+									</li>
+									<li class="page-item">
+										<button class="page-link" th:onclick="|movePage('/board/agriculture/list?page=${pageInfo.maxPage}');|">End</button>
+									</li>
+
+									<!--
+									<li class="page-item">
+										<a class="page-link" href="#" tabindex="-1">Prev</a>
+									</li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item active"><a class="page-link" href="#">2</a></li>
+									<li class="page-item disabled"><a class="page-link" href="#">..</a></li>
+									<li class="page-item"><a class="page-link" href="#">15</a></li>
+									<li class="page-item">
+										<a class="page-link" href="#">Next</a>
+									</li>
+									-->
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- Card footer END -->
+				</div>
+			</div>
+		</div>
+		<!-- Invoice history END -->
+	</div>
+</section>
+<!-- =======================
+Content END -->
+
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- **************** MAIN CONTENT END **************** -->
+
+	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+
+	<script type="text/javascript">
+		function movePage(pageUrl){
+			let searchValue = document.getElementById("searchValue");
+			let searchTypes = document.getElementsByName("searchType");
+			let searchType = 'all';
+			if(searchValue.value.length > 0){
+				for(let i = 0; i <searchTypes.length; i++){
+					if(searchTypes[i].checked == true){
+						searchType = searchTypes[i].value;
+					}
+				}
+				pageUrl = pageUrl + '&searchType=' + searchType + '&searchValue=' + searchValue.value; 
+			}
+			location.href = encodeURI(pageUrl);	
+		}
+	</script>
+</body>
+</html>

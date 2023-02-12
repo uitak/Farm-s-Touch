@@ -47,20 +47,20 @@ Content START -->
 								<div class="text-center mb-3">
 									<!-- Avatar -->
 									<div class="avatar avatar-xl mb-2">
-										<img class="avatar-img rounded-circle border border-2 border-white" src="assets/images/avatar/01.jpg" alt="">
+										<img class="avatar-img rounded-circle border border-2 border-white" src="/assets/images/avatar/01.jpg" alt="">
 									</div>
-									<h6 class="mb-0">Jacqueline Miller</h6>
-									<a href="#" class="text-reset text-success-hover small">hello@gmail.com</a>
+									<h6 class="mb-0"><span th:text="${session.loginMember.name}"></span></h6>
+									<a href="#" class="text-reset text-success-hover small"><span th:text="${session.loginMember.email}"></span></a>
 									<hr>
 								</div>
 
 								<!-- Sidebar menu item START -->
                                 <ul class="nav nav-pills-success-soft flex-column">
 									<li class="nav-item">
-										<a class="nav-link" href="myInfo.html" style="--bs-nav-link-color: #747579;"><i class="bi bi-person fa-fw me-2"></i>내 정보</a>
+										<a class="nav-link" href="/member/view" style="--bs-nav-link-color: #747579;"><i class="bi bi-person fa-fw me-2"></i>내 정보</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="myPwd.html" style="--bs-nav-link-color: #747579;"><i class="bi bi-ticket-perforated fa-fw me-2"></i>비밀번호 변경하기</a>
+										<a class="nav-link" href="/member/updatePwd" style="--bs-nav-link-color: #747579;"><i class="bi bi-ticket-perforated fa-fw me-2"></i>비밀번호 변경하기</a>
 									</li>
 	
 									<li class="nav-item">
@@ -71,7 +71,7 @@ Content START -->
 										<a class="nav-link active" href="myRetire.html" style="--bs-nav-link-color: #747579;"><i class="bi bi-trash fa-fw me-2"></i>계정 탈퇴</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link text-danger bg-danger-soft-hover" href="#"><i class="fas fa-sign-out-alt fa-fw me-2"></i>로그아웃</a>
+										<a class="nav-link text-danger bg-danger-soft-hover" href="/logout"><i class="fas fa-sign-out-alt fa-fw me-2"></i>로그아웃</a>
 									</li>
 								</ul>
 								<!-- Sidebar menu item END -->
@@ -94,14 +94,6 @@ Content START -->
 					</button>
 				</div>
 
-
-					<!-- Personal info START -->
-					
-					<!-- Personal info END -->
-
-					<!-- Update email START -->
-					<!-- Update email END -->
-
 					<!-- Update Password START -->
 					<div class="card border">
 						<!-- Card header -->
@@ -110,17 +102,17 @@ Content START -->
 						</div>
 
 						<!-- Card body START -->
-						<form class="card-body">
+						<form class="card-body" action="/member/updatePwd" method="post">
 							<!-- Current password -->
 							<div class="mb-3">
 								<label class="form-label">현재 비밀번호</label>
-								<input class="form-control" type="password" placeholder="Enter current password">
+								<input class="form-control" type="password" name="currentPwd" placeholder="Enter current password">
 							</div>
 							<!-- New password -->
 							<div class="mb-3">
 								<label class="form-label">새로운 비밀번호</label>
 								<div class="input-group">
-									<input class="form-control fakepassword" placeholder="Enter new password" type="password" id="psw-input">
+									<input class="form-control fakepassword" name="newPwd" placeholder="Enter new password" type="password" id="psw-input">
 									<span class="input-group-text p-0 bg-transparent">
 										<i class="fakepasswordicon fas fa-eye-slash cursor-pointer p-2"></i>
 									</span>
@@ -133,7 +125,7 @@ Content START -->
 							</div>
 
 							<div class="text-end">
-								<a href="#" class="btn btn-success mb-0">변경하기</a>
+								<input type="submit" class="btn btn-success mb-0" value="변경하기">
 							</div>
 						</form>
 						<!-- Card body END -->

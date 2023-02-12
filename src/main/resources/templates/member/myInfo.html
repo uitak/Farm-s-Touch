@@ -47,20 +47,21 @@ Content START -->
 								<div class="text-center mb-3">
 									<!-- Avatar -->
 									<div class="avatar avatar-xl mb-2">
-										<img class="avatar-img rounded-circle border border-2 border-white" src="/assets/images/avatar/01.jpg" alt="">
+										<img th:if="${session.loginMember.imageUrl == null}" class="avatar-img rounded-circle border border-2 border-white" src="/assets/images/farmstouch/avatar/02.png" alt="">
+										<img th:if="${session.loginMember.imageUrl != null}" id="uploadfile-1-preview" class="avatar-img rounded-circle border border-2 border-white" th:src="|/member/file/${session.loginMember.imageUrl}|" alt="">
 									</div>
-									<h6 class="mb-0">Jacqueline Miller</h6>
-									<a href="#" class="text-reset text-success-hover small">hello@gmail.com</a>
+									<h6 class="mb-0"><span th:text="${session.loginMember.name}"></span></h6>
+									<a href="#" class="text-reset text-success-hover small"><span th:text="${session.loginMember.email}"></span></a>
 									<hr>
 								</div>
 
 								<!-- Sidebar menu item START -->
 								<ul class="nav nav-pills-success-soft flex-column">
 									<li class="nav-item">
-										<a class="nav-link" href="myInfo.html" style="--bs-nav-link-color: #747579;"><i class="bi bi-person fa-fw me-2"></i>내 정보</a>
+										<a class="nav-link" href="/member/view" style="--bs-nav-link-color: #747579;"><i class="bi bi-person fa-fw me-2"></i>내 정보</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="myPwd.html" style="--bs-nav-link-color: #747579;"><i class="bi bi-ticket-perforated fa-fw me-2"></i>비밀번호 변경하기</a>
+										<a class="nav-link" href="/member/updatePwd" style="--bs-nav-link-color: #747579;"><i class="bi bi-ticket-perforated fa-fw me-2"></i>비밀번호 변경하기</a>
 									</li>
 	
 									<li class="nav-item">
@@ -71,7 +72,7 @@ Content START -->
 										<a class="nav-link active" href="myRetire.html" style="--bs-nav-link-color: #747579;"><i class="bi bi-trash fa-fw me-2"></i>계정 탈퇴</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link text-danger bg-danger-soft-hover" href="#"><i class="fas fa-sign-out-alt fa-fw me-2"></i>로그아웃</a>
+										<a class="nav-link text-danger bg-danger-soft-hover" href="/logout"><i class="fas fa-sign-out-alt fa-fw me-2"></i>로그아웃</a>
 									</li>
 								</ul>
 								<!-- Sidebar menu item END -->
@@ -105,7 +106,11 @@ Content START -->
 						<!-- Card body START -->
 						<div class="card-body">
 							<!-- Form START -->
-							<form class="row g-3">
+							<form class="row g-3" action="/member/update" method="post" th:object="${member}" enctype="multipart/form-data">
+								<input type="hidden" name="mNo" th:value="${session.loginMember.mNo}">
+								<input type="hidden" name="id" th:value="${session.loginMember.id}">
+								<input type="hidden" name="role" th:value="${session.loginMember.role}">
+
 								<!-- Profile photo -->
 								<div class="col-12">
 									<label class="form-label">사진을 업로드 하세요.<span class="text-danger">*</span></label>
@@ -113,38 +118,41 @@ Content START -->
 										<label class="position-relative me-4" for="uploadfile-1" title="Replace this pic">
 											<!-- Avatar place holder -->
 											<span class="avatar avatar-xl">
-												<img id="uploadfile-1-preview" class="avatar-img rounded-circle border border-white border-3 shadow" src="/assets/images/avatar/01.jpg" alt="">
+												<img th:if="${session.loginMember.imageUrl == null}" id="uploadfile-1-preview" class="avatar-img rounded-circle border border-white border-3 shadow" src="/assets/images/farmstouch/avatar/ava02.png" alt="">
+												<img th:if="${session.loginMember.imageUrl != null}" id="uploadfile-1-preview" class="avatar-img rounded-circle border border-white border-3 shadow" th:src="|/member/file/${session.loginMember.imageUrl}|" alt="">
 											</span>
 										</label>
 										<!-- Upload button -->
-										<label class="btn btn-sm btn-success-soft mb-0" for="uploadfile-1">Change</label>
-										<input id="uploadfile-1" class="form-control d-none" type="file">
+										<!-- <label class="btn btn-sm btn-success-soft mb-0" for="uploadfile-1">Change</label> -->
+										<span>
+											<input id="image" class="form-control" type="file" name="upimage" accept="image/gif, image/jpeg, image/png">
+										</span>										
 									</div>
 								</div>
 
 								<!-- Name -->
 								<div class="col-md-6">
 									<label class="form-label">이름<span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="Jacqueline Miller" placeholder="Enter your full name">
+									<input type="text" class="form-control" th:field="*{name}" th:placeholder="${session.loginMember.name}">
 								</div>
 
 								<!-- Email -->
 								<div class="col-md-6">
 									<label class="form-label">이메일<span class="text-danger">*</span></label>
-									<input type="email" class="form-control" value="hello@gmail.com" placeholder="Enter your email id">
+									<input type="email" class="form-control" th:field="*{email}" th:placeholder="${session.loginMember.email}">
 								</div>
 
 								<!-- Mobile -->
 								<div class="col-md-6">
 									<label class="form-label">휴대전화<span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="222 555 666" placeholder="Enter your mobile number">
+									<input type="text" class="form-control" th:field="*{phone}" th:placeholder="${session.loginMember.phone}">
 								</div>
 
 
 								<!-- Date of birth -->
 								<div class="col-md-6">
 									<label class="form-label">생년월일<span class="text-danger">*</span></label>
-									<input type="text" class="form-control flatpickr" value="29 Aug 1996" placeholder="Enter date of birth" data-date-format="Y M d">
+									<input type="text" class="form-control flatpickr" name="birth" th:field="*{birth}" th:placeholder="${session.loginMember.birth}" data-date-format="Y M d">
 								</div>
 
 								<!-- Gender -->
@@ -152,13 +160,13 @@ Content START -->
 									<label class="form-label">성별<span class="text-danger">*</span></label>
 									<div class="d-flex gap-4">
 										<div class="form-check radio-bg-light">
-											<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked="">
+											<input class="form-check-input" type="radio" name="gender" value="M"  id="flexRadioDefault1" th:checked="${session.loginMember.gender == 'M'}">
 											<label class="form-check-label" for="flexRadioDefault1">
 												남
 											</label>
 										</div>
 										<div class="form-check radio-bg-light">
-											<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+											<input class="form-check-input" type="radio" name="gender" value="F" id="flexRadioDefault2" th:checked="${session.loginMember.gender == 'F'}">
 											<label class="form-check-label" for="flexRadioDefault2">
 												여
 											</label>
@@ -169,12 +177,12 @@ Content START -->
 								<!-- Address -->
 								<div class="col-12">
 									<label class="form-label">주소</label>
-									<textarea class="form-control" rows="3" spellcheck="false">서울시</textarea>
+									<textarea class="form-control" rows="3" spellcheck="false" name="address" th:field="*{address}" th:placeholder="${session.loginMember.address}"></textarea>
 								</div>
 
 								<!-- Button -->
 								<div class="col-12 text-end">
-									<a href="#" class="btn btn-success mb-0">변경하기</a>
+									<input type="submit" class="btn btn-success mb-0" value="변경하기">
 								</div>
 							</form>
 							<!-- Form END -->

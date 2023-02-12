@@ -12,9 +12,9 @@ public class PageInfo {
 	/**
 	 * 
 	 * @param currentPage 현재 페이지
-	 * @param pageLimit 한 페이지에 보여질 페이지의 수 
+	 * @param pageLimit 한 페이지에 보여질 페이지의 수
 	 * @param listCount 전체 리스트의 수
-	 * @param listLimit 한 페이지에 표시될 리스트의 수
+	 * @param listLimit 한 페이지에 표시될 리스트의 수(=limit)
 	 */
 	public PageInfo(int currentPage, int pageLimit, int listCount, int listLimit) {
 		this.currentPage = currentPage;
@@ -98,7 +98,7 @@ public class PageInfo {
 	
 	/**
 	 * 
-	 * @return 페이지의 시작 리스트 
+	 * @return 페이지의 시작 리스트 (=offset)
 	 */ 	
 	public int getStartList() {
 		return (this.getCurrentPage() - 1) * this.listLimit + 1;

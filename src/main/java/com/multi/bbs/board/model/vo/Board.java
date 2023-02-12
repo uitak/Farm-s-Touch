@@ -13,14 +13,14 @@ import lombok.NoArgsConstructor;
 public class Board {
 	private int bNo;
 	private int mNo;
-	private String id;
+	private String writer;
 	private String title;
 	private String content;
+	private String whetherSales;
 	private String originalFileName;
 	private String renamedFileName;
 	private int readCount;
-	private String status;
-	private String type;
+	private String dtype;
 	private List<Reply> replyList;
 	private Date createDate;
 	private Date modifyDate;

@@ -47,7 +47,7 @@ Content START -->
 								<div class="text-center mb-3">
 									<!-- Avatar -->
 									<div class="avatar avatar-xl mb-2">
-										<img th:if="${session.loginMember.imageUrl == null}" class="avatar-img rounded-circle border border-2 border-white" src="/assets/images/farmstouch/avatar/02.png" alt="">
+										<img th:if="${session.loginMember.imageUrl == null}" class="avatar-img rounded-circle border border-2 border-white" src="/assets/images/farmstouch/avatar/ava02.png" alt="">
 										<img th:if="${session.loginMember.imageUrl != null}" id="uploadfile-1-preview" class="avatar-img rounded-circle border border-2 border-white" th:src="|/member/file/${session.loginMember.imageUrl}|" alt="">
 									</div>
 									<h6 class="mb-0"><span th:text="${session.loginMember.name}"></span></h6>

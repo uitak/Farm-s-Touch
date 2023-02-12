@@ -51,7 +51,7 @@
 	<nav class="navbar navbar-expand-xl">
 		<div class="container">
 			<!-- Logo START -->
-			<a class="navbar-brand" href="index.html">
+			<a class="navbar-brand" href="/">
 				<img class="light-mode-item navbar-brand-item" src="/assets/images/farmstouch/logo/farmslogo1.PNG" alt="logo" style="width: 7.5rem; height: 3.75rem; margin: -1.875rem auto">
 				<img class="dark-mode-item navbar-brand-item" src="/assets/images/farmstouch/logo/farmslogo2.png" alt="logo"  style="width: 7.5rem; height: 3.75rem; margin: -1.875rem auto">
 				<!-- <img class="light-mode-item navbar-brand-item" src="assets/images/farmstouch/logo89.png" alt="logo" style="width: 120px; height: 60px; margin: -30px auto">
@@ -241,7 +241,7 @@
 								<div class="d-flex align-items-center">
 									<!-- Avatar -->
 									<div class="avatar me-3">
-										<img th:if="${session.loginMember.imageUrl == null}" class="avatar-img rounded-circle shadow" src="/assets/images/farmstouch/avatar/ava01.png" alt="avatar">
+										<img th:if="${session.loginMember.imageUrl == null}" class="avatar-img rounded-circle shadow" src="/assets/images/farmstouch/avatar/ava02.png" alt="avatar">
 										<img th:if="${session.loginMember.imageUrl != null}" class="avatar-img rounded-circle shadow" th:src="|/member/file/${session.loginMember.imageUrl}|" alt="avatar">
 									</div>
 									<div>

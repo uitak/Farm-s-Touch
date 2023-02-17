@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.multi.bbs.plant.model.mapper.GardenMapper">
+
+	<resultMap type="Garden" id="GardenResultMap">
+		<id property="cntntsNo" column="cntntsNo"/>
+		<result property="cntntsSj" column="cntntsSj"/>
+		<result property="plntzrNm" column="plntzrNm"/>
+		<result property="distbNm" column="distbNm"/>
+		<result property="fmlCodeNm" column="fmlCodeNm"/>
+		<result property="orgplceInfo" column="orgplceInfo"/>
+		<result property="adviseInfo" column="adviseInfo"/>
+		<result property="growthHgInfo" column="growthHgInfo"/>
+		<result property="growthAraInfo" column="growthAraInfo"/>
+		<result property="lefStleInfo" column="lefStleInfo"/>
+		<result property="smellCodeNm" column="smellCodeNm"/>
+		<result property="toxctyInfo" column="toxctyInfo"/>
+		<result property="prpgtEraInfo" column="prpgtEraInfo"/>
+		<result property="etcEraInfo" column="etcEraInfo"/>
+		<result property="managelevelCodeNm" column="managelevelCodeNm"/>
+		<result property="grwtveCodeNm" column="grwtveCodeNm"/>
+		<result property="grwhTpCodeNm" column="grwhTpCodeNm"/>
+		<result property="winterLwetTpCodeNm" column="winterLwetTpCodeNm"/>
+		<result property="hdCodeNm" column="hdCodeNm"/>
+		<result property="frtlzrInfo" column="frtlzrInfo"/>
+		<result property="soilInfo" column="soilInfo"/>
+		<result property="watercycleSprngCodeNm" column="watercycleSprngCodeNm"/>
+		<result property="watercycleSummerCodeNm" column="watercycleSummerCodeNm"/>
+		<result property="watercycleAutumnCodeNm" column="watercycleAutumnCodeNm"/>
+		<result property="watercycleWinterCodeNm" column="watercycleWinterCodeNm"/>
+		<result property="dlthtsManageInfo" column="dlthtsManageInfo"/>
+		<result property="speclmanageInfo" column="speclmanageInfo"/>
+		<result property="managedemanddoCodeNm" column="managedemanddoCodeNm"/>
+		<result property="clCodeNm" column="clCodeNm"/>
+		<result property="indoorpsncpacompositionCodeNm" column="indoorpsncpacompositionCodeNm"/>
+		<result property="eclgyCodeNm" column="eclgyCodeNm"/>
+		<result property="lefmrkCodeNm" column="lefmrkCodeNm"/>
+		<result property="lefcolrCodeNm" column="lefcolrCodeNm"/>
+		<result property="ignSeasonCodeNm" column="ignSeasonCodeNm"/>
+		<result property="flclrCodeNm" column="flclrCodeNm"/>
+		<result property="fmldeSeasonCodeNm" column="fmldeSeasonCodeNm"/>
+		<result property="fmldecolrCodeNm" column="fmldecolrCodeNm"/>
+		<result property="prpgtmthCodeNm" column="prpgtmthCodeNm"/>
+		<result property="lighttdemanddoCodeNm" column="lighttdemanddoCodeNm"/>
+		<result property="postngplaceCodeNm" column="postngplaceCodeNm"/>
+		<result property="dlthtsCodeNm" column="dlthtsCodeNm"/>
+	</resultMap>
+
+	<resultMap type="GardenImg" id="GardenImgResultMap">
+		<id 	property="imgNo"			column="imgNo"/>
+		<result property="cntntsNo" 			column="cntntsNo"/>
+		<result property="imgUrl" 			column="imgUrl"/>
+	</resultMap>
+	
+	<resultMap type="Garden" id="GardenListResultMap" extends="GardenResultMap">
+		<collection property="imgList" javaType="arrayList" columnPrefix="I_" 
+												resultMap="GardenImgResultMap"/>
+	</resultMap>
+	
+	<resultMap type="DryGarden" id="DryGardenListResultMap">
+		<id 	property="cntntsNo"			column="cntntsNo"/>
+		<result property="cntntsSj" 		column="cntntsSj"/>
+		<result property="clNm" 		column="clNm"/>
+		<result property="clCodeDc" 		column="clCodeDc"/>
+		<result property="scnm" 		column="scnm"/>
+		<result property="distbNm" 		column="distbNm"/>
+		<result property="orgplce" 		column="orgplce"/>
+		<result property="stleSeNm" 		column="stleSeNm"/>
+		<result property="flwrInfo" 		column="flwrInfo"/>
+		<result property="lfclChngeInfo" 		column="lfclChngeInfo"/>
+		<result property="rdxStleNm" 		column="rdxStleNm"/>
+		<result property="grwtInfo" 		column="grwtInfo"/>
+		<result property="grwtseVeNm" 		column="grwtseVeNm"/>
+		<result property="grwhTpInfo" 		column="grwhTpInfo"/>
+		<result property="pswntrTpInfo" 		column="pswntrTpInfo"/>
+		<result property="chartrInfo" 		column="chartrInfo"/>
+		<result property="lighttInfo" 		column="lighttInfo"/>
+		<result property="waterCycleInfo" 		column="waterCycleInfo"/>
+		<result property="prpgtInfo" 		column="prpgtInfo"/>
+		<result property="hgtmMhmrInfo" 		column="hgtmMhmrInfo"/>
+		<result property="dlthtsInfo" 		column="dlthtsInfo"/>
+		<result property="manageLevelNm" 		column="manageLevelNm"/>
+		<result property="manageDemandNm" 		column="manageDemandNm"/>
+		<result property="frtlzrInfo" 		column="frtlzrInfo"/>
+		<result property="batchPlaceInfo" 		column="batchPlaceInfo"/>
+		<result property="tipInfo" 		column="tipInfo"/>
+		<result property="mainImgUrl1" 		column="mainImgUrl1"/>
+		<result property="mainImgUrl2" 		column="mainImgUrl2"/>
+		<result property="lightImgUrl1" 		column="lightImgUrl1"/>
+		<result property="lightImgUrl2" 		column="lightImgUrl2"/>
+		<result property="lightImgUrl3" 		column="lightImgUrl3"/>
+	</resultMap>
+	
+	<select id="selectGardenList" resultMap="GardenListResultMap" parameterType="map">
+		SELECT  
+			G.cntntsNo, G.cntntsSj, G.plntzrNm, G.fmlCodeNm, 
+			G.managelevelCodeNm, G.orgplceInfo,
+			Min(I.imgUrl) AS I_imgUrl
+		FROM GARDEN G
+		LEFT OUTER JOIN GARDENIMG I ON G.cntntsNo = I.cntntsNo 
+		WHERE 1=1
+		<if test="smell != null">
+			AND G.smellCodeNm IN (
+		</if>
+		<if test="S1 != null">
+			'강함', 
+		</if>		
+		<if test="S2 != null">
+			'중간', 
+		</if>	
+		<if test="S3 != null">
+			'약함', 
+		</if>	
+		<if test="S4 != null">
+			'거의 없음', 
+		</if>
+		<if test="smell != null">
+			'x') 
+		</if>
+		<if test="growth != null">
+			AND G.grwtveCodeNm IN (
+		</if>
+		<if test="G1 != null">
+			'빠름', 
+		</if>
+		<if test="G2 != null">
+			'보통', 
+		</if>
+		<if test="G3 != null">
+			'느림', 
+		</if>
+		<if test="growth != null">
+			'x')
+		</if>
+		<if test="grwhTp != null">
+			AND G.grwhTpCodeNm IN (
+		</if>
+		<if test="T1 != null">
+			'10~15℃', 
+		</if>
+		<if test="T2 != null">
+			'16~20℃', 
+		</if>
+		<if test="T3 != null">
+			'21~25℃', 
+		</if>
+		<if test="grwhTp != null">
+			'x')
+		</if>
+		<if test="manageLevel != null">
+			AND G.managelevelCodeNm IN (
+		</if>
+		<if test="M1 != null">
+			'초보자', 
+		</if>
+		<if test="M2 != null">
+			'경험자', 
+		</if>
+		<if test="M3 != null">
+			'전문가', 
+		</if>
+		<if test="M4 != null">
+			'', 
+		</if>
+		<if test="manageLevel != null">
+			'x')
+		</if>
+		<if test="waterCycle != null">
+			AND G.watercycleSprngCodeNm LIKE '%${waterCycle}%'
+		</if>
+		<if test="cntntsSj != null">
+			AND G.cntntsSj LIKE '%${cntntsSj}%'
+		</if>
+		<if test="plntzrNm != null">
+			AND G.plntzrNm LIKE '%${plntzrNm}%'
+		</if>
+		<if test="fmlCodeNm != null">
+			AND G.fmlCodeNm LIKE '%${fmlCodeNm}%'
+		</if>	
+		GROUP BY cntntsNo, cntntsSj, plntzrNm, fmlCodeNm, managelevelCodeNm, orgplceInfo
+		ORDER BY G.cntntsNo DESC LIMIT ${limit} OFFSET ${offset}
+	</select>
+		
+	<select id="selectGardenCount" resultType="int" parameterType="map">
+		SELECT  
+			COUNT(DISTINCT G.cntntsNo)
+		FROM GARDEN G
+		LEFT OUTER JOIN GARDENIMG I ON G.cntntsNo = I.cntntsNo 
+		WHERE 1=1
+		<if test="smell != null">
+			AND G.smellCodeNm IN (
+		</if>
+		<if test="S1 != null">
+			'강함', 
+		</if>		
+		<if test="S2 != null">
+			'중간', 
+		</if>	
+		<if test="S3 != null">
+			'약함', 
+		</if>	
+		<if test="S4 != null">
+			'거의 없음', 
+		</if>
+		<if test="smell != null">
+			'x')
+		</if>
+		<if test="growth != null">
+			AND G.grwtveCodeNm IN (
+		</if>
+		<if test="G1 != null">
+			'빠름', 
+		</if>
+		<if test="G2 != null">
+			'보통', 
+		</if>
+		<if test="G3 != null">
+			'느림', 
+		</if>
+		<if test="growth != null">
+			'x')
+		</if>
+		<if test="grwhTp != null">
+			AND G.grwhTpCodeNm IN (
+		</if>
+		<if test="T1 != null">
+			'10~15℃', 
+		</if>
+		<if test="T2 != null">
+			'16~20℃', 
+		</if>
+		<if test="T3 != null">
+			'21~25℃', 
+		</if>
+		<if test="grwhTp != null">
+			'x')
+		</if>
+		<if test="manageLevel != null">
+			AND G.managelevelCodeNm IN (
+		</if>
+		<if test="M1 != null">
+			'초보자', 
+		</if>
+		<if test="M2 != null">
+			'경험자', 
+		</if>
+		<if test="M3 != null">
+			'전문가', 
+		</if>
+		<if test="M4 != null">
+			'', 
+		</if>
+		<if test="manageLevel != null">
+			'x')
+		</if>
+		<if test="waterCycle != null">
+			AND G.watercycleSprngCodeNm LIKE '%${waterCycle}%'
+		</if>
+		<if test="cntntsSj != null">
+			AND G.cntntsSj LIKE '%${cntntsSj}%'
+		</if>
+		<if test="plntzrNm != null">
+			AND G.plntzrNm LIKE '%${plntzrNm}%'
+		</if>
+		<if test="fmlCodeNm != null">
+			AND G.fmlCodeNm LIKE '%${fmlCodeNm}%'
+		</if>	
+	</select>
+	
+	<select id="selectGardenByNo" parameterType="String" resultMap="GardenListResultMap">
+		SELECT 
+			G.cntntsNo, G.cntntsSj, G.plntzrNm, G.distbNm, G.fmlCodeNm, 
+			G.orgplceInfo, G.adviseInfo, G.growthHgInfo, G.growthAraInfo, 
+			G.lefStleInfo, G.smellCodeNm, G.toxctyInfo, G.prpgtEraInfo, 
+			G.etcEraInfo, G.managelevelCodeNm, G.grwtveCodeNm, G.grwhTpCodeNm, 
+			G.winterLwetTpCodeNm, G.hdCodeNm, G.frtlzrInfo, G.soilInfo, 
+			G.watercycleSprngCodeNm, G.watercycleSummerCodeNm, G.watercycleAutumnCodeNm, 
+			G.watercycleWinterCodeNm, G.dlthtsManageInfo, G.speclmanageInfo, 
+			G.managedemanddoCodeNm, G.clCodeNm, G.grwhstleCodeNm, G.indoorpsncpacompositionCodeNm,
+			G.eclgyCodeNm, G.lefmrkCodeNm, G.lefcolrCodeNm, G.ignSeasonCodeNm,
+			G.flclrCodeNm, G.fmldeSeasonCodeNm, G.fmldecolrCodeNm, G.prpgtmthCodeNm, 
+			G.lighttdemanddoCodeNm, G.postngplaceCodeNm, G.dlthtsCodeNm,
+			I.imgUrl AS I_imgUrl
+		FROM GARDEN G
+		LEFT OUTER JOIN GARDENIMG I ON G.cntntsNo = I.cntntsNo
+		WHERE G.cntntsNo Like '${cntntsNo}' 
+	
+	
+	</select>
+	
+	<select id="selectDryGardenList" resultMap="DryGardenListResultMap" parameterType="map">
+		SELECT
+			cntntsNo, cntntsSj, clNm, scnm, distbNm, manageLevelNm, mainImgUrl1, orgplce, chartrInfo
+		FROM DryGardenDtl
+		WHERE 1=1
+		<if test="shape != null">
+		And stleSeNm IN (
+		</if>
+		<if test="S1 != null">
+		'포도송이형',
+		</if>
+		<if test="S2 != null">
+		'군생형',
+		</if>
+		<if test="S3 != null">
+		'관목형',
+		</if>
+		<if test="S4 != null">
+		'포복형',
+		</if>
+		<if test="S5 != null">
+		'로제트형',
+		</if>
+		<if test="S6 != null">
+		'불규칙형',
+		</if>
+		<if test="S7 != null">
+		'포복형',
+		</if>
+		<if test="S8 != null">
+		'직립형',
+		</if>
+		<if test="S9 != null">
+		'직립형, 단측지',
+		</if>
+		<if test="S0 != null">
+		'탑형',
+		</if>
+		<if test="shape != null">
+		'')
+		</if>
+		<if test="growth != null">
+		And grwtseVeNm IN (
+		</if>
+		<if test="G1 != null">
+		'빠름',
+		</if>
+		<if test="G2 != null">
+		'보통',
+		</if>
+		<if test="G3 != null">
+		'느림',
+		</if>
+		<if test="growth != null">
+		'')
+		</if>
+		<if test="demand != null">
+		And manageDemandNm IN (
+		</if>
+		<if test="D1 != null">
+		'약간 돌봄',
+		</if>
+		<if test="D2 != null">
+		'잘 견딤',
+		</if>
+		<if test="D3 != null">
+		'필요함',
+		</if>
+		<if test="demand != null">
+		'')
+		</if>
+		<if test="level != null">
+		And manageLevelNm IN (
+		</if>
+		<if test="L1 != null">
+		'매우 쉬움',
+		</if>
+		<if test="L2 != null">
+		'쉬움',
+		</if>
+		<if test="L3 != null">
+		'보통',
+		</if>
+		<if test="L4 != null">
+		'어려움',
+		</if>
+		<if test="L5 != null">
+		'매우 어려움',
+		</if>
+		<if test="level != null">
+		'')
+		</if>
+		<if test="period != null">
+		AND (
+		</if>
+		<if test="P1 != null">
+		grwtInfo like '%여름생장%' or
+		</if>
+		<if test="P2 != null">
+		grwtInfo like '%겨울생장%' or
+		</if>
+		<if test="period != null">
+		'')
+		</if>
+		<if test="waterCycle != null">
+			AND watercycleinfo LIKE '%${waterCycle}%'
+		</if>
+		<if test="cntntsSj != null">
+			AND cntntsSj LIKE '%${cntntsSj}%'
+		</if>
+		<if test="scnm != null">
+			AND scnm LIKE '%${scnm}%'
+		</if>
+		<if test="clNm != null">
+			AND clNm LIKE '%${clNm}%'
+		</if>
+		ORDER BY cntntsNo DESC LIMIT ${limit} OFFSET ${offset}
+	</select>
+	
+	<select id="selectDryGardenCount" resultType="int" parameterType="map">
+		SELECT  
+			COUNT(DISTINCT cntntsNo)
+		FROM DryGardenDtl
+		WHERE 1=1
+		<if test="shape != null">
+		And stleSeNm IN (
+		</if>
+		<if test="S1 != null">
+		'포도송이형',
+		</if>
+		<if test="S2 != null">
+		'군생형',
+		</if>
+		<if test="S3 != null">
+		'관목형',
+		</if>
+		<if test="S4 != null">
+		'포복형',
+		</if>
+		<if test="S5 != null">
+		'로제트형',
+		</if>
+		<if test="S6 != null">
+		'불규칙형',
+		</if>
+		<if test="S7 != null">
+		'포복형',
+		</if>
+		<if test="S8 != null">
+		'직립형',
+		</if>
+		<if test="S9 != null">
+		'직립형, 단측지',
+		</if>
+		<if test="S0 != null">
+		'탑형',
+		</if>
+		<if test="shape != null">
+		'')
+		</if>
+		<if test="growth != null">
+		And grwtseVeNm IN (
+		</if>
+		<if test="G1 != null">
+		'빠름',
+		</if>
+		<if test="G2 != null">
+		'보통',
+		</if>
+		<if test="G3 != null">
+		'느림',
+		</if>
+		<if test="growth != null">
+		'')
+		</if>
+		<if test="demand != null">
+		And manageDemandNm IN (
+		</if>
+		<if test="D1 != null">
+		'약간 돌봄',
+		</if>
+		<if test="D2 != null">
+		'잘 견딤',
+		</if>
+		<if test="D3 != null">
+		'필요함',
+		</if>
+		<if test="demand != null">
+		'')
+		</if>
+		<if test="level != null">
+		And manageLevelNm IN (
+		</if>
+		<if test="L1 != null">
+		'매우 쉬움',
+		</if>
+		<if test="L2 != null">
+		'쉬움',
+		</if>
+		<if test="L3 != null">
+		'보통',
+		</if>
+		<if test="L4 != null">
+		'어려움',
+		</if>
+		<if test="L5 != null">
+		'매우 어려움',
+		</if>
+		<if test="level != null">
+		'')
+		</if>
+		<if test="period != null">
+		AND (
+		</if>
+		<if test="P1 != null">
+		grwtInfo like '%여름생장%' or
+		</if>
+		<if test="P2 != null">
+		grwtInfo like '%겨울생장%' or
+		</if>
+		<if test="period != null">
+		'')
+		</if>
+		<if test="waterCycle != null">
+			AND watercycleinfo LIKE '%${waterCycle}%'
+		</if>
+		<if test="cntntsSj != null">
+			AND cntntsSj LIKE '%${cntntsSj}%'
+		</if>
+		<if test="scnm != null">
+			AND scnm LIKE '%${scnm}%'
+		</if>
+		<if test="clNm != null">
+			AND clNm LIKE '%${clNm}%'
+		</if>
+	</select>
+	
+	<select id="selectDryGardenByNo" resultMap="DryGardenListResultMap" parameterType="String">
+		SELECT 
+			cntntsNo, cntntsSj, clNm, clCodeDc, scnm, distbNm, orgplce, stleSeNm,flwrInfo, 
+			lfclChngeInfo, rdxStleNm, grwtInfo, grwtseVeNm, grwhTpInfo, pswntrTpInfo,
+			chartrInfo, lighttInfo, waterCycleInfo, prpgtInfo, hgtmMhmrInfo, dlthtsInfo,
+			manageLevelNm, manageDemandNm, frtlzrInfo, batchPlaceInfo, tipInfo, 
+			mainImgUrl1, mainImgUrl2
+		FROM DryGardenDtl
+		WHERE cntntsNo Like '${cntntsNo}'
+	</select>
+</mapper>

@@ -17,14 +17,35 @@ Main Banner START -->
 <section class="pt-3 pt-lg-5">
 	<div class="container">
 			<!-- Content and Image START -->
-			<div class="row g-4 g-lg-5">
+			<div class="row g-4 g-lg-5">	
+						
 				<!-- Content -->
 				<div class="col-lg-6 position-relative mb-4 mb-md-0">
+					<div class="text-end">	
+						<ul class="list-inline mb-0 z-index-2">	
+							<li class="list-inline-item dropdown">
+								<!-- Share button -->
+								<a href="#" class="btn btn-bg btn-success px-2" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa-solid fa-fw fa-share-alt"></i>
+								</a>
+								<!-- dropdown button -->
+								<ul class="dropdown-menu dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare">
+									<li><a id="btnTwitter" class="dropdown-item link-icon twitter" href="javascript:shareTwitter();"><i class="fab fa-twitter-square me-2"></i>Twitter</a></li>
+									<!-- <li><a id="btnFacebook" class="dropdown-item link-icon facebook" href="javascript:shareFacebook();"><i class="fab fa-facebook-square me-2"></i>Facebook</a></li> -->
+									<li><a id="btnKakao" class="dropdown-item link-icon kakao" href="javascript:shareKakao();">
+										<img src="https://img.icons8.com/external-tal-revivo-bold-tal-revivo/24/null/external-free-instant-messaging-app-for-cross-platform-devices-logo-bold-tal-revivo.png" style="height:15px"/> KaKao</a></li>
+									<li><a class="dropdown-item" href="#" onclick="clip(); return false;"><i class="fa-solid fa-copy me-2"></i>Copy link</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				
+					
 					<!-- Title -->
-					<h3 class="mb-6 mt-md-5 display-5">
-						<span class="position-relative z-index-9" style="font-size: 3rem;">산세베리아 ‘하니’
+					<h3 class="mb-6 mt-md-0 display-5 text-center">
+						<span class="position-relative z-index-9 " style="font-size: 3rem;">[[${drygarden.cntntsSj}]]
 							<!-- SVG START -->
-							<span class="position-absolute top-50 start-50 translate-middle z-index-n1 d-none d-md-block mt-4">
+							<span class="position-absolute top-50 z-index-n1 d-none d-md-block ml-0">
 								<svg width="30rem" height="1rem" viewBox="0 0 445.5 21.5">
 									<path class="fill-success opacity-7" d="M409.9,2.6c-9.7-0.6-19.5-1-29.2-1.5c-3.2-0.2-6.4-0.2-9.7-0.3c-7-0.2-14-0.4-20.9-0.5 c-3.9-0.1-7.8-0.2-11.7-0.3c-1.1,0-2.3,0-3.4,0c-2.5,0-5.1,0-7.6,0c-11.5,0-23,0-34.5,0c-2.7,0-5.5,0.1-8.2,0.1 c-6.8,0.1-13.6,0.2-20.3,0.3c-7.7,0.1-15.3,0.1-23,0.3c-12.4,0.3-24.8,0.6-37.1,0.9c-7.2,0.2-14.3,0.3-21.5,0.6 c-12.3,0.5-24.7,1-37,1.5c-6.7,0.3-13.5,0.5-20.2,0.9C112.7,5.3,99.9,6,87.1,6.7C80.3,7.1,73.5,7.4,66.7,8 C54,9.1,41.3,10.1,28.5,11.2c-2.7,0.2-5.5,0.5-8.2,0.7c-5.5,0.5-11,1.2-16.4,1.8c-0.3,0-0.7,0.1-1,0.1c-0.7,0.2-1.2,0.5-1.7,1 C0.4,15.6,0,16.6,0,17.6c0,1,0.4,2,1.1,2.7c0.7,0.7,1.8,1.2,2.7,1.1c6.6-0.7,13.2-1.5,19.8-2.1c6.1-0.5,12.3-1,18.4-1.6 c6.7-0.6,13.4-1.1,20.1-1.7c2.7-0.2,5.4-0.5,8.1-0.7c10.4-0.6,20.9-1.1,31.3-1.7c6.5-0.4,13-0.7,19.5-1.1c2.7-0.1,5.4-0.3,8.1-0.4 c10.3-0.4,20.7-0.8,31-1.2c6.3-0.2,12.5-0.5,18.8-0.7c2.1-0.1,4.2-0.2,6.3-0.2c11.2-0.3,22.3-0.5,33.5-0.8 c6.2-0.1,12.5-0.3,18.7-0.4c2.2-0.1,4.4-0.1,6.7-0.1c11.5-0.1,23-0.2,34.6-0.4c7.2-0.1,14.4-0.1,21.6-0.1c12.2,0,24.5,0.1,36.7,0.1 c2.4,0,4.8,0.1,7.2,0.2c6.8,0.2,13.5,0.4,20.3,0.6c5.1,0.2,10.1,0.3,15.2,0.4c3.6,0.1,7.2,0.4,10.8,0.6c10.6,0.6,21.1,1.2,31.7,1.8 c2.7,0.2,5.4,0.4,8,0.6c2.9,0.2,5.8,0.4,8.6,0.7c0.4,0.1,0.9,0.2,1.3,0.3c1.1,0.2,2.2,0.2,3.2-0.4c0.9-0.5,1.6-1.5,1.9-2.5 c0.6-2.2-0.7-4.5-2.9-5.2c-1.9-0.5-3.9-0.7-5.9-0.9c-1.4-0.1-2.7-0.3-4.1-0.4c-2.6-0.3-5.2-0.4-7.9-0.6 C419.7,3.1,414.8,2.9,409.9,2.6z"/>
 								</svg>
@@ -37,19 +58,31 @@ Main Banner START -->
 					<!-- Buttons -->
                     <div class="col-9 mb-4">
 						<h5 class="mt-2"><i class="fa-solid fa-a icon-lg bg-success bg-opacity-50 text-white rounded-circle"></i>&nbsp;&nbsp;&nbsp;식물학명</h5>
-						<h6 class="mb-0"><i>Sansevieria trifasciata</i> 'Hahnii' , 용설란과</h6>
+						<th:block th:if="${#strings.isEmpty(drygarden.scnm)}">
+							<h6 class="mb-0 text-end"> - </h6>
+						</th:block>
+						<h6 class="text-end mb-0" th:utext="${drygarden.scnm}"><h6>
 					</div>
                     <div class="col-9 mb-4">
 						<h5 class="mt-2"><i class="fa-solid fa-b icon-lg bg-success bg-opacity-50 text-white rounded-circle"></i>&nbsp;&nbsp;&nbsp;과명</h5>
-						<h6 class="mb-0">산세베리아(Sansevieria)속 (용설란과)</h6>
+						<th:block th:if="${#strings.isEmpty(drygarden.clNm)}">
+							<h6 class="mb-0 text-end"> - </h6>
+						</th:block>
+						<h6 class="text-end mb-0">[[${drygarden.clNm}]]</h6>
 					</div>
                     <div class="col-9 mb-4">
 						<h5 class="mt-2"><i class="fa-solid fa-c icon-lg bg-success bg-opacity-50 text-white rounded-circle"></i>&nbsp;&nbsp;&nbsp;유통명</h5>
-						<h6 class="mb-0">-</h6>
+						<th:block th:if="${#strings.isEmpty(drygarden.distbNm)}">
+							<h6 class="mb-0 text-end"> - </h6>
+						</th:block>
+						<h6 class="text-end mb-0">[[${drygarden.distbNm}]]</h6>
 					</div>
                     <div class="col-9 mb-4">
 						<h5 class="mt-2"><i class="fa-solid fa-d icon-lg bg-success bg-opacity-50 text-white rounded-circle"></i>&nbsp;&nbsp;&nbsp;원산지</h5>
-						<h6 class="mb-0">아프리카 콩고</h6>
+						<th:block th:if="${#strings.isEmpty(drygarden.orgplce)}">
+							<h6 class="mb-0 text-end"> - </h6>
+						</th:block>
+						<h6 class="text-end mb-0">[[${drygarden.orgplce}]]</h6>
 					</div>
 				</div>
                 
@@ -57,7 +90,7 @@ Main Banner START -->
 				<!-- Image -->
 				<div class="col-lg-6 position-relative">
 
-					<img src="http://www.nongsaro.go.kr/cms_contents/1122/204869_MF_BIMG_01.jpg" class="rounded" alt="">
+					<img th:src="${drygarden.mainImgUrl1}" class="rounded" alt="">
 
 					<!-- Svg decoration -->
 					<figure class="position-absolute end-0 bottom-0">
@@ -85,8 +118,8 @@ Main Banner START -->
 
 					<!-- Round image group -->
 					<div class="vstack gap-5 align-items-center position-absolute top-0 start-0 d-none d-md-flex mt-4 ms-n3">
-						<img class="icon-lg shadow-lg border border-3 border-white rounded-circle" src="assets/images/farmstouch/T1.jpg" alt="avatar">
-						<img class="icon-xl shadow-lg border border-3 border-white rounded-circle" src="assets/images/farmstouch/T2.jpg" alt="avatar">
+						<img class="icon-lg shadow-lg border border-3 border-white rounded-circle" src="../assets/images/farmstouch/T1.jpg" alt="avatar">
+						<img class="icon-xl shadow-lg border border-3 border-white rounded-circle" src="../assets/images/farmstouch/T2.jpg" alt="avatar">
 					</div>
 				</div>
 			</div>
@@ -352,8 +385,14 @@ About START -->
 				</figure>
 
 				<!-- Image -->
-				<img src="http://www.nongsaro.go.kr/cms_contents/1122/204869_MF_BIMG_02.jpg" class="rounded-3 position-relative" alt="">
-
+				<th:block th:if="${not #strings.isEmpty(drygarden.mainImgUrl2)}">
+					<img th:src="${drygarden.mainImgUrl2}" class="rounded-3 position-relative" alt="">
+					
+				</th:block>
+				<th:block th:if="${#strings.isEmpty(drygarden.mainImgUrl2)}">
+					<img src="../assets/images/farmstouch/noresult1.png" class="rounded-3 position-relative" alt="">
+					
+				</th:block>
 				<!-- Client rating START -->
 				
 				<!-- Client rating END -->
@@ -363,44 +402,63 @@ About START -->
 			<!-- Right side START -->
 			<div class="col-lg-6">
 				<h3 class="mb-3 mb-lg-5">상세정보</h3>
-
 				<!-- Features START -->
 				<div class="row g-4">
                     <!-- Item -->
+   
                     <div class="col-sm-6">
                         <div class="icon-lg bg-primary bg-opacity-10 text-primary rounded-circle" style="display: inline-block;"><i class="fa-solid fa-shapes"></i></div>
                         <h5 class="mx-2" style="display: inline-block;">형태</h5>
-                        <p class="mt-3">로제트형</p>
+                        <th:block th:if="${#strings.isEmpty(drygarden.stleSeNm)}">
+							<p class="mt-3"> - </p>
+						</th:block>
+                        <p class="mt-3">[[${drygarden.stleSeNm}]]</p>
                     </div>
                     <!-- Item -->
                     <div class="col-sm-6">
                         <div class="icon-lg bg-warning bg-opacity-10 text-warning rounded-circle" style="display: inline-block;"><i class="bi bi-flower2"></i></div>
                         <h5 class="mx-2" style="display: inline-block;">꽃</h5>
-                        <p class="mt-3">한 여름 무렵에 흰색 꽃이 핌</p>
+                        <th:block th:if="${#strings.isEmpty(drygarden.flwrInfo)}">
+							<p class="mt-3"> - </p>
+						</th:block>
+                        <p class="mt-3" th:utext="|${drygarden.flwrInfo.replace('<br />', ', ')}|"></p>
                     </div>
                     <!-- Item -->
                     <div class="col-sm-6">
                         <div class="icon-lg bg-success bg-opacity-10 text-success rounded-circle" style="display: inline-block;"><i class="fa-solid fa-leaf"></i></div>
                         <h5 class="mx-2" style="display: inline-block;">잎</h5>
-                        <p class="mt-3">-</p>
+                        <th:block th:if="${#strings.isEmpty(drygarden.lfclChngeInfo)}">
+							<p class="mt-3"> - </p>
+						</th:block>
+                        <p class="mt-3" th:utext="|${drygarden.lfclChngeInfo.replace('<br />', ', ')}|"></p>
                     </div>
                     <div class="col-sm-6">
                         <div class="icon-lg bg-danger bg-opacity-10 text-danger rounded-circle" style="display: inline-block;"><i class="fa-solid fa-carrot"></i></div>
                         <h5 class="mx-2" style="display: inline-block;">뿌리</h5>
-                        <p class="mt-3">굵은 뿌리</p>
+                        <th:block th:if="${#strings.isEmpty(drygarden.rdxStleNm)}">
+							<p class="mt-3"> - </p>
+						</th:block>
+                        <p class="mt-3">[[${drygarden.rdxStleNm}]]</p>
                     </div>
                     
                     <!-- Item -->
                     <div class="col-sm-6">
                         <div class="icon-lg bg-orange bg-opacity-10 text-orange rounded-circle" style="display: inline-block;"><i class="fa-solid fa-seedling"></i></div>
                         <h5 class="mx-2" style="display: inline-block;">생장속도</h5>
-                        <p class="mt-3">빠름</p>
+                        <th:block th:if="${#strings.isEmpty(drygarden.grwtseVeNm)}">
+							<p class="mt-3"> - </p>
+						</th:block>
+                        <p class="mt-3">[[${drygarden.grwtseVeNm}]]</p>
                     </div>		
                     <div class="col-sm-6">
                         <div class="icon-lg bg-secondary bg-opacity-10 text-secondary rounded-circle" style="display: inline-block;"><i class="fa-solid fa-bug"></i></div>
                         <h5 class="mx-2" style="display: inline-block;">병충해</h5>
-                        <p class="mt-3">병충해에는 별로 걸리지 않으나 잎을 깨끗이 닦아주도록 함</p>
+                        <th:block th:if="${#strings.isEmpty(drygarden.dlthtsInfo)}">
+							<p class="mt-3"> - </p>
+						</th:block>
+                        <p class="mt-3">[[${drygarden.dlthtsInfo}]]</p>
                     </div>
+                     
                     	
                 </div>
 				<!-- Features END -->
@@ -422,31 +480,124 @@ Featured Hotels START -->
             <aside class="col-xl-5 d-none d-xl-block">
 				<div class="card bg-transparent border">
 					<!-- Card header START -->
-					<div class="card-header bg-transparent border-bottom">
-						<!-- Title -->
-						<h4 class="card-title mb-0">난이도 : 쉬움 </h4>
-					</div>
-					<!-- Card header END -->
-
-					<!-- Card body START -->
-					<div class="card-body">
-                        <h3 class="text-center text-white bg-success rounded-3" style="line-height: 4rem;"><i class="fa-solid fa-baby"></i></h3>
-						<div class="row g-4 mb-6">
-							
-
+					<th:block th:if="${#strings.equals(drygarden.manageLevelNm, '매우 쉬움')}">
+						<div class="card-header bg-transparent border-bottom">
+							<!-- Title -->
+							<h4 class="card-title mb-0">난이도 : [[${drygarden.manageLevelNm}]] </h4>
+						</div>
+						<!-- Card header END -->
+	
+						<!-- Card body START -->
+						<div class="card-body">
+	                        <h3 class="text-center text-white bg-success rounded-3" style="line-height: 4rem;"><i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></h3>
+							<div class="row g-4 mb-2">
 							<!-- Item -->
 							
 								<div class="bg-light py-3 px-4 rounded-3">
-									<h6 class="  mb-1">쉬움이란?</h6>
-									<h6 class=" fw-light small mb-0">애기들도 키울 수 있을만큼 쉽습니다.</h6>
+									<h6 class="  mb-1">[[${drygarden.manageLevelNm}]]이란?</h6>
+									<h6 class=" fw-light small mb-0">다육 식물을 처음 키우시는 입문자들에게 추천드리는 난이도입니다.</h6>
 								</div>
-							
+								
+							</div>
 						</div>
-
+					</th:block>
+					<th:block th:if="${#strings.equals(drygarden.manageLevelNm, '쉬움')}">
+						<div class="card-header bg-transparent border-bottom">
+							<!-- Title -->
+							<h4 class="card-title mb-0">난이도 : [[${drygarden.manageLevelNm}]] </h4>
+						</div>
+						<!-- Card header END -->
+	
+						<!-- Card body START -->
+						<div class="card-body">
+	                        <h3 class="text-center text-white bg-success rounded-3" style="line-height: 4rem;"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></h3>
+							<div class="row g-4 mb-2">
+							<!-- Item -->
+							
+								<div class="bg-light py-3 px-4 rounded-3">
+									<h6 class="  mb-1">[[${drygarden.manageLevelNm}]]이란?</h6>
+									<h6 class=" fw-light small mb-0">다육 식물을 처음 키우시는 입문자들이나, 한 번정도 키워 보신 초보자분들에게 추천해드립니다.</h6>
+								</div>
+								
+							</div>
+						</div>
+					</th:block>
+					<th:block th:if="${#strings.equals(drygarden.manageLevelNm, '보통')}">
+						<div class="card-header bg-transparent border-bottom">
+							<!-- Title -->
+							<h4 class="card-title mb-0">난이도 : [[${drygarden.manageLevelNm}]] </h4>
+						</div>
+						<!-- Card header END -->
+	
+						<!-- Card body START -->
+						<div class="card-body">
+	                        <h3 class="text-center text-white bg-success rounded-3" style="line-height: 4rem;"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i> <i class="fa-regular fa-star"></i></h3>
+							<div class="row g-4 mb-2">
+							<!-- Item -->
+							
+								<div class="bg-light py-3 px-4 rounded-3">
+									<h6 class="  mb-1">[[${drygarden.manageLevelNm}]]이란?</h6>
+									<h6 class=" fw-light small mb-0">평소에 식물에 관심이 있거나, 식물 키워 보신 경험이 있으신 분에게 추천드립니다.</h6>
+								</div>
+								
+							</div>
+						</div>
+					</th:block>
+					<th:block th:if="${#strings.equals(drygarden.manageLevelNm, '어려움')}">
+						<div class="card-header bg-transparent border-bottom">
+							<!-- Title -->
+							<h4 class="card-title mb-0">난이도 : [[${drygarden.manageLevelNm}]] </h4>
+						</div>
+						<!-- Card header END -->
+	
+						<!-- Card body START -->
+						<div class="card-body">
+	                        <h3 class="text-center text-white bg-success rounded-3" style="line-height: 4rem;"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i></h3>
+							<div class="row g-4 mb-2">
+							<!-- Item -->
+							
+								<div class="bg-light py-3 px-4 rounded-3">
+									<h6 class="  mb-1">[[${drygarden.manageLevelNm}]]이란?</h6>
+									<h6 class=" fw-light small mb-0">식물을 키워 본 경험이 있으며, 때에 맞는 적절한 관리가 가능하신 분에게 추천드립니다.</h6>
+								</div>
+								
+							</div>
+						</div>
+					</th:block>
+					<th:block th:if="${#strings.equals(drygarden.manageLevelNm, '매우 어려움')}">
+						<div class="card-header bg-transparent border-bottom">
+							<!-- Title -->
+							<h4 class="card-title mb-0">난이도 : [[${drygarden.manageLevelNm}]] </h4>
+						</div>
+						<!-- Card header END -->
+	
+						<!-- Card body START -->
+						<div class="card-body">
+	                        <h3 class="text-center text-white bg-success rounded-3" style="line-height: 4rem;"><i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i></h3>
+							<div class="row g-4 mb-2">
+							<!-- Item -->
+							
+								<div class="bg-light py-3 px-4 rounded-3">
+									<h6 class="  mb-1">[[${drygarden.manageLevelNm}]]이란?</h6>
+									<h6 class=" fw-light small mb-0">죽어가는 꽃도 살리는 당신에게 어울리는 난이도입니다.</h6>
+								</div>
+								
+							</div>
+						</div>
+					</th:block>
+						
+					<div class="card-body pt-0 pb-3">
 						<!-- List -->
 						<div class="mb-3">
-                            <h4>육성 Tip</h4>
-                            <p>10월 상, 중순부터 물을 점차 줄이고 비료도<br />주지 않음<br />고온에서 잘 자라고 저온에는 매우 약하므로<br />겨울에 냉해를 입지 않도록 잘 보온하여<br />적정온도 20-25℃를 유지함</p>
+                            <h4 class="mb-4">육성 Tip</h4>
+                            <th:block th:if="${#strings.isEmpty(drygarden.tipInfo)}">
+								<p>1. 직사광선 No! 너무 어두운 곳 No!</p>
+								<p>2. 적절한 환기와 통풍은 필수!</p>
+								<p>3. 흙이 마르면 물주기!</p>
+							</th:block>
+                            <p th:utext="${drygarden.tipInfo}"></p>
+                            <p><b>※ 추천 배치 장소</b></p>
+                            <p th:utext="${drygarden.batchPlaceInfo}"></p>
 
                         </div>
 
@@ -483,7 +634,10 @@ Featured Hotels START -->
 										<div class="bg-success py-2 px-3 rounded-3 h-100" >
 											<h1 class="text-white" ><i class="fa-solid fa-temperature-half"></i></h1>
                                             <h5 class="text-white">생육온도</h5>
-                                            <h6 class="text-white">18~27°C</h6>
+                                            <th:block th:if="${#strings.isEmpty(drygarden.grwhTpInfo)}">
+												<h6 class="text-white"> - </h6>
+											</th:block>
+                                            <h6 class="text-white">[[${drygarden.grwhTpInfo}]]</h6>
                                             
 										</div>	
 
@@ -494,7 +648,10 @@ Featured Hotels START -->
                                         <div class="bg-success py-2 px-3 rounded-3 h-100 " >
                                             <h1 class="text-white"><i class="fa-solid fa-temperature-arrow-up"></i></h1>
                                             <h5 class="text-white">월동온도</h5>
-                                            <h6 class="text-white">2~3°C</h6>
+                                             <th:block th:if="${#strings.isEmpty(drygarden.pswntrTpInfo)}">
+												<h6 class="text-white"> - </h6>
+											</th:block>
+                                            <h6 class="text-white">[[${drygarden.pswntrTpInfo}]]</h6>
                                             
                                         </div>	
                                     </div>
@@ -504,8 +661,10 @@ Featured Hotels START -->
 										<div class="bg-success py-2 px-3 rounded-3 h-100" >
 											<h1 class="text-white"><i class="fa-regular fa-sun"></i></h1>
                                             <h5 class="text-white">광도</h5>
-                                            <p class="text-white" style="font-weight: bold;">고온에 강하므로 연중 광선이 잘 쬐는 반그늘<br />아래에서 잘 자라고 여름철에는 직사광선을<br />약간 피함</p>
-                                            
+                                            <th:block th:if="${#strings.isEmpty(drygarden.lighttInfo)}">
+												<h6 class="text-white"> - </h6>
+											</th:block>
+                                            <h6 class="text-white" th:utext="${drygarden.lighttInfo}"></h6>
 										</div>
 									</div>
 									<!-- Room detail START -->
@@ -523,7 +682,10 @@ Featured Hotels START -->
 										<div class="bg-success py-2 px-3 rounded-3 h-100" >
 											<h1 class="text-white"><i class="fa-solid fa-hands-holding-circle"></i></h1>
                                             <h5 class="text-white">관리요구도</h5>
-                                            <h6 class="text-white">약간 돌봄</h6>
+                                            <th:block th:if="${#strings.isEmpty(drygarden.manageDemandNm)}">
+												<h6 class="text-white"> - </h6>
+											</th:block>
+                                            <h6 class="text-white">[[${drygarden.manageDemandNm}]]</h6>
                                             
 										</div>	
 
@@ -535,8 +697,10 @@ Featured Hotels START -->
 										<div class="bg-success py-2 px-3 rounded-3  h-100" >
 											<h1 class="text-white"><i class="fa-solid fa-shower"></i></h1>
                                             <h5 class="text-white">물주기</h5>
-                                            <p class="text-white" style="font-weight: bold;">분 흙이 충분히 마른 뒤 며칠 후 충분히 관수</p>
-                                            
+                                            <th:block th:if="${#strings.isEmpty(drygarden.waterCycleInfo)}">
+												<h6 class="text-white"> - </h6>
+											</th:block>
+                                            <h6 class="text-white" th:utext="${drygarden.waterCycleInfo}"></h6>
 										</div>
 									</div>
                                     <div class="col-md-4">
@@ -544,7 +708,10 @@ Featured Hotels START -->
 										<div class="bg-success py-2 px-3 rounded-3  h-100" >
 											<h1 class="text-white"><i class="fa-solid fa-poo"></i></h1>
                                             <h5 class="text-white">비료</h5>
-                                            <h6 class="text-white">-</h6>
+                                            <th:block th:if="${#strings.isEmpty(drygarden.frtlzrInfo)}">
+												<h6 class="text-white"> - </h6>
+											</th:block>
+                                            <h6 class="text-white">[[${drygarden.frtlzrInfo}]]</h6>
                                             
 										</div>	
 									</div>
@@ -563,6 +730,11 @@ Featured Hotels START -->
 			
 			<!-- Right side content END -->
 		</div>
+		<div class="row mb-2 mt-1">
+			<div class="col-3 mx-auto text-center">
+				<a class="btn btn-success-soft btn-lg" th:href="|/plant/drygardenList|"><i class="fa-solid fa-list"></i> 목록으로</a>
+			</div>
+		</div>
 	</div>
 </section>
 <!-- =======================
@@ -576,7 +748,68 @@ Download app END -->
 
 </main>
 <!-- **************** MAIN CONTENT END **************** -->
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
+<script type="text/javascript">
+var url = '';
+
+function clip(){
+
+	var textarea = document.createElement("textarea");
+	document.body.appendChild(textarea);
+	url = window.document.location.href;
+	textarea.value = url;
+	textarea.select();
+	document.execCommand("copy");
+	document.body.removeChild(textarea);
+	alert("URL이 복사되었습니다.")
+}
+
+// 트위터
+function shareTwitter() {
+
+    var sendText = "farmstouch"; // 전달할 텍스트
+    var sendUrl = url; // 전달할 URL
+    window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
+}
+
+// 페이스북
+/* function shareFacebook() {
+	var url = '';
+	var textarea = document.createElement("textarea");
+	document.body.appendChild(textarea);
+	url = window.document.location.href;
+	textarea.value = url;
+	textarea.select();
+	document.execCommand("copy");
+	document.body.removeChild(textarea);
+    var sendUrl = "url"; // 전달할 URL
+    window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
+} */
+
+// 카카오
+function shareKakao() {
+      
+      // 사용할 앱의 JavaScript 키 설정
+      Kakao.init('9b8a2ab69f37af22f6784fef92e74104');
+
+      // 카카오링크 버튼 생성
+      Kakao.Link.createDefaultButton({
+            container: '#btnKakao', // 카카오공유버튼ID
+            objectType: 'feed',
+            content: {
+                  title: "Farm's Touch", // 보여질 제목
+                  description: "반갑습니다. 초보 농부를 위한 온라인 지침서 팜스터치 입니다.", // 보여질 설명
+                  imageUrl: "https://www.urbanbrush.net/web/wp-content/uploads/edd/2018/02/web-20180213120309801324.png", // 콘텐츠 URL
+                  link: {
+                        mobileWebUrl: url,
+                        webUrl: url
+                  }
+            }
+      });
+}
+
+</script>
 
 
 	<footer th:replace="~{common/layout2 :: #footer}"></footer>

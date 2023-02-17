@@ -84,7 +84,7 @@ public class MemberService {
 		
 		File folder = new File(savePath);
 		if(folder.exists() == false) {
-			folder.mkdir();
+			folder.mkdirs();
 		}
 		
 		String originalFileName = upFile.getOriginalFilename();

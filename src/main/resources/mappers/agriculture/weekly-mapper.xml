@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.multi.bbs.weeklyfarminginfo.model.mapper.WeeklyFarmingInfoMapper">
+
+	<resultMap type="WeeklyFarmingInfo" id="WeeklyFarmingInfoListResultMap">
+		<id property="weekNo" column="weekNo"/>
+		<result property="cntntsNo" column="cntntsNo"/>
+		<result property="fileSeCode" column="fileSeCode"/>
+		<result property="subject" column="subject"/>
+		<result property="hitCt" column="hitCt"/>
+		<result property="writerNm" column="writerNm"/>
+		<result property="regDt" column="regDt"/>
+		<result property="downUrl" column="downUrl"/>
+		<result property="fileName" column="fileName"/>
+		<result property="subUrl" column="subUrl"/>
+	</resultMap>
+
+	<!-- select * from weekfarminfolist order by weekNo desc;  -->
+	<!-- weekNo, cntntsNo, fileSeCode, subject, writerNm, hitCt, regDt, downUrl, fileName, subUrl -->
+	<!-- 게시글 출력  -->
+	<select id="selectWeeklyFarimgInfoList" resultMap="WeeklyFarmingInfoListResultMap" parameterType="map">
+		SELECT  
+			weekNo, cntntsNo, fileSeCode, subject, writerNm, hitCt, regDt, downUrl, fileName, subUrl
+		FROM weekFarmInfoList
+		WHERE 1=1
+		<if test="subject != null">
+			AND subject LIKE '%${subject}%' 
+		</if>		
+		<if test="writerNm != null">
+			AND writerNm LIKE '%${writerNm}%' 
+		</if>		
+		ORDER BY weekNo DESC LIMIT ${limit} OFFSET ${offset}
+	</select>
+	
+	
+	<!-- 게시글 갯수 -->
+	<select id="selectWeeklyFarmingInfoCount" resultType="int" parameterType="map">
+		SELECT  
+			 COUNT(DISTINCT cntntsNo)
+		FROM weekFarmInfoList
+		WHERE 1=1
+		<if test="subject != null">
+			AND subject LIKE '%${subject}%' 
+		</if>		
+		<if test="writerNm != null">
+			AND writerNm LIKE '%${writerNm}%' 
+		</if>			
+	</select>
+	
+</mapper>

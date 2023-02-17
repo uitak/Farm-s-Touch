@@ -84,22 +84,22 @@
 						<ul class="dropdown-menu" aria-labelledby="listingMenu">
 							<!-- Dropdown submenu -->
 							
-					<li> <a class="dropdown-item" href="index.html">농작물</a></li>
+					<li> <a class="dropdown-item" th:href="|/agriculture/farmingVarietiesList|">품종정보</a></li>
 					
 					<li class="dropdown-submenu dropend">
 								<a class="dropdown-item dropdown-toggle" href="#">농기계</a>
 								<ul class="dropdown-menu" data-bs-popper="none">
-									<li> <a class="dropdown-item" href="sign-in.html">농기계 시청각 자료</a></li>
-									<li> <a class="dropdown-item" href="sign-up.html">안전 사용 지침</a></li>
+									<li> <a class="dropdown-item" th:href="|/agriculture/agriculturalMachineryVideoList|">농기계 시청각 자료</a></li>
+									<li> <a class="dropdown-item" th:href="|/agriculture/safety|">안전 사용 지침</a></li>
 								</ul>
 							</li>
 
 					<li class="dropdown-submenu dropend">
 								<a class="dropdown-item dropdown-toggle" href="#">농업기술</a>
 								<ul class="dropdown-menu" data-bs-popper="none">
-									<li> <a class="dropdown-item" href="sign-in.html">농업기술 정보</a></li>
-									<li> <a class="dropdown-item" href="sign-up.html">농업기술 더하기 나누기</a></li>
-									<li> <a class="dropdown-item" href="sign-up.html">주간 농사 정보</a></li>
+									<li> <a class="dropdown-item" th:href="|/agriculture/agriTechVideo|">농업기술 정보 영상</a></li>
+									<li> <a class="dropdown-item" th:href="|/agriculture/agriculturalPlusMinusList|">농업기술 더하기 나누기</a></li>
+									<li> <a class="dropdown-item" th:href="|/agriculture/weeklyFarmingInfo|">주간 농사 정보</a></li>
 								</ul>
 							</li>
 
@@ -112,10 +112,10 @@
 						<a class="nav-link dropdown-toggle" style=" font-size: 1.2rem;" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">식물</a>
 						<ul class="dropdown-menu" aria-labelledby="pagesMenu">
 
-							<li> <a class="dropdown-item" href="contact-2.html">추천 식물</a></li>
-							<li> <a class="dropdown-item" href="@{/plant/gardenList}">정원 식물</a></li>
-							<li> <a class="dropdown-item" href="contact.html">다육 식물</a></li>
-							<li> <a class="dropdown-item" th:href="@{/blog/list}">블로그</a></li>
+							<li> <a class="dropdown-item" th:href="|/plant/gardenList|">정원 식물</a></li>
+							<li> <a class="dropdown-item" th:href="|/plant/drygardenList|">다육 식물</a></li>
+							<li> <a class="dropdown-item" th:href="|/test/loveTypePlantTest|">식물 연애 테스트</a></li>
+							<li> <a class="dropdown-item" th:href="|/blog/list|">식물 자랑 블로그</a></li>
 						</ul>
 					</li>
 
@@ -123,9 +123,9 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" style="font-size: 1.2rem;" href="#" id="accounntMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">농촌활동</a>
 						<ul class="dropdown-menu" aria-labelledby="accounntMenu">
-							<li> <a class="dropdown-item" href="admin-dashboard.html">농가 맛집</a> </li>
-							<li> <a class="dropdown-item" href="admin-dashboard.html">약초 정보</a> </li>
-							<li> <a class="dropdown-item" href="admin-dashboard.html">농촌 교육 농장</a> </li>
+							<li> <a class="dropdown-item" th:href="|/life/farmHouseRestaurantList|">농가 맛집</a> </li>
+							<li> <a class="dropdown-item" th:href="|/life/herbList|">약초 정보</a> </li>
+							<li> <a class="dropdown-item" th:href="|/life/ruralEducationCenterList|">농촌 교육 농장</a> </li>
 						</ul>
 					</li>
 
@@ -136,7 +136,7 @@
 							<li> <a class="dropdown-item" th:href="@{/board/agriculture/list}">농산물 직거래 장터</a> </li>
 							<li> <a class="dropdown-item" th:href="@{/board/plant/list}">식물 분양 장터</a> </li>
 							<li> <a class="dropdown-item" th:href="@{/}">공지사항</a> </li>
-							<li> <a class="dropdown-item" th:href="@{/}">이벤트</a> </li>
+							<li> <a class="dropdown-item" th:href="@{/life/eventList}">이벤트</a> </li>
 						</ul>
 					</li>
 
@@ -148,7 +148,7 @@
 				<div class="navbar-collapse collapse" id="navbarCategoryCollapse">
 					<ul class="navbar-nav navbar-nav-scroll nav-pills-primary-soft text-center ms-auto p-2 p-xl-0">
 						<!-- Nav item Tour -->
-						<li class="nav-item"> <a class="nav-link" href="index-tour.html"><i class="fa-solid fa-shop me-2"></i>쇼핑몰</a> </li>
+						<li class="nav-item"> <a class="nav-link" th:href="|/shop/shoppingList|"><i class="fa-solid fa-shop me-2"></i>쇼핑몰</a> </li>
 
 						<!-- Nav item Cabs -->
 						<li class="nav-item"> <a class="nav-link" th:href="@{/login}"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>로그인</a></li>
@@ -161,7 +161,7 @@
 				<div class="navbar-collapse collapse" id="navbarCategoryCollapse">
 					<ul class="navbar-nav navbar-nav-scroll nav-pills-primary-soft text-center ms-auto p-2 p-xl-0">
 						<!-- Nav item Tour -->
-						<li class="nav-item"> <a class="nav-link" href="index-tour.html"><i class="fa-solid fa-shop me-2"></i>쇼핑몰</a> </li>
+						<li class="nav-item"> <a class="nav-link" th:href="|/shop/shoppingList|"><i class="fa-solid fa-shop me-2"></i>쇼핑몰</a> </li>
 
 						<!-- Nav item Cabs -->
 						<li class="nav-item"> <a class="nav-link" th:href="@{/logout}"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>로그아웃</a></li>
@@ -255,7 +255,7 @@
 							<li> <hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" th:href="@{/member/view}"><i class="bi bi-list-check fa-fw me-2"></i>마이페이지</a></li>
 							<li><a class="dropdown-item" href="#"><i class="bi bi-bookmark-check fa-fw me-2"></i>즐겨찾기</a></li>
-							<li><a class="dropdown-item" href="#"><i class="bi bi-heart fa-fw me-2"></i>나의 성향은</a></li>
+							<li><a class="dropdown-item" th:href="|/test/loveTypePlantTest|"><i class="bi bi-heart fa-fw me-2"></i>나의 성향은</a></li>
 							<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>고객센터</a></li>
 							<li><a class="dropdown-item bg-danger-soft-hover" th:href="@{/logout}"><i class="bi bi-power fa-fw me-2"></i>로그아웃</a></li>
 							<li> <hr class="dropdown-divider"></li>
@@ -304,8 +304,8 @@
 						</div>
 					</form>
 				</p>
-				<p class="mb-2"><a href="#" class="text-muted text-primary-hover"><i class="bi bi-telephone me-2"></i>+1234 568 963</a> </p>
-				<p class="mb-0"><a href="#" class="text-muted text-primary-hover"><i class="bi bi-envelope me-2"></i>farmsTouch@gmail.com</a></p>
+				<p class="mb-2"><a class="text-muted"><i class="bi bi-telephone me-2"></i>+1234 568 963</a> </p>
+				<p class="mb-0"><a class="text-muted"><i class="bi bi-envelope me-2"></i>farmsTouch@gmail.com</a></p>
 				
 			</div>
 			<!-- Widget 1 END -->
@@ -317,10 +317,11 @@
 					<div class="col-6 col-md-3">
 						<h5 class="text-white mb-2 mb-md-4">Search</h5>
 						<ul class="nav flex-column text-primary-hover">
-							<li class="nav-item"><a class="nav-link text-muted" href="#">농작물</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="#">정원식물</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="#">다육식물</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="#">품종정보</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" th:href="|/agriculture/farmingVarietiesList|">품종 정보</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" th:href="|/plant/gardenList|">정원 식물</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" th:href="|/plant/drygardenList|">다육 식물</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" th:href="|/agriculture/weeklyFarmingInfo|">주간 농사</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" th:href="|/life/herbList|">민간 약초</a></li>
 
 						</ul>
 					</div>
@@ -329,12 +330,11 @@
 					<div class="col-6 col-md-3">
 						<h5 class="text-white mb-2 mb-md-4">Information</h5>
 						<ul class="nav flex-column text-primary-hover">
-							<li class="nav-item"><a class="nav-link text-muted" href="#">농기계</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="#">농사기술</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="#">농가맛집</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="#">약초정보</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" href="#">농촌체험활동</a></li>
-
+							<li class="nav-item"><a class="nav-link text-muted" th:href="|/agriculture/agriculturalMachineryVideoList|">농기계 시청각 자료</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" th:href="|/agriculture/agriculturalPlusMinusList|">농업 기술+</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" th:href="|/life/farmHouseRestaurantList|">농가 맛집</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" th:href="|/agriculture/agriTechVideo|">농업 기술 영상</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" th:href="|/life/ruralEducationCenterList|">농촌 교육 농장</a></li>
 						</ul>
 					</div>
 									
@@ -344,8 +344,9 @@
 						<ul class="nav flex-column text-primary-hover">
 							<li class="nav-item"><a class="nav-link text-muted" href="#">공지사항</a></li>
 							<li class="nav-item"><a class="nav-link text-muted" th:href="@{/blog/list}">식물 블로그</a></li>
-							<li class="nav-item"><a class="nav-link text-muted" th:href="@{/board/agriculture/list}">농산물 직거래 게시판</a></li>
-
+							<li class="nav-item"><a class="nav-link text-muted" th:href="@{/board/agriculture/list}">농산물 직거래 장터</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" th:href="@{/board/plant/list}">식물 분양 장터</a></li>
+							<li class="nav-item"><a class="nav-link text-muted" th:href="|/test/loveTypePlantTest|">식물 연애 테스트</a></li>
 						</ul>
 					</div>
 

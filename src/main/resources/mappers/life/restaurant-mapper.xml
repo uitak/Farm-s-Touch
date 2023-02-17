@@ -65,6 +65,7 @@
 		<if test="searchCity != null">
 			AND subArea LIKE '%${searchCity}%'
 		</if>
+		and imgUrl1 not like ''
 		
 		GROUP BY d.cntntsNo
 		<if test="cntntsSj == null and star == null and review == null">
@@ -95,7 +96,7 @@
 		<if test="searchCity != null">
 			AND subArea LIKE '%${searchCity}%' 
 		</if>
-				
+		and imgUrl1 not like ''		
 	</select>
 
 	
@@ -120,6 +121,7 @@
 		<if test="cntntsNo != null">
 			AND d.cntntsNo != #{cntntsNo}
 		</if>
+		and imgUrl1 not like ''
 		Order by rand() Limit 4
 	</select>
 	
@@ -130,6 +132,7 @@
 		<if test="cntntsNo != null">
 			AND d.cntntsNo = #{cntntsNo}
 		</if>
+		and imgUrl1 not like ''
 	</select>
 	
 

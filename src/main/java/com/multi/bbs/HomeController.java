@@ -56,11 +56,17 @@ public class HomeController {
 		List<TechVideoIndex> vList = indexService.getTechVideoIndexList();
 		
 		//확인용 추후에 필히 삭제
-//		for(TechVideoIndex havetodelete : vList) {
+//		for(TodayFlowerIndex havetodelete : fList) {
 //			System.out.println(havetodelete);
 //		}
+		
+		String reContent = fList.get(0).getFContent().substring(0,90) + "...";	// 문자열 너무 길어서 컷팅
+		String reGrow = fList.get(0).getFGrow().substring(0,90) + "...";	// 문자열 너무 길어서 컷팅
 	
 		model.addAttribute("fList", fList);	// 오늘의 꽃 전달
+		model.addAttribute("reContent", reContent);	// 문자열 컷팅 한 내용
+		model.addAttribute("reGrow", reGrow);		// 문자열 컷팅 한 내용
+		
 		model.addAttribute("tList", tList);	// 농가맛집 전달
 		model.addAttribute("vList", vList);	// 농업기술동영상 전달
 		return "/index";

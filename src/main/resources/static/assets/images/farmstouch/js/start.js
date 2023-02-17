@@ -1,5 +1,5 @@
 // qna 페이지 처리 js
-const main = document.querySelector("#main");
+const main = document.querySelector("#mainTest");
 const qna = document.querySelector("#qna");
 const endPoint = 12;    // 질문 마지막 번호
 const result = document.querySelector("#result");
@@ -48,7 +48,7 @@ function goResult(){
             }, 450);
       });
       setResult();
-      // calResult();
+      goDetail();
 }
 
 
@@ -129,35 +129,37 @@ function begin(){
       }, 450);
 }
 
+// 결과로 나온 꽃 상세페이지로 이동
+function goDetail(){
+	var myValue = '';
+	if(point === 0){
+		myValue = "http://localhost/life/todayFlowerDetail?dataNo=193";
+	} else if(point === 1) {
+		myValue = "http://localhost/life/todayFlowerDetail?dataNo=244";
+	} else if(point === 2) {
+		myValue = "http://localhost/life/todayFlowerDetail?dataNo=4";
+	} else if(point === 3) {
+		myValue = "http://localhost/life/todayFlowerDetail?dataNo=343";
+	} else if(point === 4) {
+		myValue = "http://localhost/life/todayFlowerDetail?dataNo=8";
+	} else if(point === 5) {
+		myValue = "http://localhost/life/todayFlowerDetail?dataNo=167";
+	} else if(point === 6) {
+		myValue = "http://localhost/life/todayFlowerDetail?dataNo=342";
+	} else if(point === 7) {
+		myValue = "http://localhost/life/todayFlowerDetail?dataNo=205";
+	} else if(point === 8) {
+		myValue = "http://localhost/life/todayFlowerDetail?dataNo=9";
+	} else if(point === 9) {
+		myValue = "http://localhost/life/todayFlowerDetail?dataNo=42";
+	} else if(point === 10) {
+		myValue = "http://localhost/life/todayFlowerDetail?dataNo=184";
+	} else if(point === 11){
+		myValue = "http://localhost/life/todayFlowerDetail?dataNo=311";
+	} else {
+		myValue = "http://localhost/life/todayFlowerList";
+	}
 
-var myValue = '';
-if(point === 0){
-	myValue = "http://localhost/life/todayFlowerDetail?dataNo=193";
-} else if(point === 1) {
-	myValue = "http://localhost/life/todayFlowerDetail?dataNo=244";
-} else if(point === 2) {
-	myValue = "http://localhost/life/todayFlowerDetail?dataNo=4";
-} else if(point === 3) {
-	myValue = "http://localhost/life/todayFlowerDetail?dataNo=343";
-} else if(point === 4) {
-	myValue = "http://localhost/life/todayFlowerDetail?dataNo=8";
-} else if(point === 5) {
-	myValue = "http://localhost/life/todayFlowerDetail?dataNo=167";
-} else if(point === 6) {
-	myValue = "http://localhost/life/todayFlowerDetail?dataNo=342";
-} else if(point === 7) {
-	myValue = "http://localhost/life/todayFlowerDetail?dataNo=205";
-} else if(point === 8) {
-	myValue = "http://localhost/life/todayFlowerDetail?dataNo=9";
-} else if(point === 9) {
-	myValue = "http://localhost/life/todayFlowerDetail?dataNo=42";
-} else if(point === 10) {
-	myValue = "http://localhost/life/todayFlowerDetail?dataNo=184";
-} else if(point === 11){
-	myValue = "http://localhost/life/todayFlowerDetail?dataNo=311";
-} else {
-	myValue = "http://localhost/life/todayFlowerDetail";
+	var myLink = document.getElementById("myLink"); 
+	myLink.setAttribute("href", myValue); 
 }
-
-var myLink = document.getElementById("myLink"); // Access the hyperlink element
-myLink.setAttribute("href", myValue); // Set the href attribute of the hyperlink to the value of the variable

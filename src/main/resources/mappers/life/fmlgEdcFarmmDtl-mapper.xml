@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.multi.bbs.fmlgEdcFarmm.model.mapper.FmlgEdcFarmmMapper">
+
+	<resultMap type="FmlgEdcFarmm" id="FmlgEdcFarmmDtlListResultMap">
+		<id property="cntntsNo" column="cntntsNo"/>
+		<result property="cntntsNo" column="cntntsNo"/>
+		<result property="locplc" column="locplc"/>
+		<result property="thema" column="thema"/>
+		<result property="appnYear" column="appnYear"/>
+		
+		<result property="url" column="url"/>
+		<result property="telno" column="telno"/>
+		<result property="crtfcYearInfo" column="crtfcYearInfo"/>
+		<result property="cn" column="cn"/>
+		<result property="imgUrl1" column="imgUrl1"/>
+		
+		<result property="imgUrl2" column="imgUrl2"/>
+		<result property="imgUrl3" column="imgUrl3"/>
+		<result property="imgUrl4" column="imgUrl4"/>
+		<result property="imgUrl5" column="imgUrl5"/>
+		<result property="imgUrl6" column="imgUrl6"/>
+	</resultMap>
+
+	<insert id="insertfmlgEdcFarmmDtl" parameterType="com.multi.bbs.fmlgEdcFarmm.model.vo.FmlgEdcFarmm">
+		INSERT INTO fmlgEdcFarmmDtl(
+			cntntsNo, cntntsSj, locplc, thema, appnYear, 
+			url, telno, crtfcYearInfo, cn, imgUrl1, 
+			imgUrl2, imgUrl3, imgUrl4, imgUrl5, imgUrl6
+		) VALUES (
+			#{cntntsNo}, #{cntntsSj}, #{locplc}, #{thema}, #{appnYear}, 
+			#{url}, #{telno}, #{crtfcYearInfo}, #{cn}, #{imgUrl1}, 
+			#{imgUrl2}, #{imgUrl3}, #{imgUrl4}, #{imgUrl5}, #{imgUrl6}
+		)
+	</insert>
+
+	<select id="selectfmlgEdcFarmmDtlCount" resultType="int" parameterType="map">
+		SELECT  
+			COUNT(*)
+		FROM fmlgEdcFarmmDtl
+		WHERE 1=1
+		<if test="cntntsSj != null">
+			AND cntntsSj LIKE '%${cntntsSj}%' 
+		</if>
+		<if test="thema != null">
+			AND thema LIKE '%${thema}%' 
+		</if>
+		<if test="locplc != null">
+			AND locplc LIKE '%${locplc}%' 
+		</if>
+	</select>
+
+	<select id="selectfmlgEdcFarmmDtlList" resultType="FmlgEdcFarmm" parameterType="map">
+		SELECT
+			*
+		FROM fmlgEdcFarmmDtl
+		WHERE 1=1
+		<if test="cntntsSj != null">
+			AND cntntsSj LIKE '%${cntntsSj}%'
+		</if>
+		<if test="thema != null">
+			AND thema LIKE '%${thema}%'
+		</if>
+		<if test="locplc != null">
+			AND locplc LIKE '%${locplc}%'
+		</if>
+		ORDER BY cntntsSj LIMIT ${limit} OFFSET ${offset}
+	</select>
+
+	<!-- 상세페이지 view > 목록 번호를 골라서 들고오자 -->
+	<select id="selecfmlgEdcFarmmDtlByNo" resultMap="FmlgEdcFarmmDtlListResultMap" parameterType="String">
+		SELECT  
+			cntntsNo, cntntsSj, locplc, thema, appnYear, 
+			url, telno, crtfcYearInfo, cn, imgUrl1, 
+			imgUrl2, imgUrl3, imgUrl4, imgUrl5, imgUrl6
+		FROM fmlgEdcFarmmDtl
+		WHERE 1=1
+		<if test="cntntsNo != null">
+			AND cntntsNo = #{cntntsNo}
+		</if>
+	</select>
+
+	<!-- 상세페이지 다른 약초 자기 자신 제외하고 랜덤으로 2개 뽑아오기 -->
+	<!--  select * from prvateTherpyFinal where cntntsNo NOT LIKE '204881' Order by rand() Limit 2;  -->
+	<select id="selectfmlgEdcFarmmDtlOtherList" resultMap="FmlgEdcFarmmDtlListResultMap" parameterType="String">
+		SELECT  
+			cntntsNo, cntntsSj, locplc, thema, appnYear, 
+			url, telno, crtfcYearInfo, cn, imgUrl1, 
+			imgUrl2, imgUrl3, imgUrl4, imgUrl5, imgUrl6
+		FROM fmlgEdcFarmmDtl
+		WHERE 1=1
+		<if test="cntntsNo != null">
+			AND cntntsNo != #{cntntsNo}
+		</if>
+		Order by rand() Limit 1
+	</select>
+
+</mapper>

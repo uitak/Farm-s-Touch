@@ -18,7 +18,7 @@
 Main banner START -->
 <section class="pt-0">
 	<!-- Background and title -->
-	<div class="container-fluid" style="background-image:url(assets/images/farmstouch/example/rural/rural9.webp); background-position: center left; background-size: cover;">
+	<div class="container-fluid" th:style="|background-image:url(@{/assets/images/farmstouch/example/rural/rural9.webp}); background-position: center left; background-size: cover;|">
 		<div class="row">
 			<!-- Title -->
 			<div class="col-md-6 mx-auto text-center pt-7 pb-9">
@@ -53,7 +53,7 @@ Main banner START -->
 					
 					<!-- Tab content item START -->
 					<div class="tab-pane fade show active" id="tab-1-1">
-						<form class="card shadow p-0">
+						<form th:action="@{/life/ruralEducationCenterList}" method="get" class="card shadow p-0">
 							<!-- Card header -->
 							<div class="card-header p-4">
 								<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>제목명 검색</h5>
@@ -65,7 +65,7 @@ Main banner START -->
 									<!-- Location -->
 									<div class="col-12">
 										<div class="form-icon-input form-size-lg form-fs-lg">
-											<input class="form-control" type="text" placeholder="검색어를 입력하세요...">
+											<input type="text" id="searchValue" name="searchValue" th:value="${param.searchValue}" class="form-control" placeholder="검색어를 입력하세요...">
 											<span class="form-icon"><i class="bi bi-search fs-5"></i></span>
 										</div>
 									</div>
@@ -73,7 +73,7 @@ Main banner START -->
 
 								<!-- Button -->
 								<div class="text-center pt-0">
-									<button class="btn btn-lg btn-success2 mb-n7" type="submit">제목명 검색 <i class="bi bi-arrow-right ps-3"></i></button>
+									<button class="btn btn-lg btn-success2 mb-n7" type="submit" th:name="searchType" value="cntntsSj">제목명 검색 <i class="bi bi-arrow-right ps-3"></i></button>
 								</div>
 							</div>
 						</form>
@@ -83,7 +83,7 @@ Main banner START -->
 
 					<!-- Tab content item START -->
 					<div class="tab-pane fade" id="tab-1-2">
-						<form class="card shadow p-0">
+						<form th:action="@{/life/ruralEducationCenterList}" method="get" class="card shadow p-0">
 							<!-- Card header -->
 							<div class="card-header p-4">
 								<h5 class="mb-0"><i class="fa-solid fa-hashtag fa-fw me-2"></i>주제명 검색</h5>
@@ -95,7 +95,7 @@ Main banner START -->
 									<!-- Location -->
 									<div class="col-12">
 										<div class="form-icon-input form-size-lg form-fs-lg">
-											<input class="form-control " type="text" placeholder="검색어를 입력하세요...">
+											<input type="text" id="searchValue" name="searchValue" th:value="${param.searchValue}" class="form-control" placeholder="검색어를 입력하세요...">
 											<span class="form-icon"><i class="bi bi-search fs-5"></i></span>
 										</div>
 									</div>
@@ -103,7 +103,7 @@ Main banner START -->
 
 								<!-- Button -->
 								<div class="text-center pt-0">
-									<button class="btn btn-lg btn-success2 mb-n7" type="submit">주제명 검색 <i class="bi bi-arrow-right ps-3"></i></button>
+									<button class="btn btn-lg btn-success2 mb-n7" type="submit" th:name="searchType" value="thema">주제명 검색 <i class="bi bi-arrow-right ps-3"></i></button>
 								</div>
 							</div>
 						</form>
@@ -114,7 +114,7 @@ Main banner START -->
 
 					<!-- Tab content item START -->
 					<div class="tab-pane fade" id="tab-1-3">
-						<form class="card shadow p-0">
+						<form th:action="@{/life/ruralEducationCenterList}" method="get" class="card shadow p-0">
 							<!-- Card header -->
 							<div class="card-header p-4">
 								<h5 class="mb-0"><i class="fa-solid fa-globe-asia fa-fw me-2"></i>지역명 검색</h5>
@@ -128,53 +128,53 @@ Main banner START -->
 										<div class="form-icon-input form-size-lg form-fs-lg">
 											
 											<span class="form-icon" style="margin-top: -17px;"><i class="bi bi-search fs-5"></i></span>
-											<input class="form-control" type="text" placeholder="검색어를 입력하세요...">
+											<input type="text" id="searchValue" name="searchValue2" th:value="${param.searchValue}" class="form-control" placeholder="검색어를 입력하세요...">
 											
 											<!-- Checkbox -->
 											<div style="margin-top: 10px; text-align: center;">
-												<input class="form-check-input" type="checkbox" value="1" id="location1">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="경기">
 												<label class="form-check-label" for="location1" style="margin-right: 12px;"> 경기</label>
 
-												<input class="form-check-input" type="checkbox" value="2" id="location2">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="강원">
 												<label class="form-check-label" for="location2" style="margin-right: 12px;"> 강원</label>
 												
-												<input class="form-check-input" type="checkbox" value="3" id="location3">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="충북">
 												<label class="form-check-label" for="location3" style="margin-right: 12px;"> 충북</label>
 												
-												<input class="form-check-input" type="checkbox" value="4" id="location4">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="충남">
 												<label class="form-check-label" for="location4" style="margin-right: 12px;"> 충남</label>
 												
-												<input class="form-check-input" type="checkbox" value="5" id="location5">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="전북">
 												<label class="form-check-label" for="location5" style="margin-right: 12px;"> 전북</label>
 												
-												<input class="form-check-input" type="checkbox" value="6" id="location6">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="전남">
 												<label class="form-check-label" for="location6" style="margin-right: 12px;"> 전남</label>
 												
-												<input class="form-check-input" type="checkbox" value="7" id="location7">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="경북">
 												<label class="form-check-label" for="location7" style="margin-right: 12px;"> 경북</label>
 												
-												<input class="form-check-input" type="checkbox" value="8" id="location8">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="경남">
 												<label class="form-check-label" for="location8" style="margin-right: 12px;"> 경남</label>
 												
-												<input class="form-check-input" type="checkbox" value="9" id="location9">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="제주">
 												<label class="form-check-label" for="location9" style="margin-right: 12px;"> 제주</label>
 												
-												<input class="form-check-input" type="checkbox" value="10" id="location10">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="대전">
 												<label class="form-check-label" for="location10" style="margin-right: 12px;"> 대전</label>
 												
-												<input class="form-check-input" type="checkbox" value="11" id="location11">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="부산">
 												<label class="form-check-label" for="location11" style="margin-right: 12px;"> 부산</label>
 												
-												<input class="form-check-input" type="checkbox" value="12" id="location12">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="인천">
 												<label class="form-check-label" for="location12" style="margin-right: 12px;"> 인천</label>
 												
-												<input class="form-check-input" type="checkbox" value="13" id="location13">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="세종">
 												<label class="form-check-label" for="location13" style="margin-right: 12px;"> 세종</label>
 												
-												<input class="form-check-input" type="checkbox" value="14" id="location14">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="대구">
 												<label class="form-check-label" for="location14" style="margin-right: 12px;"> 대구</label>
 												
-												<input class="form-check-input" type="checkbox" value="15" id="location15">
+												<input class="form-check-input" type="checkbox" name="searchValue" value="서울">
 												<label class="form-check-label" for="location15" style="margin-right: 12px;"> 서울</label>
 											</div>
 											
@@ -184,7 +184,7 @@ Main banner START -->
 
 								<!-- Button -->
 								<div class="text-center pt-0">
-									<button class="btn btn-lg btn-success2 mb-n7" type="submit">지역명 검색 <i class="bi bi-arrow-right ps-3"></i></button>
+									<button class="btn btn-lg btn-success2 mb-n7" type="submit" th:name="searchType" value="locplc">지역명 검색 <i class="bi bi-arrow-right ps-3"></i></button>
 								</div>
 							</div>
 						</form>
@@ -211,7 +211,7 @@ Main banner START -->
 		<div class="row">
 			<div class="col-12">
 				<!-- Card START -->
-				<div class="card card-body bg-primary justify-content-center text-center px-4 px-sm-5 pt-6 pt-md-8 pb-8" style="background-image: url(assets/images/farmstouch/example/bann.PNG); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+				<div class="card card-body bg-primary justify-content-center text-center px-4 px-sm-5 pt-6 pt-md-8 pb-8" th:style="|background-image: url(@{/assets/images/farmstouch/example/bann.PNG}); background-position: center center; background-repeat: no-repeat; background-size: cover;|">
 				</div>
 				<!-- Card END -->
 
@@ -232,41 +232,22 @@ Tour grid START -->
 		<div class="row g-4 align-items-center justify-content-between mb-4">
 			<!-- Content -->
 			<div class="col-12 col-xl-8">
-				<h5 class="mb-0">Showing 1-7 of 32 result</h5>
+				<h5 class="mb-0">Showing [[${fmlgEdcFarmmDtlCount}]] of 414 results</h5>
 			</div>
 
-			<!-- Select option -->
-			<div class="col-xl-2">
-				<form class="form-control-bg-light">
-					<select class="form-select js-choice">
-						<option value="">Most Viewed</option>
-						<option>Recently search</option>
-						<option>Most popular</option>
-						<option>Top rated</option>
-					</select>
-				</form>
-			</div>
 		</div>
 		<!-- Filter and content END -->
 
 		<div class="row g-4">
 			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4" >
+			<div class="col-md-6 col-xl-4" th:each="fmlgEdcFarmm : ${list}">
 				<div class="card card-hover-shadow pb-0 h-100" style="background-color: #daf0da; border-radius: 0.938rem;">
 					<!-- Overlay item -->
 					<div class="position-relative">
 						<!-- Image -->
-						<img src="assets/images/farmstouch/example/edu1.jpg" class="card-img-top" alt="Card image" style="height: 17.5rem;">
+						<img th:src="${fmlgEdcFarmm.imgUrl1}" class="card-img-top" alt="Card image" style="height: 17.5rem;">
 						<!-- Overlay -->
 						<div class="card-img-overlay d-flex flex-column p-4 z-index-1">
-							<!-- Card overlay top -->
-							<!-- <div>
-								<span class="badge text-bg-dark"><h6 class="fw-light text-white m-0"><i class="fa-solid fa-star text-warning me-2"></i>4.5</h6></span>
-							</div> -->
-							<!-- Card overlay bottom -->
-							<!-- <div class="w-100 mt-auto">
-								<span class="badge text-bg-white fs-6">6 days / 5 nights</span>
-							</div> -->
 						</div>
 					</div>
 					<!-- Image -->
@@ -274,22 +255,21 @@ Tour grid START -->
 					<!-- Card body START -->
 					<div class="card-body px-3">
 						<!-- Title -->
-						<h5 class="card-title mb-0"><a href="tour-detail.html" class="stretched-link">팜다원</a></h5>
-						<!-- <span class="small"><i class="far fa-calendar-alt me-2"></i>April 12-17</span> -->
+						<h5 class="card-title mb-0"><a th:href="|/life/ruralEducationCenterDetails?cntntsNo=${fmlgEdcFarmm.cntntsNo}|" class="stretched-link">[[${fmlgEdcFarmm.cntntsSj}]]</a></h5>
 
 						<!-- List -->
 						<ul class=" mt-3 mb-3">
 							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-location-dot text-success me-2"></i> 지역 : 수성구
+								<i class="fa-solid fa-location-dot text-success me-2"></i> 지역 : [[${fmlgEdcFarmm.locplc}]]
 							</li>
 							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-phone text-orange me-2"></i>연락처 : 010-9998-9939
+								<i class="fa-solid fa-phone text-orange me-2"></i>연락처 : [[${fmlgEdcFarmm.telno}]]
 							</li>
 							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-hashtag text-danger me-2"></i> 주제 : 다육식물 관찰 및 표현
+								<i class="fa-solid fa-hashtag text-danger me-2"></i> 주제 : [[${fmlgEdcFarmm.thema}]]
 							</li>
 							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-globe-asia text-info me-2"></i>상세주소 : 대구 수성구 진밭길 330
+								<i class="fa-solid fa-globe-asia text-info me-2"></i>상세주소 : [[${fmlgEdcFarmm.locplc}]]
 							</li>
 						</ul>
 					</div>
@@ -297,404 +277,37 @@ Tour grid START -->
 				</div>
 			</div>
 			<!-- Card item END -->
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4" >
-				<div class="card card-hover-shadow pb-0 h-100" style="background-color: #daf0da; border-radius: 0.938rem;">
-					<!-- Overlay item -->
-					<div class="position-relative">
-						<!-- Image -->
-						<img src="assets/images/farmstouch/example/edu1.jpg" class="card-img-top" alt="Card image" style="height: 17.5rem;">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-4 z-index-1">
-							<!-- Card overlay top -->
-							<!-- <div>
-								<span class="badge text-bg-dark"><h6 class="fw-light text-white m-0"><i class="fa-solid fa-star text-warning me-2"></i>4.5</h6></span>
-							</div> -->
-							<!-- Card overlay bottom -->
-							<!-- <div class="w-100 mt-auto">
-								<span class="badge text-bg-white fs-6">6 days / 5 nights</span>
-							</div> -->
-						</div>
-					</div>
-					<!-- Image -->
-
-					<!-- Card body START -->
-					<div class="card-body px-3">
-						<!-- Title -->
-						<h5 class="card-title mb-0"><a href="tour-detail.html" class="stretched-link">팜다원</a></h5>
-						<!-- <span class="small"><i class="far fa-calendar-alt me-2"></i>April 12-17</span> -->
-
-						<!-- List -->
-						<ul class=" mt-3 mb-3">
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-location-dot text-success me-2"></i> 지역 : 수성구
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-phone text-orange me-2"></i>연락처 : 010-9998-9939
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-hashtag text-danger me-2"></i> 주제 : 다육식물 관찰 및 표현
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-globe-asia text-info me-2"></i>상세주소 : 대구 수성구 진밭길 330
-							</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-				</div>
-			</div>
-			<!-- Card item END -->
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4" >
-				<div class="card card-hover-shadow pb-0 h-100" style="background-color: #daf0da; border-radius: 0.938rem;">
-					<!-- Overlay item -->
-					<div class="position-relative">
-						<!-- Image -->
-						<img src="assets/images/farmstouch/example/edu1.jpg" class="card-img-top" alt="Card image" style="height: 17.5rem;">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-4 z-index-1">
-							<!-- Card overlay top -->
-							<!-- <div>
-								<span class="badge text-bg-dark"><h6 class="fw-light text-white m-0"><i class="fa-solid fa-star text-warning me-2"></i>4.5</h6></span>
-							</div> -->
-							<!-- Card overlay bottom -->
-							<!-- <div class="w-100 mt-auto">
-								<span class="badge text-bg-white fs-6">6 days / 5 nights</span>
-							</div> -->
-						</div>
-					</div>
-					<!-- Image -->
-
-					<!-- Card body START -->
-					<div class="card-body px-3">
-						<!-- Title -->
-						<h5 class="card-title mb-0"><a href="tour-detail.html" class="stretched-link">팜다원</a></h5>
-						<!-- <span class="small"><i class="far fa-calendar-alt me-2"></i>April 12-17</span> -->
-
-						<!-- List -->
-						<ul class=" mt-3 mb-3">
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-location-dot text-success me-2"></i> 지역 : 수성구
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-phone text-orange me-2"></i>연락처 : 010-9998-9939
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-hashtag text-danger me-2"></i> 주제 : 다육식물 관찰 및 표현
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-globe-asia text-info me-2"></i>상세주소 : 대구 수성구 진밭길 330
-							</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-				</div>
-			</div>
-			<!-- Card item END -->
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4" >
-				<div class="card card-hover-shadow pb-0 h-100" style="background-color: #daf0da; border-radius: 0.938rem;">
-					<!-- Overlay item -->
-					<div class="position-relative">
-						<!-- Image -->
-						<img src="assets/images/farmstouch/example/edu1.jpg" class="card-img-top" alt="Card image" style="height: 17.5rem;">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-4 z-index-1">
-							<!-- Card overlay top -->
-							<!-- <div>
-								<span class="badge text-bg-dark"><h6 class="fw-light text-white m-0"><i class="fa-solid fa-star text-warning me-2"></i>4.5</h6></span>
-							</div> -->
-							<!-- Card overlay bottom -->
-							<!-- <div class="w-100 mt-auto">
-								<span class="badge text-bg-white fs-6">6 days / 5 nights</span>
-							</div> -->
-						</div>
-					</div>
-					<!-- Image -->
-
-					<!-- Card body START -->
-					<div class="card-body px-3">
-						<!-- Title -->
-						<h5 class="card-title mb-0"><a href="tour-detail.html" class="stretched-link">팜다원</a></h5>
-						<!-- <span class="small"><i class="far fa-calendar-alt me-2"></i>April 12-17</span> -->
-
-						<!-- List -->
-						<ul class=" mt-3 mb-3">
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-location-dot text-success me-2"></i> 지역 : 수성구
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-phone text-orange me-2"></i>연락처 : 010-9998-9939
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-hashtag text-danger me-2"></i> 주제 : 다육식물 관찰 및 표현
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-globe-asia text-info me-2"></i>상세주소 : 대구 수성구 진밭길 330
-							</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-				</div>
-			</div>
-			<!-- Card item END -->
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4" >
-				<div class="card card-hover-shadow pb-0 h-100" style="background-color: #daf0da; border-radius: 0.938rem;">
-					<!-- Overlay item -->
-					<div class="position-relative">
-						<!-- Image -->
-						<img src="assets/images/farmstouch/example/edu1.jpg" class="card-img-top" alt="Card image" style="height: 17.5rem;">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-4 z-index-1">
-							<!-- Card overlay top -->
-							<!-- <div>
-								<span class="badge text-bg-dark"><h6 class="fw-light text-white m-0"><i class="fa-solid fa-star text-warning me-2"></i>4.5</h6></span>
-							</div> -->
-							<!-- Card overlay bottom -->
-							<!-- <div class="w-100 mt-auto">
-								<span class="badge text-bg-white fs-6">6 days / 5 nights</span>
-							</div> -->
-						</div>
-					</div>
-					<!-- Image -->
-
-					<!-- Card body START -->
-					<div class="card-body px-3">
-						<!-- Title -->
-						<h5 class="card-title mb-0"><a href="tour-detail.html" class="stretched-link">팜다원</a></h5>
-						<!-- <span class="small"><i class="far fa-calendar-alt me-2"></i>April 12-17</span> -->
-
-						<!-- List -->
-						<ul class=" mt-3 mb-3">
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-location-dot text-success me-2"></i> 지역 : 수성구
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-phone text-orange me-2"></i>연락처 : 010-9998-9939
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-hashtag text-danger me-2"></i> 주제 : 다육식물 관찰 및 표현
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-globe-asia text-info me-2"></i>상세주소 : 대구 수성구 진밭길 330
-							</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-				</div>
-			</div>
-			<!-- Card item END -->
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4" >
-				<div class="card card-hover-shadow pb-0 h-100" style="background-color: #daf0da; border-radius: 0.938rem;">
-					<!-- Overlay item -->
-					<div class="position-relative">
-						<!-- Image -->
-						<img src="assets/images/farmstouch/example/edu1.jpg" class="card-img-top" alt="Card image" style="height: 17.5rem;">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-4 z-index-1">
-							<!-- Card overlay top -->
-							<!-- <div>
-								<span class="badge text-bg-dark"><h6 class="fw-light text-white m-0"><i class="fa-solid fa-star text-warning me-2"></i>4.5</h6></span>
-							</div> -->
-							<!-- Card overlay bottom -->
-							<!-- <div class="w-100 mt-auto">
-								<span class="badge text-bg-white fs-6">6 days / 5 nights</span>
-							</div> -->
-						</div>
-					</div>
-					<!-- Image -->
-
-					<!-- Card body START -->
-					<div class="card-body px-3">
-						<!-- Title -->
-						<h5 class="card-title mb-0"><a href="tour-detail.html" class="stretched-link">팜다원</a></h5>
-						<!-- <span class="small"><i class="far fa-calendar-alt me-2"></i>April 12-17</span> -->
-
-						<!-- List -->
-						<ul class=" mt-3 mb-3">
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-location-dot text-success me-2"></i> 지역 : 수성구
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-phone text-orange me-2"></i>연락처 : 010-9998-9939
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-hashtag text-danger me-2"></i> 주제 : 다육식물 관찰 및 표현
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-globe-asia text-info me-2"></i>상세주소 : 대구 수성구 진밭길 330
-							</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-				</div>
-			</div>
-			<!-- Card item END -->
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4" >
-				<div class="card card-hover-shadow pb-0 h-100" style="background-color: #daf0da; border-radius: 0.938rem;">
-					<!-- Overlay item -->
-					<div class="position-relative">
-						<!-- Image -->
-						<img src="assets/images/farmstouch/example/edu1.jpg" class="card-img-top" alt="Card image" style="height: 17.5rem;">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-4 z-index-1">
-							<!-- Card overlay top -->
-							<!-- <div>
-								<span class="badge text-bg-dark"><h6 class="fw-light text-white m-0"><i class="fa-solid fa-star text-warning me-2"></i>4.5</h6></span>
-							</div> -->
-							<!-- Card overlay bottom -->
-							<!-- <div class="w-100 mt-auto">
-								<span class="badge text-bg-white fs-6">6 days / 5 nights</span>
-							</div> -->
-						</div>
-					</div>
-					<!-- Image -->
-
-					<!-- Card body START -->
-					<div class="card-body px-3">
-						<!-- Title -->
-						<h5 class="card-title mb-0"><a href="tour-detail.html" class="stretched-link">팜다원</a></h5>
-						<!-- <span class="small"><i class="far fa-calendar-alt me-2"></i>April 12-17</span> -->
-
-						<!-- List -->
-						<ul class=" mt-3 mb-3">
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-location-dot text-success me-2"></i> 지역 : 수성구
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-phone text-orange me-2"></i>연락처 : 010-9998-9939
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-hashtag text-danger me-2"></i> 주제 : 다육식물 관찰 및 표현
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-globe-asia text-info me-2"></i>상세주소 : 대구 수성구 진밭길 330
-							</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-				</div>
-			</div>
-			<!-- Card item END -->
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4" >
-				<div class="card card-hover-shadow pb-0 h-100" style="background-color: #daf0da; border-radius: 0.938rem;">
-					<!-- Overlay item -->
-					<div class="position-relative">
-						<!-- Image -->
-						<img src="assets/images/farmstouch/example/edu1.jpg" class="card-img-top" alt="Card image" style="height: 17.5rem;">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-4 z-index-1">
-							<!-- Card overlay top -->
-							<!-- <div>
-								<span class="badge text-bg-dark"><h6 class="fw-light text-white m-0"><i class="fa-solid fa-star text-warning me-2"></i>4.5</h6></span>
-							</div> -->
-							<!-- Card overlay bottom -->
-							<!-- <div class="w-100 mt-auto">
-								<span class="badge text-bg-white fs-6">6 days / 5 nights</span>
-							</div> -->
-						</div>
-					</div>
-					<!-- Image -->
-
-					<!-- Card body START -->
-					<div class="card-body px-3">
-						<!-- Title -->
-						<h5 class="card-title mb-0"><a href="tour-detail.html" class="stretched-link">팜다원</a></h5>
-						<!-- <span class="small"><i class="far fa-calendar-alt me-2"></i>April 12-17</span> -->
-
-						<!-- List -->
-						<ul class=" mt-3 mb-3">
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-location-dot text-success me-2"></i> 지역 : 수성구
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-phone text-orange me-2"></i>연락처 : 010-9998-9939
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-hashtag text-danger me-2"></i> 주제 : 다육식물 관찰 및 표현
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-globe-asia text-info me-2"></i>상세주소 : 대구 수성구 진밭길 330
-							</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-				</div>
-			</div>
-			<!-- Card item END -->
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4" >
-				<div class="card card-hover-shadow pb-0 h-100" style="background-color: #daf0da; border-radius: 0.938rem;">
-					<!-- Overlay item -->
-					<div class="position-relative">
-						<!-- Image -->
-						<img src="assets/images/farmstouch/example/edu1.jpg" class="card-img-top" alt="Card image" style="height: 17.5rem;">
-						<!-- Overlay -->
-						<div class="card-img-overlay d-flex flex-column p-4 z-index-1">
-							<!-- Card overlay top -->
-							<!-- <div>
-								<span class="badge text-bg-dark"><h6 class="fw-light text-white m-0"><i class="fa-solid fa-star text-warning me-2"></i>4.5</h6></span>
-							</div> -->
-							<!-- Card overlay bottom -->
-							<!-- <div class="w-100 mt-auto">
-								<span class="badge text-bg-white fs-6">6 days / 5 nights</span>
-							</div> -->
-						</div>
-					</div>
-					<!-- Image -->
-
-					<!-- Card body START -->
-					<div class="card-body px-3">
-						<!-- Title -->
-						<h5 class="card-title mb-0"><a href="tour-detail.html" class="stretched-link">팜다원</a></h5>
-						<!-- <span class="small"><i class="far fa-calendar-alt me-2"></i>April 12-17</span> -->
-
-						<!-- List -->
-						<ul class=" mt-3 mb-3">
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-location-dot text-success me-2"></i> 지역 : 수성구
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-phone text-orange me-2"></i>연락처 : 010-9998-9939
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-hashtag text-danger me-2"></i> 주제 : 다육식물 관찰 및 표현
-							</li>
-							<li class="nav-item h6 fw-normal">
-								<i class="fa-solid fa-globe-asia text-info me-2"></i>상세주소 : 대구 수성구 진밭길 330
-							</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-				</div>
-			</div>
-			<!-- Card item END -->
-
 			
-			
-
 			
 		</div> <!-- Row END -->
 
+		<!-- 페이지 부 -->
+		<th:block th:if="${fmlgEdcFarmmDtlCount > 0}">
 		<!-- Pagination -->
 		<div class="row">
 			<div class="col-12">
 				<nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
 					<ul class="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-						<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fa-solid fa-angle-left"></i></a></li>
-						<li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
-						<li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
-						<li class="page-item mb-0"><a class="page-link" href="#">..</a></li>
-						<li class="page-item mb-0"><a class="page-link" href="#">6</a></li>
-						<li class="page-item mb-0"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+						<li class="page-item mb-0"><a class="page-link" th:onclick="movePage(1);"><i class="fa-solid fa-angle-left"></i></a></li>
+						<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${pageInfo.prevPage}]]);"><i class="fa-solid fa-angle-left"></i></a></li>
+						<th:block th:each= "num, status : ${#numbers.sequence(pageInfo.startPage, pageInfo.endPage)}">
+							<th:block th:if="${status.current == pageInfo.currentPage}">
+								<li class="page-item mb-0 active"><a class="page-link" disabled>[[${status.current}]]<span class="visually-hidden">(current)</span></a></li>
+							</th:block>
+							<th:block th:if="${status.current != pageInfo.currentPage}">
+								<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${status.current}]])">[[${status.current}]]</a></li>
+							</th:block>
+						</th:block>
+						
+						<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${pageInfo.nextPage}]])"><i class="fa-solid fa-angle-right"></i></a></li>
+						<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${pageInfo.maxPage}]])"><i class="fa-solid fa-angle-right"></i></a></li>
 					</ul>
 				</nav>
 			</div>
 		</div>
+		</th:block>
+		
+		
 	</div>
 </section>
 <!-- =======================
@@ -705,5 +318,31 @@ Tour grid END -->
 
 <!-- footer 시작 -->
 <footer th:replace="~{common/layout2 :: #footer}"></footer>
+
+<!-- Back to top -->
+<div class="back-top"></div>
+
+<!-- Bootstrap JS -->
+<script th:src="@{/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+
+<!-- Vendors -->
+<script th:src="@{/assets/vendor/choices/js/choices.min.js}"></script>
+<script th:src="@{/assets/vendor/flatpickr/js/flatpickr.min.js}"></script>
+
+<!-- ThemeFunctions -->
+<script th:src="@{/assets/js/functions.js}"></script>
+
+<script type="text/javascript">
+	var url_href = window.location.href;
+	var url = new URL(url_href); // URL 객체 선언
+
+	function movePage(page){
+		url.searchParams.set("page", page);
+	
+	window.location.search = url.searchParams;
+};
+
+</script>
+
 </body>
 </html>

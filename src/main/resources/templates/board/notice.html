@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+
+
+<!-- Header END -->	
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+
+<!-- =======================
+Main banner START -->
+<section class="pt-0 mt-4">
+	<div class="container">
+		<!-- Hero banner START -->
+		<div class="row">
+			<div class="col-12">
+				<!-- Card START -->
+				<div class="card card-body bg-success justify-content-center text-center px-4 px-sm-5 pt-6 pt-md-8 pb-8" th:style="|background-image: url(@{/assets/images/element/bg-pattern.png}); background-position: center center; background-repeat: no-repeat; background-size: cover;|">
+					<!-- Title -->
+					<h1 class="fs-2 text-white mb-4 mt-n5">How Can We Help You?</h1>
+					<!-- Search -->
+					<form class="col-md-6 bg-body rounded mx-auto p-2 mb-3">
+						<div class="input-group">
+							<input class="form-control border-0 me-1" type="text" placeholder="검색어를 입력하세요...">
+							<button type="button" class="btn btn-dark rounded mb-0"><i class="fa-solid fa-magnifying-glass"></i> 검색</button>
+						</div>
+					</form>
+
+					<!-- Popular search -->
+					<div class="row align-items-center mt-4 mb-2">
+						<div class="col-md-9 mx-auto">
+							<!-- <h6 class="text-white mb-3">Popular questions</h6> -->
+							<h6 class="text-white mb-3">Frequently Asked Questions</h6>
+							<!-- Questions List START -->
+							<div class="list-group hstack gap-3 justify-content-center flex-wrap mb-0">
+								<a class="btn btn-link text-white fw-light text-decoration-underline p-0 mb-0" th:href="@{/#}"> 팜스터치란?</a>
+								<a class="btn btn-link text-white fw-light text-decoration-underline p-0 mb-0" th:href="@{/#}"> 팜스터치 사이트 이용 방법? </a>
+								<a class="btn btn-link text-white fw-light text-decoration-underline p-0 mb-0" th:href="@{/#}"> 장터 게시판 이용 방법? </a>
+								<a class="btn btn-link text-white fw-light text-decoration-underline p-0 mb-0" th:href="@{/#}"> 식물 블로그 이용 방법? </a>
+								<a class="btn btn-link text-white fw-light text-decoration-underline p-0 mb-0" th:href="@{/#}"> 쇼핑몰 이용 방법? </a>
+								<a class="btn btn-link text-white fw-light text-decoration-underline p-0 mb-0" th:href="@{/#}"> 로그인/회원가입 문제 해결 방안? </a>
+							</div>
+							<!-- Questions list END -->
+						</div>
+					</div>
+				</div>
+				<!-- Card END -->
+			</div>
+		</div>
+		<!-- Hero banner END -->
+
+		<!-- Topics START -->
+		<div class="row g-4 mt-n8">
+			<div class="col-10 col-lg-11 col-xl-10 mx-auto">
+				<div class="row g-4">
+					<div class="col-lg-4">
+						<!-- Get started START -->
+						<div class="card shadow h-100">
+							<!-- Title -->
+							<div class="card-header d-flex align-items-center pb-0">
+								<i class="bi bi-emoji-smile fs-2 text-success me-2"></i>
+								<h5 class="card-title mb-0">Agriculture: </h5>
+							</div>
+
+							<!-- List START -->
+							<div class="card-body pt-0">
+								<ul class="nav flex-column">
+									<li class="nav-item"><a class="nav-link d-flex text-black-50" th:href="@{/agriculture/farmingVarietiesList}"><i class="fa-solid fa-angle-right text-primary pt-1 me-2"></i>농작물 검색하러 가기</a></li>
+									<li class="nav-item"><a class="nav-link d-flex text-black-50" th:href="@{/agriculture/agriculturalMachineryVideoList}"><i class="fa-solid fa-angle-right text-primary pt-1 me-2"></i>농기계 시청각 자료 확인하기</a></li>
+									<li class="nav-item"><a class="nav-link d-flex text-black-50" th:href="@{/agriculture/agriTechVideo}"><i class="fa-solid fa-angle-right text-primary pt-1 me-2"></i>농업 기술 정보 확인하기</a></li>
+									<li class="nav-item"><a class="nav-link d-flex text-black-50" th:href="@{/agriculture/weeklyFarmingInfo}"><i class="fa-solid fa-angle-right text-primary pt-1 me-2"></i>주간 농사 정보 검색</a></li>
+								</ul>
+							</div>
+							<!-- List END -->
+						</div> 
+						<!-- Get started END --> 
+					</div>
+
+					<div class="col-lg-4">
+						<!-- Account Setup START -->
+						<div class="card shadow h-100">
+							<!-- Title -->
+							<div class="card-header border-0 d-flex align-items-center pb-0">
+								<i class="bi bi-layers fs-2 text-warning me-2"></i>
+								<h5 class="card-title mb-0">Plant Information:</h5>
+							</div>
+							<!-- List START -->
+							<div class="card-body pt-0">
+								<ul class="nav flex-column">
+									<li class="nav-item"><a class="nav-link d-flex text-black-50" th:href="@{/plant/}"><i class="fa-solid fa-angle-right text-primary pt-1 me-2"></i>나와 어울리는 식물 추천받기</a></li>
+									<li class="nav-item"><a class="nav-link d-flex text-black-50" th:href="@{/plant/gardenList}"><i class="fa-solid fa-angle-right text-primary pt-1 me-2"></i>정원식물 검색하러 가기</a></li>
+									<li class="nav-item"><a class="nav-link d-flex text-black-50" th:href="@{/plant/drygardenList}"><i class="fa-solid fa-angle-right text-primary pt-1 me-2"></i>다육식물 검색하러 가기</a></li>
+									<li class="nav-item"><a class="nav-link d-flex text-black-50" th:href="@{/plant/}"><i class="fa-solid fa-angle-right text-primary pt-1 me-2"></i>식물 자랑 블로그</a></li>
+								</ul>
+							</div>
+							<!-- List END -->
+						</div>  
+						<!-- Account Setup END -->
+					</div>
+
+					<div class="col-lg-4">
+						<!-- Other Topics START -->
+						<div class="card shadow h-100">
+							<!-- Title -->
+							<div class="card-header border-0 d-flex align-items-center pb-0">
+								<i class="bi bi-info-circle fs-2 text-info me-2"></i>
+								<h5 class="card-title mb-0">Life & Community: </h5>
+							</div>
+
+							<!-- List START -->
+							<div class="card-body pt-0">
+								<ul class="nav flex-column">
+									<li class="nav-item"><a class="nav-link d-flex text-black-50" th:href="@{/life/farmHouseRestaurantList}"><i class="fa-solid fa-angle-right text-primary pt-1 me-2"></i>농가에 있는 맛집 찾기</a></li>
+									<li class="nav-item"><a class="nav-link d-flex text-black-50" th:href="@{/life/herbList}"><i class="fa-solid fa-angle-right text-primary pt-1 me-2"></i>약초정보 검색하기</a></li>
+									<li class="nav-item"><a class="nav-link d-flex text-black-50" th:href="@{/life/ruralEducationCenterList}"><i class="fa-solid fa-angle-right text-primary pt-1 me-2"></i>농촌교육농장 알아보기</a></li>
+									<li class="nav-item"><a class="nav-link d-flex text-black-50" th:href="@{/life/eventList}"><i class="fa-solid fa-angle-right text-primary pt-1 me-2"></i>이벤트 확인하기</a></li>
+								</ul>
+							</div>
+							<!-- List END -->
+						</div>  
+						<!-- Other Topics END -->
+					</div>
+				</div>	
+			</div>
+		</div>
+		<!-- Topics END -->
+
+	</div>
+</section>
+<!-- =======================
+Main banner END -->
+
+<!-- =======================
+Faqs START -->
+<section class="pt-0 pt-lg-5 mt-n6">
+	<div class="container">
+		<!-- Title -->
+		<div class="row">
+			<div class="col-12 text-center mb-4">
+				<h2 class="mb-0">Notice</h2>
+			</div>
+		</div>
+
+		<!-- Accordion START -->
+		<div class="row">
+			<div class="col-10 mx-auto">
+				<div class="accordion accordion-icon accordion-bg-light" id="accordionExample2">
+					<!-- Item -->
+					<div class="accordion-item mb-3">
+						<h6 class="accordion-header font-base" id="heading-1">
+							<button class="accordion-button fw-bold rounded d-inline-block collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+								팜스터치란?
+							</button>
+						</h6>
+						<!-- Body -->
+						<div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="heading-1" data-bs-parent="#accordionExample2">
+							<div class="accordion-body mt-3">
+								<p>
+									<i class="bi bi-patch-check-fill text-success me-2"></i><b>농업기술 포탈 '팜스터치'</b><br/><br/>
+									&nbsp;'팜스터치'는 초보 농부를 위한 온라인 지침서로 약 800만 건에 달하는 농업 관련 DB정보를 통해 150만 건의 농업 관련 콘텐츠를 제공하는 최대 농업기술 포털 서비스입니다.<br/>
+									<br/>
+								</p>
+								<p>
+									<i class="bi bi-patch-check-fill text-success me-2"></i><b>'팜스터치' 구성</b><br/><br/>
+									&nbsp;농촌진흥청과 국립농업과학원 등 총 5개 기관의 32개 시스템, 10개 유관기관 19종 정보, 165개 지방농촌진흥기관의 정보를 통합하여 농업기술정보를 제공합니다.<br/>
+									<br/>
+								</p>
+								<p>	
+									<i class="bi bi-patch-check-fill text-success me-2"></i><b>사용자 편의성을 고려한 맞춤 서비스 제공</b><br/><br/>
+									&nbsp;농업인, 소비자, 전문가 등 사용자 유형별로 메인 화면에 대한 콘텐츠를 제공하여 활용의 편의성을 높였습니다.<br/>
+									
+									<!-- Table START -->
+									<div class="table-responsive">
+										<table class="table table-bordered border-dark border-opacity-25">
+												<tr>
+													<td scope="col" class="table-success border-dark border-opacity-25 text-center text-black-50"><b>농업인</b></td>
+													<td scope="col">농업기술 중심</td>
+												</tr>
+												<tr>
+													<td scope="col" class="table-success border-dark border-opacity-25 text-center text-black-50"><b>소비자</b></td>
+													<td scope="col">농촌체험, 농가맛집, 제철 식재로 정보 중심</td>
+												</tr>
+												<tr>
+													<td scope="col" class="table-success border-dark border-opacity-25 text-center text-black-50"><b>전문가</b></td>
+													<td scope="col">연구보고서, 논문, 영농활용정보 중심</td>
+												</tr>
+										</table>
+									</div>	
+									<!-- Table END -->
+								</p>
+								<p>
+									<i class="bi bi-patch-check-fill text-success me-2"></i><b>통합검색을 통한 정보의 접근성 향상</b><br/><br/>
+									&nbsp;모든 메인 화면 상단에 검색 기능을 제공하여 정보의 접근성을 높였습니다. 또한, 농업기술정보, 경영정보, 교육정보 등 분류 별로 검색 결과를 제공하므로 농업 현안 및 이슈 등을 쉽게 파악할 수 있습니다.
+									<br/><br/>
+								</p>
+								
+								<!-- Action box START -->
+								<div class="bg-success bg-opacity-10 rounded-3 mb-4 p-3">
+									<div class="d-md-flex justify-content-md-between align-items-center">
+										<!-- Image and title -->
+										<div class="d-sm-flex align-items-center mb-2 mb-md-0">
+											<!-- Image -->
+											<img th:src="@{/assets/images/farmstouch/logo/farmslogo1.png}" class="h-50px" alt="">
+											<!-- Title -->
+											<div class="ms-sm-3 mt-2 mt-sm-0">
+												<h5 class="card-title mb-0">Go sign up now</h5>
+												<p class="mb-0">팜스터치 회원가입하고 혜택 받으러 가기</p>
+											</div>
+										</div>
+
+										<!-- Button -->
+										<a th:href="@{/member/enroll}" class="btn btn-success mb-0">Join us</a>
+									</div>
+								</div>
+								<!-- Action box END -->
+
+							</div>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div class="accordion-item mb-3">
+						<h6 class="accordion-header font-base" id="heading-2">
+							<button class="accordion-button fw-bold rounded d-inline-block collapsed d-block pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+								팜스터치 사이트 이용안내
+							</button>
+						</h6>
+						<!-- Body -->
+						<div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#accordionExample2">
+							<div class="accordion-body mt-3">
+								<p>
+									<i class="bi bi-patch-check-fill text-success me-2"></i><b>농사</b><br/><br/>
+									&nbsp;품종 정보, 농기계 시청각 자료, 안전 사용 지침, 농업기술 정보, 농업기술 더하기 나누기, 주간 농사 정보 등 농자재 관련된 모든 정보 및 영농에 필요한 다양한 기술 정보를 제공합니다.<br/>
+									<br/>
+								</p>
+								<p>
+									<i class="bi bi-patch-check-fill text-success me-2"></i><b>식물</b><br/><br/>
+									&nbsp;정원 식물, 다육 식물, 추천 식물 등 식물과 관련된 다양한 정보 및 사용자의 성향에 맞는 추천 식물을 제공합니다.<br/>
+									<br/>
+								</p>
+								<p>
+									<i class="bi bi-patch-check-fill text-success me-2"></i><b>농촌활동</b><br/><br/>
+									&nbsp;농가 맛집, 약초 정보, 농촌 교육 농장 등 일반인이 쉽게 접할 수 있는 생활 문화 정보를 제공합니다.<br/>
+									<br/>
+								</p>
+								<p>
+									<i class="bi bi-patch-check-fill text-success me-2"></i><b>커뮤니티</b><br/><br/>
+									&nbsp;농산물 직거래 장터, 식물 분양 장터, 이벤트 등 사용자간 정보를 공유할 수 있는 공간을 제공합니다.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div class="accordion-item mb-3">
+						<h6 class="accordion-header font-base" id="heading-3">
+							<button class="accordion-button fw-bold collapsed rounded d-block pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+								장터 게시판 이용 방법
+							</button>
+						</h6>
+						<!-- Body -->
+						<div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3" data-bs-parent="#accordionExample2">
+							<div class="accordion-body mt-3">
+								1. 생산자, 소비자 모두를 위한 공간입니다.<br/><br/>
+								2. 허위사실 유포 등 모든 운영 방해 행위에 대하여 로그 확인 및 모니터링 될 수 있으며, 민·형사상 책임을 물을 수 있습니다. <br/><br/>
+								3. 불량 회원에 대해 무통보 일시, 영구 정지될 수 있으므로, 정상적인 이용 부탁드립니다. <br/><br/>
+								4. 같은 상품을 반복해서 올리지마시고, 5일 경과 후 올려주세요. <br/><br/>
+								5. 상품 올리실 때, 기존에 올리신 상품과 중복되는 제목을 피해주세요. <br/><br/>
+								6. 상품을 분류에 맞는 게시판에 올려주세요. (예: 농산물은 "농산물 직거래 장터", 식물은 "식물 분양 장터")<br/><br/>
+								7. 제 3자 피해 : 힘든 환경에서 정직하게 판매하시는 분들에게 피해가 전가될 수 있기 때문에, 무차별적 비방/비난에 대한 제재가 있습니다.<br/><br/>
+								감사합니다.
+							</div>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div class="accordion-item mb-3">
+						<h6 class="accordion-header font-base" id="heading-4">
+							<button class="accordion-button fw-bold collapsed rounded d-block pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+								함께 만드는 콘텐츠(Community)
+							</button>
+						</h6>
+						<!-- Body -->
+						<div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4" data-bs-parent="#accordionExample2">
+							<div class="accordion-body mt-3">
+								<i class="fa-solid fa-1"></i> &nbsp;<b>회원가입 / 로그인</b><br/>
+								농산물 직거래 장터, 식물 분양 장터, 식물 자랑 블로그에 글을 등록하기 위해서는 회원가입 및 로그인이 필요합니다.<br/>
+								'회원가입' 버튼을 클릭해 가입 할 이메일 주소와 비밀번호를 입력합니다.<br/>
+								<br/>
+								<i class="fa-solid fa-2"></i> &nbsp;<b>다양한 검색 기능 제공</b><br/>
+								최신순, 조회순 등 다양한 검색 기능을 제공하고, 로그인 했을 경우에는 관심분야 순으로 검색 기능을 제공합니다.<br/>
+								<br/>
+								<i class="fa-solid fa-3"></i> &nbsp;<b>SNS 공유 기능</b><br/>
+								좌측 화면 상단의 '공유하기' 버튼을 클릭하면 다른 SNS에 공유할 수 있는 아이콘이 제공됩니다. 공유하고자 하는 아이콘을 클릭하여 해당 정보를 타 SNS에 공유할 수 있습니다.<br/>
+							</div>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div class="accordion-item mb-3">
+						<h6 class="accordion-header font-base" id="heading-5">
+							<button class="accordion-button fw-bold collapsed rounded d-block pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+								다시 찾은 일상, 농촌으로 떠나는 가족여행
+							</button>
+						</h6>
+						<!-- Body -->
+						<div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="heading-5" data-bs-parent="#accordionExample2">
+							<div class="accordion-body mt-3">
+								<b>다시 찾은 일상, 농촌으로 떠나는 가족여행</b><br/>
+								<br/>
+								&nbsp;사회적 거리두기 완화에 따른 일상 회복에 대한 높은 기대감에 맞춰 가족 단위 여행객을 위한 <b>'농경문화 마을'</b>과 <b>'농가맛집'</b> 등 다양한 농촌 여행지를 소개합니다.<br/><br/>
+								<a th:href="@{/life/farmHouseRestaurantList}" class="btn btn-success-soft mb-0">농가맛집 바로가기</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div class="accordion-item mb-3">
+						<h6 class="accordion-header font-base" id="heading-6">
+							<button class="accordion-button fw-bold collapsed rounded d-block pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6" aria-expanded="false" aria-controls="collapse-6">
+								팜스터치 이용자조사 설문 참여 커피 상품권
+							</button>
+						</h6>
+						<!-- Body -->
+						<div id="collapse-6" class="accordion-collapse collapse" aria-labelledby="heading-6" data-bs-parent="#accordionExample2">
+							<div class="accordion-body mt-3">
+								“팜스터치 정보서비스 이용자 조사(23.1.10~23.1.30)”에 참여해주신 여러분께 깊이 감사드립니다.<br/>
+								보내주신 의견을 소중히 여겨 보다 나은 정보서비스로 보답하겠습니다.<br/>
+								아울러, 사은품 추첨을 통해 응답자 40분께 모바일 커피 상품권을 카카오톡(또는 문자)로 보내드립니다.<br/>
+							</div>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div class="accordion-item">
+						<h6 class="accordion-header font-base" id="heading-7">
+							<button class="accordion-button fw-bold collapsed rounded d-block pe-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-7" aria-expanded="false" aria-controls="collapse-7">
+								부정.불량 농약.비료 신고포상금 제도 안내
+							</button>
+						</h6>
+						<!-- Body -->
+						<div id="collapse-7" class="accordion-collapse collapse" aria-labelledby="heading-7" data-bs-parent="#accordionExample2">
+							<div class="accordion-body mt-3">
+								<b>부정.불량 농약.비료 신고포상금 제도</b><br/>
+								<br/>
+								<b>지급근거</b><br/>
+								- 농약관리법 제27조의2 및 같은 법 시행령 제21조의3<br/>
+								- 농촌진흥청 고시 '부정불량 농약 신고자 포상금 지급기준' 제3조<br/>
+								- 농촌진흥청 훈령 '농자재 관리 업무에 관한 규정' 제14조<br/>
+								<br/>
+								<b>신고방법</b><br/>
+								- 문서 또는 모사전송(FAX)<br/>
+								- 제출서류: 신고서 및 입증자료(사진, 영수증, 동영상 등)<br/>
+								- 신고처: 농촌진흥청(농자재산업과) 및 시.군.구청(농약.비료 담당부서)<br/>
+								<br/>
+								<b>지급절차</b><br/>
+								- 신고내용이 사실로 판명되어 농촌진흥청장 또는 시.군.구청장이 행정처분(경고, 영업정지 등) 또는 고발(송치 포함)한 경우 농촌진흥청장은 해당 연도 예산의 범위 내에서 신고자에게 포상금을 지급<br/>
+								<br/>
+								<b>지급한도</b><br/>
+								- 동일 신고자에게 연간 200만 원 이하 지금 가능
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- Accordion END -->
+	</div>
+</section>
+<!-- =======================
+Faqs END -->
+
+<!-- =======================
+Action boxes END -->
+<section class="pt-0 pt-lg-5 mt-n4">
+	<div class="container">
+		<div class="row g-4">
+			<!-- Action box item -->
+			<div class="col-md-6 position-relative overflow-hidden">
+				<div class="bg-success bg-opacity-10 rounded-3 h-100 p-4">
+					<!-- Content -->
+					<div class="d-flex">
+						<!-- Icon -->
+						<div class="icon-lg text-white bg-success rounded-circle flex-shrink-0"><i class="bi bi-headset"></i></div>
+						<!-- Content -->
+						<div class="ms-3">
+							<h4 class="mb-1">Contact Support?</h4>
+							<p class="mb-3">필요한 도움을 찾지 못하셨나요?</p>
+							<a th:href="@{/#}" class="btn btn-dark mb-0">Contact Us</a>
+						</div>	
+					</div>
+				</div>
+			</div>
+
+			<!-- Action box item -->
+			<div class="col-md-6 position-relative overflow-hidden">
+				<div class="bg-secondary bg-opacity-10 rounded-3 h-100 p-4">
+					<!-- Content -->
+					<div class="d-flex">
+						<!-- Icon -->
+						<div class="icon-lg text-dark bg-warning rounded-circle flex-shrink-0"><i class="fa-solid fa-house"></i></div>
+						<!-- Content -->
+						<div class="ms-3">
+							<h4 class="mb-1">Go to main page</h4>
+							<p class="mb-3">팜스터치 메인 페이지로 돌아가기</p>
+							<a th:href="@{/index}" class="btn btn-dark mb-0">Take me to Main page</a>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Action boxes END -->
+
+<!-- =======================
+Popular article START -->
+
+<!-- =======================
+Popular article END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+<!-- footer 시작 -->
+<footer th:replace="~{common/layout2 :: #footer}"></footer>
+
+<!-- Back to top -->
+<div class="back-top"></div>
+
+<!-- Vendors -->
+<script th:src="@{/assets/vendor/tiny-slider/tiny-slider.js}"></script>
+
+<!-- ThemeFunctions -->
+<script th:src="@{/assets/js/functions.js}"></script>
+
+</body>
+</html>

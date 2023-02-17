@@ -30,12 +30,15 @@ Main START -->
 
 						<!-- Card body --> 
 						<div class="card-body p-0 pt-4">
+						
+							<div th:each="product : ${list}">
+							
 							<!-- Product item START -->
-							<div class="row">
+							<div class="row align-items-center">
 								<!-- Image -->
 								<div class="col-5 col-md-2">
 									<div class="bg-light p-2 rounded-2">
-										<img src="assets/images/farmstouch/bonsai-1171555.jpg" alt="" style="height: 4.063rem;">
+										<img th:src="${product.image}" alt="" style="height: 4.063rem;">
 									</div>
 								</div>
 
@@ -44,11 +47,11 @@ Main START -->
 										<!-- Content -->
 										<div class="col-md-7">
 											<!-- Product detail START -->
-											<h5 class="mb-1"><a href="#">실내공기정화식물</a></h5>
-                      <small style="color: #446A46;">디지털/가전</small>
+											<h5 class="mb-1"><a th:href="|/shop/shoppingBasket?pno=${product.pno}|">[[${product.title}]]</a></h5>
+                      						<small style="color: #446A46;">[[${product.category1}]]</small>
 											<!-- List -->
 											<ul class="nav nav-divider small align-items-center mt-1">
-												<li class="nav-item">판매점: innoplustech</li>
+												<li class="nav-item">판매점: [[${product.mallName}]]</li>
 											</ul>
 										</div>
 			
@@ -58,69 +61,30 @@ Main START -->
 												<option value="1">01</option>
 												<option value="2">02</option>
 												<option value="3">03</option>
+												<option value="4">04</option>
+												<option value="5">05</option>
 											</select>
 										</div>
 		
 										<!-- Price and button -->
 										<div class="col-md-3 text-md-end">
-											<h5>\103.00</h5>
+											<h5>\[[${product.lprice}]]</h5>
 											<!-- Buttons -->
 											<div class="hstack gap-1 flex-wrap text-primary-hover mt-2 justify-content-md-end">
-												<a href="#" class="text-reset small"><i class="bi bi-trash3 me-2"></i>Remove</a>
-												<a href="#" class="text-reset small"><i class="bi bi-heart me-2"></i>Save for later</a>
+												<a th:href="@{/#}" class="text-reset small"><i class="bi bi-trash3 me-2"></i>Remove</a>
+												<a th:href="@{/#}" class="text-reset small"><i class="bi bi-heart me-2"></i>Save for later</a>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>	
 							<!-- Product item END -->
-
 							<hr> <!-- Divider -->
-
-							<!-- Product item START -->
-							<div class="row align-items-center">
-								<!-- Image -->
-								<div class="col-5 col-md-2">
-									<div class="bg-light p-2 rounded-2">
-										<img src="assets/images/farmstouch/succulents-2347550.jpg" alt="" style="height: 4.063rem;">
-									</div>
-								</div>
-
-								<div class="col-7 col-md-10">
-									<div class="row g-2">
-										<!-- Content -->
-										<div class="col-md-7">
-											<!-- Product detail START -->
-											<h5 class="mb-1"><a href="#">비료 엔비올트리플 20KG</a></h5>
-                      				<small style="color: #446A46;">디지털/가전</small>
-											<!-- List -->
-											<ul class="nav nav-divider small align-items-center mt-1">
-												<li class="nav-item">판매점: innoplustech</li>
-											</ul>
-										</div>
-			
-										<!-- Select -->
-										<div class="col-md-2">
-											<select class="form-select form-select-sm" aria-label="Default select example">
-												<option value="1">01</option>
-												<option value="2">02</option>
-												<option value="3">03</option>
-											</select>
-										</div>
-		
-										<!-- Price and button -->
-										<div class="col-md-3 text-md-end">
-											<h5>\98.00</h5>
-											<!-- Buttons -->
-											<div class="hstack gap-1 flex-wrap text-primary-hover mt-2 justify-content-md-end">
-												<a href="#" class="text-reset small"><i class="bi bi-trash3 me-2"></i>Remove</a>
-												<a href="#" class="text-reset small"><i class="bi bi-heart me-2"></i>Save for later</a>
-											</div>
-										</div>
-									</div>
-								</div>
+							
 							</div>
-							<!-- Product item END -->
+	
+	
+							
 						</div>
 					</div>
 					<!-- My Cart END -->
@@ -157,7 +121,7 @@ Main START -->
 							</li>
 							<li class="list-group-item d-flex justify-content-between align-items-center">
 								<span>할인</span>
-								<span class="h6 mb-0">-\50</span>	
+								<span class="h6 mb-0">-\0</span>	
 							</li>
 						</ul>
 					</div>
@@ -170,7 +134,7 @@ Main START -->
 						</div>
 
 						<!-- Button -->
-						<div class="d-grid"><a href="#" class="btn btn-success2 mb-0">결제하기</a></div>
+						<div class="d-grid"><a th:href="@{/#}" class="btn btn-success2 mb-0">결제하기</a></div>
 					</div>
 				</div>
 				<!-- Order summary END -->

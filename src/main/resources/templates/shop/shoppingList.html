@@ -15,6 +15,8 @@
 <!-- =======================
 Main START -->
 <section class="pt-3 pt-lg-5">
+	<form th:action="@{/shop/shoppingList}" method="get" class="" name="searchForm">
+
 	<div class="container">
 		<div class="row">
 			
@@ -22,221 +24,184 @@ Main START -->
 			<aside class="col-xl-4 col-xxl-3">
 				<!-- Responsive offcanvas body START -->
 				<div class="offcanvas-xl offcanvas-end" tabindex="-1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
-					<div class="offcanvas-header bg-light">
-						<h5 class="offcanvas-title" id="offcanvasSidebarLabel">Advance Filter</h5>
-						<button  type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasSidebar" aria-label="Close"></button>
-					</div>
-					<div class="offcanvas-body flex-column p-3 p-xl-0">
-						<form class="border rounded-2">
-
-							<!-- Availability START -->
-							<div class="card card-body">	
-								<!-- Title -->
-								<h6 class="mb-3">상품명</h6>
-
-								<!-- Search -->
-								<div class="">
-									<div class="rounded position-relative">
-										<input class="form-control pe-5" type="search" placeholder="검색어 입력" aria-label="Search">
-										<button class="btn bg-transparent border-0 px-2 py-0 position-absolute top-50 end-0 translate-middle-y"
-											type="submit"><i class="bi bi-search fs-5"> </i></button>
+						<div class="offcanvas-body flex-column p-3 p-xl-0 border rounded-2 ">
+	
+								<!-- Availability START -->
+								<div class="card card-body">	
+									<!-- Title -->
+									<h6 class="mb-3">상품명</h6>
+	
+									<!-- Search -->
+									<div class="">
+										<div class="rounded position-relative">
+											<input id="title" name="title" th:value="${param.title}" class="form-control pe-5" type="text" placeholder="검색어 입력" aria-label="Search">
+											<button class="btn bg-transparent border-0 px-2 py-0 position-absolute top-50 end-0 translate-middle-y"
+												type="submit"><i class="bi bi-search fs-5"> </i></button>
+										</div>
+									</div>
+	
+									<div class="row ms-1 mt-2">
+										<!-- Availability group -->
+										<div class="form-check col-6">
+											<input id="farmming" name="kinds" value="농업" 
+												th:checked="${#arrays.contains(kinds, '농업')  ? 'checked' : null}"
+						                     class="form-check-input" type="checkbox">
+						                    <label class="form-check-label" for="farmming">농업 용품</label>
+											
+										</div>
+										<div class="form-check col-6">
+											<input id="plant" name="kinds" value="식물" 
+												th:checked="${#arrays.contains(kinds, '식물')  ? 'checked' : null}"
+						                    class="form-check-input" type="checkbox">
+						                    <label class="form-check-label" for="plant">식물 용품</label>
+											
+										</div>
+										<!-- Availability END -->
 									</div>
 								</div>
-
-								<div class="row ms-1 mt-2">
-								<!-- Availability group -->
-								<div class="form-check col-6">
-									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-									<label class="form-check-label" for="flexRadioDefault1">
-										농업 용품
-									</label>
+	
+								<hr class="my-0"> <!-- Divider -->
+	
+								<!-- Offer type START -->
+								<div class="card card-body">	
+									<!-- Title -->
+									<h6 class="mb-3">타입</h6>
+	
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="씨앗" name="brands" value="씨앗"
+											th:checked="${#arrays.contains(brands, '씨앗')  ? 'checked' : null}"
+										>
+										<label class="form-check-label" for="씨앗">씨앗</label>
+									</div>
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="농기계" name="brands" value="농기계"
+											th:checked="${#arrays.contains(brands, '농기계')  ? 'checked' : null}"
+										>
+										<label class="form-check-label" for="농기계">농기계</label>
+									</div>
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="비료" name="brands" value="비료"
+											th:checked="${#arrays.contains(brands, '비료')  ? 'checked' : null}"
+										>
+										<label class="form-check-label" for="비료">비료</label>
+									</div>
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="농약" name="brands" value="농약"
+											th:checked="${#arrays.contains(brands, '농약')  ? 'checked' : null}"
+										>
+										<label class="form-check-label" for="농약">농약</label>
+									</div>
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="화분" name="brands" value="화분"
+											th:checked="${#arrays.contains(brands, '화분')  ? 'checked' : null}"
+										>
+										<label class="form-check-label" for="화분">화분</label>
+									</div>
+									<!-- Checkbox -->
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" id="영양제" name="brands" value="영양제"
+											th:checked="${#arrays.contains(brands, '영양제')  ? 'checked' : null}"
+										>
+										<label class="form-check-label" for="영양제">영양제</label>
+									</div>
 								</div>
-								<div class="form-check col-6">
-									<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-									<label class="form-check-label" for="flexRadioDefault2">
-										식물 용품
-									</label>
+								<!-- Offer type END -->
+	
+								<hr class="my-0"> <!-- Divider -->
+	
+								<!-- Rating Star START -->
+								<div class="card card-body">
+									<!-- Title -->
+									<h6 class="mb-3">별점</h6>
+									<!-- Rating Star group -->
+									<ul class="list-inline mb-0 g-3">
+										<!-- Item -->
+										<li class="list-inline-item mb-0">
+											<input type="checkbox" class="btn-check" id="btn-check-6">
+											<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-6">1<i class="bi bi-star-fill"></i></label>
+										</li>
+										<!-- Item -->
+										<li class="list-inline-item mb-0">
+											<input type="checkbox" class="btn-check" id="btn-check-7">
+											<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-7">2<i class="bi bi-star-fill"></i></label>
+										</li>
+										<!-- Item -->
+										<li class="list-inline-item mb-0">
+											<input type="checkbox" class="btn-check" id="btn-check-8">
+											<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-8">3<i class="bi bi-star-fill"></i></label>
+										</li>
+										<!-- Item -->
+										<li class="list-inline-item mb-0">
+											<input type="checkbox" class="btn-check" id="btn-check-15">
+											<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-15">4<i class="bi bi-star-fill"></i></label>
+										</li>
+										<!-- Item -->
+										<li class="list-inline-item mb-0">
+											<input type="checkbox" class="btn-check" id="btn-check-16">
+											<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-16">5<i class="bi bi-star-fill"></i></label>
+										</li>
+									</ul>
 								</div>
-								<!-- Availability END -->
-
-							</div>
-
-
-							</div>
-
-							<hr class="my-0"> <!-- Divider -->
-
-							<!-- Offer type START -->
-							<div class="card card-body">	
-								<!-- Title -->
-								<h6 class="mb-3">타입</h6>
-
-								<!-- Checkbox -->
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="amenitiesType1">
-									<label class="form-check-label" for="amenitiesType1">씨앗</label>
-								</div>
-								<!-- Checkbox -->
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="amenitiesType2">
-									<label class="form-check-label" for="amenitiesType2">농기계</label>
-								</div>
-								<!-- Checkbox -->
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="amenitiesType3">
-									<label class="form-check-label" for="amenitiesType3">비료</label>
-								</div>
-								<!-- Checkbox -->
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="amenitiesType4">
-									<label class="form-check-label" for="amenitiesType4">농약</label>
-								</div>
-								<!-- Checkbox -->
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="amenitiesType5">
-									<label class="form-check-label" for="amenitiesType5">화분</label>
-								</div>
-								<!-- Checkbox -->
-								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="amenitiesType6">
-									<label class="form-check-label" for="amenitiesType6">영양제</label>
-								</div>
-							</div>
-							<!-- Offer type END -->
-
-							<hr class="my-0"> <!-- Divider -->
-
-							<!-- Rating Star START -->
-							<div class="card card-body">
-								<!-- Title -->
-								<h6 class="mb-3">별점</h6>
-								<!-- Rating Star group -->
-								<ul class="list-inline mb-0 g-3">
-									<!-- Item -->
-									<li class="list-inline-item mb-0">
-										<input type="checkbox" class="btn-check" id="btn-check-6">
-										<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-6">1<i class="bi bi-star-fill"></i></label>
-									</li>
-									<!-- Item -->
-									<li class="list-inline-item mb-0">
-										<input type="checkbox" class="btn-check" id="btn-check-7">
-										<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-7">2<i class="bi bi-star-fill"></i></label>
-									</li>
-									<!-- Item -->
-									<li class="list-inline-item mb-0">
-										<input type="checkbox" class="btn-check" id="btn-check-8">
-										<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-8">3<i class="bi bi-star-fill"></i></label>
-									</li>
-									<!-- Item -->
-									<li class="list-inline-item mb-0">
-										<input type="checkbox" class="btn-check" id="btn-check-15">
-										<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-15">4<i class="bi bi-star-fill"></i></label>
-									</li>
-									<!-- Item -->
-									<li class="list-inline-item mb-0">
-										<input type="checkbox" class="btn-check" id="btn-check-16">
-										<label class="btn btn-sm btn-light btn-success-soft-check" for="btn-check-16">5<i class="bi bi-star-fill"></i></label>
-									</li>
-								</ul>
-							</div>
-							<!-- Rating Star END -->
-						</form><!-- Form End -->
-					</div>
-					<!-- Buttons -->
-					<div class="d-flex justify-content-between p-2 p-xl-0 mt-xl-3">
-						<button class="btn btn-link p-0 mb-0" style="color: #446A46;">Clear all</button>
-						<button class="btn btn-success2 mb-0">Filter Result</button>
-					</div>
+								<!-- Rating Star END -->
+						</div>
+						<!-- Buttons -->
+						<div class="d-flex justify-content-between p-2 p-xl-0 mt-xl-3">
+							<button class="btn btn-link p-0 mb-0" style="color: #446A46;" type="reset">Clear all</button>
+							<button type="submit" class="btn btn-success2 mb-0">Filter Result</button>
+						</div>
+					
 				</div>
 				<!-- Responsive offcanvas body END -->
 			</aside>
 			<!-- Filter END -->
 
 			<!-- Main part START -->
-			<div class="col-xl-9">
+			<div class="col-xl-9 row g-2 g-xl-4 mb-4 mt-n4">
 
-				<!-- Search filter START -->
-				<form class="row g-2 g-xl-4 mb-4">
-
-					<!-- Select -->
-					<div class="col-md-4 col-xl-3">
-						<select class="form-select" aria-label="Default select example">
-							<option selected>정렬 기준</option>
-							<option value="1">추천순</option>
-							<option value="2">가격 낮은 순</option>
-							<option value="3">가격 높은 순</option>
-						</select>
+				<!-- Adv START -->
+				<div class="col-12">
+					<div class="rounded-2 bg-dark-overlay-5 overflow-hidden p-4 p-md-5" th:style="|background-image: url(@{/assets/images/farmstouch/plant5.jpg});|">
+						<div class="d-md-flex justify-content-between align-items-center">
+							<h4 class="text-white mb-2 mb-md-0">Fam's Touch 회원가입 시 최대 20% 할인!</h4>
+							<a th:href="@{/#}" class="btn btn-success2 mb-0">쿠폰 발급받기</a>
+						</div>
 					</div>
+				</div>
+				<!-- Adv END -->
 
-          <div class="col-md-4 col-xl-3 d-grid d-xl-none">
-            <!-- Filter offcanvas button -->
-						<button class="btn btn-success-soft btn-success-check mb-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
-							<i class="fas fa-sliders-h me-1"></i> Show filter
-						</button>
-          </div>
-				</form>
-				<!-- Search filter END -->
+				<!-- Select -->
+				<!-- <div class="col-md-4 col-xl-3 mb-n4">
+					<select id="sort" th:name="sort" class="form-select" aria-label="Default select example">
+						<option value="normal" th:seleted=" ${paramMap.sort} == 'normal' ">추천순</option>
+	                    <option value="low" th:seleted=" ${paramMap.sort} == 'low' ">낮은 가격순</option>
+	                    <option value="high" th:seleted=" ${paramMap.sort} == 'high' ">높은 가격순</option>
+					</select>
+				</div> -->
+				
+				<!-- <div class="d-flex align-items-center flex-nowra col-md-6 col-xl-6 mb-n4">
+					<label class="text-black opacity-50 text-nowrap fs-sm me-2 d-none d-sm-block" for="sorting">Sort by:</label>
+					<select id="sort" name="sort" class="form-select"  onchange="document.searchForm.submit();">
+                    <option value="normal" th:seleted="${paramMap.sort == 'normal' ? 'selected' : '' }">추천순</option>
+                    <option value="low" th:seleted="${paramMap.sort == 'low' ? 'selected' : '' }">낮은 가격순</option>
+                    <option value="high" th:seleted="${paramMap.sort == 'high' ? 'selected' : '' }" >높은 가격순</option>
+                  </select>
+                  <span class="fs-sm text-black opacity-50 text-nowrap ms-2 d-none d-md-block">of [[${count}]] products</span>
+				</div> -->
+				
 
 				<!-- Product START -->
 				<div class="row g-4">
 
-					<!-- Adv START -->
-					<div class="col-12">
-						<div class="rounded-2 bg-dark-overlay-5 overflow-hidden p-4 p-md-5" style="background-image: url(assets/images/farmstouch/plant5.jpg);">
-							<div class="d-md-flex justify-content-between align-items-center">
-								<h4 class="text-white mb-2 mb-md-0">Fam's Touch 회원가입 시 최대 20% 할인!</h4>
-								<a href="#" class="btn btn-success2 mb-0">쿠폰 발급받기</a>
-							</div>
-						</div>
-					</div>
-					<!-- Adv END -->
-
-					<!-- Product item START -->
-					<div class="col-sm-6 col-md-4">
-						<div class="card border p-3 h-100">
-
-							<div class="position-relative">
-								<!-- Image -->
-								<a href="shop-detail.html" class="">
-									<img class="card-img" src="assets/images/farmstouch/balcony-plants-3426042.jpg" alt="" style="height: 14.063rem;">
-								</a>
-								<!-- Overlay -->
-								<div class="card-img-overlay p-0">
-									<div> <span class="badge text-bg-warning">New</span></div>
-								</div>
-							</div>
-		
-							<!-- Card body -->
-							<div class="card-body text-center p-3 px-0">
-								<!-- Badge and price -->
-								<div class="d-flex justify-content-center mb-2">
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
-									</ul>
-								</div>
-								<!-- Title -->
-								<h5 class="card-title"><a href="shop-detail.html">Osprey Packs Backpack</a></h5>
-								<h6 class="mb-0" style="color: #446A46;">\103.00</h6>
-							</div>
-		
-							<!-- Card footer -->
-							<div class="card-footer text-center p-0">
-								<!-- Button -->
-								<a href="#" class="btn btn-sm btn-success2 mb-0"><i class="bi bi-cart me-2"></i>장바구니 담기</a>
-							</div>
-						</div>
-					</div>
-					<!-- Product item END -->
-		
-					<!-- Product item START -->
-					<div class="col-sm-6 col-md-4">
+					<!-- Product item START --> 
+					<div class="col-sm-6 col-md-4" th:each="product : ${list}">
 						<div class="card border p-3 h-100">
 							<!-- Image -->
-							<a href="shop-detail.html"><img class="card-img" src="assets/images/farmstouch/bloom-1835391.jpg" alt="" style="height: 14.063rem;"></a>
+							<a th:href="|/shop/shoppingDetails?pno=${product.pno}|"><img class="card-img" th:src="${product.image}" alt="" style="height: 14.063rem;"></a>
 		
 							<!-- Card body -->
 							<div class="card-body text-center p-3 px-0">
@@ -251,258 +216,45 @@ Main START -->
 									</ul>
 								</div>
 								<!-- Title -->
-								<h5 class="card-title"><a href="shop-detail.html">Plain Colored T-Shirts</a></h5>
-								<h6 class="mb-0" style="color: #446A46;">\103.00</h6>
+								<h5 class="card-title"><a th:href="|/shop/shoppingDetails?pno=${product.pno}|">[[${product.title}]]</a></h5>
+								<h6 class="mb-0" style="color: #446A46;">\[[${product.lprice}]]</h6>
 							</div>
 		
 							<!-- Card footer -->
-							<div class="card-footer text-center p-0">
+							<div class="card-footer text-center p-0" th:if="|${loginMember} != null|">
 								<!-- Button -->
-								<a href="#" class="btn btn-sm btn-success2 mb-0"><i class="bi bi-cart me-2"></i>장바구니 담기</a>
-							</div>
-						</div>
-					</div>
-					<!-- Product item END -->
-		
-					<!-- Product item START -->
-					<div class="col-sm-6 col-md-4">
-						<div class="card border p-3 h-100">
-							<!-- Image -->
-							<a href="shop-detail.html"><img class="card-img" src="assets/images/farmstouch/flower-197343.jpg" alt="" style="height: 14.063rem;"></a>
-		
-							<!-- Card body -->
-							<div class="card-body text-center p-3 px-0">
-								<!-- Badge and price -->
-								<div class="d-flex justify-content-center mb-2">
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
-									</ul>
-								</div>
-								<!-- Title -->
-								<h5 class="card-title"><a href="shop-detail.html">Men's Watertight Jacket</a></h5>
-								<h6 class="mb-0" style="color: #446A46;">\103.00</h6>
-							</div>
-		
-							<!-- Card footer -->
-							<div class="card-footer text-center p-0">
-								<!-- Button -->
-								<a href="#" class="btn btn-sm btn-success2 mb-0"><i class="bi bi-cart me-2"></i>장바구니 담기</a>
+								<a th:href="|/shop/shoppingBasket?pno=${product.pno}|" class="btn btn-sm btn-success2 mb-0" type="button" 
+									onclick="location.href='|/shop/shoppingBasket?pno=${product.pno}|'"
+								><i class="bi bi-cart me-2"></i>장바구니 담기</a>
 							</div>
 						</div>
 					</div>
 					<!-- Product item END -->
 
-					<!-- Product item START -->
-					<div class="col-sm-6 col-md-4">
-						<div class="card border p-3 h-100">
-							<!-- Image -->
-							<a href="shop-detail.html"><img class="card-img" src="assets/images/farmstouch/bloom-1835391.jpg" alt="" style="height: 14.063rem;"></a>
-		
-							<!-- Card body -->
-							<div class="card-body text-center p-3 px-0">
-								<!-- Badge and price -->
-								<div class="d-flex justify-content-center mb-2">
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
-									</ul>
-								</div>
-								<!-- Title -->
-								<h5 class="card-title"><a href="shop-detail.html">Plain Colored T-Shirts</a></h5>
-								<h6 class="mb-0" style="color: #446A46;">\103.00</h6>
-							</div>
-		
-							<!-- Card footer -->
-							<div class="card-footer text-center p-0">
-								<!-- Button -->
-								<a href="#" class="btn btn-sm btn-success2 mb-0"><i class="bi bi-cart me-2"></i>장바구니 담기</a>
-							</div>
-						</div>
-					</div>
-					<!-- Product item END -->
-		
-					<!-- Product item START -->
-					<div class="col-sm-6 col-md-4">
-						<div class="card border p-3 h-100">
-							<!-- Image -->
-							<a href="shop-detail.html"><img class="card-img" src="assets/images/farmstouch/flower-197343.jpg" alt="" style="height: 14.063rem;"></a>
-		
-							<!-- Card body -->
-							<div class="card-body text-center p-3 px-0">
-								<!-- Badge and price -->
-								<div class="d-flex justify-content-center mb-2">
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
-									</ul>
-								</div>
-								<!-- Title -->
-								<h5 class="card-title"><a href="shop-detail.html">Men's Watertight Jacket</a></h5>
-								<h6 class="mb-0" style="color: #446A46;">\103.00</h6>
-							</div>
-		
-							<!-- Card footer -->
-							<div class="card-footer text-center p-0">
-								<!-- Button -->
-								<a href="#" class="btn btn-sm btn-success2 mb-0"><i class="bi bi-cart me-2"></i>장바구니 담기</a>
-							</div>
-						</div>
-					</div>
-					<!-- Product item END -->
-
-					<!-- Product item START -->
-					<div class="col-sm-6 col-md-4">
-						<div class="card border p-3 h-100">
-							<!-- Image -->
-							<a href="shop-detail.html"><img class="card-img" src="assets/images/farmstouch/bloom-1835391.jpg" alt="" style="height: 14.063rem;"></a>
-		
-							<!-- Card body -->
-							<div class="card-body text-center p-3 px-0">
-								<!-- Badge and price -->
-								<div class="d-flex justify-content-center mb-2">
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
-									</ul>
-								</div>
-								<!-- Title -->
-								<h5 class="card-title"><a href="shop-detail.html">Plain Colored T-Shirts</a></h5>
-								<h6 class="mb-0" style="color: #446A46;">\103.00</h6>
-							</div>
-		
-							<!-- Card footer -->
-							<div class="card-footer text-center p-0">
-								<!-- Button -->
-								<a href="#" class="btn btn-sm btn-success2 mb-0"><i class="bi bi-cart me-2"></i>장바구니 담기</a>
-							</div>
-						</div>
-					</div>
-					<!-- Product item END -->
-		
-					<!-- Product item START -->
-					<div class="col-sm-6 col-md-4">
-						<div class="card border p-3 h-100">
-							<!-- Image -->
-							<a href="shop-detail.html"><img class="card-img" src="assets/images/farmstouch/flower-197343.jpg" alt="" style="height: 14.063rem;"></a>
-		
-							<!-- Card body -->
-							<div class="card-body text-center p-3 px-0">
-								<!-- Badge and price -->
-								<div class="d-flex justify-content-center mb-2">
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
-									</ul>
-								</div>
-								<!-- Title -->
-								<h5 class="card-title"><a href="shop-detail.html">Men's Watertight Jacket</a></h5>
-								<h6 class="mb-0" style="color: #446A46;">\103.00</h6>
-							</div>
-		
-							<!-- Card footer -->
-							<div class="card-footer text-center p-0">
-								<!-- Button -->
-								<a href="#" class="btn btn-sm btn-success2 mb-0"><i class="bi bi-cart me-2"></i>장바구니 담기</a>
-							</div>
-						</div>
-					</div>
-					<!-- Product item END -->
-
-					<!-- Product item START -->
-					<div class="col-sm-6 col-md-4">
-						<div class="card border p-3 h-100">
-							<!-- Image -->
-							<a href="shop-detail.html"><img class="card-img" src="assets/images/farmstouch/bloom-1835391.jpg" alt="" style="height: 14.063rem;"></a>
-		
-							<!-- Card body -->
-							<div class="card-body text-center p-3 px-0">
-								<!-- Badge and price -->
-								<div class="d-flex justify-content-center mb-2">
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
-									</ul>
-								</div>
-								<!-- Title -->
-								<h5 class="card-title"><a href="shop-detail.html">Plain Colored T-Shirts</a></h5>
-								<h6 class="mb-0" style="color: #446A46;">\103.00</h6>
-							</div>
-		
-							<!-- Card footer -->
-							<div class="card-footer text-center p-0">
-								<!-- Button -->
-								<a href="#" class="btn btn-sm btn-success2 mb-0"><i class="bi bi-cart me-2"></i>장바구니 담기</a>
-							</div>
-						</div>
-					</div>
-					<!-- Product item END -->
-		
-					<!-- Product item START -->
-					<div class="col-sm-6 col-md-4">
-						<div class="card border p-3 h-100">
-							<!-- Image -->
-							<a href="shop-detail.html"><img class="card-img" src="assets/images/farmstouch/flower-197343.jpg" alt="" style="height: 14.063rem;"></a>
-		
-							<!-- Card body -->
-							<div class="card-body text-center p-3 px-0">
-								<!-- Badge and price -->
-								<div class="d-flex justify-content-center mb-2">
-									<ul class="list-inline mb-0">
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
-									</ul>
-								</div>
-								<!-- Title -->
-								<h5 class="card-title"><a href="shop-detail.html">Men's Watertight Jacket</a></h5>
-								<h6 class="mb-0" style="color: #446A46;">\103.00</h6>
-							</div>
-		
-							<!-- Card footer -->
-							<div class="card-footer text-center p-0">
-								<!-- Button -->
-								<a href="#" class="btn btn-sm btn-success2 mb-0"><i class="bi bi-cart me-2"></i>장바구니 담기</a>
-							</div>
-						</div>
-					</div>
-					<!-- Product item END -->
-
+					<th:block th:if="${count > 0}">
 					<!-- Pagination -->
 					<div class="row">
 						<div class="col-12">
 							<nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
 								<ul class="pagination pagination-primary-soft2 d-inline-block d-md-flex rounded mb-0">
-									<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fa-solid fa-angle-left"></i></a></li>
-									<li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
-									<li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
-									<li class="page-item mb-0"><a class="page-link" href="#">..</a></li>
-									<li class="page-item mb-0"><a class="page-link" href="#">6</a></li>
-									<li class="page-item mb-0"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+									<li class="page-item mb-0"><a class="page-link" th:onclick="movePage(1);"><i class="fa-solid fa-angle-left"></i></a></li>
+									<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${pageInfo.prevPage}]]);"><i class="fa-solid fa-angle-left"></i></a></li>
+									<th:block th:each= "num, status : ${#numbers.sequence(pageInfo.startPage, pageInfo.endPage)}">
+										<th:block th:if="${status.current == pageInfo.currentPage}">
+											<li class="page-item mb-0 active"><a class="page-link" disabled>[[${status.current}]]<span class="visually-hidden">(current)</span></a></li>
+										</th:block>
+										<th:block th:if="${status.current != pageInfo.currentPage}">
+											<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${status.current}]])">[[${status.current}]]</a></li>
+										</th:block>
+									</th:block>
+									
+									<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${pageInfo.nextPage}]])"><i class="fa-solid fa-angle-right"></i></a></li>
+									<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${pageInfo.maxPage}]])"><i class="fa-solid fa-angle-right"></i></a></li>
 								</ul>
 							</nav>
 						</div>
 					</div>
+					</th:block>
 
 				</div>
 				<!-- Product END -->
@@ -511,6 +263,9 @@ Main START -->
 			<!-- Main part END -->
 		</div>
 	</div>
+	
+	</form><!-- Form End -->
+	
 </section>
 <!-- =======================
 Main END -->
@@ -519,5 +274,49 @@ Main END -->
 <!-- **************** MAIN CONTENT END **************** -->
 
 	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+	
 </body>
 </html>
+
+<script type="text/javascript">
+	var url_href = window.location.href;
+	var url = new URL(url_href); // URL 객체 선언
+
+	function movePage(page){
+		url.searchParams.set("page", page);
+	
+	window.location.search = url.searchParams;
+	
+	
+	var title = document.getElementById("title"); 
+	pageUrl += '&title='+title.value;
+	
+	var kinds = document.getElementsByName("kinds"); 
+	for(i = 0; i < kinds.length; i++){
+		if(kinds[i].checked == true){
+			pageUrl += '&kinds='+kinds[i].value;
+		}
+	}
+	
+	var brands = document.getElementsByName("brands"); 
+	for(i = 0; i < brands.length; i++){
+		if(brands[i].checked == true){
+			pageUrl += '&brands='+brands[i].value;
+		}
+	}
+	
+	var lowPrice = document.getElementById("lowPrice"); 
+	pageUrl += '&lowPrice=' + lowPrice.value;
+	
+	var highPrice = document.getElementById("highPrice"); 
+	pageUrl += '&highPrice=' + highPrice.value;
+	
+	
+	
+	var sort = document.getElementById("sort");
+	pageUrl += '&sort=' + sort.options[sort.selectedIndex].value;
+	
+	location.href = encodeURI(pageUrl);	
+	
+};
+</script>

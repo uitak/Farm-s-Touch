@@ -14,7 +14,7 @@
 <!-- **************** MAIN CONTENT START **************** -->
 <main>
 
-
+<div id="nongsaroApiLoadingArea"></div>
 	
 <!-- =======================
 Main Title START -->
@@ -27,9 +27,9 @@ Main Title START -->
 				<div class="d-lg-flex justify-content-lg-between mb-1">
 					<!-- Title -->
 					<div class="mb-2 mb-lg-0">
-						<h1 class="fs-2">매실나무 </h1>
+						<h1 class="fs-2">[[${prvateTherpy.cntntsSj}]]</h1>
 						<!-- Location -->
-						<p class="fw-bold mb-0"><i class="bi bi-puzzle-fill me-2"></i>Prunus mume (장미과)</p>
+						<p class="fw-bold mb-0"><i class="bi bi-puzzle-fill me-2"></i>[[${prvateTherpy.bneNm}]]</p>
 					</div>
 
 					<!-- Buttons -->
@@ -46,10 +46,11 @@ Main Title START -->
 							</a>
 							<!-- dropdown button -->
 							<ul class="dropdown-menu dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare">
-								<li><a class="dropdown-item" href="#"><i class="fab fa-twitter-square me-2"></i>Twitter</a></li>
-								<li><a class="dropdown-item" href="#"><i class="fab fa-facebook-square me-2"></i>Facebook</a></li>
-								<li><a class="dropdown-item" href="#"><i class="fab fa-linkedin me-2"></i>LinkedIn</a></li>
-								<li><a class="dropdown-item" href="#"><i class="fa-solid fa-copy me-2"></i>Copy link</a></li>
+								<li><a id="btnTwitter" class="dropdown-item link-icon twitter" href="javascript:shareTwitter();"><i class="fab fa-twitter-square me-2"></i>Twitter</a></li>
+								<!-- <li><a id="btnFacebook" class="dropdown-item link-icon facebook" href="javascript:shareFacebook();"><i class="fab fa-facebook-square me-2"></i>Facebook</a></li> -->
+								<li><a id="btnKakao" class="dropdown-item link-icon kakao" href="javascript:shareKakao();">
+									<img src="https://img.icons8.com/external-tal-revivo-bold-tal-revivo/24/null/external-free-instant-messaging-app-for-cross-platform-devices-logo-bold-tal-revivo.png" style="height:15px"/> KaKao</a></li>
+								<li><a class="dropdown-item" href="#" onclick="clip(); return false;"><i class="fa-solid fa-copy me-2"></i>Copy link</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -72,69 +73,88 @@ Main Title START -->
 <!-- =======================
 Main Title END -->
 
+
 <!-- =======================
-Image gallery START -->
-<section class="card-grid pt-0">
+Main Banner START -->
+<section class="pt-4">
 	<div class="container">
-		<div class="row g-2">
-			<!-- Image -->
-			<div class="col-md-6">
-				<a data-glightbox data-gallery="gallery" href="assets/images/farmstouch/example/2000.jpg">
-					<div class="card card-grid-lg card-element-hover card-overlay-hover overflow-hidden" style="background-image:url(assets/images/farmstouch/example/2000.jpg); background-position: center left; background-size: cover;">
-						<!-- Card hover element -->
-						<div class="hover-element position-absolute w-100 h-100">
-							<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
-						</div>
-					</div>
-				</a>
-			</div>
 
-			<div class="col-md-6">
-				<!-- Card item START -->
-				<div class="row g-2"> 
-					<!-- Image -->
-					<div class="col-12">
-						<div class="card card-grid-sm card-element-hover" style="background-image:url(assets/images/farmstouch/example/sim3.png); background-position: center left; background-size: cover;"></div>
-					</div>
-
-					<!-- Images -->
-					<div class="col-12">
-						<div class="card card-grid-sm overflow-hidden" style="background-image:url(assets/images/farmstouch/example/1000.jpg); background-position: center left; background-size: cover;">
-							<!-- Background overlay -->
-							<div class="bg-overlay bg-dark opacity-7"></div>
-
-							<!-- Popup Images -->
-							<a data-glightbox="" data-gallery="gallery" href="assets/images/farmstouch/example/2000.jpg" class="stretched-link z-index-9"></a>
-							<a data-glightbox="" data-gallery="gallery" href="assets/images/farmstouch/example/2001.jpg"></a>
-							<a data-glightbox="" data-gallery="gallery" href="assets/images/farmstouch/example/2002.jpg"></a>
-							<a data-glightbox="" data-gallery="gallery" href="assets/images/farmstouch/example/2003.jpg"></a>
-
-
-							<!-- Overlay text -->
-							<div class="card-img-overlay d-flex h-100 w-100">
-								<h6 class="card-title m-auto fw-light "><a href="#" class="text-white">이미지 모두 보기</a></h6>
-							</div>
-						</div>
-					</div>
-					<!-- Image -->
-					<!-- <div class="col-md-6">
-						<a data-glightbox data-gallery="gallery" href="assets/images/category/directory/example/1005.jpg">
-							<div class="card card-grid-sm card-element-hover card-overlay-hover overflow-hidden" style="background-image:url(assets/images/category/directory/example/1005.jpg); background-position: center left; background-size: cover;">
-								
-								<div class="hover-element position-absolute w-100 h-100">
+		<!-- Slider START -->
+		<div class="tiny-slider arrow-round arrow-blur">
+			<div class="tiny-slider-inner" data-autoplay="false" data-arrow="true" data-edge="0" data-dots="false" data-items="2" data-items-sm="1">
+		
+				<!-- 1 -->
+				<th:block th:if="${not #strings.isEmpty(prvateTherpy.imgUrl1)}">
+					<div>
+						<a class="w-100 h-100" data-glightbox data-gallery="gallery" th:href="|${prvateTherpy.imgUrl1}|" target="_blank">
+							<div class="card card-element-hover card-overlay-hover overflow-hidden">
+								<!-- Image -->
+								<img th:src="${prvateTherpy.imgUrl1}" class="rounded-3" alt="" style="height:23.75rem">
+								<!-- Full screen button -->
+								<div class="hover-element w-100 h-100">
 									<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
 								</div>
 							</div>
-						</a>	
-					</div> -->
-				</div>
-				<!-- Card item END -->
+						</a>
+					</div>
+				</th:block>
+				
+				<!-- 2 -->
+				<th:block th:if="${not #strings.isEmpty(prvateTherpy.imgUrl2)}">
+					<div>
+						<a class="w-100 h-100" data-glightbox data-gallery="gallery" th:href="|${prvateTherpy.imgUrl2}|" target="_blank">
+							<div class="card card-element-hover card-overlay-hover overflow-hidden">
+								<!-- Image -->
+								<img th:src="${prvateTherpy.imgUrl2}" class="rounded-3" alt="" style="height:23.75rem">
+								<!-- Full screen button -->
+								<div class="hover-element w-100 h-100">
+									<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+								</div>
+							</div>
+						</a>
+					</div>
+				</th:block>
+				
+				<!-- 3 -->
+				<th:block th:if="${not #strings.isEmpty(prvateTherpy.imgUrl3)}">
+					<div>
+						<a class="w-100 h-100" data-glightbox data-gallery="gallery" th:href="|${prvateTherpy.imgUrl3}|" target="_blank">
+							<div class="card card-element-hover card-overlay-hover overflow-hidden">
+								<!-- Image -->
+								<img th:src="${prvateTherpy.imgUrl3}" class="rounded-3" alt="" style="height:23.75rem">
+								<!-- Full screen button -->
+								<div class="hover-element w-100 h-100">
+									<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+								</div>
+							</div>
+						</a>
+					</div>
+				</th:block>
+				
+				<!-- 4 -->
+				<th:block th:if="${not #strings.isEmpty(prvateTherpy.imgUrl4)}">
+					<div>
+						<a class="w-100 h-100" data-glightbox data-gallery="gallery" th:href="|${prvateTherpy.imgUrl4}|" target="_blank">
+							<div class="card card-element-hover card-overlay-hover overflow-hidden">
+								<!-- Image -->
+								<img th:src="${prvateTherpy.imgUrl4}" class="rounded-3" alt="" style="height:23.75rem">
+								<!-- Full screen button -->
+								<div class="hover-element w-100 h-100">
+									<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+								</div>
+							</div>
+						</a>
+					</div>
+				</th:block>
 			</div>
 		</div>
+		<!-- Slider END -->
 	</div>
 </section>
 <!-- =======================
-Image gallery END -->
+Main Banner END -->
+
+
 
 <!-- =======================
 About hotel START -->
@@ -173,17 +193,16 @@ About hotel START -->
 
 							<h5 class="fw-light mb-2">이용부위 및 좋은 사이트</h5>
 							<ul class="list-group list-group-borderless mb-sm-5">
-								<li class="list-group-item h6 fw-light d-flex mb-0"><i class="bi bi-patch-check-fill text-success me-2"></i>매화나무의 미숙과를 훈증한 것</li>
-								<a href="http://www.jdm0777.com/yaksamo/yakchosanhyang-a.htm"  target="_blank"><li class="list-group-item h6 fw-light d-flex mb-0"><i class="bi bi-patch-check-fill text-success me-2"></i>http://www.jdm0777.com/yaksamo/yakchosanhyang-a.htm</li></a>
+								<li class="list-group-item h6 fw-light d-flex mb-0"><i class="bi bi-patch-check-fill text-success me-2"></i>이용 부위 : [[${prvateTherpy.useeRegn}]]</li>
+								<a href="https://www.gnares.go.kr:8444/Home/Contents.mbz?action=MAPP_0000000173"  target="_blank"><li class="list-group-item h6 fw-light d-flex mb-0"><i class="bi bi-patch-check-fill text-success me-2"></i>추가 정보 : 경상남도농업기술원 | 약초</li></a>
 							</ul>
 
 							<h5 class="fw-light mb-3">형태</h5>
 							<p class="mb-3">
-								□ 낙엽소향목으로 키 5m 이다. 수피는 담회색 또는 담녹색이고 잎은 호생하며 난형이다. 꽃은 잎보 다 먼저 피며 백색 또는 분홍색이다. 핵과는 둥글고 융모에 싸여있고 7월에 황색으로 익는다. <br />
-								□ 개화기: 3~4월, 성숙기 : 7월 <br />
-								□ 재배환경 : 야생 매화나무는 내한성이 강함. 유실수 또는 분재로 재배 <br />
-								□ 수확·건조 : 5월에 미성숙과를 따서 건조시키거나 소금에 절인다.
-
+								<!-- [[${prvateTherpy.stle}]] -->
+								<!-- [[${prvateTherpy.stle.replace('br /', 'br')}]] -->
+								<p th:utext="|${prvateTherpy.stle.replace('</ br>', '<br>')}|"></p>
+								<!-- <span th:text="${#strings.replace(${prvateTherpy.stle}, '</ br>', '<br>')}"></span> -->
 							</p>
 							
 							<div class="collapse" id="collapseContent">
@@ -193,24 +212,12 @@ About hotel START -->
 							<a class="p-0 mb-4 mt-2 btn-more d-flex align-items-center collapsed" data-bs-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">
 								See <span class="see-more ms-1">more</span><span class="see-less ms-1">less</span><i class="fa-solid fa-angle-down ms-2"></i>
 							</a>
-
+								
 
 							<h5 class="fw-light mb-3">민간요법</h5>
 							<!-- <p class="mb-3">Demesne far-hearted suppose venture excited see had has. Dependent on so extremely delivered by. Yet no jokes worse her why. <b>Bed one supposing breakfast day fulfilled off depending questions.</b></p> -->
 							<p class="mb-0">
-						
-								□ 소화불량 - 마른 매실 20개, 물 1.8ℓ 엽차 잎 세 숟갈을 냄비에 넣어서 30분∼1시간동안 약한 불로 걸쭉하게 끓인다. 매일 식전 식후, 차처럼 마신다. <br />- 참고 : <br />1)
-								식욕부진, 소화불량에 가장 적합한 음료이다. <br />2) 냉장보관, 오래 두면 좋지 않다. <br />□ 설사 치료 - 푸른 매실을 같은 분량의 설탕과 함께 입구가 넓은 병에 넣어둔 후 10일 정도가
-								지나면 즙이 다 우 러나온 매실이 위쪽으로 떠오른다. - 매실은 전부 건져내고, 남은 매실 즙을 가제로 한번 거른다. - 병에 넣어 보관하고, 한 숟갈 정도씩 떠 먹으면 좋다. <br />- 참고 :
-								<br />1) 설탕의 양이 적으면 쓴맛이 난다. <br />2) 설사가 나거나 배가 아플 때 효과가 있다. <br />□ 복통 치료 - 매실장아찌를 만들고 나온 씨를 쪼개 보면 그 속에 살이 들어
-								있는데, 그 살을 먹으면 설사로 인한 복통에 효과가 있다. <br />- 참고 : 매실 장아찌의 매실을 그대로 먹어도 좋은데 신 것을 싫어하는 사람이면 뜨거운 물에 넣고 으깨어 마시면 좋다. <br />□
-								초기감기 치료 - 푸른 매실에 소금을 넣고 며칠 두면, 순수한 매실 즙인 투명한 액체가 우러난다. - 우러난 액체를 채취해서 냉장 보관한다. <br />□ 기침 치료 - 푸른 매실을 깨끗이 씻은 다음
-								설탕을 뿌려 용기에 담아 밀봉한다. ·매실과 설탕을 대략 같은 양으로 하지 않으면 신맛이 강해지므로 설탕의 양에 주의 한다. ·2∼3개월 지나면 즙이 배어 나오는데 이즙을 한 스푼 정도씩 하루 3회
-								복용한다. <br />□ 목감기 치료 - 푸른 매실 4∼5kg을 잘 씻은 다음 씨를 빼내고 으깬다. - 면으로 된 주머니에 넣고 즙을 짠다. - 냄비에 짜낸 즙을 넣고, 아주 약한 불에 잘 저으면서
-								끓인다. - 청황색이 점점 갈색으로 변하며 거품이 일면서 액체상태였던 것이 서서히 끈적끈적하게 된다. 약 두 시간 가량 끓인 다음 주걱으로 떠 봐서, 실처럼 길게 늘어지게 되면 불을 끈다. - 편도선염이나
-								목이 부어 아플 때, 매실 엑스를 3분의 1스푼 분량과 작은 마늘 한 조각의 즙을 섞어 찻잔에 넣고 따뜻한 물을 부어 양치질을 하거나 2배로 희석하여 목에 바른다. <br />- 참고 : <br />1)
-								매실과육 엑스는 매실 장아찌의 30배의 효과가 있다고 한다. <br />2) 복통, 설사, 변비, 빈혈 등에 뛰어난 효과가 나타난다.
-
+								<p th:utext="|${prvateTherpy.prvateTherpy.replace('</ br>', '<br>')}|"></p>
 							</p>
 							
 							<div class="collapse" id="collapseContent">
@@ -220,24 +227,15 @@ About hotel START -->
 							<a class="p-0 mb-4 mt-2 btn-more d-flex align-items-center collapsed" data-bs-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">
 								See <span class="see-more ms-1">more</span><span class="see-less ms-1">less</span><i class="fa-solid fa-angle-down ms-2"></i>
 							</a>
-							<!-- <h5 class="fw-light mb-3">민간요법</h5>
-							<p class="mb-3">Demesne far-hearted suppose venture excited see had has. Dependent on so extremely delivered by. Yet no jokes worse her why. <b>Bed one supposing breakfast day fulfilled off depending questions.</b></p>
-							<p class="mb-0">Delivered dejection necessary objection do Mr prevailed. Mr feeling does chiefly cordial in do. Water timed folly right aware if oh truth. Large above be to means. Dashwood does provide stronger is.</p>
 							
-							<div class="collapse" id="collapseContent">
-								<p class="my-3">We focus a great deal on the understanding of behavioral psychology and influence triggers which are crucial for becoming a well rounded Digital Marketer. We understand that theory is important to build a solid foundation, we understand that theory alone isn't going to get the job done so that's why this rickets is packed with practical hands-on examples that you can follow step by step.</p>
-								<p class="mb-0">Behavioral psychology and influence triggers which are crucial for becoming a well rounded Digital Marketer. We understand that theory is important to build a solid foundation, we understand that theory alone isn't going to get the job done so that's why this tickets is packed with practical hands-on examples that you can follow step by step.</p>
-							</div>
-							<a class="p-0 mb-4 mt-2 btn-more d-flex align-items-center collapsed" data-bs-toggle="collapse" href="#collapseContent" role="button" aria-expanded="false" aria-controls="collapseContent">
-								See <span class="see-more ms-1">more</span><span class="see-less ms-1">less</span><i class="fa-solid fa-angle-down ms-2"></i>
-							</a> -->
 						</div>
 						<!-- Card body END -->
 					</div>
 					<!-- About hotel START -->
 
 
-
+<!-- ================================================= 다른 약초 알아보기 ================================================= -->
+					<th:block th:each="otherList : ${otherList}" >
 					<!-- Room START -->
 					<div class="card bg-transparent" id="room-options">
 						<!-- Card header -->
@@ -248,7 +246,7 @@ About hotel START -->
 								<div class="col-sm-4">
 									<!-- Button -->
 									<div class="d-grid">
-										<a href="#" class="btn btn-lg btn-success-soft mb-0">검색페이지로 이동</a>
+										<a th:href="|/life/herbList|" class="btn btn-lg btn-success-soft mb-0">검색페이지로 이동</a>
 									</div>
 								</div>
 							</div>
@@ -273,16 +271,11 @@ About hotel START -->
 											<div class="tiny-slider arrow-round arrow-xs arrow-dark overflow-hidden rounded-2">
 												<div class="tiny-slider-inner" data-autoplay="true" data-arrow="true" data-dots="false" data-items="1">
 													<!-- Image item -->
-													<div><img src="assets/images/farmstouch/example/9993.jpg" alt="Card image"></div>
-
+													<div> <img th:src="${otherList.imgUrl1}" class="rounded-2" alt="Card image" style="height:175px"></div>
+						
 													<!-- Image item -->
-													<div><img src="assets/images/farmstouch/example/9994.jpg" alt="Card image"></div>
-
-													<!-- Image item -->
-													<div><img src="assets/images/farmstouch/example/9995.jpg" alt="Card image"></div>
-
-													<!-- Image item -->
-													<div><img src="assets/images/farmstouch/example/9996.jpg" alt="Card image"></div>
+													<div> <img th:src="${otherList.imgUrl2}" class="rounded-2" alt="Card image"  style="height:175px"> </div>
+						
 												</div>
 											</div>
 											<!-- Slider END -->
@@ -294,18 +287,18 @@ About hotel START -->
 											<div class="card-body d-flex flex-column h-100 p-0">
 					
 												<!-- Title -->
-												<h5 class="card-title"><a href="#">금불초</a></h5>
+												<h5 class="card-title"><a th:href="|/life/herbDetails?cntntsNo=${otherList.cntntsNo}|">[[${otherList.cntntsSj}]]</a></h5>
 
 												<!-- Amenities -->
 												<ul class="nav nav-divider mb-2">
-													<li class="nav-item">Inula britannica var. japonica (국화과)</li>
+													<li class="nav-item">[[${otherList.bneNm}]]</li>
 												</ul>
 
-												<p class="mb-0"><b>생약명 :</b> 旋覆花根(선복화근)</p>
-												<p class="mb-0"><b>이용부위 :</b> 금불초의 뿌리</p>
+												<p class="mb-0"><b>생약명 :</b> [[${otherList.hbdcNm}]]</p>
+												<p class="mb-0"><b>이용부위 :</b> [[${otherList.useeRegn}]]</p>
 												<!-- Button -->
 												<p class="mb-0">
-													<a href="#" class="btn btn-link text-success p-0 mb-0 mt-1" data-bs-toggle="modal" data-bs-target="#roomDetail"><i class="bi bi-eye-fill me-1"></i>상세정보 팝업</a>
+													<a href="#" class="btn btn-link text-success p-0 mb-0 mt-1" data-bs-toggle="modal" data-bs-target="#room"><i class="bi bi-eye-fill me-1"></i>상세정보 팝업</a>
 												</p>
 											</div>
 										</div>
@@ -313,12 +306,11 @@ About hotel START -->
 								</div>
 								<!-- Room item END -->
 
-								
-
 							</div>
 						</div>
 						<!-- Card body END -->
-					</div>
+
+					</div></th:block>
 					<!-- Room END -->
 
 				</div>	
@@ -335,25 +327,20 @@ About hotel START -->
 						<div class="d-sm-flex justify-content-sm-between align-items-center mb-3">
 							<div>
 								<span>민간약초</span>
-								<h4 class="card-title mb-0">매실나무</h4>
+								<h4 class="card-title mb-0">[[${prvateTherpy.cntntsSj}]]</h4>
 							</div>
 							<div style="text-align: right;">
 								<h6 class="fw-normal mb-0">생약명</h6>
-								<small>烏梅(오매)</small>
+								<small>[[${prvateTherpy.hbdcNm}]]</small>
 							</div>
 						</div>		
 
 						<!-- Rating -->
 						<ul class="list-inline mb-2">
-							<li class="list-inline-item me-1 h6 fw-light mb-0">학명 <i class="bi bi-arrow-right me-2"></i>Prunus mume (장미과)</li>
-							<!-- <li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
-							<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
-							<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
-							<li class="list-inline-item me-0 small"><i class="fa-solid fa-star text-warning"></i></li>
-							<li class="list-inline-item me-0 small"><i class="fa-solid fa-star-half-alt text-warning"></i></li> -->
+							<li class="list-inline-item me-1 h6 fw-light mb-0">학명 <i class="bi bi-arrow-right me-2"></i><small>[[${prvateTherpy.bneNm}]]</small></li>
 						</ul>
 
-						<p class="h6 fw-light mb-4">이용부위 <i class="bi bi-arrow-right me-2"></i>매화나무의 미숙과를 훈증한 것</p>
+						<p class="h6 fw-light mb-4">이용부위 <i class="bi bi-arrow-right me-2"></i>[[${prvateTherpy.useeRegn}]]</p>
 
 						<!-- Button -->
 						<div class="d-grid">
@@ -370,13 +357,13 @@ About hotel START -->
 							<div class="row g-0 align-items-center">
 								<!-- Image -->
 								<div class="col-sm-6 col-md-12 col-lg-6">
-									<img src="assets/images/farmstouch/example/1004.jpg" class="card-img rounded-0" alt="" style="height: 11.25rem;">
+									<img src="../assets/images/farmstouch/example/1004.jpg" class="card-img rounded-0" alt="" style="height: 11.25rem;">
 								</div>
 
 								<!-- Title and content -->
 								<div class="col-sm-6 col-md-12 col-lg-6">
 									<div class="card-body p-3">
-										<h6 class="card-title"><a href="offer-detail.html" class="stretched-link">오늘의 꽃</a></h6>
+										<h6 class="card-title"><a href="#" class="stretched-link">오늘의 꽃</a></h6>
 										<p class="mb-0">오늘 나의 기분을 점쳐줄 꽃 구경하러 갈 사람?</p>
 									</div>
 								</div>
@@ -396,85 +383,146 @@ About hotel END -->
 </main>
 <!-- **************** MAIN CONTENT END **************** -->
 <!-- 다른 약초 팝업창 START -->
-<div class="modal fade" id="roomDetail" tabindex="-1" aria-labelledby="roomDetailLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content p-0">
-
-			<!-- Title -->
-			<div class="modal-header p-3">
-				<h5 class="modal-title mb-0" id="roomDetailLabel">상세페이지 팝업창</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-
-			<!-- Modal body -->
-			<div class="modal-body p-0">
-
-				<!-- Card START -->
-				<div class="card bg-transparent p-3">
-					<!-- Slider START -->
-					<div class="tiny-slider arrow-round arrow-dark overflow-hidden rounded-2">
-						<div class="tiny-slider-inner rounded-2 overflow-hidden" data-autoplay="true" data-arrow="true" data-dots="false" data-items="1">
-							<!-- Image item -->
-							<div> <img src="assets/images/farmstouch/example/9993.jpg" class="rounded-2" alt="Card image"></div>
-
-							<!-- Image item -->
-							<div> <img src="assets/images/farmstouch/example/9994.jpg" class="rounded-2" alt="Card image"> </div>
-
-							<!-- Image item -->
-							<div> <img src="assets/images/farmstouch/example/9995.jpg" class="rounded-2" alt="Card image"> </div>
-
-							<!-- Image item -->
-							<div> <img src="assets/images/farmstouch/example/9996.jpg" class="rounded-2" alt="Card image"> </div>
-						</div>
-					</div>
-					<!-- Slider END -->
-
-					<!-- Card header -->
-					<div class="card-header bg-transparent pb-0">
-						<h3 class="card-title mb-0">금불초</h3>
-					</div>
-
-					<!-- Card body START -->
-					<div class="card-body">
-						<!-- Content -->
-						<p>□ 다년초로 키 20∼60㎝이고 근경이 뻗으면서 번식한다. 잎은 피침형으로 길이 5∼10㎝로 밑부분이 갑자기 좁아져서 엽병이 없거나 원줄기를 감싸며 양면에 복모가 있고 가장자리가 밋밋하다. 꽃은 가 지 끝과 원줄기 끝에 달리고 황색이다. 삭과는 1mm정도 10개의 능선과 더불어 털이 있다.
-							□ 개화기 : 7~9월
-							□ 분포 및 환경 : 산록의 습지, 물기있는 곳
-							□ 수확·건조 : 가을에 뿌리를 채취하여 양건한다.</p>
-						
-						<div class="row">
-							<h5 class="mb-0">명칭 및 이용부위</h5>
-
-							<!-- List -->
-							<div class="col-md-12">
-								<!-- List -->
-								<ul class="list-group list-group-borderless mt-2 mb-0">
-									<li class="list-group-item d-flex mb-0">
-										<i class="fa-solid fa-check-circle text-success me-2"></i><span class="h6 fw-light mb-0">Inula britannica var. japonica (국화과)</span>
-									</li>
-									<li class="list-group-item d-flex mb-0">
-										<i class="fa-solid fa-check-circle text-success me-2"></i><span class="h6 fw-light mb-0">旋覆花根(선복화근)</span>
-									</li>
-									<li class="list-group-item d-flex mb-0">
-										<i class="fa-solid fa-check-circle text-success me-2"></i><span class="h6 fw-light mb-0">금불초의 뿌리</span>
-									</li>
-								</ul>
-							</div>
-
-							
-						</div> <!-- Row END -->
-					</div>
-					<!-- Card body END -->
+<th:block th:each="otherList : ${otherList}" >
+	<div class="modal fade" id="room" tabindex="-1" aria-labelledby="roomDetailLabel" aria-hidden="true">
+	
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content p-0">
+				
+				<!-- Title -->
+				<div class="modal-header p-3">
+					<h5 class="modal-title mb-0" style="margin-right:7.5rem" id="roomDetailLabel">상세페이지 팝업창</h5>
+					<a th:href="|/life/herbDetails?cntntsNo=${otherList.cntntsNo}|" class="btn btn-lg btn-success-soft mx-0 my-0 px-3 py-2">상세페이지 이동</a>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
-				<!-- Card END -->
+	
+				<!-- Modal body -->
+				<div class="modal-body p-0">
+	
+					<!-- Card START -->
+					<div class="card bg-transparent p-3">
+						<!-- Slider START -->
+						<div class="tiny-slider arrow-round arrow-dark overflow-hidden rounded-2">
+							<div class="tiny-slider-inner rounded-2 overflow-hidden" data-autoplay="true" data-arrow="true" data-dots="false" data-items="1">
+								<!-- Image item -->
+								<div> <img th:src="${otherList.imgUrl1}" class="rounded-2" alt="Card image"></div>
+	
+								<!-- Image item -->
+								<div> <img th:src="${otherList.imgUrl2}" class="rounded-2" alt="Card image"> </div>
+							</div>
+						</div>
+						<!-- Slider END -->
+	
+						<!-- Card header -->
+						<div class="card-header bg-transparent pb-0">
+							<h3 class="card-title mb-0">[[${otherList.cntntsSj}]]</h3>
+						</div>
+	
+						<!-- Card body START -->
+						<div class="card-body">
+							<!-- Content -->
+							<p th:utext="|${otherList.stle}|"></p>
+							
+							<div class="row">
+								<h5 class="mb-0">명칭 및 이용부위</h5>
+	
+								<!-- List -->
+								<div class="col-md-12">
+									<!-- List -->
+									<ul class="list-group list-group-borderless mt-2 mb-0">
+										<li class="list-group-item d-flex mb-0">
+											<i class="fa-solid fa-check-circle text-success me-2"></i><span class="h6 fw-light mb-0">[[${otherList.bneNm}]]</span>
+										</li>
+										<li class="list-group-item d-flex mb-0">
+											<i class="fa-solid fa-check-circle text-success me-2"></i><span class="h6 fw-light mb-0">[[${otherList.hbdcNm}]]</span>
+										</li>
+										<li class="list-group-item d-flex mb-0">
+											<i class="fa-solid fa-check-circle text-success me-2"></i><span class="h6 fw-light mb-0">[[${otherList.useeRegn}]]</span>
+										</li>
+									</ul>
+								</div>
+	
+								
+							</div> <!-- Row END -->
+						</div>
+						<!-- Card body END -->
+					</div>
+					<!-- Card END -->
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<!-- 다른 약초 팝업창 END -->
+	<!-- 다른 약초 팝업창 END -->
+</th:block>
+
+
 
 <!-- =======================Footer START -->
 
 	<footer th:replace="~{common/layout2 :: #footer}"></footer>
 </body>
 </html>
+
+<!-- 카카오 공유하기 -->
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+<script type="text/javascript">
+var url = '';
+
+function clip(){
+
+	var textarea = document.createElement("textarea");
+	document.body.appendChild(textarea);
+	url = window.document.location.href;
+	textarea.value = url;
+	textarea.select();
+	document.execCommand("copy");
+	document.body.removeChild(textarea);
+	alert("URL이 복사되었습니다.")
+}
+
+// 트위터
+function shareTwitter() {
+
+    var sendText = "farmstouch"; // 전달할 텍스트
+    var sendUrl = url; // 전달할 URL
+    window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
+}
+
+// 페이스북
+/* function shareFacebook() {
+	var url = '';
+	var textarea = document.createElement("textarea");
+	document.body.appendChild(textarea);
+	url = window.document.location.href;
+	textarea.value = url;
+	textarea.select();
+	document.execCommand("copy");
+	document.body.removeChild(textarea);
+    var sendUrl = "url"; // 전달할 URL
+    window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
+} */
+
+// 카카오
+function shareKakao() {
+      
+      // 사용할 앱의 JavaScript 키 설정
+      Kakao.init('9b8a2ab69f37af22f6784fef92e74104');
+
+      // 카카오링크 버튼 생성
+      Kakao.Link.createDefaultButton({
+            container: '#btnKakao', // 카카오공유버튼ID
+            objectType: 'feed',
+            content: {
+                  title: "Farm's Touch", // 보여질 제목
+                  description: "반갑습니다. 초보 농부를 위한 온라인 지침서 팜스터치 입니다.", // 보여질 설명
+                  imageUrl: "https://www.urbanbrush.net/web/wp-content/uploads/edd/2018/02/web-20180213120309801324.png", // 콘텐츠 URL
+                  link: {
+                        mobileWebUrl: url,
+                        webUrl: url
+                  }
+            }
+      });
+}
+
+</script>

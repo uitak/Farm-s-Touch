@@ -3,6 +3,16 @@
 
 <head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
 
+<!-- 제목의 글자수를 제한하고 ... 처리하는 css -->
+<style>
+	.textcutting{
+	  width        : 25.5rem;     
+	  text-overflow: ellipsis;  /* 위에 설정한 넓이보다 길면 말줄임표처럼 표시 */
+	  white-space  : nowrap;    /* 줄바꿈을 하지 않음 */
+	  overflow     : hidden;    /* 내용이 길면 감춤 */
+	  display      : block;     /* ie6이상 현재요소를 블럭처리 */
+}
+</style>
 <body>
 
 <!-- Header START -->
@@ -20,7 +30,7 @@
 Main banner START -->
 <section class="pt-0">
 	<!-- Background and title -->
-	<div class="container-fluid" style="background-image:url(assets/images/farmstouch/example/visual14.jpg); background-position: center left; background-size: cover; height: 27rem;">
+	<div class="container-fluid" style="background-image:url(../assets/images/farmstouch/example/visual14.jpg); background-position: center left; background-size: cover; height: 27rem;">
 		<div class="row py-8"> 
 			<div class="col-md-2 mx-auto"> </div>
 			<div class="col-md-6 mx-auto"> 
@@ -29,7 +39,7 @@ Main banner START -->
 			</div>
 			<div class="col-md-4 mx-auto"> </div>
 		</div>
-		<div class="row" style="margin-bottom: 30px;"></div>
+		<div class="row" style="margin-bottom: 1.875rem;"></div>
 			
 	</div>
 </section>
@@ -141,9 +151,9 @@ Flight list START -->
 <section class="pt-0">
 	<div class="container">
 		<div class="row">
-			
 				<!-- Left sidebar START -->
 				<aside class="col-xl-4 col-xxl-3">
+					<form th:action="@{/agriculture/agriculturalPlusMinusList}" method="get" id="mlrdForm1" name="mlrdForm1" class="mlrdForm1">
 					<!-- Responsive offcanvas body START -->
 						<div class="offcanvas-xl offcanvas-end" tabindex="-1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
 							<!-- Offcanvas header -->
@@ -151,14 +161,32 @@ Flight list START -->
 								<h5 class="offcanvas-title" id="offcanvasSidebarLabel">Advance Filters</h5>
 								<button  type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasSidebar" aria-label="Close"></button>
 							</div>
-
 							<!-- Offcanvas body -->
 							<div class="offcanvas-body flex-column p-3 p-xl-0">
-								
 								<div class="rounded-3 shadow">
-									<form>
 										<!-- Popular filters START -->
 										<div class="card card-body rounded-0 rounded-top p-4">
+										
+<!-- ======================================================== 필터 검색 추가 부분 ======================================================= -->										
+										<div class="row g-3 align-items-center justify-content-between mb-3">
+										<h6 class="mb-0">필터와 함꼐 검색</h6>
+												<!-- Select option -->
+												<div class="col-md-6">
+													<!-- Short by filter -->
+													<select class="form-select js-choice" aria-label=".form-select-sm" name="searchType">
+														<option th:text="제목" value="curationNm" th:selected="${paramMap.searchType}=='curationNm'"></option>
+														<option th:text="등록년도" value="registDt" th:selected="${paramMap.searchType}=='registDt'"></option>
+													</select>
+												</div>
+												<!-- Search -->
+												<div class="col-md-6">
+													<div class="rounded position-relative">
+														<input class="form-control pe-5" id="searchValue" name="searchValue" th:value="${param.searchValue}" type="text" placeholder="검색" aria-label="검색">
+														<button class="btn border-0 px-3 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit" th:onclick="fncSearch()"><i class="fas fa-search fs-6"></i></button>
+													</div>
+												</div>
+											</div>
+<!-- ======================================================== 필터 검색 추가 부분 ======================================================= -->										
 											<!-- Title -->
 											<h6 class="mb-2">지역 분류</h6>
 											<!-- Popular filters group -->
@@ -166,15 +194,14 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType1">
-														<label class="form-check-label" for="popolarType1">서울특별시</label>
+														<input class="form-check-input" type="checkbox" id="popolarType1" value="popolarType1" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'popolarType1')}">
+														<label class="form-check-label" for="popolarType1">서울특별시</label>		<!-- contains는 like와 같으므로 to10을 고르면 to10과 to1이 같이 나온다 -->
 													</div>
-													<!-- <span class="small">(41)</span> -->
 												</div>	
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType2">
+														<input class="form-check-input" type="checkbox" id="popolarType2" value="popolarType2" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'popolarType2')}">
 														<label class="form-check-label" for="popolarType2">부산광역시</label>
 													</div>
 													<!-- <span class="small">(20)</span> -->
@@ -182,7 +209,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType3">
+														<input class="form-check-input" type="checkbox" id="popolarType3" value="popolarType3" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'popolarType3')}">
 														<label class="form-check-label" for="popolarType3">대구광역시</label>
 													</div>
 													<!-- <span class="small">(4)</span> -->
@@ -190,7 +217,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType4">
+														<input class="form-check-input" type="checkbox" id="popolarType4" value="popolarType4" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'popolarType4')}">
 														<label class="form-check-label" for="popolarType4">인천광역시</label>
 													</div>
 													<!-- <span class="small">(2)</span> -->
@@ -198,7 +225,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType5">
+														<input class="form-check-input" type="checkbox" id="popolarType5" value="popolarType5" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'popolarType5')}">
 														<label class="form-check-label" for="popolarType5">울산광역시</label>
 													</div>
 													<!-- <span class="small">(2)</span> -->
@@ -206,7 +233,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType6">
+														<input class="form-check-input" type="checkbox" id="popolarType6" value="popolarType6" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'popolarType6')}">
 														<label class="form-check-label" for="popolarType6">광주광역시</label>
 													</div>
 													<!-- <span class="small">(2)</span> -->
@@ -214,7 +241,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType7">
+														<input class="form-check-input" type="checkbox" id="popolarType7" value="popolarType7" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'popolarType7')}">
 														<label class="form-check-label" for="popolarType7">세종특별자치시</label>
 													</div>
 													<!-- <span class="small">(2)</span> -->
@@ -222,7 +249,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType8">
+														<input class="form-check-input" type="checkbox" id="popolarType8" value="popolarType8" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'popolarType8')}">
 														<label class="form-check-label" for="popolarType8">경기도</label>
 													</div>
 													<!-- <span class="small">(2)</span> -->
@@ -230,7 +257,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType9">
+														<input class="form-check-input" type="checkbox" id="popolarType9" value="popolarType9" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'popolarType9')}">
 														<label class="form-check-label" for="popolarType9">강원도</label>
 													</div>
 													<!-- <span class="small">(2)</span> -->
@@ -238,15 +265,15 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType10">
-														<label class="form-check-label" for="popolarType10">충청북도</label>
+														<input class="form-check-input" type="checkbox" id="areaType1" value="areaType1" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'areaType1')}" >
+														<label class="form-check-label" for="areaType1">충청북도</label>
 													</div>
 													<!-- <span class="small">(2)</span> -->
 												</div>
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType11">
+														<input class="form-check-input" type="checkbox" id="areaType2" value="areaType2" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'areaType2')}">
 														<label class="form-check-label" for="popolarType11">충청남도</label>
 													</div>
 													<!-- <span class="small">(2)</span> -->
@@ -254,7 +281,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType12">
+														<input class="form-check-input" type="checkbox" id="areaType3" value="areaType3" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'areaType3')}">
 														<label class="form-check-label" for="popolarType12">전라북도</label>
 													</div>
 													<!-- <span class="small">(2)</span> -->
@@ -262,7 +289,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType13">
+														<input class="form-check-input" type="checkbox" id="areaType4" value="areaType4" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'areaType4')}">
 														<label class="form-check-label" for="popolarType13">전라남도</label>
 													</div>
 													<!-- <span class="small">(2)</span> -->
@@ -270,7 +297,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType14">
+														<input class="form-check-input" type="checkbox" id="areaType5" value="areaType5" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'areaType5')}">
 														<label class="form-check-label" for="popolarType14">경상북도</label>
 													</div>
 													<!-- <span class="small">(2)</span> -->
@@ -278,7 +305,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType15">
+														<input class="form-check-input" type="checkbox" id="areaType6" value="areaType6" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'areaType6')}">
 														<label class="form-check-label" for="popolarType15">경상남도</label>
 													</div>
 													<!-- <span class="small">(2)</span> -->
@@ -286,7 +313,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType16">
+														<input class="form-check-input" type="checkbox" id="areaType7" value="areaType7" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'areaType7')}">
 														<label class="form-check-label" for="popolarType16">제주특별자치도</label>
 													</div>
 													<!-- <span class="small">(2)</span> -->
@@ -294,7 +321,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" id="popolarType17">
+														<input class="form-check-input" type="checkbox" id="areaType8" value="areaType8" name="areaCodeNm" th:checked="${#strings.contains(areaCodeNm,'areaType8')}">
 														<label class="form-check-label" for="popolarType17">전국</label>
 													</div>
 													<!-- <span class="small">(2)</span> -->
@@ -314,7 +341,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" value="" id="lauoverType1">
+														<input class="form-check-input" type="checkbox" value="lauoverType1" id="lauoverType1" name="ctgCodeNm" th:checked="${#strings.contains(ctgCodeNm,'lauoverType1')}">
 														<label class="form-check-label" for="lauoverType1">농업기술</label>
 													</div>
 													<!-- <span class="small">(01)</span> -->
@@ -322,7 +349,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" value="" id="lauoverType2">
+														<input class="form-check-input" type="checkbox" value="lauoverType2" id="lauoverType2" name="ctgCodeNm" th:checked="${#strings.contains(ctgCodeNm,'lauoverType2')}">
 														<label class="form-check-label" for="lauoverType2">교육</label>
 													</div>
 													<!-- <span class="small">(02)</span> -->
@@ -330,7 +357,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" value="" id="lauoverType3">
+														<input class="form-check-input" type="checkbox" value="lauoverType3" id="lauoverType3" name="ctgCodeNm" th:checked="${#strings.contains(ctgCodeNm,'lauoverType3')}">
 														<label class="form-check-label" for="lauoverType3">기타</label>
 													</div>
 													<!-- <span class="small">(02)</span> -->
@@ -338,7 +365,7 @@ Flight list START -->
 												<!-- Checkbox -->
 												<div class="d-flex justify-content-between align-items-center">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" value="" id="lauoverType4">
+														<input class="form-check-input" type="checkbox" value="lauoverType4" id="lauoverType4" name="ctgCodeNm" th:checked="${#strings.contains(ctgCodeNm,'lauoverType4')}">
 														<label class="form-check-label" for="lauoverType4">음식</label>
 													</div>
 													<!-- <span class="small">(03)</span> -->
@@ -349,32 +376,32 @@ Flight list START -->
 													<!-- Checkbox -->
 													<div class="d-flex justify-content-between align-items-center">
 														<div class="form-check">
-															<input class="form-check-input" type="checkbox" value="" id="lauoverType7">
-															<label class="form-check-label" for="lauoverType7">생활문화</label>
+															<input class="form-check-input" type="checkbox" value="lauoverType5" id="lauoverType5" name="ctgCodeNm" th:checked="${#strings.contains(ctgCodeNm,'lauoverType5')}">
+															<label class="form-check-label" for="lauoverType5">생활문화</label>
 														</div>
 														<!-- <span class="small">(04)</span> -->
 													</div>
 													<!-- Checkbox -->
 													<div class="d-flex justify-content-between align-items-center">
 														<div class="form-check">
-															<input class="form-check-input" type="checkbox" value="" id="lauoverType8">
-															<label class="form-check-label" for="lauoverType8">공모전</label>
+															<input class="form-check-input" type="checkbox" value="lauoverType6" id="lauoverType6" name="ctgCodeNm" th:checked="${#strings.contains(ctgCodeNm,'lauoverType6')}">
+															<label class="form-check-label" for="lauoverType6">공모전</label>
 														</div>
 														<!-- <span class="small">(15)</span> -->
 													</div>
 													<!-- Checkbox -->
 													<div class="d-flex justify-content-between align-items-center">
 														<div class="form-check">
-															<input class="form-check-input" type="checkbox" value="" id="lauoverType9">
-															<label class="form-check-label" for="lauoverType9">농자재</label>
+															<input class="form-check-input" type="checkbox" value="lauoverType7" id="lauoverType7" name="ctgCodeNm" th:checked="${#strings.contains(ctgCodeNm,'lauoverType7')}">
+															<label class="form-check-label" for="lauoverType7">농자재</label>
 														</div>
 														<!-- <span class="small">(04)</span> -->
 													</div>
 													<!-- Checkbox -->
 													<div class="d-flex justify-content-between align-items-center">
 														<div class="form-check">
-															<input class="form-check-input" type="checkbox" value="" id="lauoverType10">
-															<label class="form-check-label" for="lauoverType10">해외농업</label>
+															<input class="form-check-input" type="checkbox" value="lauoverType8" id="lauoverType8" name="ctgCodeNm" th:checked="${#strings.contains(ctgCodeNm,'lauoverType8')}">
+															<label class="form-check-label" for="lauoverType8">해외농업</label>
 														</div>
 														<!-- <span class="small">(04)</span> -->
 													</div>
@@ -385,18 +412,18 @@ Flight list START -->
 												</a>
 											</div>
 										</div>
-									</form>	<!-- Layover Airport END -->
+										<!-- Layover Airport END -->
 								</div><!-- Form End -->
 							</div>
 
 							<!-- Buttons -->
 							<div class="d-flex justify-content-between p-2 p-xl-0 mt-xl-4">
-								<button class="btn btn-link p-0 mb-0">Clear all</button>
-								<button class="btn btn-success2 mb-0"  type="submit">필터 검색 결과</button>
+								<button class="btn btn-link p-0 mb-0" type="reset" onclick="location.href='http://localhost/agriculture/agriculturalPlusMinusList';">Clear all</button>
+								<button class="btn btn-success2 mb-0"  type="submit" th:onclick="fncSearch()">필터 검색 결과</button>
 							</div>
 		
 						</div>
-					<!-- Responsive offcanvas body END -->
+					</form><!-- Responsive offcanvas body END -->
 				</aside>
 				<!-- Left sidebar END -->
 
@@ -409,7 +436,7 @@ Flight list START -->
 							<!-- Title and badge -->
 							<div class="d-flex align-items-center mb-3 mb-sm-0">
 								<div class="position-relative z-index-1 me-2">
-									<img src="assets/images/element/05.svg" class="position-relative h-40px" alt="">
+									<img src="../assets/images/element/05.svg" class="position-relative h-40px" alt="">
 									<span class="smaller text-white position-absolute top-50 start-50 translate-middle">Hot</span>
 								</div>
 								<!-- Title -->
@@ -430,7 +457,7 @@ Flight list START -->
 									<div class="card-header border-bottom">
 										<div class="d-sm-flex justify-content-between align-items-center">
 											<h5 class="mb-2 mb-sm-0">농업기술 더하기 나누기 목록</h5>
-											<a href="#" class="btn btn-sm btn-info mb-0">메인페이지로</a>
+											<a th:href="|/|" class="btn btn-sm btn-info mb-0">메인페이지로</a>
 										</div>
 									</div>
 									<!-- Card header END -->
@@ -438,28 +465,25 @@ Flight list START -->
 									<!-- Card body START -->
 									<div class="card-body">
 										<!-- Search and select START -->
-		
-										<div class="row g-3 align-items-center justify-content-between mb-3">
-											<!-- Select option -->
-											<div class="col-md-3">
-												<!-- Short by filter -->
-												<form>
-													<select class="form-select js-choice" aria-label=".form-select-sm">
-														<option value="title">제목</option>
-														<option value="content">작성자</option>
+										<form th:action="@{/agriculture/agriculturalPlusMinusList}" method="get" id="mlrdForm2" name="mlrdForm2" class="mlrdForm2">
+											<div class="row g-3 align-items-center justify-content-between mb-3">
+												<!-- Select option -->
+												<div class="col-md-3">
+													<!-- Short by filter -->
+													<select class="form-select js-choice" aria-label=".form-select-sm" name="searchType">
+														<option th:text="제목" value="curationNm" th:selected="${paramMap.searchType}=='curationNm'"></option>
+														<option th:text="등록년도" value="registDt" th:selected="${paramMap.searchType}=='registDt'"></option>
 													</select>
-												</form>
-											</div>
-											<!-- Search -->
-											<div class="col-md-8">
-												<div class="rounded position-relative">
-													<input class="form-control pe-5" type="search" placeholder="Search" aria-label="Search">
-													<button class="btn border-0 px-3 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6"></i></button>
+												</div>
+												<!-- Search -->
+												<div class="col-md-8">
+													<div class="rounded position-relative">
+														<input class="form-control pe-5" id="searchValue" name="searchValue" th:value="${param.searchValue}" type="text" placeholder="Search" aria-label="Search">
+														<button class="btn border-0 px-3 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit" th:onclick="fncSearch()"><i class="fas fa-search fs-6"></i></button>
+													</div>
 												</div>
 											</div>
-										
-											
-										</div>
+										</form>
 										<!-- Search and select END -->
 
 										<!-- Hotel room list START -->
@@ -478,97 +502,27 @@ Flight list START -->
 												</thead>
 
 												<!-- Table body START -->
-												<tbody class="border-top-0">
-													<!-- Table item -->
-													<tr style="text-align: center;">
-														<td> <span class="mb-0">001</span> </td>
-														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">키위(참다래), 단순히 먹는 과일에서 그치지않고 오감만족 아이템으로 최고</a></span> </td>
-														<td> 전라남도 </td>
-														<td> <div class="badge text-bg-success">기타</div> </td>
-														<td> <div class="badge bg-success bg-opacity-10 text-success">교육</div> </td>
-														<td style="font-size: 12px;">2017-11-09</td>
-													</tr>
-
-													<!-- Table item -->
-													<tr style="text-align: center;">
-														<td> <span class="mb-0">002</span> </td>
-														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">창업에서 마케팅까지! SNS로 시작한 나의 잭과사과나무(정보화경진대회 우수상, 경상북도 청도군 박수빈)</a></span> </td>
-														<td> 제주특별자치도 </td>
-														<td> <div class="badge text-bg-success">사과</div> </td>
-														<td> <div class="badge bg-success bg-opacity-10 text-success">농업기술</div> </td>
-														<td style="font-size: 12px;">2017-11-11</td>
-													</tr>
-
-													<!-- Table item -->
-													<tr style="text-align: center;">
-														<td> <span class="mb-0">002</span> </td>
-														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">약초된장</a></span> </td>
-														<td> 제주특별자치도 </td>
-														<td> <div class="badge text-bg-success">사과</div> </td>
-														<td> <div class="badge bg-success bg-opacity-10 text-success">농업기술</div> </td>
-														<td style="font-size: 12px;">2017-11-11</td>
-													</tr>
-
-													<!-- Table item -->
-													<tr style="text-align: center;">
-														<td> <span class="mb-0">001</span> </td>
-														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">키위(참다래), 단순히 먹는 과일에서 그치지않고 오감만족 아이템으로 최고</a></span> </td>
-														<td> 전라남도 </td>
-														<td> <div class="badge text-bg-success">기타</div> </td>
-														<td> <div class="badge bg-success bg-opacity-10 text-success">교육</div> </td>
-														<td style="font-size: 12px;">2017-11-09</td>
-													</tr>
-
-													<!-- Table item -->
-													<tr style="text-align: center;">
-														<td> <span class="mb-0">002</span> </td>
-														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">창업에서 마케팅까지! SNS로 시작한 나의 잭과사과나무(정보화경진대회 우수상, 경상북도 청도군 박수빈)</a></span> </td>
-														<td > 제주특별자치도 </td>
-														<td> <div class="badge text-bg-success">사과</div> </td>
-														<td> <div class="badge bg-success bg-opacity-10 text-success">농업기술</div> </td>
-														<td style="font-size: 12px;">2017-11-11</td>
-													</tr>
-
-													<!-- Table item -->
-													<tr style="text-align: center;">
-														<td> <span class="mb-0">002</span> </td>
-														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">약초된장</a></span> </td>
-														<td> 제주특별자치도 </td>
-														<td> <div class="badge text-bg-success">사과</div> </td>
-														<td> <div class="badge bg-success bg-opacity-10 text-success">농업기술</div> </td>
-														<td style="font-size: 12px;">2017-11-11</td>
-													</tr>
-
-													<!-- Table item -->
-													<tr style="text-align: center;">
-														<td> <span class="mb-0">002</span> </td>
-														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">약초된장</a></span> </td>
-														<td> 제주특별자치도 </td>
-														<td> <div class="badge text-bg-success">사과</div> </td>
-														<td> <div class="badge bg-success bg-opacity-10 text-success">농업기술</div> </td>
-														<td style="font-size: 12px;">2017-11-11</td>
-													</tr>
-
-													<!-- Table item -->
-													<tr style="text-align: center;">
-														<td> <span class="mb-0">002</span> </td>
-														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">창업에서 마케팅까지! SNS로 시작한 나의 잭과사과나무(정보화경진대회 우수상, 경상북도 청도군 박수빈)</a></span> </td>
-														<td> 경상남도 </td>
-														<td> <div class="badge text-bg-success">사과</div> </td>
-														<td> <div class="badge bg-success bg-opacity-10 text-success">농업기술</div> </td>
-														<td style="font-size: 12px;">2017-11-11</td>
-													</tr>
-
-													<!-- Table item -->
-													<tr style="text-align: center;">
-														<td> <span class="mb-0">002</span> </td>
-														<td style="text-align: left; font-weight: bold;"> <span class="mb-0"><a href="#">창업에서 마케팅까지! SNS로 시작한 나의 잭과사과나무(정보화경진대회 우수상, 경상북도 청도군 박수빈)</a></span> </td>
-														<td> 제주특별자치도 </td>
-														<td> <div class="badge text-bg-success">사과</div> </td>
-														<td> <div class="badge bg-success bg-opacity-10 text-success">농업기술</div> </td>
-														<td style="font-size: 12px;">2017-11-11</td>
-													</tr>
-												</tbody>
+											
+												<th:block th:if="${mlist == null}">
+													<tbody>
+														<tr>
+															<td colspan="6">조회된 글이 없습니다.</td>
+														</tr>
+													</tbody>
+												</th:block>
+												<th:block th:if="${mlist != null}">
+											    	<tbody class="border-top-0">
+														<!-- Table item -->
+														<tr style="text-align: center;" th:each="mlcurationList : ${mlist}">
+															<td> <span class="mb-0">[[${mlcurationList.mlNo}]]</span> </td>
+															<td style="text-align: left; font-weight: bold;"> <div class="mb-0 textcutting" ><a th:href="|/agriculture/agriculturalPlusMinusDetails?dataNO=${mlcurationList.dataNO}|">[[${mlcurationList.curationNm}]]</a></div> </td>
+															<td> [[${mlcurationList.areaCodeNm}]] </td>
+															<td> <div class="badge bg-success bg-opacity-10 text-success">[[${mlcurationList.kidofcomdtyCodeNm}]]</div> </td>
+															<td> <div class="badge text-bg-success">[[${mlcurationList.ctgCodeNm}]]</div> </td>
+															<td style="font-size: 12px;">[[${mlcurationList.registDt}]]</td>
+														</tr>
+													</tbody>
+												</th:block>
 												<!-- Table body END -->
 											</table>
 										</div>
@@ -581,22 +535,44 @@ Flight list START -->
 										<!-- Pagination and content -->
 										<div class="d-sm-flex justify-content-sm-between align-items-sm-center">
 											<!-- Content -->
-											<p class="mb-sm-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
-											<!-- Pagination -->
-											<nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
-												<ul class="pagination pagination-sm pagination-primary-soft mb-0">
-													<li class="page-item disabled">
-														<a class="page-link" href="#" tabindex="-1">Prev</a>
-													</li>
-													<li class="page-item"><a class="page-link" href="#">1</a></li>
-													<li class="page-item active"><a class="page-link" href="#">2</a></li>
-													<li class="page-item disabled"><a class="page-link" href="#">..</a></li>
-													<li class="page-item"><a class="page-link" href="#">15</a></li>
-													<li class="page-item">
-														<a class="page-link" href="#">Next</a>
-													</li>
-												</ul>
-											</nav>
+											<p class="mb-sm-0 text-center text-sm-start">검색결과 총 [[${mboardCount}]] 개가 발견되었습니다.</p>
+											
+											
+											<!-- 페이지 부  -->
+											<th:block th:if="${mboardCount > 0}">
+												<nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
+													<ul class="pagination pagination-sm pagination-primary-soft mb-0">
+														<li class="page-item">
+															<button class="page-link" th:onclick="movePage(1);">&lt;&lt;</button>
+														</li>
+														<li class="page-item">
+															<button class="page-link"  th:onclick="movePage([[${pageInfo.prevPage}]]);">Prev</button>
+														</li>
+													      <th:block th:each="num, status : ${#numbers.sequence(pageInfo.startPage, pageInfo.endPage)}">
+													            <th:block th:if="${status.current == pageInfo.currentPage}">
+													            	<li class="page-item active">
+													                  	<button class="page-link" disabled>[[${status.current}]]<span class="visually-hidden">(current)</span></button>
+													                 </li>
+													            </th:block>
+													            <th:block th:if="${status.current != pageInfo.currentPage}">
+													            	<li class="page-item">
+													                  <button class="page-link" th:onclick="movePage([[${status.current}]])">
+													                        [[${status.current}]]
+													                  </button>
+													                  </li>
+													            </th:block>
+													      </th:block>								
+														
+														
+														<li class="page-item">
+															<button class="page-link" th:onclick="movePage([[${pageInfo.nextPage}]])">Next</button>
+														</li>
+														<li class="page-item">
+															<button class="page-link" th:onclick="movePage([[${pageInfo.maxPage}]])">&gt;&gt;</button>
+														</li>
+													</ul>
+												</nav>
+											</th:block>
 										</div>
 									</div>
 									<!-- Card footer END -->
@@ -615,7 +591,6 @@ Flight list START -->
 Flight list END -->
 
 
-
 <!-- =======================
 Action box START -->
 <section>
@@ -627,7 +602,7 @@ Action box START -->
 					<div class="row g-4 justify-content-between align-items-center">
 						<!-- Image -->
 						<div class="col-sm-3 col-lg-2">
-							<img src="assets/images/farmstouch/example/fam02.png" alt="">
+							<img src="../assets/images/farmstouch/example/fam02.png" alt="">
 						</div>
 
 						<!-- Title and content -->
@@ -651,13 +626,22 @@ Action box START -->
 Action box END -->
 
 
-
-
 </main>
 <!-- **************** MAIN CONTENT END **************** -->
 
 <!-- =======================Footer START -->
-
 	<footer th:replace="~{common/layout2 :: #footer}"></footer>
 </body>
 </html>
+
+<script type="text/javascript">
+	var url_href = window.location.href; /* 현제 페이지 url 따오기 */
+	var url = new URL(url_href); /* URL 객체 선언 */
+	
+	function movePage(page){	/* 현재 page 숫자를 받아와서 */
+		url.searchParams.set("page", page);	/* page=숫자 형태로 만듬 */
+		
+		window.location.search = url.searchParams; /* location.search : search property는 물음표(?)를 포함하여 URL의 쿼리 문자열 부분을 반환 */
+	};
+	
+</script>

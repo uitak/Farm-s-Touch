@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.multi.bbs.frmhsTasteHosDtl.model.mapper.FrmhsTasteHosMapper">
+
+	<resultMap type="FrmhsTasteHos" id="FrmhsTasteHosListResultMap">
+		<id property="cntntsNo" column="cntntsNo"/>
+		<result property="cntntsSj" column="cntntsSj"/>
+		<result property="slogan" column="slogan"/>
+		<result property="adstrdNm" column="adstrdNm"/>
+		<result property="locplc" column="locplc"/>
+		
+		<result property="telno" column="telno"/>
+		<result property="operMth" column="operMth"/>
+		<result property="restde" column="restde"/>
+		<result property="bsnTime" column="bsnTime"/>
+		<result property="seatStle" column="seatStle"/>
+		
+		<result property="url" column="url"/>
+		<result property="smm" column="smm"/>
+		<result property="trtmntMenu" column="trtmntMenu"/>
+		<result property="exprnProgrm" column="exprnProgrm"/>
+		<result property="trrsrt" column="trrsrt"/>
+		
+		<result property="imgUrl1" column="imgUrl1"/>
+		<result property="imgUrl2" column="imgUrl2"/>
+		<result property="imgUrl3" column="imgUrl3"/>
+		<result property="imgUrl4" column="imgUrl4"/>
+		<result property="imgUrl5" column="imgUrl5"/>
+		<result property="subArea" column="subArea"/>
+		
+		<result property="likeCount" column="likeCount"/>
+		<result property="isLike" column="isLike"/>
+	</resultMap>
+	
+	<resultMap type="FrmhsTasteHosReview" id="FrmhsTasteHosReviewListResultMap">
+		<id property="reviewNo" column="reviewNo"/>
+		<result property="cntntsNo" column="cntntsNo"/>
+		<result property="mNo" column="mNo"/>
+		<result property="content" column="content"/>
+		<result property="star" column="star"/>
+		
+		<result property="originalFilename" column="originalFilename"/>
+		<result property="renamedFilename" column="renamedFilename"/>
+		<result property="createDate" column="createDate"/>
+	</resultMap>
+
+
+	<!-- select d.cntntsNo, d.cntntsSj, d.adstrdNm, d.subArea,
+				d.telno, d.bsnTime, d.restde, d.imgUrl1, avg(star) as star
+		from frmhsTasteHos d
+			left join frmhsTasteHosReview r on r.cntntsNo = d.cntntsNo; -->
+	<!-- 게시글 출력  --> <!-- resultMap은 위에서 선언한 table의 id와 같다 -->
+	<select id="selectFrmhsTasteHosList" resultMap="FrmhsTasteHosListResultMap" parameterType="map">
+		select d.cntntsNo, d.cntntsSj, d.adstrdNm, d.subArea,
+				d.telno, d.bsnTime, d.restde, d.imgUrl1, d.imgUrl2, avg(star) as star, count(reviewNo) as reviews
+		from frmhsTasteHos d
+			left join frmhsTasteHosReview r 
+			on r.cntntsNo = d.cntntsNo
+		WHERE 1=1
+		<if test="searchValue != null">
+			AND cntntsSj LIKE '%${searchValue}%'
+		</if>
+		<if test="searchCity != null">
+			AND subArea LIKE '%${searchCity}%'
+		</if>
+		
+		GROUP BY d.cntntsNo
+		<if test="cntntsSj == null and star == null and review == null">
+			ORDER BY d.cntntsNo DESC 
+		</if>
+		<if test="cntntsSj != null">
+			ORDER BY cntntsSj 
+		</if>
+		<if test="star != null">
+			ORDER BY star
+		</if>
+		<if test="review != null">
+			ORDER BY reviews
+		</if>
+		LIMIT ${limit} OFFSET ${offset}
+	</select>
+	
+	
+	<!-- 게시글 갯수 -->
+	<select id="selectFrmhsTasteHosCount" resultType="int" parameterType="map">
+		SELECT  
+			 COUNT(DISTINCT cntntsNo)
+		FROM frmhsTasteHos
+		WHERE 1=1
+		<if test="searchValue != null">
+			AND cntntsSj LIKE '%${searchValue}%' 
+		</if>		
+		<if test="searchCity != null">
+			AND subArea LIKE '%${searchCity}%' 
+		</if>
+				
+	</select>
+
+	
+	<!-- view 페이지로 번호 맞는 애들 정보 갖고오자 -->
+	<select id="selectFrmhsTasteHosByNo" parameterType="String" resultMap="FrmhsTasteHosListResultMap">
+		SELECT  
+			d.cntntsNo, d.cntntsSj, d.slogan, d.adstrdNm, d.locplc, 
+			d.telno, d.operMth, d.restde, d.bsnTime, d.seatStle, 
+    		d.url, d.smm, d.trtmntMenu, d.exprnProgrm, d.trrsrt, d.imgUrl1, d.imgUrl2, d.imgUrl3, d.imgUrl4, d.imgUrl5, d.subArea, d.mNo,
+			AVG(star) AS star, COUNT(reviewNo) AS reviews
+		FROM frmhsTasteHos d
+		LEFT JOIN frmhsTasteHosReview r on r.cntntsNo = d.cntntsNo
+		WHERE d.cntntsNo = #{cntntsNo}
+	</select>
+	
+	<!-- 다른 애들 랜덤하게 4개 갖고오자 -->
+	<select id="selectFrmhsTasteHosOtherList" resultMap="FrmhsTasteHosListResultMap" parameterType="String">
+		SELECT  
+			d.cntntsNo, d.cntntsSj, d.locplc, d.imgUrl1
+		FROM frmhsTasteHos d
+		WHERE 1=1
+		<if test="cntntsNo != null">
+			AND d.cntntsNo != #{cntntsNo}
+		</if>
+		Order by rand() Limit 4
+	</select>
+	
+	<select id="selectFrmhsTasteHosImgList" resultMap="FrmhsTasteHosListResultMap" parameterType="String">
+		select d.cntntsNo, d.imgUrl1, d.imgUrl2, d.imgUrl3, d.imgUrl4, d.imgUrl5
+		from frmhsTasteHos d
+		where 1=1
+		<if test="cntntsNo != null">
+			AND d.cntntsNo = #{cntntsNo}
+		</if>
+	</select>
+	
+
+	
+</mapper>

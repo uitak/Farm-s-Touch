@@ -3,6 +3,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head" th:replace="~{common/layout1 :: head}"></head>
 
+<!-- 제목의 글자수를 제한하고 ... 처리하는 css -->
+<style>
+	.textcutting{
+	  width        : 9rem;     
+	  text-overflow: ellipsis;  /* 위에 설정한 넓이보다 길면 말줄임표처럼 표시 */
+	  white-space  : nowrap;    /* 줄바꿈을 하지 않음 */
+	  overflow     : hidden;    /* 내용이 길면 감춤 */
+	  display      : block;     /* ie6이상 현재요소를 블럭처리 */
+}
+</style>
+
 <body>
 <header th:replace="~{common/layout1 :: #header}"></header>
 
@@ -28,62 +39,193 @@ Main Banner START -->
 		</div>
 
 		<!-- Search START -->
-		<div class="container position-relative">
-		<div class="row mt-n7">
-			<div class="col-11 mx-auto">				
-				<!-- Booking from START -->
-				<form class="bg-mode shadow rounded-3 p-4">
-					<div class="row g-4 align-items-center">
-
-						<div class="col-xl-8">
-							<div class="row g-4">
-								<!-- Location -->
-								<div class="col-md-6 col-lg-5">
-									<label class="h6 fw-normal mb-0"><i class="bi bi-list-check text-primary me-1"></i>Category</label>
-									<!-- Input field -->
-									<div class="form-border-bottom form-control-transparent form-fs-lg mt-2">
-										<select class="form-select js-choice" data-search-enabled="true">
-											<option value="">카테고리 선정</option>
-											<option>San Jacinto, USA</option>
-											<option>North Dakota, Canada</option>
-											<option>West Virginia, Paris</option>
-										</select>
-									</div>
+		<div class="container mt-n8">
+			<div class="row">
+				<div class="col-11 col-lg-8 col-xl-8 mx-auto">
+					<ul class="nav nav-tabs nav-bottom-line nav-justified nav-responsive bg-mode rounded-top z-index-9 position-relative pt-2 pb-0 px-4">
+						<li class="nav-item"> 
+							<a class="nav-link mb-0 active" data-bs-toggle="tab" href="#tab-1-1"><i class="fa-solid fa-hashtag fa-fw me-2"></i>품종</a> 
+						</li>
+						<li class="nav-item">
+							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-2"><i class="fa-solid fa-hashtag fa-fw me-2"></i>정원식물</a> 
+						</li>
+						<li class="nav-item"> 
+							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-3"><i class="fa-solid fa-hashtag fa-fw me-2"></i>약초</a> 
+						</li>
+						<li class="nav-item"> 
+							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-4"><i class="fa-solid fa-hashtag fa-fw me-2"></i>안전사용지침</a> 
+						</li>
+						<li class="nav-item"> 
+							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-5"><i class="fa-solid fa-hashtag fa-fw me-2"></i>농촌교육농장</a> 
+						</li>
+						<li class="nav-item"> 
+							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-6"><i class="fa-solid fa-hashtag fa-fw me-2"></i>주간농사정보</a> 
+						</li>
+					</ul>
+				</div>
+				<div class="col-12">
+					<div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade show active" id="tab-1-1">
+							<form class="card shadow p-0" th:action="@{/agriculture/farmingVarietiesList}" method="get">
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>품종정보 검색</h5>
 								</div>
-
-								<!-- Check in -->
-								<div class="col-md-6 col-lg-7">
-									<label class="h6 fw-normal mb-0"><i class="bi bi-search text-primary me-1"></i>Search</label>
-									<!-- Input field -->
-									<div class="form-border-bottom form-control-transparent form-fs-lg mt-2">
-										<input type="text" class="form-control py-2" placeholder="검색어를 입력하세요.">
-									</div>
+	
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-10">
+											<div class="form-icon-input form-size-lg form-fs-lg">
+												<input class="form-control" type="text" id="searchName" name="searchName" placeholder="품종명을 입력하세요...">
+												<span class="form-icon"><i class="fa-solid fa-seedling fs-5"></i></span>
+											</div>
+										</div>
+										<div class="col-2">
+											<div class="text-center pt-0" style="margin-top:-1.25rem">
+											<button class="btn btn-lg btn-success mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+											</div>
+										</div>
+									</div> <!-- Row END -->
 								</div>
-
-								
-							</div>
+							</form>
 						</div>
-
-						<!-- Button -->
-						<div class="col-xl-2">
-							<div class="d-grid">
-
-							</div>
+						<!-- tab  시작 -->
+						<div class="tab-pane fade " id="tab-1-2">
+							<form class="card shadow p-0" th:action="@{/agriculture/farmingVarietiesList}" method="get">
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>정원식물 검색</h5>
+								</div>
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-10">
+											<div class="form-icon-input form-size-lg form-fs-lg">
+												<input class="form-control" type="text" id="searchName" name="searchName" placeholder="정원 식물명을 입력하세요...">
+												<span class="form-icon"><i class="fa-solid fa-seedling fs-5"></i></span>
+											</div>
+										</div>
+										<div class="col-2">
+											<div class="text-center pt-0" style="margin-top:-1.25rem">
+											<button class="btn btn-lg btn-success mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+											</div>
+										</div>
+									</div> <!-- Row END -->
+								</div>
+							</form>
 						</div>
-
-						<!-- Button -->
-						<div class="col-xl-2">
-							<div class="d-grid">
-								<button type="submit" class="btn btn-lg btn-success mb-0" style="font-size: 0.9em; background-color: #446A46;">검색하기&nbsp; <i class="fa-solid fa-magnifying-glass"></i>
-									
-								</button>
-							</div>
+						<!-- tab  끝 -->
+						<!-- tab  시작 -->
+						<div class="tab-pane fade " id="tab-1-3">
+							<form class="card shadow p-0" th:action="@{/life/herbList}" method="get">
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>민간약초 검색</h5>
+								</div>
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-10">
+											<div class="form-icon-input form-size-lg form-fs-lg">
+												<input class="form-control" type="hidden" id="searchType" name="searchType" th:value="cntntsSj">
+												<input class="form-control" type="text" id="searchValue" name="searchValue" placeholder="약초명을 입력하세요...">
+												<span class="form-icon"><i class="fa-solid fa-seedling fs-5"></i></span>
+											</div>
+										</div>
+										<div class="col-2">
+											<div class="text-center pt-0" style="margin-top:-1.25rem">
+											<button class="btn btn-lg btn-success mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+											</div>
+										</div>
+									</div> <!-- Row END -->
+								</div>
+							</form>
 						</div>
+						<!-- tab  끝 -->
+						<!-- tab  시작 -->
+						<div class="tab-pane fade " id="tab-1-4">
+							<form class="card shadow p-0" th:action="@{/agriculture/farmingVarietiesList}" method="get">
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>안전이용지침 조회</h5>
+								</div>
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-10">
+											<div class="form-icon-input form-size-lg form-fs-lg">
+												<input class="form-control" type="text" id="searchName" name="searchName" placeholder="안전사용지침을 입력하세요...">
+												<span class="form-icon"><i class="fa-solid fa-seedling fs-5"></i></span>
+											</div>
+										</div>
+										<div class="col-2">
+											<div class="text-center pt-0" style="margin-top:-1.25rem">
+											<button class="btn btn-lg btn-success mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+											</div>
+										</div>
+									</div> <!-- Row END -->
+								</div>
+							</form>
+						</div>
+						<!-- tab  끝 -->
+
+						<!-- tab  시작 -->
+						<div class="tab-pane fade " id="tab-1-5">
+							<form class="card shadow p-0" th:action="@{/agriculture/farmingVarietiesList}" method="get">
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>농촌교육농장 검색</h5>
+								</div>
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-10">
+											<div class="form-icon-input form-size-lg form-fs-lg">
+												<input class="form-control" type="text" id="searchName" name="searchName" placeholder="농촌교육농장 이름을 입력하세요...">
+												<span class="form-icon"><i class="fa-solid fa-seedling fs-5"></i></span>
+											</div>
+										</div>
+										<div class="col-2">
+											<div class="text-center pt-0" style="margin-top:-1.25rem">
+											<button class="btn btn-lg btn-success mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+											</div>
+										</div>
+									</div> <!-- Row END -->
+								</div>
+							</form>
+						</div>
+						<!-- tab  끝 -->
+						<!-- tab  시작 -->
+						<div class="tab-pane fade " id="tab-1-6">
+							<form class="card shadow p-0" th:action="@{/agriculture/weeklyFarmingInfo}" method="get">
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>주간 농사 정보 검색</h5>
+								</div>
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-10">
+											<div class="form-icon-input form-size-lg form-fs-lg">
+												<input class="form-control" type="hidden" id="searchType" name="searchType" th:value="subject">
+												<input class="form-control" type="text" id="searchValue" name="searchValue" placeholder="주간 농사 정보 제목을 입력하세요...">
+												<span class="form-icon"><i class="fa-solid fa-seedling fs-5"></i></span>
+											</div>
+										</div>
+										<div class="col-2">
+											<div class="text-center pt-0" style="margin-top:-1.25rem">
+											<button class="btn btn-lg btn-success mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+											</div>
+										</div>
+									</div> <!-- Row END -->
+								</div>
+							</form>
+						</div>
+						<!-- tab  끝 -->
 					</div>
-				</form>
-				<!-- Booking from END -->
+				</div>
 			</div>
-		</div>
 		</div>
 		<!-- Search END -->
 		
@@ -221,116 +363,42 @@ Packages END -->
 
 <!-- =======================
 Experience START -->
-<section class="pt-5 pt-md-8 pb-0" style="margin-top: -3.125rem; margin-bottom: -3.125rem;">
+<section class="pt-5 pt-md-8 pb-0" style="margin-top: -3.125rem; margin-bottom: -3.125rem;" th:if="${vList != null}">
 	<div class="container-fluid px-lg-5">
 		<!-- Title -->
 		<div class="row mb-4">
 			<div class="col-12 text-center">
-				<h3 class="mb-0">농업기술 동영상 구경해보실래요?</h3>
+				<h3 class="mb-0">
+					<a th:href="|/|">농업기술 동영상 구경해보실래요?</a>
+				</h3>
 			</div>
 		</div>
-
 		<!-- Slider START -->
-		<div class="tiny-slider arrow-round arrow-blur rounded-3 overflow-hidden">
+		<div class="tiny-slider arrow-round arrow-blur rounded-3 overflow-hidden" >
 			<div class="tiny-slider-inner" data-autoplay="true" data-arrow="true" data-dots="false" data-items-xl="4" data-items-lg="3" data-items-md="2" data-items-xs="1">
-
-				<!-- Card START -->
-				<div class="card card-img-scale overflow-hidden bg-transparent">
-					<div class="card-img-scale-wrapper rounded-3">
-						<!-- Card Image -->
-						<img src="http://www.nongsaro.go.kr/portal/imgView.do?ep=a5gb/CMEYLclIUPoWw9/DZpAzn2z8@sWTCNA5pR4wDX0WshDBKt7B3CgxiJjTnBv" class="card-img" alt="" style="height: 15.625rem;">
-					</div> 
-					
-					<!-- Card body -->
-					<div class="card-body px-2">
-						<!-- Title -->
-						<h5 class="card-title"><a href="http://www.nongsaro.go.kr/portal/ps/psb/psbo/vodPlay.ps?mvpNo=1783" class="stretched-link">(with 귀농7년차) 맛좋은 추황배 과피흑변 어떻게 방지할까</a></h5>
-						<!-- Content -->
-						<div class="hstack gap-2">
-							<span class="mb-0 text-success">국립원예특작과학원</span>
-							<!-- <small class="mb-0 text-success">국립원예특작과학원</small> -->
+				<th:block th:each="techVideo : ${vList}">
+					<!-- Card START -->
+					<div class="card card-img-scale overflow-hidden bg-transparent">
+						<div class="card-img-scale-wrapper rounded-3">
+							<!-- Card Image -->
+							<img th:src="|${techVideo.videoImg}|" class="card-img" alt="" style="height: 15.625rem;">
+						</div> 
+						
+						<!-- Card body -->
+						<div class="card-body px-2">
+							<!-- Title -->
+							<h5 class="card-title"><a th:href="|${techVideo.videoLink}|" class="stretched-link" target="_blank">[[${techVideo.videoTitle}]]</a></h5>
+							<!-- Content -->
+							<div class="hstack gap-2">
+								<span class="mb-0 text-success">[[${techVideo.videoOriginInstt}]]</span>
+								<!-- <small class="mb-0 text-success">국립원예특작과학원</small> -->
+							</div>
 						</div>
 					</div>
-				</div>
+				</th:block>
 				<!-- Card END -->
-				<!-- Card START -->
-				<div class="card card-img-scale overflow-hidden bg-transparent">
-					<div class="card-img-scale-wrapper rounded-3">
-						<!-- Card Image -->
-						<img src="http://www.nongsaro.go.kr/portal/imgView.do?ep=a5gb/CMEYLclIUPoWw9/DZpAzn2z8@sWTCNA5pR4wDWfdJeNFbhvYQz@Fmgjls@K" class="card-img" alt="" style="height: 15.625rem;">
-					</div> 
-					
-					<!-- Card body -->
-					<div class="card-body px-2">
-						<!-- Title -->
-						<h5 class="card-title"><a href="http://www.nongsaro.go.kr/portal/ps/psb/psbo/vodPlay.ps?mvpNo=1783" class="stretched-link">(with 귀농7년차) 맛좋은 추황배 과피흑변 어떻게 방지할까</a></h5>
-						<!-- Content -->
-						<div class="hstack gap-2">
-							<span class="mb-0 text-success">국립원예특작과학원</span>
-							<!-- <small class="mb-0 text-success">국립원예특작과학원</small> -->
-						</div>
-					</div>
-				</div>
-				<!-- Card END -->
-				<!-- Card START -->
-				<div class="card card-img-scale overflow-hidden bg-transparent">
-					<div class="card-img-scale-wrapper rounded-3">
-						<!-- Card Image -->
-						<img src="http://www.nongsaro.go.kr/portal/imgView.do?ep=a5gb/CMEYLclIUPoWw9/DZpAzn2z8@sWTCNA5pR4wDXqIRXtIYhidDcjORl9@MbK" class="card-img" alt="" style="height: 15.625rem;">
-					</div> 
-					
-					<!-- Card body -->
-					<div class="card-body px-2">
-						<!-- Title -->
-						<h5 class="card-title"><a href="http://www.nongsaro.go.kr/portal/ps/psb/psbo/vodPlay.ps?mvpNo=1783" class="stretched-link">(with 귀농7년차) 맛좋은 추황배 과피흑변 어떻게 방지할까</a></h5>
-						<!-- Content -->
-						<div class="hstack gap-2">
-							<span class="mb-0 text-success">국립원예특작과학원</span>
-							<!-- <small class="mb-0 text-success">국립원예특작과학원</small> -->
-						</div>
-					</div>
-				</div>
-				<!-- Card END -->
-				<!-- Card START -->
-				<div class="card card-img-scale overflow-hidden bg-transparent">
-					<div class="card-img-scale-wrapper rounded-3">
-						<!-- Card Image -->
-						<img src="http://www.nongsaro.go.kr/portal/imgView.do?ep=a5gb/CMEYLclIUPoWw9/DZpAzn2z8@sWTCNA5pR4wDVEeq/B9y5zCAYuswVPhkCp" class="card-img" alt="" style="height: 15.625rem;">
-					</div> 
-					
-					<!-- Card body -->
-					<div class="card-body px-2">
-						<!-- Title -->
-						<h5 class="card-title"><a href="http://www.nongsaro.go.kr/portal/ps/psb/psbo/vodPlay.ps?mvpNo=1783" class="stretched-link">(with 귀농7년차) 맛좋은 추황배 과피흑변 어떻게 방지할까</a></h5>
-						<!-- Content -->
-						<div class="hstack gap-2">
-							<span class="mb-0 text-success">국립원예특작과학원</span>
-							<!-- <small class="mb-0 text-success">국립원예특작과학원</small> -->
-						</div>
-					</div>
-				</div>
-				<!-- Card END -->
-				<!-- Card START -->
-				<div class="card card-img-scale overflow-hidden bg-transparent">
-					<div class="card-img-scale-wrapper rounded-3">
-						<!-- Card Image -->
-						<img src="http://www.nongsaro.go.kr/portal/imgView.do?ep=a5gb/CMEYLclIUPoWw9/DZpAzn2z8@sWTCNA5pR4wDX6MwQapKRrqMod1azpGpK1" class="card-img" alt="" style="height: 250px;">
-					</div> 
-					
-					<!-- Card body -->
-					<div class="card-body px-2">
-						<!-- Title -->
-						<h5 class="card-title"><a href="http://www.nongsaro.go.kr/portal/ps/psb/psbo/vodPlay.ps?mvpNo=1783" class="stretched-link">(with 귀농7년차) 맛좋은 추황배 과피흑변 어떻게 방지할까</a></h5>
-						<!-- Content -->
-						<div class="hstack gap-2">
-							<span class="mb-0 text-success">국립원예특작과학원</span>
-							<!-- <small class="mb-0 text-success">국립원예특작과학원</small> -->
-						</div>
-					</div>
-				</div>
-				<!-- Card END -->		
 			</div>	
-		</div>
+		</div>																
 	</div>
 </section>
 <!-- =======================
@@ -343,63 +411,68 @@ Experience END -->
 
 <!-- =======================
 Top category START -->
-<section class="pt-0 mt-n3" style="padding-top:5rem !important;">
-	<div class="container">
+<section class="pt-0 mt-n3" style="padding-top:5rem !important;" th:if="${fList != null}">
+	<div class="container" >
 		
 		<!-- Title -->
-		<div class="row mb-4">
-			<div class="col-6">
-				<h3 class="mb-n2">오늘의 꽃</h3>
+		<div class="row mb-4" >
+			<div class="col-6" th:each="todayFlower : ${fList}">
+				<h3 class="mb-n2">오늘의 꽃 
+					<a th:href="|/life/todayFlowerDetail?dataNo=${todayFlower.dataNo}|">
+						<span style="font-size:20px">Today: [[${todayFlower.fMonth}]]월 [[${todayFlower.fDay}]]일</span>
+					</a>
+				</h3>
 			</div>
 			<div class="col-6">
 				<h3 class="mb-n2">식물 자랑 게시판</h3>
 			</div>
 		</div>
-
-		<div class="row g-4">
+		
+		
+		<div class="row g-4" >
 			<!-- Card item -->
-			<div class="col-lg-4 col-xl-3"> <!-- rgb(135, 128, 94)  EAE7B1  A6BB8D -->
+			<div  class="col-lg-4 col-xl-3" th:each="todayFlower : ${fList}">
 				<div class="card h-100 p-3" style="background-color: #F6EDD9;">
 					<!-- Image -->
 					<div class="col">
-						<img src="http://www.nihhs.go.kr/user/AttachFiles/FLOWF/SFLOWF/0105-1.jpg" class="img-thumbnail w-100" style="max-height:9rem;" alt="">
+						<img th:src="${todayFlower.imgUrl1}" class="img-thumbnail w-100" style="max-height:9rem;" alt="">
 					</div>
 					<div class="col">
-						<img src="http://www.nihhs.go.kr/user/AttachFiles/FLOWF/SFLOWF/0105-2.jpg" class="img-thumbnail w-100" style="max-height:9rem;" alt="">
+						<img th:src="${todayFlower.imgUrl2}" class="img-thumbnail w-100" style="max-height:9rem;" alt="">
 					</div>
 					<div class="col">
-						<img src="http://www.nihhs.go.kr/user/AttachFiles/FLOWF/SFLOWF/0105-3.jpg" class="img-thumbnail w-100" style="max-height:9rem;" alt="">
+						<img th:src="${todayFlower.imgUrl3}" class="img-thumbnail w-100" style="max-height:9rem;" alt="">
 					</div>
 					
 				</div>
 			</div>
 			
 			<!-- Card item --> <!--  rgb(237, 223, 179) EAE7B1 777100 -->
-			<div class="col-lg-4 col-xl-3" style="color:#3b4b00;">
-				<div class="card h-100 p-3" style="background-color: #F6EDD9;">
+			<div class="col-lg-4 col-xl-3" style="color:#3b4b00;" th:each="todayFlower : ${fList}">
+				<div class="card h-100 p-3" style="background-color: #F6EDD9;  margin-bottom: -20px">
 					<!-- Image -->
 					<div class="col">
 						<h5 style="color:#00311a;">꽃이름:</h5>
-						<p sytle="line-height: 1;">
-							수선화
+						<p style="line-height: 1;">
+							[[${todayFlower.flowNm}]]
 						</p>
 					</div>
 					<div class="col">
 						<h5 style="color: #00311a;">꽃말:</h5>
 						<p>
-							자만심, 자존심, 자신만을 사랑하다
+							[[${todayFlower.flowLang}]]
 						</p>
 					</div>
 					<div class="col">
 						<h5 style="color: #00311a;">내용:</h5>
-						<p>
-							수선화의 유래를 보면 그리스신화에 나오는 미소년 나르시스(나르키소스)가 제 모습에 반하여 죽어 꽃이 되었다하니 ...
+						<p class="textcutting2" id="textcutting2">
+							[[${todayFlower.fContent}]]
 						</p>
 					</div>
 					<div class="col">
 						<h5 style="color: #00311a;">자생지:</h5>
-						<p>
-							추위엔 강한 편으로 전국에서 월동이 가능하지만 꽃은 정원에서 서울 등 중부지역은 4월 이후에 피며, 제주(제주수선)에서는 ...
+						<p class="textcutting2" id="textcutting2">
+							[[${todayFlower.fGrow}]]
 						</p>
 					</div>
 
@@ -482,241 +555,182 @@ Top category START -->
 				</div>
 			</div>
 			<!-- Blog list END -->
-
 		</div>
-
+		</th:block>
 	</div>
 </section>
 <!-- =======================
 Top category END -->
 
 <!-- =======================
-Stories START-->  <!-- rgb(237, 223, 179) --> <!-- A6BB8D  82A284 -->
-<section class="pt-0 pt-md-4 mt-n3">
+Stories START-->
+<section class="pt-0 pt-md-4 mt-n3" >
 	<div class="container-fluid" style="background-color: #A6BB8D; padding: 1.25rem;">
 		<div class="container">
-
-		<!-- Title -->
-		<div class="row">
-			<div class="col-7 mb-3">
-				<h3 class="mb-0">농가 맛집</h3>
+		
+			<!-- Title -->
+			<div class="row">
+				<div class="col-7 mb-3">
+					<h3 class="mb-0"><a th:href="|/life/farmHouseRestaurantList|">농가 맛집</a></h3>
+				</div>
+				<div class="col-5 mb-3">
+					<h3 class="mb-0">바로가기</h3>
+				</div>
 			</div>
-			<div class="col-5 mb-3">
-				<h3 class="mb-0">바로가기</h3>
-			</div>
-		</div>
 
-		<div class="row g-4">
-			<!-- Category item -->
-			<div class="col-lg-7">
-
-				<div class="row g-4">
-
-					<div class="col-sm-6">
-						<div class="card border rounded-3 overflow-hidden">
-							<div class="row g-0 align-items-center">
-								<!-- Image -->
-								<div class="col-sm-6">
-									<img src="http://www.nongsaro.go.kr/cms_contents/1097/237884_MF_BIMG_01.png" class="card-img rounded-0" style="height:8.125rem;" alt="">
-								</div>
-		
-								<!-- Title and content -->
-								<div class="col-sm-6">
-									<div class="card-body px-3">
-										<h6 class="card-title"><a href="#" class="stretched-link">마이담</a></h6>
-										<p class="mb-0" style="font-size:small;"><i class="bi bi-telephone me-2"></i>: 063-433-5535</p>
-										<p class="mb-0" style="font-size:small;"><i class="bi bi-telephone me-2"></i>: 매주 월요일</p>
-										<p class="mb-0" style="font-size:small;"><i class="bi bi-telephone me-2"></i>: 진안군</p>
+			<div class="row g-4">
+				<!-- Category item -->
+				<div class="col-lg-7"  >
+	
+					<div class="row g-4" th:if="${tList != null}">
+	
+						<div class="col-sm-6" th:each="frmhsTasteHos : ${tList}">
+							<div class="card border rounded-3 overflow-hidden">
+								<div class="row g-0 align-items-center">
+									<!-- Image -->
+									<div class="col-sm-6">
+										<img th:src="${frmhsTasteHos.imgUrl1}" class="card-img rounded-0" style="height:8.125rem;" alt="">
 									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6">
-						<div class="card border rounded-3 overflow-hidden">
-							<div class="row g-0 align-items-center">
-								<!-- Image -->
-								<div class="col-sm-6">
-									<img src="http://www.nongsaro.go.kr/cms_contents/1097/208837_MF_BIMG_015.jpg" class="card-img rounded-0" style="height:8.125rem;" alt="">
-								</div>
-		
-								<!-- Title and content -->
-								<div class="col-sm-6">
-									<div class="card-body px-3">
-										<h6 class="card-title"><a href="#" class="stretched-link">나경농원</a></h6>
-										<p class="mb-0" style="font-size:small;"><i class="bi bi-telephone me-2"></i>: 055-941-2123</p>
-										<p class="mb-0" style="font-size:small;"><i class="bi bi-telephone me-2"></i>: 연중무휴</p>
-										<p class="mb-0" style="font-size:small;"><i class="bi bi-telephone me-2"></i>: 거창군</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6">
-						<div class="card border rounded-3 overflow-hidden">
-							<div class="row g-0 align-items-center">
-								<!-- Image -->
-								<div class="col-sm-6">
-									<img src="http://www.nongsaro.go.kr/cms_contents/1097/237858_MF_BIMG_01.jpg" class="card-img rounded-0" style="height:8.125rem;" alt="">
-								</div>
-		
-								<!-- Title and content -->
-								<div class="col-sm-6">
-									<div class="card-body px-3">
-										<h6 class="card-title"><a href="#" class="stretched-link">해밀</a></h6>
-										<p class="mb-0" style="font-size:small;"><i class="bi bi-telephone me-2"></i>: 041-363-5505</p>
-										<p class="mb-0" style="font-size:small;"><i class="bi bi-telephone me-2"></i>: 연중무휴</p>
-										<p class="mb-0" style="font-size:small;"><i class="bi bi-telephone me-2"></i>: 당진시</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6">
-						<div class="card border rounded-3 overflow-hidden">
-							<div class="row g-0 align-items-center">
-								<!-- Image -->
-								<div class="col-sm-6">
-									<img src="http://www.nongsaro.go.kr/cms_contents/1097/207147_MF_BIMG_015.png" class="card-img rounded-0" style="height:8.125rem;" alt="">
-								</div>
-		
-								<!-- Title and content -->
-								<div class="col-sm-6">
-									<div class="card-body px-3">
-										<h6 class="card-title"><a href="#" class="stretched-link">길목</a></h6>
-										<p class="mb-0" style="font-size:small;"><i class="bi bi-telephone me-2"></i>: 055-572-9555</p>
-										<p class="mb-0" style="font-size:small;"><i class="bi bi-telephone me-2"></i>: 매주 월요일</p>
-										<p class="mb-0" style="font-size:small;"><i class="bi bi-telephone me-2"></i>: 의령군</p>
+			
+									<!-- Title and content -->
+									<div class="col-sm-6">
+										<div class="card-body px-3">
+											<h6 class="card-title textcutting">
+												<a th:href="|/life/farmHouseRestaurantDetails?cntntsNo=${frmhsTasteHos.cntntsNo}|" class="stretched-link">
+													[[${frmhsTasteHos.cntntsSj}]]
+												</a>
+											</h6>
+											<p class="mb-0 textcutting" style="font-size:small;"><i class="bi bi-telephone me-2"></i>: [[${frmhsTasteHos.telno}]]</p>
+											<p class="mb-0 textcutting" style="font-size:small;"><i class="bi bi-clock me-2"></i>: [[${frmhsTasteHos.operMth}]]</p>
+											<p class="mb-0 textcutting" style="font-size:small;"><i class="bi bi-map me-2"></i>: [[${frmhsTasteHos.subArea}]] [[${frmhsTasteHos.adstrdNm}]]</p>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<!-- Blog list START -->
-			<div class="col-lg-5">
-				
-				<div class="h-100" style="border-radius: 1rem; background-color: #A6BB8D;">
+	
+				<!-- Blog list START -->
+				<div class="col-lg-5">
 					
-					<div class="row h-100">
-						<div class="col-4 pt-2">							
-							<div class="card text-center align-items-center" style="background-color: #A6BB8D;">
-								<!-- Image -->
-								<div class="icon-xl bg-light rounded-circle">
-									<img src="https://img.icons8.com/stickers/100/null/spring.png" class="w-80px" alt=""/>
+					<div class="h-100" style="border-radius: 1rem; background-color: #A6BB8D;">
+						
+						<div class="row h-100">
+							<div class="col-4 pt-2">							
+								<div class="card text-center align-items-center" style="background-color: #A6BB8D;">
+									<!-- Image -->
+									<div class="icon-xl bg-light rounded-circle">
+										<img src="https://img.icons8.com/stickers/100/null/sunflower.png" class="w-80px" alt="정원 식물"/>
+									</div>
+									<!-- Card body -->
+									<div class="card-body px-0 py-3 pb-0">
+										<h5 class="card-title">
+											<a href="#" class="stretched-link">정원 식물</a>
+										</h5>
+									</div>
 								</div>
-								<!-- Card body -->
-								<div class="card-body px-0 py-3 pb-0">
-									<h5 class="card-title">
-										<a href="#" class="stretched-link">식물 정보1</a>
-									</h5>
+							</div>
+							<div class="col-4 pt-2">
+								<div class="card text-center align-items-center"  style="background-color: #A6BB8D;">
+									<!-- Image -->
+									<div class="icon-xl bg-light rounded-circle">
+										<!-- <img src="assets/images/custom/weather/img1.jpg" class="w-80px" alt=""> -->
+										<img src="https://img.icons8.com/stickers/100/null/cactus.png"  class="w-80px" alt="다육식물"/>
+									</div>
+									<!-- Card body -->
+									<div class="card-body px-0 py-3 pb-0">
+										<h5 class="card-title">
+											<a href="#" class="stretched-link">다육 식물</a>
+										</h5>
+									</div>
+								</div>
+							</div>
+							<div class="col-4 pt-2">
+								<div class="card text-center align-items-center"  style="background-color:#A6BB8D;">
+									<!-- Image -->
+									<div class="icon-xl bg-light rounded-circle">
+										<!-- <img src="assets/images/custom/weather/img1.jpg" class="w-80px" alt=""> -->
+										<img src="https://img.icons8.com/stickers/100/null/close-up-mode.png" class="w-80px" alt="식물 테스트"/>
+									</div>
+									<!-- Card body -->
+									<div class="card-body px-0 py-3 pb-0">
+										<h5 class="card-title">
+											<a th:href="|/test/loveTypePlantTest|" class="stretched-link">식물 테스트</a>
+										</h5>
+									</div>
+								</div>
+							</div>
+							<div class="col-4 pt-2">
+								<div class="card text-center align-items-center" style="background-color:#A6BB8D;">
+									<div class="icon-xl bg-light rounded-circle">
+										<!-- <img src="assets/images/custom/weather/img1.jpg" class="w-80px" alt=""> -->
+										<img src="https://img.icons8.com/stickers/100/null/hand-planting.png" class="w-80px" alt="품종 정보"/>
+									</div>
+									<!-- Card body -->
+									<div class="card-body px-0 py-3 pb-0">
+										<h5 class="card-title">
+											<a th:href="|/agriculture/farmingVarietiesList|" class="stretched-link">품종 정보</a>
+										</h5>
+									</div>
+								</div>
+							</div>
+							<div class="col-4 pt-2">
+								<div class="card text-center align-items-center"  style="background-color:#A6BB8D;">
+									<!-- Image -->
+									<div class="icon-xl bg-light rounded-circle">
+										<!-- <img src="assets/images/custom/weather/img1.jpg" class="w-80px" alt=""> -->
+										<img src="https://img.icons8.com/stickers/100/null/tractor.png" class="w-80px" alt="농기계 정보"/>
+									</div>
+									<!-- Card body -->
+									<div class="card-body px-0 py-3 pb-0">
+										<h5 class="card-title">
+											<a href="#" class="stretched-link">농기계 정보</a>
+										</h5>
+									</div>
+								</div>
+							</div>
+							<div class="col-4 pt-2">
+								<div class="card text-center align-items-center"  style="background-color:#A6BB8D;">
+									<!-- Image -->
+									<div class="icon-xl bg-light rounded-circle">
+										<img src="https://img.icons8.com/stickers/100/null/product-knowledge.png" class="w-80px" alt="농사 기술"/>
+									</div>
+									<!-- Card body -->
+									<div class="card-body px-0 py-3 pb-0">
+										<h5 class="card-title">
+											<a th:href="|/agriculture/agriculturalPlusMinusList|" class="stretched-link">농사 기술</a>
+										</h5>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-4 pt-2">
-							<div class="card text-center align-items-center"  style="background-color: #A6BB8D;">
-								<!-- Image -->
-								<div class="icon-xl bg-light rounded-circle">
-									<!-- <img src="assets/images/custom/weather/img1.jpg" class="w-80px" alt=""> -->
-									<img src="https://img.icons8.com/stickers/100/null/sunflower.png" class="w-80px" alt=""/>
+	
+	
+						<!-- Image
+						<img src="assets/images/client/09.svg" class="w-75" alt="">
+	
+						<div class="card-body mt-4 p-0">
+							<span class="mb-1">Flat</span>
+							<h4 class="mb-1">$2,400 off</h4>
+							<h6 class="fw-normal">On International Flights</h6>
+	
+							<div class="d-flex justify-content-between align-items-center mt-4">
+								<div class="bg-primary bg-opacity-10 border border-2 border-primary border-dashed rounded-2 px-3 py-2">
+								 <h5 class="fw-normal user-select-all mb-0">LOG125F</h5>
 								</div>
-								<!-- Card body -->
-								<div class="card-body px-0 py-3 pb-0">
-									<h5 class="card-title">
-										<a href="#" class="stretched-link">식물 정보2</a>
-									</h5>
-								</div>
+								 <a href="#" class="btn btn-lg btn-white btn-round mb-0"><i class="bi bi-arrow-right"></i></a>
 							</div>
 						</div>
-						<div class="col-4 pt-2">
-							<div class="card text-center align-items-center"  style="background-color:#A6BB8D;">
-								<!-- Image -->
-								<div class="icon-xl bg-light rounded-circle">
-									<!-- <img src="assets/images/custom/weather/img1.jpg" class="w-80px" alt=""> -->
-									<img src="https://img.icons8.com/stickers/100/null/close-up-mode.png" class="w-80px" alt=""/>
-								</div>
-								<!-- Card body -->
-								<div class="card-body px-0 py-3 pb-0">
-									<h5 class="card-title">
-										<a href="#" class="stretched-link">식물 정보3</a>
-									</h5>
-								</div>
-							</div>
-						</div>
-						<div class="col-4 pt-2">
-							<div class="card text-center align-items-center" style="background-color:#A6BB8D;">
-								<div class="icon-xl bg-light rounded-circle">
-									<!-- <img src="assets/images/custom/weather/img1.jpg" class="w-80px" alt=""> -->
-									<img src="https://img.icons8.com/stickers/100/null/lawn-care.png" class="w-80px" alt=""/>
-								</div>
-								<!-- Card body -->
-								<div class="card-body px-0 py-3 pb-0">
-									<h5 class="card-title">
-										<a href="#" class="stretched-link">농사 정보1</a>
-									</h5>
-								</div>
-							</div>
-						</div>
-						<div class="col-4 pt-2">
-							<div class="card text-center align-items-center"  style="background-color:#A6BB8D;">
-								<!-- Image -->
-								<div class="icon-xl bg-light rounded-circle">
-									<!-- <img src="assets/images/custom/weather/img1.jpg" class="w-80px" alt=""> -->
-								</div>
-								<!-- Card body -->
-								<div class="card-body px-0 py-3 pb-0">
-									<h5 class="card-title">
-										<a href="#" class="stretched-link">농사 정보2</a>
-									</h5>
-								</div>
-							</div>
-						</div>
-						<div class="col-4 pt-2">
-							<div class="card text-center align-items-center"  style="background-color:#A6BB8D;">
-								<!-- Image -->
-								<div class="icon-xl bg-light rounded-circle">
-									
-								</div>
-								<!-- Card body -->
-								<div class="card-body px-0 py-3 pb-0">
-									<h5 class="card-title">
-										<a href="#" class="stretched-link">농사 정보3</a>
-									</h5>
-								</div>
-							</div>
-						</div>
+						-->
 					</div>
-
-
-					<!-- Image
-					<img src="assets/images/client/09.svg" class="w-75" alt="">
-
-					<div class="card-body mt-4 p-0">
-						<span class="mb-1">Flat</span>
-						<h4 class="mb-1">$2,400 off</h4>
-						<h6 class="fw-normal">On International Flights</h6>
-
-						<div class="d-flex justify-content-between align-items-center mt-4">
-							<div class="bg-primary bg-opacity-10 border border-2 border-primary border-dashed rounded-2 px-3 py-2">
-							 <h5 class="fw-normal user-select-all mb-0">LOG125F</h5>
-							</div>
-							 <a href="#" class="btn btn-lg btn-white btn-round mb-0"><i class="bi bi-arrow-right"></i></a>
-						</div>
-					</div>
-					-->
+	
 				</div>
-
-			</div>
-			<!-- Blog list END -->
-
-
-		</div> <!-- Row END -->
-	</div>
+				<!-- Blog list END -->
+	
+	
+			</div> <!-- Row END -->
+		</div>
 	</div>
 </section>
 <!-- =======================

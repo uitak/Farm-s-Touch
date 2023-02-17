@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/dontTouchlayout :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/dontTouchlayout :: #header}"></header>
+      <section id="shareResult" class="mx-auto my-5 py-5 px-3">
+            <h1>당신의 결과는?</h1>
+            <div class="resultname">
+                  <p>난 너만 봐, 정직한 연애 스타일의 <해바라기></p>
+            </div>
+            <div id="resultImg" class="my-3 col-lg-6 col-md-8 col-sm-10 mx-auto">
+                 <img src="../assets/images/farmstouch/img/image-1.png" alt="0" class="img-fluid">
+            </div>
+            <div class="resultDesc">
+                  <p>연애 유형의 진국인 당신! 해바라기 꽃말 [동경, 숭배]에 해당하는 당신은 상대방만 바라보는 해바라기 연애 스타일이랍니다. 매사에 끈기가 있어 연애를 할 때 성실하고 진심을 다하는 성향을 가지고, 온화하며 따뜻한 마음을 가지고 있어요. 한 번 좋아하면 끝까지 좋아하는 의리파지만 자존심이 쌔 은근히 고집이 강하답니다. 또한 욱하는 성질이 있어 이런 부분들을 조심해야 하고, 질투심이 많아 사랑이 집착으로 바뀔 수 있어 주의해야 된답니다!</p>
+            </div>
+            <script type="text/javascript">
+                  function moveHome(){
+                        location.href = "http://localhost/test/loveTypePlantTest";
+                  }
+            </script>
+            <button type="button" class="goHome mt-3 px-2 py-3" onclick="js:moveHome()">나도 검사해보기</button>
+      </section>
+		<script src="../assets/images/farmstouch/js/data.js"></script>
+        <script src="../assets/images/farmstouch/js/start.js"></script>
+        <script src="../assets/images/farmstouch/js/share.js"></script>
+            
+             <footer th:replace="~{common/dontTouchlayout :: #footer}"></footer>
+
+</body>
+
+
+</html>

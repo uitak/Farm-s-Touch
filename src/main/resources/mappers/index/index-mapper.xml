@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.multi.bbs.index.model.mapper.IndexMapper">
+
+	<resultMap type="TodayFlowerIndex" id="TodayFlowerIndexListResultMap">
+		<id property="dataNo" column="dataNo"/>
+		<result property="fMonth" column="fMonth"/>
+		<result property="fDay" column="fDay"/>
+		<result property="flowNm" column="flowNm"/>
+		<result property="fSctNm" column="fSctNm"/>
+		
+		<result property="fEngNm" column="fEngNm"/>
+		<result property="flowLang" column="flowLang"/>
+		<result property="fContent" column="fContent"/>
+		<result property="fUse" column="fUse"/>
+		<result property="fGrow" column="fGrow"/>
+		
+		<result property="fType" column="fType"/>
+		<result property="fileName1" column="fileName1"/>
+		<result property="fileName2" column="fileName2"/>
+		<result property="fileName3" column="fileName3"/>
+		
+		<result property="imgUrl1" column="imgUrl1"/>
+		<result property="imgUrl2" column="imgUrl2"/>
+		<result property="imgUrl3" column="imgUrl3"/>
+		<result property="publishOrg" column="publishOrg"/>
+	</resultMap>
+	
+	<resultMap type="FrmhsTasteHosIndex" id="FrmhsTasteHosIndexListResultMap">
+		<id property="cntntsNo" column="cntntsNo"/>
+		<result property="cntntsSj" column="cntntsSj"/>
+		<result property="slogan" column="slogan"/>
+		<result property="adstrdNm" column="adstrdNm"/>
+		<result property="locplc" column="locplc"/>
+		
+		<result property="telno" column="telno"/>
+		<result property="operMth" column="operMth"/>
+		<result property="restde" column="restde"/>
+		<result property="bsnTime" column="bsnTime"/>
+		<result property="seatStle" column="seatStle"/>
+		
+		<result property="url" column="url"/>
+		<result property="smm" column="smm"/>
+		<result property="trtmntMenu" column="trtmntMenu"/>
+		<result property="exprnProgrm" column="exprnProgrm"/>
+		<result property="trrsrt" column="trrsrt"/>
+		
+		<result property="imgUrl1" column="imgUrl1"/>
+		<result property="imgUrl2" column="imgUrl2"/>
+		<result property="imgUrl3" column="imgUrl3"/>
+		<result property="imgUrl4" column="imgUrl4"/>
+		<result property="imgUrl5" column="imgUrl5"/>
+		
+		<result property="subArea" column="subArea"/>
+	</resultMap>
+	
+	<resultMap type="TechVideoIndex" id="TechVideoIndexListResultMap">
+		<id property="vidNo" column="vidNo"/>
+		<result property="videoTitle" column="videoTitle"/>
+		<result property="videoOriginInstt" column="videoOriginInstt"/>
+		<result property="videoLink" column="videoLink"/>
+		<result property="videoImg" column="videoImg"/>
+	</resultMap>
+	
+	<resultMap type="PrvateTherpyIndex" id="PrvateTherpyIndexListResultMap">
+		<id property="prvNo" column="prvNo"/>
+		<result property="cntntsNo" column="cntntsNo"/>
+		<result property="cntntsSj" column="cntntsSj"/>
+		<result property="bneNm" column="bneNm"/>
+		<result property="hbdcNm" column="hbdcNm"/>
+		
+		<result property="thmbImgUrl" column="thmbImgUrl"/>
+		<result property="imgUrl" column="imgUrl"/>
+		<result property="useeRegn" column="useeRegn"/>
+		<result property="stle" column="stle"/>
+		<result property="prvateTherpy" column="prvateTherpy"/>
+		
+		<result property="imgUrl1" column="imgUrl1"/>
+		<result property="imgUrl2" column="imgUrl2"/>
+		<result property="imgUrl3" column="imgUrl3"/>
+		<result property="imgUrl4" column="imgUrl4"/>
+		<result property="imgUrl5" column="imgUrl5"/>
+		<result property="imgUrl6" column="imgUrl6"/>
+	</resultMap>
+	
+	
+	<!-- select * from (select * from todayflower where DATE_FORMAT(curdate(), '%c') = fMonth) t where DATE_FORMAT(curdate(), '%e') = fDay;  -->
+	<!-- 현재 날짜에 맞는 오늘의 꽃 출력  -->
+	<select id="selectTodayFlowerIndexList" resultMap="TodayFlowerIndexListResultMap" parameterType="map">
+		SELECT
+			dataNo, fMonth, fDay, flowNm, 
+			flowLang, fContent, fUse, fGrow, 
+			fType, imgUrl1, imgUrl2, imgUrl3
+		FROM (select * from todayFlower where DATE_FORMAT(curdate(), '%c') = fMonth) t 
+		WHERE DATE_FORMAT(curdate(), '%e') = fDay
+	</select>
+	
+	<!-- 농가맛집 랜덤하게 4개 출력 -->
+	<!-- select cntntsNo, cntntsSj, adstrdNm, subArea, telno,imgUrl1, operMth from frmhstastehos where operMth not like '' Order by rand() Limit 4; -->
+	<select id="selectFrmhsTasteHosIndexList" resultMap="FrmhsTasteHosIndexListResultMap" parameterType="map">
+		SELECT
+			cntntsNo, cntntsSj, adstrdNm, subArea, telno, imgUrl1, operMth
+		FROM frmhsTastehos 
+		WHERE operMth not like '' and imgUrl1 not like ''
+		Order by rand() Limit 4
+	</select>
+	
+	<!-- 농업기술 동영상 랜덤하게 10개 출력 -->
+	<select id="selectTechVideoIndexList" resultMap="TechVideoIndexListResultMap" parameterType="map">
+		SELECT
+			vidNo, videoTitle, videoOriginInstt, videoLink, videoImg
+		FROM techVideovideo
+		Order by rand() Limit 10
+	</select>
+	
+
+</mapper>

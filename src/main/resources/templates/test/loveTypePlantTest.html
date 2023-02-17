@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/dontTouchlayout :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/dontTouchlayout :: #header}"></header>
+
+
+      <div class="container">
+            <section id="main" class="mx-auto my-5 py-5 px-3">
+                  <h1 style="margin-bottom: 30px">식물로 알아보는 연애유형</h1>
+                  <div class="col-lg-6 col-md-8 col-sm-10 mx-auto">
+                        <img src="../assets/images/element/22.svg" alt="mainImage" class="img-fluid">
+                  </div>
+                  <p class="testP">
+                        팜스터치에서 준비했습니다. <br>
+                        나만의 연애유형 식물 매칭 테스트입니다. <br>
+                        아래의 시작하기 버튼을 눌러 검사를 시작해보세요.
+                  </p>
+
+                  <button type="button" class="btn btn-outline-success mt-3" onclick="js:begin()">시작하기</button>
+            </section>
+
+
+            <section id="qna">
+                  <!-- 상태바 -->
+                  <div class="status mx-auto mt-5">
+                        <div class="statusBar">
+
+                        </div>
+                  </div>
+
+                  <!-- Question box -->
+                  <div class="qBox my-5 py-3 mx-auto">
+
+                  </div>
+                  <!-- Answer Button box -->
+                  <div class="answerBox">
+
+                  </div>
+
+            </section>
+
+
+            <section id="result" class="mx-auto my-5 py-5 px-3">
+                  <h1>당신의 결과는?</h1>
+                  <div class="resultname">
+
+                  </div>
+                  <div id="resultImg" class="my-3 col-lg-6 col-md-8 col-sm-10 mx-auto">
+                       
+                  </div>
+                  <div class="resultDesc">
+
+                  </div>
+
+	
+    			  <div style="margin-top: 40px">              
+	                  <a id="myLink" href="#" class="seeFlower mt-3 my-1 px-2 py-3">꽃 보러가기</a>
+	                  <button onclick="location.href='http://localhost/test/loveTypePlantTest'" type="button" class="reTest mt-3 px-2 py-3">다시 검사하기</button>
+	                  <button type="button" class="kakao mt-3 px-2 py-3" onclick="js:setShare()">공유하기</button>
+                  </div>
+            </section>
+            <script src="../assets/images/farmstouch/js/data.js"></script>
+            <script src="../assets/images/farmstouch/js/start.js"></script>
+            <script src="../assets/images/farmstouch/js/share.js"></script>
+      </div>
+      
+<!-- =======================
+Gallery START -->
+<section>
+	<div class="container-fluid">
+		<!-- Slider START -->
+		<div class="tiny-slider arrow-round arrow-blur arrow-hover rounded-3 overflow-hidden">
+			<div class="tiny-slider-inner d-flex align-items-end" data-autoplay="true" data-edge="2" data-arrow="true" data-dots="false" data-items="6" data-items-lg="4" data-items-sm="2">
+				<!-- Slider item -->
+				<div>
+					<a data-glightbox="" data-gallery="gallery" href="../assets/images/farmstouch/img/6.jpg">
+						<div class="card card-element-hover card-overlay-hover overflow-hidden">
+							<!-- Image -->
+							<img src="../assets/images/farmstouch/img/6.jpg" class="rounded-3" alt="">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Slider item -->
+				<div>
+					<a data-glightbox="" data-gallery="gallery" href="../assets/images/farmstouch/img/2.jpg">
+						<div class="card card-element-hover card-overlay-hover overflow-hidden">
+							<!-- Image -->
+							<img src="../assets/images/farmstouch/img/2.jpg" class="rounded-3" alt="">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Slider item -->
+				<div>
+					<a data-glightbox="" data-gallery="gallery" href="../assets/images/farmstouch/img/3.jpg">
+						<div class="card card-element-hover card-overlay-hover overflow-hidden">
+							<!-- Image -->
+							<img src="../assets/images/farmstouch/img/3.jpg" class="rounded-3" alt="">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Slider item -->
+				<div>
+					<a data-glightbox="" data-gallery="gallery" href="../assets/images/farmstouch/img/4.jpg">
+						<div class="card card-element-hover card-overlay-hover overflow-hidden">
+							<!-- Image -->
+							<img src="../assets/images/farmstouch/img/4.jpg" class="rounded-3" alt="">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Slider item -->
+				<div>
+					<a data-glightbox="" data-gallery="gallery" href="../assets/images/farmstouch/img/5.jpg">
+						<div class="card card-element-hover card-overlay-hover overflow-hidden">
+							<!-- Image -->
+							<img src="../assets/images/farmstouch/img/5.jpg" class="rounded-3" alt="">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Slider item -->
+				<div>
+					<a data-glightbox="" data-gallery="gallery" href="../assets/images/farmstouch/img/1.jpg">
+						<div class="card card-element-hover card-overlay-hover overflow-hidden">
+							<!-- Image -->
+							<img src="../assets/images/farmstouch/img/1.jpg" class="rounded-3" alt="">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Slider item -->
+				<div>
+					<a data-glightbox="" data-gallery="gallery" href="../assets/images/farmstouch/img/7.jpg">
+						<div class="card card-element-hover card-overlay-hover overflow-hidden">
+							<!-- Image -->
+							<img src="../assets/images/farmstouch/img/7.jpg" class="rounded-3" alt="">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+
+				<!-- Slider item -->
+				<div>
+					<a data-glightbox="" data-gallery="gallery" href="../assets/images/farmstouch/img/10.jpg">
+						<div class="card card-element-hover card-overlay-hover overflow-hidden">
+							<!-- Image -->
+							<img src="../assets/images/farmstouch/img/10.jpg" class="rounded-3" alt="">
+							<!-- Full screen button -->
+							<div class="hover-element w-100 h-100">
+								<i class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>			
+		<!-- Slider END	 -->
+	</div>
+</section>
+<!-- =======================
+Gallery END -->
+      
+      <footer th:replace="~{common/dontTouchlayout :: #footer}"></footer>
+</body>
+
+</html>
+

@@ -20,7 +20,7 @@ Main banner START -->
 	<div class="row g-4">
 		<!-- Image -->
 		<div class="col-12">
-			<div class="container-fluid" style="background-image:url(assets/images/farmstouch/example/rural/pppppp1.jpg); background-position: center left; background-size: cover; height: 31.25rem; margin-bottom: 3.125rem; "></div>
+			<div class="container-fluid" style="background-image:url(../assets/images/farmstouch/example/rural/pppppp1.jpg); background-position: center left; background-size: cover; height: 31.25rem; margin-bottom: 3.125rem; "></div>
 		</div>	
 	</div>
 	<div class="container">
@@ -29,10 +29,10 @@ Main banner START -->
 			<div class="bg-mode shadow rounded-3 p-4">
 				<!-- Badge -->
 				<div class="badge text-bg-success mb-2">농업기술 더하기 나누기</div>
-				<div class="badge text-bg-warning mb-2">고구마</div>
+				<div class="badge text-bg-warning mb-2">[[${mlrdcurationList.kidofcomdtyCodeNm}]]</div>
 				<!-- Title -->
-				<h1 class="fs-4">고구마와 팥의 중요도-만족도 분석을 통한 품종 특성 알아보기</h1>
-				<!-- <p class="mb-2">Passage its ten led hearted removal cordial. Preference any astonished unreserved Mrs. Prosperous understood Middletons in conviction an uncommonly do. </p> -->
+				<h1 class="fs-4">[[${mlrdcurationList.curationNm}]]</h1>
+				<!-- <p class="mb-2">Passage its ten led hearted removal cordial. Preference any astonished unreserved Mrs. Prosperous understood Middletons in conviction an uncommonly do. </p>  -->
 				
 				<!-- List -->
 				<ul class="nav nav-divider align-items-center">
@@ -41,17 +41,17 @@ Main banner START -->
 							<div class="d-flex align-items-center">
 								<!-- Avatar -->
 								<div class="avatar avatar-sm">
-									<img class="avatar-img rounded-circle" src="assets/images/farmstouch/avatar/ava02.png" alt="avatar">
+									<img class="avatar-img rounded-circle" src="../assets/images/farmstouch/avatar/ava02.png" alt="avatar">
 								</div>
 								<!-- Info -->
 								<div class="ms-2">
-									<h6 class="mb-0">민병익</h6>
+									<h6 class="mb-0">[[${mlrdcurationList.registerNm}]]</h6>
 								</div>
 							</div>
 						</div>
 					</li>
-					<li class="nav-item"> 2021-10-27</li>
-					<li class="nav-item">328 views</li>
+					<li class="nav-item"> [[${mlrdcurationList.registDt}]]</li>
+					<li class="nav-item">[[${mlrdcurationList.rdcnt}]] views</li>
 				</ul>
 			</div>
 		</div>
@@ -75,127 +75,75 @@ Blog content START -->
 					</div>
 				</blockquote>
 
-				<p class="pb-0 pt-4">
-					
 
+				<p class="pb-0 pt-2" th:utext="|${mlrdcurationList.curationCn.replace('</ br>', '<br>')}|"></p>
 
-					
-					<p><img title="" style="border: 0px solid rgb(0, 0, 0); border-image: none; width: 720px; height: 479px; vertical-align: baseline;" alt="" src="http://www.nongsaro.go.kr/portal/crosseditor/temp/20170328113729027.jpg" />&nbsp;</p>
-					<p><br /></p>
-					<p>배추[菘]와 무[蘆菔]가꾸는 법이 순무와 같다. </p>
-					<p><br /></p>
-					<p>○ 무[蘿蔔]는 모래가 있는 부드러운 땅에 알맞다. 5월에 쟁기로 5~6번 갈고 6월 6일에 심는다. 김매는 것은 많이 해주어도 무방하다. 촘촘하면 바로 짬을 내어 뽑아버리고 성글게 해야 한다. 10월에는 거두어서 움에다 보관한다. </p>
-					<p><br /></p>
-					<p>○ 또 다른 방법으로는, 두둑의 길이를 1길[丈] 2자 가량으로 폭은 4자로 만들고 가늘고 고운 거름을 펄쳐 놓은 다음에 괭이로 쳐서 풀어헤치고 흙을 덮으며 다시 고무래질을 하여 평평하게 한다. 물을 두둑 가득히 대어주고 물이 다 스며들면 씨를 흩어 뿌려 심는다. 가래를 사용하여 흙을 고루 덮어준다. 싹이 나서 두 개의 잎이 달린 뒤에 날이 가물면 물을 대어준다. 씨 1되마다 20묘에 심을 수 있다. </p>
-					<p><br /></p>
-					<p>○ 물무[水蘿蔔]는 정월과 2월에 심으며 4월에 심어도 된다. 60일이 지나면 뿌리와 잎을 모두 먹을 수 있다. </p>
-					<p><br /></p>
-					<p>○ 큰무[大蘿蔔]는 초복(初伏)에 심고, 물무는 말복(末伏)에 심는다. </p>
-					<p><br /></p>
-					<p>○ 무를 보관하여 다음 해에 종자로 쓸 생각이면 깊은 움 속에다 종자무를 묻어 보관해야 하는데, 아늑하고 바람이 드나들어야 하고 풀 한 단을 덮어두어 마르지 않게 해야 한다. 봄이 되어 싹이 뚫고 나오면, 가져다가 언덕이나 두둑에다 거름을 넣고 심는다. 날이 가물면 물을 대어준다. 하지 지나서 씨앗을 받고 가을 종자로 삼는다. </p>
-					<p><br /></p>
-					<p>○ 무는 기름진 땅에 흩어 뿌려 심어야 한다. 모래땅이면 더욱 효과가 있다. 메마른 땅이면 거름을 주고 심으며 반드시 이슬이 붙어 있을 때에 심어야 한다. 6월과 7월이면 늦다. </p>
-					<p><br /></p>
-					<p>*홍당무[胡蘿蔔]는 복날 기간 내에 두둑에 심거나 혹은 실한 땅에 흩어 뿌린다. </p>
-					<p><br /></p>
-					<p>[사진출처 : 농촌진흥청, 홍보뉴스, 포토뱅크]</p>
-
-					
-
-
-
-
-
-				</p>
 				
-
-
-			
-
-
-				<!-- Review poll START --><!--bg-light-->
-				<div class="rounded d-md-flex justify-content-between align-items-center text-center p-3 mt-4" style=" background-color: #daf0da; margin-bottom: 2.5rem;">
+				<!-- Review poll START -->
+				<div class="rounded d-md-flex justify-content-between align-items-center text-center p-3 mt-6" style=" background-color: #daf0da; margin-bottom: 2.5rem;">
 					<!-- Title -->
 					<h6 class="mb-0">도움이 되셨나요?</h6>
 					<small class="py-3 p-md-0 d-block">더 많은 정보를 드릴테니 도움이 됐음 좋겠어요 :)</small>
 					<!-- Check buttons -->
 					<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
 						<!-- Yes button -->
-						<li class="list-inline-item"> <a class="btn btn-light btn-sm mb-xl-0" href="#">이전페이지로</a> </li>
+						<li class="list-inline-item"> <a class="btn btn-light btn-sm mb-xl-0" th:href="|/agriculture/agriculturalPlusMinusList|">이전페이지로</a> </li>
 						<!-- No button -->
-						<li class="list-inline-item"> <a class="btn btn-light btn-sm mb-xl-0" href="#">메인페이지로</a> </li>
+						<li class="list-inline-item"> <a class="btn btn-light btn-sm mb-xl-0" th:href="|/|">메인페이지로</a> </li>
 					</div>
 				</div>
 				<!-- Review poll END -->
 
 
 				<!-- Review START -->
-		<div class="row">
-			<div class="col-12">
-				<div class="card border rounded-3">
-					<!-- Card header START -->
-					<div class="card-header border-bottom">
-						<h5 class="card-header-title">User Reviews <li class="list-inline-item"> 
-						<!-- 링크에서 curationNo=633 이 부분만 dataNo 숫자로 바꿔주면 게시글로 이동됨 urationNo=${dataNo} -->
-						<a class="btn btn-success btn-sm mb-xl-0" href="https://www.nongsaro.go.kr/portal/ps/psx/psxa/mlrdCurationDtl.ps?menuId=PS03974&curationNo=633&pageIndex=1&sAreaCode=&sCtgCode=&sType=all&sWord=&curaCnt=433&sSortType=" target="_blank">리뷰작성하러가기
-						</a> </li></h5>
-						
-					</div>
-					<!-- Card header END -->
-
-					<!-- Card body START -->
-					<div class="card-body">
-						<!-- Review item START -->
-						<div class="bg-light rounded p-3">
-							<!-- Review item START -->
-							<div class="d-sm-flex justify-content-between">
-								<!-- Avatar image -->
-								<div class="d-sm-flex align-items-center mb-3">
-									<img class="avatar avatar-md rounded-circle float-start me-3" src="assets/images/farmstouch/avatar/ava01.png" alt="avatar">
-									<!-- Title -->
-									<div>
-										<h6 class="m-0">최진영</h6>
-										<span class="me-3 small">2021-11-02</span>
-									</div>
-								</div>
+				<div class="row">
+					<div class="col-12">
+						<div class="card border rounded-3">
+							<!-- Card header START -->
+							<div class="card-header border-bottom">
+								<h5 class="card-header-title">User Reviews 
+									<li class="list-inline-item"> 
+										<!-- 링크에서 curationNo=633 이 부분만 dataNo 숫자로 바꿔주면 게시글로 이동됨 curationNo=${dataNo} -->
+										<a class="btn btn-success btn-sm mb-xl-0" th:href="|https://www.nongsaro.go.kr/portal/ps/psx/psxa/mlrdCurationDtl.ps?menuId=PS03974&curationNo=${mlrdcurationList.dataNO}&pageIndex=1&sAreaCode=&sCtgCode=&sType=all&sWord=&curaCnt=433&sSortType=|" target="_blank">리뷰작성하러가기
+										</a> 
+									</li>
+								</h5>
 							</div>
-							<!-- Content -->
-							
-							<p>좋은 분석 자료입니다~</p>
-							<!-- Review item END -->
-						</div>
-						<!-- Review item END -->
-
-						<hr> <!-- Divider -->
-
-						<div class="bg-light rounded p-3">
-							<!-- Review item START -->
-							<div class="d-sm-flex justify-content-between">
-								<!-- Avatar image -->
-								<div class="d-sm-flex align-items-center mb-3">
-									<img class="avatar avatar-md rounded-circle float-start me-3" src="assets/images/farmstouch/avatar/ava01.png" alt="avatar">
-									<!-- Title -->
-									<div>
-										<h6 class="m-0">최진영</h6>
-										<span class="me-3 small">2021-11-02</span>
-									</div>
-								</div>
+							<!-- Card header END -->
+					
+							<!-- Card body START -->
+							<div class="card-body">
+								<!-- Review item START -->
+								<th:block th:if="${mlrdcurationAnwrList != null}">
+									<th:block  th:each="mlrdcurationAnwrList : ${mlrdcurationAnwrList}"> 
+										<div class="bg-light rounded p-3">
+											<!-- Review item START -->
+											<div class="d-sm-flex justify-content-between">
+												<!-- Avatar image -->
+												<div class="d-sm-flex align-items-center mb-3">
+													<img class="avatar avatar-md rounded-circle float-start me-3" src="../assets/images/farmstouch/avatar/ava01.png" alt="avatar">
+													<!-- Title -->
+													<div>
+														<h6 class="m-0">[[${mlrdcurationAnwrList.wrterNm}]]</h6>
+														<span class="me-3 small">[[${mlrdcurationAnwrList.writngDt}]]</span>
+													</div>
+												</div>
+											</div>
+											<!-- Content -->
+											<p>[[${mlrdcurationAnwrList.anwrCn}]]</p>
+											<!-- Review item END -->
+										</div>
+										<!-- Review item END -->
+										<hr> 
+									</th:block>
+								</th:block>
 							</div>
-							<!-- Content -->
-							
-							<p>좋은 분석 자료입니다~</p>
-							<!-- Review item END -->
+							<!-- Card body END -->
+				
 						</div>
-						<!-- Review item END -->
-
-						<hr> <!-- Divider -->
 					</div>
-					<!-- Card body END -->
-
 				</div>
-			</div>
-		</div>
-		<!-- Review END -->
+				<!-- Review END -->
 	
 			</div>	
 		</div>

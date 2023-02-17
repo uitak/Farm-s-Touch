@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.multi.bbs.mlrdcuration.model.mapper.MlrdcurationMapper">
+	<!-- 내용 테이블 -->
+	<resultMap type="MlrdcurationList" id="MlrdcurationListResultMap">
+		<id property="mlNo" column="mlNo"/>
+		<result property="dataNO" column="dataNO"/>
+		<result property="curationNm" column="curationNm"/>
+		<result property="areaCodeNm" column="areaCodeNm"/>
+		<result property="ctgCodeNm" column="ctgCodeNm"/>
+		<result property="kidofcomdtyCodeNm" column="kidofcomdtyCodeNm"/>
+		<result property="registDt" column="registDt"/>
+		<result property="curationCn" column="curationCn"/>
+		<result property="registerNm" column="registerNm"/>
+		<result property="rdcnt" column="rdcnt"/>
+	</resultMap>
+	
+	<!-- 댓글 테이블 -->
+	<resultMap type="MlrdcurationAnwrList" id="MlrdcurationAnwrListResultMap">
+		<id property="anNo" column="anNo"/>
+		<result property="dataNo" column="dataNo"/>
+		<result property="anwrNo" column="anwrNo"/>
+		<result property="anwrCn" column="anwrCn"/>
+		<result property="wrterNm" column="wrterNm"/>
+		<result property="writngDt" column="writngDt"/>
+		<result property="chdYn" column="chdYn"/>
+		<result property="lvl" column="lvl"/>
+	</resultMap>
+
+	<!-- select * from mlrdcurationfinal where ... order by mlNo desc limit 5 offset 15 ;   -->
+	<!-- mlNo, dataNO, curationNm, areaCodeNm, ctgCodeNm, kidofcomdtyCodeNm, registDt, curationCn, registerNm, rdcnt -->
+	<!-- 게시글 출력  -->
+	<select id="selectMlrdcurationList" resultMap="MlrdcurationListResultMap" parameterType="map">
+		SELECT  
+			mlNo, dataNO, curationNm, areaCodeNm, ctgCodeNm, kidofcomdtyCodeNm, registDt, curationCn, registerNm, rdcnt
+		FROM mlrdcurationFinal
+		WHERE 1=1
+		<!-- 제목, 년도 -->
+		<if test="curationNm != null">
+			AND curationNm LIKE '%${curationNm}%' 
+		</if>		
+		<if test="registDt != null">
+			AND registDt LIKE '%${registDt}%' 
+		</if>
+		<!-- checkbox 지역 -->
+		<if test="popolarType1 != null">
+			AND areaCodeNm LIKE '서울특별시' 
+		</if>
+		<if test="popolarType2 != null">
+			AND areaCodeNm LIKE '부산광역시' 
+		</if>
+		<if test="popolarType3 != null">
+			AND areaCodeNm LIKE '대구광역시' 
+		</if>
+		<if test="popolarType4 != null">
+			AND areaCodeNm LIKE '인천광역시' 
+		</if>
+		<if test="popolarType5 != null">
+			AND areaCodeNm LIKE '울산광역시' 
+		</if>
+		<if test="popolarType6 != null">
+			AND areaCodeNm LIKE '광주광역시' 
+		</if>
+		<if test="popolarType7 != null">
+			AND areaCodeNm LIKE '세종특별자치시' 
+		</if>
+		<if test="popolarType8 != null">
+			AND areaCodeNm LIKE '경기도' 
+		</if>
+		<if test="popolarType9 != null">
+			AND areaCodeNm LIKE '강원도' 
+		</if>
+		<if test="areaType1 != null">
+			AND areaCodeNm LIKE '충청북도' 
+		</if>
+		<if test="areaType2 != null">
+			AND areaCodeNm LIKE '충청남도' 
+		</if>
+		<if test="areaType3 != null">
+			AND areaCodeNm LIKE '전라북도' 
+		</if>
+		<if test="areaType4 != null">
+			AND areaCodeNm LIKE '전라남도' 
+		</if>
+		<if test="areaType5 != null">
+			AND areaCodeNm LIKE '경상북도' 
+		</if>
+		<if test="areaType6 != null">
+			AND areaCodeNm LIKE '경상남도' 
+		</if>
+		<if test="areaType7 != null">
+			AND areaCodeNm LIKE '제주특별자치도' 
+		</if>
+		<if test="areaType8 != null">
+			AND areaCodeNm LIKE '전국' 
+		</if>
+		<!-- checkbox 분야 -->
+		<if test="lauoverType1 != null">
+			AND ctgCodeNm  LIKE '농업기술' 
+		</if>
+		<if test="lauoverType2 != null">
+			AND ctgCodeNm  LIKE '교육' 
+		</if>
+		<if test="lauoverType3 != null">
+			AND ctgCodeNm  LIKE '기타' 
+		</if>
+		<if test="lauoverType4 != null">
+			AND ctgCodeNm  LIKE '음식' 
+		</if>
+		<if test="lauoverType5 != null">
+			AND ctgCodeNm  LIKE '생활문화' 
+		</if>
+		<if test="lauoverType6 != null">
+			AND ctgCodeNm  LIKE '공모전' 
+		</if>
+		<if test="lauoverType7 != null">
+			AND ctgCodeNm  LIKE '농자재' 
+		</if>
+		<if test="lauoverType8 != null">
+			AND ctgCodeNm  LIKE '해외농업' 
+		</if>
+		ORDER BY mlNo DESC LIMIT ${limit} OFFSET ${offset}
+	</select>
+	
+	
+	<!-- 게시글 갯수 조건에 맞는 갯수를 출력헤야 하므로 where절이 길어짐 -->
+	<select id="selectMlrdcurationCount" resultType="int" parameterType="map">
+		SELECT  
+			 COUNT(DISTINCT dataNO)
+		FROM mlrdcurationFinal
+		WHERE 1=1
+		<!-- 제목, 년도 -->
+		<if test="curationNm != null">
+			AND curationNm LIKE '%${curationNm}%' 
+		</if>		
+		<if test="registDt != null">
+			AND registDt LIKE '%${registDt}%' 
+		</if>
+		<!-- checkbox 지역 -->
+		<if test="popolarType1 != null">
+			AND areaCodeNm LIKE '서울특별시' 
+		</if>
+		<if test="popolarType2 != null">
+			AND areaCodeNm LIKE '부산광역시' 
+		</if>
+		<if test="popolarType3 != null">
+			AND areaCodeNm LIKE '대구광역시' 
+		</if>
+		<if test="popolarType4 != null">
+			AND areaCodeNm LIKE '인천광역시' 
+		</if>
+		<if test="popolarType5 != null">
+			AND areaCodeNm LIKE '울산광역시' 
+		</if>
+		<if test="popolarType6 != null">
+			AND areaCodeNm LIKE '광주광역시' 
+		</if>
+		<if test="popolarType7 != null">
+			AND areaCodeNm LIKE '세종특별자치시' 
+		</if>
+		<if test="popolarType8 != null">
+			AND areaCodeNm LIKE '경기도' 
+		</if>
+		<if test="popolarType9 != null">
+			AND areaCodeNm LIKE '강원도' 
+		</if>
+		<if test="areaType1 != null">
+			AND areaCodeNm LIKE '충청북도' 
+		</if>
+		<if test="areaType2 != null">
+			AND areaCodeNm LIKE '충청남도' 
+		</if>
+		<if test="areaType3 != null">
+			AND areaCodeNm LIKE '전라북도' 
+		</if>
+		<if test="areaType4 != null">
+			AND areaCodeNm LIKE '전라남도' 
+		</if>
+		<if test="areaType5 != null">
+			AND areaCodeNm LIKE '경상북도' 
+		</if>
+		<if test="areaType6 != null">
+			AND areaCodeNm LIKE '경상남도' 
+		</if>
+		<if test="areaType7 != null">
+			AND areaCodeNm LIKE '제주특별자치도' 
+		</if>
+		<if test="areaType8 != null">
+			AND areaCodeNm LIKE '전국' 
+		</if>
+		<!-- checkbox 분야 -->
+		<if test="lauoverType1 != null">
+			AND ctgCodeNm  LIKE '농업기술' 
+		</if>
+		<if test="lauoverType2 != null">
+			AND ctgCodeNm  LIKE '교육' 
+		</if>
+		<if test="lauoverType3 != null">
+			AND ctgCodeNm  LIKE '기타' 
+		</if>
+		<if test="lauoverType4 != null">
+			AND ctgCodeNm  LIKE '음식' 
+		</if>
+		<if test="lauoverType5 != null">
+			AND ctgCodeNm  LIKE '생활문화' 
+		</if>
+		<if test="lauoverType6 != null">
+			AND ctgCodeNm  LIKE '공모전' 
+		</if>
+		<if test="lauoverType7 != null">
+			AND ctgCodeNm  LIKE '농자재' 
+		</if>
+		<if test="lauoverType8 != null">
+			AND ctgCodeNm  LIKE '해외농업' 
+		</if>
+	</select>
+	
+	
+	<!-- 상세페이지 view > 목록 번호를 골라서 들고오자 -->
+	<select id="selecMlrdcurationByNo" parameterType="String" resultMap="MlrdcurationListResultMap">
+		SELECT  
+			mlNo, dataNO, curationNm, areaCodeNm, ctgCodeNm, kidofcomdtyCodeNm, registDt, curationCn, registerNm, rdcnt 
+		FROM mlrdcurationFinal
+		WHERE 1=1
+		<if test="dataNO != null">
+			AND dataNO = #{dataNO}
+		</if>
+	</select>
+	
+	
+	<!-- 
+	select * 
+	from (SELECT 
+			a.anNo, f.dataNo as dataNO, a.anwrNo, a.anwrCn, a.wrterNm
+		FROM mlrdCurationAnwrList a
+			inner join mlrdCurationFinal f
+			on a.dataNo = f.dataNo) r 
+	where r.dataNo = 15; -->  <!-- 댓글 가져와보자 서브쿼리를 써야하네 성능 감당할 수 있을까 -->
+    <select id="selectMlrdcurationAnwrList" parameterType="map" resultMap="MlrdcurationAnwrListResultMap">
+		select * 
+		from (	SELECT 
+					a.anNo, f.dataNo as dataNO, a.anwrNo, a.anwrCn, a.wrterNm, a.writngDt
+				FROM mlrdCurationAnwrList a
+					inner join mlrdCurationFinal f
+					on a.dataNo = f.dataNo) r 
+		where r.dataNo = #{dataNO}
+		limit ${limit} offset ${offset}
+	</select>
+	
+	
+	<!-- select count(*) 
+		from (	SELECT 
+					a.anNo, f.dataNo as dataNO, a.anwrNo, a.anwrCn, a.wrterNm, a.writngDt
+				FROM mlrdCurationAnwrList a
+					inner join mlrdCurationFinal f
+					on a.dataNo = f.dataNo) r 
+		where r.dataNo = 619; --> <!-- 불러올 댓글의 갯수를 알아야지 -->
+<!-- 		<select id="selectMlrdcurationAnwrListCount" resultType="int" parameterType="map">
+			select count(*) 
+			from (	SELECT 
+						a.anNo, f.dataNo as dataNO, a.anwrNo, a.anwrCn, a.wrterNm, a.writngDt
+					FROM mlrdCurationAnwrList a
+						inner join mlrdCurationFinal f
+						on a.dataNo = f.dataNo) r 
+			where r.dataNo = #{dataNO}
+		</select> -->
+</mapper>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.multi.bbs.todayflower.model.mapper.TodayFlowerMapper">
+
+	<resultMap type="TodayFlower" id="TodayFlowerListResultMap">
+		<id property="dataNo" column="dataNo"/>
+		<result property="fMonth" column="fMonth"/>
+		<result property="fDay" column="fDay"/>
+		<result property="flowNm" column="flowNm"/>
+		<result property="fSctNm" column="fSctNm"/>
+		
+		<result property="fEngNm" column="fEngNm"/>
+		<result property="flowLang" column="flowLang"/>
+		<result property="fContent" column="fContent"/>
+		<result property="fUse" column="fUse"/>
+		<result property="fGrow" column="fGrow"/>
+		
+		<result property="fType" column="fType"/>
+		<result property="fileName1" column="fileName1"/>
+		<result property="fileName2" column="fileName2"/>
+		<result property="fileName3" column="fileName3"/>
+		
+		<result property="imgUrl1" column="imgUrl1"/>
+		<result property="imgUrl2" column="imgUrl2"/>
+		<result property="imgUrl3" column="imgUrl3"/>
+		<result property="publishOrg" column="publishOrg"/>
+	</resultMap>
+	
+	
+	<!-- select * from todayflower where fMonth like '1'; -->
+	<!-- 게시글 출력  --> <!-- resultMap은 위에서 선언한 table의 id와 같다 -->
+	<select id="selectTodayFlowerList" resultMap="TodayFlowerListResultMap" parameterType="map">
+		SELECT dataNo, fMonth, fDay, flowNm, fSctNm, fEngNm, flowLang, imgUrl1, publishOrg
+		FROM todayFlower 
+		WHERE 1=1
+		<if test="searchValue != null">
+			AND flowNm LIKE '%${searchValue}%'
+		</if>
+		<if test="searchMonth != null">
+			AND fMonth like '${searchMonth}'
+		</if>
+		LIMIT ${limit} OFFSET ${offset}
+	</select>
+	
+	
+	<!-- 게시글 갯수 -->
+	<select id="selectTodayFlowerCount" resultType="int" parameterType="map">
+		SELECT  
+			 COUNT(DISTINCT dataNo)
+		FROM todayFlower
+		WHERE 1=1
+		<if test="searchValue != null">
+			AND flowNm LIKE '%${searchValue}%' 
+		</if>		
+		<if test="searchMonth != null">
+			AND fMonth like '${searchMonth}'
+		</if>
+	</select>
+	
+	<!-- view 페이지로 번호 맞는 애들 정보 갖고오자 -->
+	<select id="selectTodayFlowerByNo" parameterType="String" resultMap="TodayFlowerListResultMap">
+		SELECT  
+			dataNo, fMonth, fDay, flowNm, fSctNm, 
+			fEngNm, flowLang, fContent, fUse, fGrow, 
+			fType, fileName1, fileName2, fileName3, 
+			imgUrl1, imgUrl2, imgUrl3, publishOrg
+		FROM todayFlower
+		WHERE dataNo = #{dataNo}
+	</select>
+	
+	<!-- 다른 애들 랜덤하게 4개 갖고오자 -->
+	<select id="selectTodayFlowerOtherList" resultMap="TodayFlowerListResultMap" parameterType="String">
+		SELECT  
+			dataNo, fMonth, fDay, flowNm, flowLang, imgUrl1
+		FROM todayFlower
+		WHERE 1=1
+		<if test="dataNo != null">
+			AND dataNo != #{dataNo}
+		</if>
+		Order by rand() Limit 4
+	</select>
+	
+	<select id="selectTodayFlowerImgList" resultMap="TodayFlowerListResultMap" parameterType="String">
+		select dataNo, imgUrl1, imgUrl2, imgUrl3
+		from todayFlower
+		where 1=1
+		<if test="cntntsNo != null">
+			AND dataNo = #{dataNo}
+		</if>
+	</select>
+	
+	
+</mapper>

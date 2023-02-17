@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/dontTouchlayout :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/dontTouchlayout :: #header}"></header>
+      <section id="shareResult" class="mx-auto my-5 py-5 px-3">
+            <h1>당신의 결과는?</h1>
+            <div class="resultname">
+                  <p>기념일에 무슨 이벤트 할까, 이벤트 플래너 <아가판서스></p>
+            </div>
+            <div id="resultImg" class="my-3 col-lg-6 col-md-8 col-sm-10 mx-auto">
+                 <img src="../assets/images/farmstouch/img/image-5.png" alt="0" class="img-fluid">
+            </div>
+            <div class="resultDesc">
+                  <p>상대방의 기념일을 챙기며 깜짝 놀라게 하는 당신!, 아가판서스 꽃말 [사랑의 편지, 사랑의 소식, 사랑이 찾아옴]처럼 사랑으로 범벅되었습니다. 아이디어가 뛰어나고 남다른 감각이 있어, 상대방에게 많은 이벤트를 해주는 스타일이에요. 연애할 때 눈치도 빠르고, 감동을 줄 수 있어 상대방이 매일 행복하답니다. 전체적으로 화려한 연애를 하지만, 은근히 비밀이 많고 우유부단한 성격을 가지고 있답니다. 또한 귀가 매우 얇아 남의 이야기를 곧이 곧대로 믿어, 상대방을 의심하기도 하기 때문에 조심해야 된답니다!</p>
+            </div>
+            <script type="text/javascript">
+                  function moveHome(){
+                        location.href = "http://localhost/test/loveTypePlantTest";
+                  }
+            </script>
+            <button type="button" class="goHome mt-3 px-2 py-3" onclick="js:moveHome()">나도 검사해보기</button>
+      </section>
+		<script src="../assets/images/farmstouch/js/data.js"></script>
+        <script src="../assets/images/farmstouch/js/start.js"></script>
+        <script src="../assets/images/farmstouch/js/share.js"></script>
+            
+             <footer th:replace="~{common/dontTouchlayout :: #footer}"></footer>
+
+</body>
+
+
+</html>

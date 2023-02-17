@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/dontTouchlayout :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/dontTouchlayout :: #header}"></header>
+      <section id="shareResult" class="mx-auto my-5 py-5 px-3">
+            <h1>당신의 결과는?</h1>
+            <div class="resultname">
+                  <p>야 사귀자, 사랑을 쟁취하는 <삼나무></p>
+            </div>
+            <div id="resultImg" class="my-3 col-lg-6 col-md-8 col-sm-10 mx-auto">
+                 <img src="../assets/images/farmstouch/img/image-2.png" alt="0" class="img-fluid">
+            </div>
+            <div class="resultDesc">
+                  <p>한 번 좋아하는 사람이 있으면 내 사람으로 만드는 당신! 삼나무의 꽃말 [견고함과 자신감]에 해당하는 당신은 썸부터 사랑까지 한 번에 직진하는 스타일이랍니다. 연애할 때 주로 이끄는 성향을 가지고 있고, 시원시원한 성격과 유쾌한 성격을 가지고 있어요. 대쪽같은 성격에다 실수를 용납하는 대인배지만 유혹에 약하고 허영때문에 들뜨는 성격이라 다른 이성의 접근에 주의해야 돼요. 또한 내가 한 말로 인해 상대방이 상처를 받을 수 있기 때문에, 항상 말 조심이 필요하답니다!</p>
+            </div>
+            <script type="text/javascript">
+                  function moveHome(){
+                        location.href = "http://localhost/test/loveTypePlantTest";
+                  }
+            </script>
+            <button type="button" class="goHome mt-3 px-2 py-3" onclick="js:moveHome()">나도 검사해보기</button>
+      </section>
+		<script src="../assets/images/farmstouch/js/data.js"></script>
+        <script src="../assets/images/farmstouch/js/start.js"></script>
+        <script src="../assets/images/farmstouch/js/share.js"></script>
+            
+             <footer th:replace="~{common/dontTouchlayout :: #footer}"></footer>
+
+</body>
+
+
+</html>

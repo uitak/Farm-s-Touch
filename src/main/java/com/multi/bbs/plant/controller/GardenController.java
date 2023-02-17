@@ -43,7 +43,6 @@ public class GardenController {
 					searchMap.put(smell[i], smell[i]);
 					
 				}
-				System.out.println(Arrays.toString(smell));
 			}
 			if(growth != null) {
 				for(int i=0; i< growth.length; i++) {
@@ -52,7 +51,6 @@ public class GardenController {
 					}
 					searchMap.put(growth[i], growth[i]);
 				}
-				System.out.println(Arrays.toString(growth));
 			}
 			if(grwhTp != null) {
 				for(int i=0; i< grwhTp.length; i++) {
@@ -98,7 +96,6 @@ public class GardenController {
 		model.addAttribute("gardenCount", gardenCount);
 		model.addAttribute("pageInfo", pageInfo);
 		model.addAttribute("param", param);
-		System.out.println(param.toString());
 		model.addAttribute("list", list);
 		model.addAttribute("listSize",list.size());
 		
@@ -111,7 +108,6 @@ public class GardenController {
 		if(garden == null) {
 			return "redirect:error"; 
 		}
-		System.out.println(garden.toString());
 		model.addAttribute("garden", garden);
 		return "/plant/gardenDtl";
 		
@@ -133,7 +129,6 @@ public class GardenController {
 					searchMap.put(shape[i], shape[i]);
 					
 				}
-				System.out.println(Arrays.toString(shape));
 			}
 			if(growth != null) {
 				for(int i=0; i< growth.length; i++) {
@@ -142,7 +137,6 @@ public class GardenController {
 					}
 					searchMap.put(growth[i], growth[i]);
 				}
-				System.out.println(Arrays.toString(growth));
 			}
 			if(demand != null) {
 				for(int i=0; i< demand.length; i++) {
@@ -209,7 +203,6 @@ public class GardenController {
 		if(drygarden == null) {
 			return "redirect:error"; 
 		}
-		System.out.println(drygarden.toString());
 		model.addAttribute("drygarden", drygarden);
 		return "/plant/drygardenDtl";
 		

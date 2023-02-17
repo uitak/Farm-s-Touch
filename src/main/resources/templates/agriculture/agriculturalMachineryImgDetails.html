@@ -26,17 +26,25 @@ About hotel START -->
 					<div class="card bg-transparent">
 						<!-- Card body START -->
 						<div class="card-body pt-4 p-0">
-							<video width="600" height="450" controls="" autoplay="" class="mb-4 mt-4">
-								<source th:src="${mva.vodUrl}"  type="video/mp4">
-								<embed id="Movie_Player" th:src="${mva.vodUrl}"  type="video/x-ms-wmv" width="37.5rem" height="28.125rem" style="background:#ffffff url('http://www.nongsaro.go.kr/bs/images/common/loading.gir') no-repeat center center;">
-							</video>
+							<div class="row">
+								<img class="col-11 mb-4 mt-1 mx-auto" th:src="${mvi.imgUrl}"  width="600" height="450" />
+							</div>
 							<!-- Child review START -->
 							<div class="d-md-flex p-3 rounded-3" style="background-color: #D8EBD9;">
 								<div class="mt-2 mt-md-0">
-									<h5 class="fw-bold mb-3">[[${mva.cntntsSj}]]</h5>
-									<p class="mb-2 h6 fw-light">[[${mva.smmInfo}]]</p>
+									<p class="fs-7">[[${mvi.knmcNm}]]</p>
+									<h5 class="fw-bold mb-3">※ [[${mvi.cntntsSj}]]</h5>
+									<p class="mb-2 h6 fw-light" th:utext="|${mvi.smmInfo.replace('.', '.<br>')}|"></p>
 								</div>
 							</div>
+							<th:block th:if="${not #strings.isEmpty(mvi.atpnCn)}">
+								<div class="d-md-flex p-3 rounded-3 mt-3" style="background-color: #D8EBD9;">
+								<div class="mt-2 mt-md-0">
+									<h5 class="fw-bold mb-3">※ 주의사항</h5>
+									<p class="mb-2 h6 fw-light" th:utext="|${mvi.atpnCn.replace('.', '.<br>')}|"></p>
+								</div>
+							</div>
+							</th:block>
 							<!-- Child review END -->
 						</div>
 						<!-- Card body END -->
@@ -54,21 +62,21 @@ About hotel START -->
 
 						<div class="row">
 							<h5 class="fw-bold justify-content-start col-7">관련 콘텐츠</h5>
-							<div class="col-5 align-content-end"><a th:href="|/agriculture/agriculturalMachineryVideoList|">보러가기 <i class="fa-solid fa-angle-right" style="color: rgb(168, 222, 183)"></i></a></div>
+							<div class="col-5 align-content-end"><a th:href="|/agriculture/agriculturalMachineryVideoList?searchType=Img|">보러가기 <i class="fa-solid fa-angle-right" style="color: rgb(168, 222, 183)"></i></a></div>
 						</div>
 						<th:block th:if="${list != null}">
 							
-						<div th:each="mvalist : ${list}" class="card rounded-0 overflow-hidden mb-0">
+						<div th:each="mvilist : ${list}" class="card rounded-0 overflow-hidden mb-0">
 							<div class="row g-0 pt-3">
 								<!-- Image -->
 								<div class="col-sm-4 col-md-10 col-lg-4">
-									<img th:src="${mvalist.imgUrl}"class="card-img rounded-0" alt="" style="width:100%; height:6rem;">
+									<img th:src="${mvilist.imgUrl}"class="card-img rounded-0" alt="" style="width:100%; height:6rem;">
 								</div>
 								<!-- Title and content -->
 								<div class="col-sm-8 col-md-14 col-lg-8">
 									<div class="card-body ps-2 pt-0">
-										<h6 class="card-title fw-light pt-1" style="vertical-align: top;"><a th:href="|/agriculture/agriculturalMachineryVideoDetails?no=${mvalist.cntntsNo}|" class="stretched-link">[[${mvalist.cntntsSj}]]</a></h6>
-										<p class="fs-7">[[${mvalist.knmcNm}]]</p>
+										<h6 class="card-title fw-light pt-1" style="vertical-align: top;"><a th:href="|/agriculture/agriculturalMachineryImgDetails?no=${mvilist.cntntsNo}|" class="stretched-link">[[${mvilist.cntntsSj}]]</a></h6>
+										<p class="fs-7">출처 : 농사로</p>
 									</div>
 								</div>
 							</div>

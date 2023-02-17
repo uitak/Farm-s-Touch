@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.multi.bbs.agriculture.model.mapper.MachineVodMapper">
+
+	<resultMap type="MachineVodAni" id="MachineVodAniResultMap">
+		<id property="cntntsNo" column="cntntsNo"/>
+		<result property="smmInfo" column="smmInfo"/>
+		<result property="smmInfoCut" column="smmInfoCut"/>
+		<result property="safeacdntSeNm" column="safeacdntSeNm"/>
+		<result property="knmcNm" column="knmcNm"/>
+		<result property="safeacdntClNm" column="safeacdntClNm"/>
+		<result property="atpnCn" column="atpnCn"/>
+		<result property="cntntsSj" column="cntntsSj"/>
+		<result property="imgUrl" column="imgUrl"/>
+		<result property="vodUrl" column="vodUrl"/>
+	</resultMap>
+	
+	<resultMap type="MachineVodMov" id="MachineVodMovResultMap">
+		<id property="cntntsNo" column="cntntsNo"/>
+		<result property="dc" column="dc"/>
+		<result property="dcCut" column="dcCut"/>
+		<result property="cntntsSj" column="cntntsSj"/>
+		<result property="imgUrl" column="imgUrl"/>
+		<result property="vodUrl" column="vodUrl"/>
+	</resultMap>
+	
+	<resultMap type="MachineVodImg" id="MachineVodImgResultMap">
+		<id property="cntntsNo" column="cntntsNo"/>
+		<result property="smmInfo" column="smmInfo"/>
+		<result property="smmInfoCut" column="smmInfoCut"/>
+		<result property="safeacdntSeNm" column="safeacdntSeNm"/>
+		<result property="knmcNm" column="knmcNm"/>
+		<result property="safeacdntClNm" column="safeacdntClNm"/>
+		<result property="atpnCn" column="atpnCn"/>
+		<result property="cntntsSj" column="cntntsSj"/>
+		<result property="imgUrl" column="imgUrl"/>
+	</resultMap>
+	
+
+	<select id="selectMachineVodAniList" resultMap="MachineVodAniResultMap" parameterType="map">
+		SELECT  
+			cntntsNo, smmInfoCut, cntntsSj, imgUrl, knmcNm
+			FROM MachineVodAni 
+			WHERE 1 = 1
+		<if test="searchName != null">
+			AND MachineVodAni.cntntsSj LIKE '%${searchName}%'
+		</if>		
+		
+		<choose>
+		<when test="cntntsNo != null">
+			AND MachineVodAni.cntntsNo NOT LIKE '${cntntsNo}'
+			ORDER BY RAND() LIMIT ${limit} OFFSET ${offset}
+		</when>
+		<otherwise>
+			ORDER BY cntntsNo DESC LIMIT ${limit} OFFSET ${offset}
+		</otherwise>
+		</choose>
+		
+	</select>
+	
+	
+	<select id="selectMachineVodAniCount" resultType="int" parameterType="map">
+		SELECT  
+			COUNT(DISTINCT cntntsNo)
+			FROM MachineVodAni 
+			WHERE 1 = 1
+		<if test="searchName != null">
+			AND MachineVodAni.cntntsSj LIKE '%${searchName}%'
+		</if>		
+		<if test="cntntsNo != null">
+			AND MachineVodAni.cntntsNo NOT LIKE '${cntntsNo}'
+		</if>	
+	</select>
+	
+	
+	<select id="selectMachineVodMovList" resultMap="MachineVodMovResultMap" parameterType="map">
+		SELECT  
+			cntntsNo, dcCut, cntntsSj, imgUrl
+			FROM MachineVodMov 
+			WHERE 1 = 1
+		<if test="searchName != null">
+			AND MachineVodMov.cntntsSj LIKE '%${searchName}%'
+		</if>
+		
+		<choose>
+			<when test="cntntsNo != null">
+				AND MachineVodMov.cntntsNo NOT LIKE '${cntntsNo}'
+				ORDER BY RAND() LIMIT ${limit} OFFSET ${offset}
+			</when>
+			<otherwise>
+				ORDER BY cntntsNo DESC LIMIT ${limit} OFFSET ${offset}
+			</otherwise>
+		</choose>
+
+	</select>
+	
+	<select id="selectMachineVodMovCount" resultType="int" parameterType="map">
+		SELECT  
+			COUNT(DISTINCT cntntsNo)
+			FROM MachineVodMov
+			WHERE 1 = 1
+		<if test="searchName != null">
+			AND MachineVodMov.cntntsSj LIKE '%${searchName}%'
+		</if>	
+		<if test="cntntsNo != null">
+			AND MachineVodMov.cntntsNo NOT LIKE '${cntntsNo}'
+		</if>		
+	</select>
+	
+	<select id="selectMachineVodImgList" resultMap="MachineVodImgResultMap" parameterType="map">
+		SELECT  
+			cntntsNo, smmInfoCut, cntntsSj, imgUrl
+			FROM MachineVodImg 
+			WHERE 1 = 1
+		<if test="searchName != null">
+			AND MachineVodImg.cntntsSj LIKE '%${searchName}%'
+		</if>	
+		<choose>
+			<when test="cntntsNo != null">
+				AND MachineVodImg.cntntsNo NOT LIKE '${cntntsNo}'
+				ORDER BY RAND() LIMIT ${limit} OFFSET ${offset}
+			</when>
+			<otherwise>
+				ORDER BY cntntsNo DESC LIMIT ${limit} OFFSET ${offset}
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="selectMachineVodImgCount" resultType="int" parameterType="map">
+		SELECT  
+			COUNT(DISTINCT cntntsNo)
+			FROM MachineVodImg
+			WHERE 1 = 1
+		<if test="searchName != null">
+			AND MachineVodImg.cntntsSj LIKE '%${searchName}%'
+		</if>	
+		<if test="cntntsNo != null">
+			AND MachineVodImg.cntntsNo NOT LIKE '${cntntsNo}'
+		</if>		
+	</select>
+	
+	<select id="selectAniByNo" parameterType="String" resultMap="MachineVodAniResultMap">
+		SELECT
+			cntntsNo, smmInfo, smmInfoCut, safeacdntSeNm, 
+			knmcNm, safeacdntClNm, atpnCn, cntntsSj, imgUrl, vodUrl  
+		FROM MachineVodAni
+		WHERE MachineVodAni.cntntsNo Like '${cntntsNo}'
+	</select>
+	
+	<select id="selectMovByNo" parameterType="String" resultMap="MachineVodMovResultMap">
+		SELECT
+			cntntsNo, dc, dcCut, cntntsSj, 
+			imgUrl, vodUrl 
+		FROM MachineVodMov
+		WHERE MachineVodMov.cntntsNo Like '${cntntsNo}'
+	</select>
+	
+	<select id="selectImgByNo" parameterType="String" resultMap="MachineVodImgResultMap">
+		SELECT
+			cntntsNo, smmInfo, smmInfoCut, safeacdntSeNm, 
+			knmcNm, safeacdntClNm, atpnCn, cntntsSj, imgUrl   
+		FROM MachineVodImg
+		WHERE MachineVodImg.cntntsNo Like '${cntntsNo}'
+	</select>
+	
+	
+
+</mapper>

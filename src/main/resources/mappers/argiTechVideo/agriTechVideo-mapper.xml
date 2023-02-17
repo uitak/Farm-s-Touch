@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.multi.bbs.agriTechVideo.model.mapper.AgriTechVideoMapper">
+
+	<resultMap type="AgriTechVideo" id="agriTechVideoResultMap">
+		<id property="vidNo" column="vidNo"/>
+		<result property="videoTitle" column="videoTitle"/>
+		<result property="videoOriginInstt" column="videoOriginInstt"/>
+		<result property="videoLink" column="videoLink"/>
+		<result property="videoImg" column="videoImg"/>
+	</resultMap>
+
+	
+	<select id="selectVideoList" resultMap="agriTechVideoResultMap" parameterType="map">
+		SELECT  
+			vidNo, videoTitle, videoOriginInstt, videoLink, videoImg
+		FROM techvideovideo
+		WHERE 1=1
+		<if test="videoTitle != null">
+			AND videoTitle LIKE '%${videoTitle}%'
+		</if>
+
+		<if test="videoOriginInstt != null">
+			AND videoOriginInstt LIKE '%${videoOriginInstt}%'
+		</if>	
+		ORDER BY vidNo ASC LIMIT ${limit} OFFSET ${offset}
+	</select>
+
+
+	
+	<!-- 게시글 갯수 -->
+	<select id="selectVideoCount" resultType="int" parameterType="map">
+		SELECT  
+			 COUNT(DISTINCT vidNo)
+		FROM techvideovideo	
+		where 1 = 1	
+		<if test="videoTitle != null">
+			AND videoTitle LIKE '%${videoTitle}%'
+		</if>
+
+		<if test="videoOriginInstt != null">
+			AND videoOriginInstt LIKE '%${videoOriginInstt}%'
+		</if>
+
+	</select>
+
+</mapper>

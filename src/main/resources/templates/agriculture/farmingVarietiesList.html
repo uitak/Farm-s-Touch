@@ -17,7 +17,7 @@ Main Banner START -->
 <section class="pt-0 mt-0">
 	<div class="container-fluid px-0">
 		<!-- Background image -->
-		<div class=" p-3 p-sm-5" style="background-image: url(assets/images/farmstouch/v1.jpg); background-position: center -17rem; background-repeat: no-repeat; background-size: cover; height: 27rem;">
+		<div class=" p-3 p-sm-5" style="background-image: url(../assets/images/farmstouch/v1.jpg); background-position: center -17rem; background-repeat: no-repeat; background-size: cover; height: 27rem;">
 			<!-- Banner title -->
 			<div class="row my-2 my-xl-5"> 
 				<div class="col-md-1 mx-auto"></div>
@@ -41,148 +41,537 @@ Title and Tabs START -->
 <section class="pt-0 pb-4 mt-n9">
 	<div class="container position-relative">
 
-		<!-- Collapse body START -->
-		<div class="" id="">
-			<div class="card card-body bg-light p-4 mt-4 z-index-9">
-
-				<!-- Form START -->
-				<form class="row g-4">
-
-					<!-- Check box item -->
-					<div class="col-12">
-						<div class="form-control-borderless">
-							<label class="form-label">분류</label>
-							<div class="row g-3">
-								<!-- checkbox -->
-								<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-										<label class="form-check-label h6 fw-light mb-0" for="flexCheckDefault">
-											식량작물
-										</label>
+		<div class="container mt-n8">
+			<div class="row">
+				<div class="col-11 col-lg-8 col-xl-8 mx-auto">
+					<ul class="nav nav-tabs nav-bottom-line nav-justified nav-responsive bg-mode rounded-top z-index-9 position-relative pt-2 pb-0 px-4">
+						<li class="nav-item"> 
+							<a class="nav-link mb-0 active" data-bs-toggle="tab" href="#tab-1-1"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>전체</a> 
+						</li>
+						<li class="nav-item">
+							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-2"><i class="fa-solid fa-hashtag fa-fw me-2"></i>식량작물</a> 
+						</li>
+						<li class="nav-item"> 
+							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-3"><i class="fa-solid fa-hashtag fa-fw me-2"></i>특용작물</a> 
+						</li>
+						<li class="nav-item"> 
+							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-4"><i class="fa-solid fa-hashtag fa-fw me-2"></i>채소</a> 
+						</li>
+						<li class="nav-item"> 
+							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-5"><i class="fa-solid fa-hashtag fa-fw me-2"></i>과수</a> 
+						</li>
+						<li class="nav-item"> 
+							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-6"><i class="fa-solid fa-hashtag fa-fw me-2"></i>화훼</a> 
+						</li>
+						<li class="nav-item"> 
+							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-7"><i class="fa-solid fa-hashtag fa-fw me-2"></i>녹비작물</a> 
+						</li>
+					</ul>
+				</div>
+				<div class="col-12">
+					<div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade show active" id="tab-1-1">
+							<form class="card shadow p-0" th:action="@{/agriculture/farmingVarietiesList}" method="get">
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>전체 검색</h5>
+								</div>
+	
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-12">
+											<div class="form-icon-input form-size-lg form-fs-lg">
+												<input class="form-control" type="text" id="searchName" name="searchName" placeholder="품종명을 입력하세요...">
+												<span class="form-icon"><i class="fa-solid fa-seedling fs-5"></i></span>
+											</div>
+										</div>
+									</div> <!-- Row END -->
+	
+									<!-- Button -->
+									<div class="text-center pt-0">
+										<button class="btn btn-lg btn-success2 mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
 									</div>
 								</div>
-
-								<!-- checkbox -->
-								<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-										<label class="form-check-label h6 fw-light mb-0" for="flexCheckDefault2">
-											특용작물
-										</label>
-									</div>
-								</div>
-
-								<!-- checkbox -->
-								<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3">
-											<label class="form-check-label h6 fw-light mb-0" for="flexCheckDefault3">
-												채소
-											</label>
-									</div>
-								</div>
-
-								<!-- checkbox -->
-								<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault4">
-											<label class="form-check-label h6 fw-light mb-0" for="flexCheckDefault4">
-												과수
-											</label>
-									</div>
-								</div>
-
-								<!-- checkbox -->
-								<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault11">
-											<label class="form-check-label h6 fw-light mb-0" for="flexCheckDefault11">
-												화훼
-											</label>
-									</div>
-								</div>
-
-								<!-- checkbox -->
-								<div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault12">
-											<label class="form-check-label h6 fw-light mb-0" for="flexCheckDefault12">
-												녹비작물 
-											</label>
-									</div>
-								</div>
-							</div> <!-- Row END -->
+							</form>
 						</div>
-					</div>
-
-					<!-- Input item -->
-					<div class="col-md-6 col-lg-4">
-						<div class="form-control-borderless">
-							<label class="form-label">품종명</label>
-							<input type="text" class="form-control form-control-lg">
+						<!-- tab  시작 -->
+						<div class="tab-pane fade " id="tab-1-2">
+							<form class="card shadow p-0" th:action="@{/agriculture/farmingVarietiesList}" method="get">
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>식량작물 검색</h5>
+								</div>
+								<input type="hidden" name="searchType" value="FC">
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-control-borderless">
+												<label class="form-label">품종명</label>
+												<input type="text" id="searchName" name="searchName" class="form-control form-control-lg">
+											</div>
+										</div>
+					
+										<!-- Select item -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-size-lg form-control-borderless">
+												<label class="form-label">작물분류</label>
+												<select class="form-select js-choice border-0" name="searchSubType">
+													<option value="">선택하세요</option>
+													<option value="%감자%">감자</option>
+													<option value="%고구마%">고구마</option>
+													<option>귀리</option>
+													<option>기장</option>
+													<option>녹두</option>
+													<option>동부</option>
+													<option value="%밀%">밀</option>
+													<option value="%벼%">벼</option>
+													<option value="%보리%">보리</option>
+													<option>수수</option>
+													<option value="%옥수수%">옥수수</option>
+													<option>완두</option>
+													<option>조</option>
+													<option value="%콩%">콩</option>
+													<option>트리티케일(라이밀)</option>
+													<option>팥</option>
+													<option>피</option>
+													<option value="%기타%">기타</option>
+												</select>
+											</div>
+										</div>
+					
+										<!-- Select item -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-size-lg form-control-borderless">
+												<label class="form-label">육성연도</label>
+												<select class="form-select js-choice border-0" name="searchYear">
+													<option value="">선택하세요</option>
+													<option value="202%">2020년대</option>
+													<option value="201%">2010년대</option>
+													<option value="200%">2000년대</option>
+													<option value="199%">1990년대</option>
+													<option value="198%">1980년대</option>
+													<option value="197%">1970년대</option>
+													<option value="196%">1960년대</option>
+													
+												</select>
+											</div>
+										</div>
+					
+										<!-- Button -->
+										
+									</div> <!-- Row END -->
+	
+									<!-- Button -->
+									<div class="text-center pt-0">
+										<button class="btn btn-lg btn-success2 mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+									</div>
+								</div>
+							</form>
 						</div>
-					</div>
-
-					<!-- Select item -->
-					<div class="col-md-6 col-lg-4">
-						<div class="form-size-lg form-control-borderless">
-							<label class="form-label">작물분류</label>
-							<select class="form-select js-choice border-0">
-								<option value="">벼</option>
-								<option>맥류</option>
-								<option>두류</option>
-								<option>잡곡류</option>
-								<option>서류</option>
-							</select>
+						<!-- tab  끝 -->
+						<!-- tab  시작 -->
+						<div class="tab-pane fade " id="tab-1-3">
+							<form class="card shadow p-0" th:action="@{/agriculture/farmingVarietiesList}" method="get">
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>특용작물 검색</h5>
+								</div>
+								<input type="hidden" name="searchType" value="IC">
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-control-borderless">
+												<label class="form-label">품종명</label>
+												<input type="text" class="form-control form-control-lg" id="searchName" name="searchName">
+											</div>
+										</div>
+					
+										<!-- Select item -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-size-lg form-control-borderless">
+												<label class="form-label">작물분류</label>
+												<select class="form-select js-choice border-0" name="searchSubType">
+													<option value="">선택하세요</option>
+													<option>감초</option>
+													<option>결명자</option>
+													<option>구기자</option>
+													<option>구릿대(백지)</option>
+													<option>노루궁뎅이버섯</option>
+													<option value="%느타리%">느타리</option>
+													<option>당귀</option>
+													<option>도라지(길경)</option>
+													<option>들깨</option>
+													<option>땅콩</option>
+													<option>마(산약)</option>
+													<option value="%만가닥버섯%">만가닥버섯</option>
+													<option>맥문동</option>
+													<option value="%방풍%">방풍</option>
+													<option value="%비늘버섯%">비늘버섯</option>
+													<option>삽주(백출)</option>
+													<option>상황버섯</option>
+													<option>시호</option>
+													<option>아까시재목버섯(장수버섯)</option>
+													<option value="%양송이%">양송이</option>
+													<option>왕송이</option>
+													<option>유채</option>
+													<option>율무(의이인)</option>
+													<option>인삼</option>
+													<option>잎새버섯</option>
+													<option>작약</option>
+													<option>지모</option>
+													<option>지황</option>
+													<option value="%차류%">차류</option>
+													<option>참깨</option>
+													<option>천궁</option>
+													<option>천마균류(뽕나무버섯류)</option>
+													<option>팽이버섯</option>
+													<option>표고버섯</option>
+													<option>황기</option>
+													<option value="%기타%">기타</option>
+												</select>
+											</div>
+										</div>
+					
+										<!-- Select item -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-size-lg form-control-borderless">
+												<label class="form-label">육성연도</label>
+												<select class="form-select js-choice border-0" name="searchYear">
+													<option value="">선택하세요</option>
+													<option value="202%">2020년대</option>
+													<option value="201%">2010년대</option>
+													<option value="200%">2000년대</option>
+													<option value="199%">1990년대</option>
+													<option value="198%">1980년대</option>
+													<option value="197%">1970년대</option>
+													<option value="196%">1960년대</option>
+													
+												</select>
+											</div>
+										</div>
+					
+										<!-- Button -->
+										
+									</div> <!-- Row END -->
+	
+									<!-- Button -->
+									<div class="text-center pt-0">
+										<button class="btn btn-lg btn-success2 mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+									</div>
+								</div>
+							</form>
 						</div>
-					</div>
-
-					<!-- Select item -->
-					<div class="col-md-6 col-lg-4">
-						<div class="form-size-lg form-control-borderless">
-							<label class="form-label">육성연도</label>
-							<select class="form-select js-choice border-0">
-								<option value="">선택하세요</option>
-								<option>2023</option>
-								<option>2022</option>
-								<option>2021</option>
-								<option>2020</option>
-								<option>2019</option>
-								<option>2018</option>
-								<option>2017</option>
-								<option>2016</option>
-								<option>2015</option>
-								<option>2014</option>
-								<option>2013</option>
-								<option>2012</option>
-								<option>2011</option>
-								<option>2010</option>
-								<option>2009</option>
-								<option>2008</option>
-								<option>2007</option>
-								<option>2006</option>
-								<option>2005</option>
-								<option>2004</option>
-								<option>2003</option>
-								<option>2002</option>
-								<option>2001</option>
-								<option>2000</option>
-							</select>
+						<!-- tab  끝 -->
+						<!-- tab  시작 -->
+						<div class="tab-pane fade " id="tab-1-4">
+							<form class="card shadow p-0" th:action="@{/agriculture/farmingVarietiesList}" method="get">
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>채소 검색</h5>
+								</div>
+								<input type="hidden" name="searchType" value="VC">
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-control-borderless">
+												<label class="form-label">품종명</label>
+												<input type="text" class="form-control form-control-lg" id="searchName" name="searchName">
+											</div>
+										</div>
+					
+										<!-- Select item -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-size-lg form-control-borderless">
+												<label class="form-label">작물분류</label>
+												<select class="form-select js-choice border-0" name="searchSubType">
+													<option value="">선택하세요</option>
+													<option value="%고추%">고추</option>
+													<option>딸기</option>
+													<option value="%마늘%">마늘</option>
+													<option value="%멜론%">멜론</option>
+													<option value="%무%">무</option>
+													<option>박</option>
+													<option>방울토마토</option>
+													<option value="%배추%">배추</option>
+													<option>부추</option>
+													<option value="%상추%">상추</option>
+													<option>수박</option>
+													<option>씀바귀</option>
+													<option value="양파%">양파</option>
+													<option>여주</option>
+													<option>참외</option>
+													<option value="취나물%">취나물</option>
+													<option value="토마토%">토마토</option>
+													<option value="파%">파</option>
+													<option value="호박%">호박</option>
+													<option value="%기타%">기타</option>
+												</select>
+											</div>
+										</div>
+					
+										<!-- Select item -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-size-lg form-control-borderless">
+												<label class="form-label">육성연도</label>
+												<select class="form-select js-choice border-0" name="searchYear">
+													<option value="">선택하세요</option>
+													<option value="202%">2020년대</option>
+													<option value="201%">2010년대</option>
+													<option value="200%">2000년대</option>
+													<option value="199%">1990년대</option>
+													<option value="198%">1980년대</option>
+													<option value="197%">1970년대</option>
+													<option value="196%">1960년대</option>
+													
+												</select>
+											</div>
+										</div>
+					
+										<!-- Button -->
+										
+									</div> <!-- Row END -->
+	
+									<!-- Button -->
+									<div class="text-center pt-0">
+										<button class="btn btn-lg btn-success2 mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+									</div>
+								</div>
+							</form>
 						</div>
-					</div>
+						<!-- tab  끝 -->
 
-					<!-- Button -->
-					<div class="text-end align-items-center">
-						<button class="btn btn-link p-0 mb-0" style="color: #446A46;">취소</button>
-						<button class="btn btn-success2 mb-0 ms-3">조회</button>
+						<!-- tab  시작 -->
+						<div class="tab-pane fade " id="tab-1-5">
+							<form class="card shadow p-0" th:action="@{/agriculture/farmingVarietiesList}" method="get">
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>과수 검색</h5>
+								</div>
+								<input type="hidden" name="searchType" value="FT">
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-control-borderless">
+												<label class="form-label">품종명</label>
+												<input type="text" class="form-control form-control-lg" id="searchName" name="searchName">
+											</div>
+										</div>
+					
+										<!-- Select item -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-size-lg form-control-borderless">
+												<label class="form-label">작물분류</label>
+												<select class="form-select js-choice border-0" name="searchSubType">
+													<option value="">선택하세요</option>
+													<option value="%감귤%">감귤</option>
+													<option value="%감%">감</option>
+													<option>매실</option>
+													<option>배</option>
+													<option>복숭아</option>
+													<option>사과</option>
+													<option>살구</option>
+													<option>자두</option>
+													<option value="%참다래%">참다래</option>
+													<option>포도</option>
+													<option value="%기타%">기타</option>
+												</select>
+											</div>
+										</div>
+					
+										<!-- Select item -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-size-lg form-control-borderless">
+												<label class="form-label">육성연도</label>
+												<select class="form-select js-choice border-0" name="searchYear">
+													<option value="">선택하세요</option>
+													<option value="202%">2020년대</option>
+													<option value="201%">2010년대</option>
+													<option value="200%">2000년대</option>
+													<option value="199%">1990년대</option>
+													<option value="198%">1980년대</option>
+													<option value="197%">1970년대</option>
+													<option value="196%">1960년대</option>
+													
+												</select>
+											</div>
+										</div>
+					
+										<!-- Button -->
+										
+									</div> <!-- Row END -->
+	
+									<!-- Button -->
+									<div class="text-center pt-0">
+										<button class="btn btn-lg btn-success2 mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!-- tab  끝 -->
+
+						<!-- tab  시작 -->
+						<div class="tab-pane fade " id="tab-1-6">
+							<form class="card shadow p-0" th:action="@{/agriculture/farmingVarietiesList}" method="get">
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>화훼 검색</h5>
+								</div>
+								<input type="hidden" name="searchType" value="FL">
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-control-borderless">
+												<label class="form-label">품종명</label>
+												<input type="text" class="form-control form-control-lg" id="searchName" name="searchName">
+											</div>
+										</div>
+					
+										<!-- Select item -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-size-lg form-control-borderless">
+												<label class="form-label">작물분류</label>
+												<select class="form-select js-choice border-0" name="searchSubType">
+													<option value="">선택하세요</option>
+													<option>거베라</option>
+													<option value="%국화%">국화</option>
+													<option>글라디올러스</option>
+													<option>꽃기린</option>
+													<option>꽃도라지</option>
+													<option>꽃호박</option>
+													<option>류코코리비</option>
+													<option>목화</option>
+													<option>무궁화</option>
+													<option>백합(나리)</option>
+													<option>비모란</option>
+													<option value="%선인장%">선인장</option>
+													<option>숙근안개초</option>
+													<option>스타티스</option>
+													<option>심비디움</option>
+													<option>아마릴리스</option>
+													<option value="%야생화%">야생화</option>
+													<option>오니소갈럼</option>
+													<option>용담</option>
+													<option value="%장미%">장미</option>
+													<option>철쭉</option>
+													<option>카네이션</option>
+													<option>칼라</option>
+													<option>팔레높시스(호접란)</option>
+													<option>팬지</option>
+													<option>페튜니아</option>
+													<option>포인세티아</option>
+													<option>프리지아</option>
+													<option>홍화</option>
+													<option value="%기타%">기타</option>
+												</select>
+											</div>
+										</div>
+					
+										<!-- Select item -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-size-lg form-control-borderless">
+												<label class="form-label">육성연도</label>
+												<select class="form-select js-choice border-0" name="searchYear">
+													<option value="">선택하세요</option>
+													<option value="202%">2020년대</option>
+													<option value="201%">2010년대</option>
+													<option value="200%">2000년대</option>
+													<option value="199%">1990년대</option>
+													<option value="198%">1980년대</option>
+													<option value="197%">1970년대</option>
+													<option value="196%">1960년대</option>
+													
+												</select>
+											</div>
+										</div>
+					
+										<!-- Button -->
+										
+									</div> <!-- Row END -->
+	
+									<!-- Button -->
+									<div class="text-center pt-0">
+										<button class="btn btn-lg btn-success2 mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!-- tab  끝 -->
+						<!-- tab  시작 -->
+						<div class="tab-pane fade " id="tab-1-7">
+							<form class="card shadow p-0" th:action="@{/agriculture/farmingVarietiesList}" method="get">
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>녹비작물 검색</h5>
+								</div>
+								<input type="hidden" name="searchType" value="FG">
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-control-borderless">
+												<label class="form-label">품종명</label>
+												<input type="text" class="form-control form-control-lg" id="searchName" name="searchName">
+											</div>
+										</div>
+					
+										<!-- Select item -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-size-lg form-control-borderless">
+												<label class="form-label">작물분류</label>
+												<select class="form-select js-choice border-0" name="searchSubType">
+													<option value="">선택하세요</option>
+													<option>헤어리베치</option>
+													<option>화본과류</option>
+												</select>
+											</div>
+										</div>
+					
+										<!-- Select item -->
+										<div class="col-md-6 col-lg-4">
+											<div class="form-size-lg form-control-borderless">
+												<label class="form-label">육성연도</label>
+												<select class="form-select js-choice border-0" name="searchYear">
+													<option value="">선택하세요</option>
+													<option value="202%">2020년대</option>
+													<option value="201%">2010년대</option>
+													<option value="200%">2000년대</option>
+													<option value="199%">1990년대</option>
+													<option value="198%">1980년대</option>
+													<option value="197%">1970년대</option>
+													<option value="196%">1960년대</option>
+													
+												</select>
+											</div>
+										</div>
+					
+										<!-- Button -->
+										
+									</div> <!-- Row END -->
+	
+									<!-- Button -->
+									<div class="text-center pt-0">
+										<button class="btn btn-lg btn-success2 mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!-- tab  끝 -->
+
+
+
 					</div>
-				</form>
-				<!-- Form END -->
+				</div>
 			</div>
 		</div>
-		<!-- Collapse body END -->
 
+		<!-- Collapse body START -->
+		
 	</div>
 </section>
 <!-- =======================
@@ -193,22 +582,33 @@ Title and Tabs END -->
 <section class="pt-0">
 	<div class="container">
 		<div class="row g-4">
-
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4">
+			<th:block th:if="${listSize == 0}">
+				<div class="row mt-5">
+					<div class = "col-8 pt-3 mx-auto text-center">
+						<h2 class="text-secondary"><i class="fa-solid fa-circle-exclamation"></i> 조회된 내용이 없습니다.</h2>
+					</div>
+				</div>
+				
+					
+				
+			</th:block>
+			
+			
+			<th:block th:if="${list != null}">
+				<div th:each="variety : ${list}" class="col-md-6 col-xl-4">
 				<div class="card shadow p-2 pb-0 h-100">
 					<!-- Image -->
-					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220105%2F%EC%B0%B8%EB%88%84%EB%A6%AC.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
+					<img th:src= "${variety.imgFileLink}" class="rounded-2" alt="Card image" style="height: 268px;">
 
 					<!-- Card body START -->
 					<div class="card-body px-3 pb-0">
 
 						<!-- Title -->
-						<h5 class="card-title"><a href="hotel-detail.html">사하라(Boseokchal)</a></h5>
+						<h5 class="card-title"><a th:href="|/agriculture/farmingVarietiesDetails?no=${variety.cntntsNo}|" >[[${variety.cntntsSj}]]</a></h5>
 
 						<!-- List -->
 						<ul class="nav nav-divider mb-2 mb-sm-3">
-							<li class="nav-item">장미</li>
+							<li class="nav-item" >[[${variety.svcCodeNm}]]</li>
 						</ul>
 					</div>
 					<!-- Card body END -->
@@ -224,336 +624,40 @@ Title and Tabs END -->
 							</div>
 							<!-- Button -->
 							<div class="mt-2 mt-sm-0 z-index-2 text-end">
-								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
+								<a th:href="|/agriculture/farmingVarietiesDetails?no=${variety.cntntsNo}|" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
 							</div>                  
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4">
-				<div class="card shadow p-2 pb-0 h-100">
-					<!-- Image -->
-					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220105%2F%EC%B0%B8%EB%88%84%EB%A6%AC.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
-
-					<!-- Card body START -->
-					<div class="card-body px-3 pb-0">
-
-						<!-- Title -->
-						<h5 class="card-title"><a href="hotel-detail.html">반짜기(Banjjagi)</a></h5>
-
-						<!-- List -->
-						<ul class="nav nav-divider mb-2 mb-sm-3">
-							<li class="nav-item">국화 > 스프레이</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-
-					<!-- Card footer START-->
-					<div class="card-footer pt-0">
-						<!-- Price and Button -->
-						<div class="d-sm-flex justify-content-sm-between align-items-center">
-							<!-- Price -->
-							<div class="d-flex align-items-center">
-								<h5 class="fw-normal text-success mb-0 me-1"></h5>
-								<span class="mb-0 me-2"></span>
-							</div>
-							<!-- Button -->
-							<div class="mt-2 mt-sm-0 z-index-2">
-								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
-							</div>                  
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4">
-				<div class="card shadow p-2 pb-0 h-100">
-					<!-- Image -->
-					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220105%2F%EC%B0%B8%EB%88%84%EB%A6%AC.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
-
-					<!-- Card body START -->
-					<div class="card-body px-3 pb-0">
-
-						<!-- Title -->
-						<h5 class="card-title"><a href="hotel-detail.html">금빛누리(Geumbitnuli)</a></h5>
-
-						<!-- List -->
-						<ul class="nav nav-divider mb-2 mb-sm-3">
-							<li class="nav-item">국화 > 스탠다드</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-
-					<!-- Card footer START-->
-					<div class="card-footer pt-0">
-						<!-- Price and Button -->
-						<div class="d-sm-flex justify-content-sm-between align-items-center">
-							<!-- Price -->
-							<div class="d-flex align-items-center">
-								<h5 class="fw-normal text-success mb-0 me-1"></h5>
-								<span class="mb-0 me-2"></span>
-							</div>
-							<!-- Button -->
-							<div class="mt-2 mt-sm-0 z-index-2">
-								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
-							</div>                  
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4">
-				<div class="card shadow p-2 pb-0 h-100">
-					<!-- Image -->
-					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220107%2F%EC%84%B1%EC%88%99+%EC%A0%84%EA%B2%BD_%EB%B0%80%EC%96%91361%ED%98%B8.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
-
-					<!-- Card body START -->
-					<div class="card-body px-3 pb-0">
-
-						<!-- Title -->
-						<h5 class="card-title"><a href="hotel-detail.html">장풍(Jangpung)</a></h5>
-
-						<!-- List -->
-						<ul class="nav nav-divider mb-2 mb-sm-3">
-							<li class="nav-item">콩</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-
-					<!-- Card footer START-->
-					<div class="card-footer pt-0">
-						<!-- Price and Button -->
-						<div class="d-sm-flex justify-content-sm-between align-items-center">
-							<!-- Price -->
-							<div class="d-flex align-items-center">
-								<h5 class="fw-normal text-success mb-0 me-1"></h5>
-								<span class="mb-0 me-2"></span>
-							</div>
-							<!-- Button -->
-							<div class="mt-2 mt-sm-0">
-								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
-							</div>                  
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4">
-				<div class="card shadow p-2 pb-0 h-100">
-					<!-- Image -->
-					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220107%2F%EC%84%B1%EC%88%99%EC%A0%84%EA%B2%BD_%EC%84%A0%EC%98%AC_%EC%83%88%EC%98%AC%EC%BD%A9_%EC%9D%B4%EB%A6%842.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
-
-					<!-- Card body START -->
-					<div class="card-body px-3 pb-0">
-
-						<!-- Title -->
-						<h5 class="card-title"><a href="hotel-detail.html">선올(Seonol)</a></h5>
-
-						<!-- List -->
-						<ul class="nav nav-divider mb-2 mb-sm-3">
-							<li class="nav-item">콩</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-
-					<!-- Card footer START-->
-					<div class="card-footer pt-0">
-						<!-- Price and Button -->
-						<div class="d-sm-flex justify-content-sm-between align-items-center">
-							<!-- Price -->
-							<div class="d-flex align-items-center">
-								<h5 class="fw-normal text-success mb-0 me-1"></h5>
-								<span class="mb-0 me-2"></span>
-							</div>
-							<!-- Button -->
-							<div class="mt-2 mt-sm-0">
-								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
-							</div>                  
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4">
-				<div class="card shadow p-2 pb-0 h-100">
-					<!-- Image -->
-					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220105%2F%EC%B0%B8%EB%88%84%EB%A6%AC.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
-
-					<!-- Card body START -->
-					<div class="card-body px-3 pb-0">
-
-						<!-- Title -->
-						<h5 class="card-title"><a href="hotel-detail.html">소미(Somi)</a></h5>
-
-						<!-- List -->
-						<ul class="nav nav-divider mb-2 mb-sm-3">
-							<li class="nav-item">콩</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-
-					<!-- Card footer START-->
-					<div class="card-footer pt-0">
-						<!-- Price and Button -->
-						<div class="d-sm-flex justify-content-sm-between align-items-center">
-							<!-- Price -->
-							<div class="d-flex align-items-center">
-								<h5 class="fw-normal text-success mb-0 me-1"></h5>
-								<span class="mb-0 me-2"></span>
-							</div>
-							<!-- Button -->
-							<div class="mt-2 mt-sm-0">
-								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
-							</div>                  
-						</div>
-					</div>
-
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4">
-				<div class="card shadow p-2 pb-0 h-100">
-					<!-- Image -->
-					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220105%2F%EC%B0%B8%EB%88%84%EB%A6%AC.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
-
-					<!-- Card body START -->
-					<div class="card-body px-3 pb-0">
-
-						<!-- Title -->
-						<h5 class="card-title"><a href="hotel-detail.html">후산(Husan)</a></h5>
-
-						<!-- List -->
-						<ul class="nav nav-divider mb-2 mb-sm-3">
-							<li class="nav-item">마늘</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-
-					<!-- Card footer START-->
-					<div class="card-footer pt-0">
-						<!-- Price and Button -->
-						<div class="d-sm-flex justify-content-sm-between align-items-center">
-							<!-- Price -->
-							<div class="d-flex align-items-center">
-								<h5 class="fw-normal text-success mb-0 me-1"></h5>
-								<span class="mb-0 me-2"></span>
-							</div>
-							<!-- Button -->
-							<div class="mt-2 mt-sm-0">
-								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
-							</div>                  
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4">
-				<div class="card shadow p-2 pb-0 h-100">
-					<!-- Image -->
-					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220105%2F%EC%B0%B8%EB%88%84%EB%A6%AC.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
-
-					<!-- Card body START -->
-					<div class="card-body px-3 pb-0">
-
-						<!-- Title -->
-						<h5 class="card-title"><a href="hotel-detail.html">참누리(Chamnuri)</a></h5>
-
-						<!-- List -->
-						<ul class="nav nav-divider mb-2 mb-sm-3">
-							<li class="nav-item">논벼 > 일반벼</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-
-					<!-- Card footer START-->
-					<div class="card-footer pt-0">
-						<!-- Price and Button -->
-						<div class="d-sm-flex justify-content-sm-between align-items-center">
-							<!-- Price -->
-							<div class="d-flex align-items-center">
-								<h5 class="fw-normal text-success mb-0 me-1"></h5>
-								<span class="mb-0 me-2"></span>
-							</div>
-							<!-- Button -->
-							<div class="mt-2 mt-sm-0">
-								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
-							</div>                  
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
-			<!-- Card item START -->
-			<div class="col-md-6 col-xl-4">
-				<div class="card shadow p-2 pb-0 h-100">
-					<!-- Image -->
-					<img src="http://atis.rda.go.kr/rdais/commonModule/fileDownloadToApp.vw?file_name=%2Fatis%2Fspciesoutput%2Fspcies%2F20220105%2F%EC%B0%B8%EB%88%84%EB%A6%AC.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
-
-					<!-- Card body START -->
-					<div class="card-body px-3 pb-0">
-
-						<!-- Title -->
-						<h5 class="card-title"><a href="hotel-detail.html">핑커몬드(Pinker Mond)</a></h5>
-
-						<!-- List -->
-						<ul class="nav nav-divider mb-2 mb-sm-3">
-							<li class="nav-item">백합(나리)</li>
-						</ul>
-					</div>
-					<!-- Card body END -->
-
-					<!-- Card footer START-->
-					<div class="card-footer pt-0">
-						<!-- Price and Button -->
-						<div class="d-sm-flex justify-content-sm-between align-items-center">
-							<!-- Price -->
-							<div class="d-flex align-items-center">
-								<h5 class="fw-normal text-success mb-0 me-1"></h5>
-								<span class="mb-0 me-2"></span>
-							</div>
-							<!-- Button -->
-							<div class="mt-2 mt-sm-0">
-								<a href="hotel-detail.html" class="btn btn-sm btn-success2 mb-0 w-100">자세히 보기<i class="bi bi-arrow-right ms-2"></i></a>    
-							</div>                  
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Card item END -->
-
+			</th:block>
+			
+			
 		</div> <!-- Row END -->
-
+		<th:block th:if="${listSize > 0}">
 		<!-- Pagination -->
 		<div class="row">
 			<div class="col-12">
 				<nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
 					<ul class="pagination pagination-primary-soft2 d-inline-block d-md-flex rounded mb-0">
-						<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fa-solid fa-angle-left"></i></a></li>
-						<li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
-						<li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
-						<li class="page-item mb-0"><a class="page-link" href="#">..</a></li>
-						<li class="page-item mb-0"><a class="page-link" href="#">6</a></li>
-						<li class="page-item mb-0"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a></li>
+						<li class="page-item mb-0"><a class="page-link" th:onclick="movePage(1);"><i class="fa-solid fa-angle-left"></i></a></li>
+						<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${pageInfo.prevPage}]]);"><i class="fa-solid fa-angle-left"></i></a></li>
+						<th:block th:each= "num, status : ${#numbers.sequence(pageInfo.startPage, pageInfo.endPage)}">
+							<th:block th:if="${status.current == pageInfo.currentPage}">
+								<li class="page-item mb-0 active"><a class="page-link" disabled>[[${status.current}]]<span class="visually-hidden">(current)</span></a></li>
+							</th:block>
+							<th:block th:if="${status.current != pageInfo.currentPage}">
+								<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${status.current}]])">[[${status.current}]]</a></li>
+							</th:block>
+						</th:block>
+						
+						<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${pageInfo.nextPage}]])"><i class="fa-solid fa-angle-right"></i></a></li>
+						<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${pageInfo.maxPage}]])"><i class="fa-solid fa-angle-right"></i></a></li>
 					</ul>
 				</nav>
 			</div>
 		</div>
+		</th:block>
 	</div>
 </section>
 <!-- =======================
@@ -567,3 +671,15 @@ Hotel grid END -->
 	<footer th:replace="~{common/layout2 :: #footer}"></footer>
 </body>
 </html>
+
+<script type="text/javascript">
+var url_href = window.location.href;
+var url = new URL(url_href); // URL 객체 선언
+
+function movePage(page){
+	url.searchParams.set("page", page);
+	
+	window.location.search = url.searchParams;
+};
+
+</script>

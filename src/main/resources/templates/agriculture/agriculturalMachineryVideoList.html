@@ -19,37 +19,111 @@ Main Banner START -->
 <section class="pt-0 mt-0">
 	<div class="container-fluid px-0">
 		<!-- Background image -->
-		<div class="rounded p-3 p-sm-5" style="background-image: url(assets/images/farmstouch/wallpaperbetter\ \(2\)_2.jpg); background-position: center 0; background-repeat: no-repeat; background-size: cover; height: 27rem;">
+		<div class="rounded p-3 p-sm-5" style="background-image: url(../assets/images/farmstouch/wallpaperbetter\ \(2\)_2.jpg); background-position: center 0; background-repeat: no-repeat; background-size: cover; height: 27rem;">
 			<!-- Banner title -->
 			<div class="row my-2 my-xl-5"> 
 				<div class="col-md-6 mx-auto"> </div>
 				<div class="col-md-6 mx-auto"> 
-					<h1 class="text-center " style="text-shadow:2px 2px 2px white; color: #285430;">농기계 시청각 영상</h1>
+					<h1 class="text-center " style="text-shadow:2px 2px 2px white; color: #285430;">농기계 시청각 자료</h1>
 					<h4 class="text-center " style="text-shadow:2px 2px 2px #285430; color: white;">Agricultural Machine Vod</h4>
-				</div>
-				
+				</div>		
 			</div>
 			<!-- Search START -->
-			<div class="col-xl-8 mx-auto">
-				<div class="bg-white bg-opacity-10 border border-light border-opacity-25 rounded-3 p-4 mt-5">
-					<!-- Form START -->
-					<form class="row g-3 justify-content-center align-items-center">
-						<div class="col-lg-10">
-							<!-- Input -->
-							<div class="form-input-dropdown position-relative">
-								<input class="form-control form-control-lg me-1 ps-5" type="text" data-bs-toggle="dropdown" placeholder="검색어를 입력하세요.">
-								<!-- Icon -->
-								<span class="position-absolute top-50 start-0 translate-middle ps-5"><i class="bi bi-search fs-5"></i></span>
-							</div>
-						</div>
-						<div class="col-lg-2 d-grid">
-							<!-- Search -->
-							<a class="btn btn-lg btn-success2 mb-0" href="#">검색</a>
-						</div>
-					</form>
-					<!-- Form END -->
+			<div class="row pt-3 bg-white bg-opacity-10">
+				<div class="col-11 col-lg-8 col-xl-8 mx-auto">
+					<ul class="nav nav-tabs nav-bottom-line nav-justified nav-responsive bg-mode rounded-top z-index-9 position-relative pt-2 pb-0 px-4">
+						<li class="nav-item"> 
+							<a class="nav-link mb-0 active" data-bs-toggle="tab" href="#tab-1-1"><i class="fa-solid fa-photo-film fa-fw me-2"></i>애니메이션</a> 
+						</li>
+						<li class="nav-item">
+							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-2"><i class="fa-solid fa-video fa-fw me-2"></i>동영상</a> 
+						</li>
+						<li class="nav-item"> 
+							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-3"><i class="fa-solid fa-image fa-fw me-2"></i>삽화</a> 
+						</li>
+						
+					</ul>
 				</div>
-			</div>	
+				<div class="col-10 mx-auto">
+					<div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade show active" id="tab-1-1">
+							<form class="card shadow p-0" th:action="@{/agriculture/agriculturalMachineryVideoList}" method="get" >
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-photo-film fa-fw me-2"></i>애니메이션 검색</h5>
+								</div>
+								<input type="hidden" name="searchType" value="Ani">
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-12">
+											<div class="form-icon-input form-size-lg form-fs-lg">
+												<input class="form-control" type="text" id="searchName" name="searchName" placeholder="제목을 입력하세요...">
+												<span class="form-icon"><i class="fa-solid fa-seedling fs-5"></i></span>
+											</div>
+										</div>
+									</div> <!-- Row END -->
+	
+									<!-- Button -->
+									<div class="text-center pt-0">
+										<button class="btn btn-lg btn-success2 mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="tab-pane fade" id="tab-1-2">
+							<form class="card shadow p-0" th:action="@{/agriculture/agriculturalMachineryVideoList}" method="get" >
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-video fa-fw me-2"></i>동영상 검색</h5>
+								</div>
+								<input type="hidden" name="searchType" value="Mov">
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-12">
+											<div class="form-icon-input form-size-lg form-fs-lg">
+												<input class="form-control" type="text" id="searchName" name="searchName" placeholder="제목을 입력하세요...">
+												<span class="form-icon"><i class="fa-solid fa-seedling fs-5"></i></span>
+											</div>
+										</div>
+									</div> <!-- Row END -->
+	
+									<!-- Button -->
+									<div class="text-center pt-0">
+										<button class="btn btn-lg btn-success2 mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="tab-pane fade" id="tab-1-3">
+							<form class="card shadow p-0" th:action="@{/agriculture/agriculturalMachineryVideoList}" method="get">
+								<div class="card-header p-4">
+									<h5 class="mb-0"><i class="fa-solid fa-image fa-fw me-2"></i>삽화 검색</h5>
+								</div>
+								<input type="hidden" name="searchType" value="Img">
+								<!-- Card body -->
+								<div class="card-body p-4 pt-0">
+									<div class="row g-4">
+										<!-- Location -->
+										<div class="col-12">
+											<div class="form-icon-input form-size-lg form-fs-lg">
+												<input class="form-control" type="text" id="searchName" name="searchName" placeholder="제목을 입력하세요...">
+												<span class="form-icon"><i class="fa-solid fa-seedling fs-5"></i></span>
+											</div>
+										</div>
+									</div> <!-- Row END -->
+	
+									<!-- Button -->
+									<div class="text-center pt-0">
+										<button class="btn btn-lg btn-success2 mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 			<!-- Search END -->
 		</div>
 	</div>
@@ -59,19 +133,31 @@ Main Banner END -->
 
 <!-- =======================
 Hotel list START -->
-<section class="pt-0">
+<section class="pt-7">
 	<div class="container">
 		<div class="row">
 			<!-- Main content START -->
 			<div class="">
 				<div class="vstack gap-4">
-
-					<!-- Card item START -->
-					<div class="card shadow p-2">
+					<th:block th:if="${listSize == 0}">
+						<div class="row mt-5">
+							<div class = "col-8 pt-3 mx-auto text-center">
+								<h2 class="text-secondary"><i class="fa-solid fa-circle-exclamation"></i> 조회된 내용이 없습니다.</h2>
+							</div>
+						</div>
+						
+							
+						
+					</th:block>
+					
+					
+					<th:block th:if="${list3 != null}">
+						<!-- Card item START -->
+					<div class="card shadow p-2" th:each="machinevodani : ${list3}">
 						<div class="row g-0">
 							<!-- Card img -->
 							<div class="col-md-3">
-								<img src="http://www.nongsaro.go.kr/cms_contents/756/34954_MF_ATTACH_01.jpg" class="card-img rounded-2" alt="Card image" style="width: 320x; height: 230px;">
+								<img th:src="${machinevodani.imgUrl}" class="card-img rounded-2" alt="Card image" style="width: 320x; height: 230px;">
 							</div>
 							<!-- Card body -->
 							<div class="col-md-9">
@@ -79,12 +165,12 @@ Hotel list START -->
 									<div class="row">
 										<div class="col-md-11">
 											<!-- Title -->
-											<h5 class="card-title mb-1 mt-3"><a href="hotel-detail.html">경운기 도로주행</a></h5>
+											<h5 class="card-title mb-1 mt-3"><a th:href="|/agriculture/agriculturalMachineryVideoDetails?no=${machinevodani.cntntsNo}|" >[[${machinevodani.cntntsSj}]]</a></h5>
 										</div>
 									</div>
 									<!-- Amenities -->
 									<ul class="nav nav-divider mt-3">
-										<li class="nav-item text-black">경운기로 도로주행시 안전주의사항</li>
+										<li class="nav-item text-black">[[${machinevodani.smmInfoCut}]]</li>
 									</ul>
 									<!-- Price and Button -->
 									<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
@@ -95,7 +181,7 @@ Hotel list START -->
 										</div>
 										<!-- Button -->
 										<div class="mt-3 mt-sm-0">
-											<a class="btn btn-success2" href="#">영상 보러가기</a>
+											<a class="btn btn-success2" th:href="|/agriculture/agriculturalMachineryVideoDetails?no=${machinevodani.cntntsNo}|">영상 보기</a>
 										</div>                  
 									</div>
 								</div>
@@ -103,13 +189,16 @@ Hotel list START -->
 						</div>
 					</div>
 					<!-- Card item END -->
-
-					<!-- Card item START -->
-					<div class="card shadow p-2">
+					
+					</th:block>
+					
+					<th:block th:if="${list1 != null}">
+						<!-- Card item START -->
+					<div class="card shadow p-2" th:each="machinevodmov : ${list1}">
 						<div class="row g-0">
 							<!-- Card img -->
 							<div class="col-md-3">
-								<img src="http://www.nongsaro.go.kr/cms_contents/756/34969_MF_ATTACH_01.jpg" class="card-img rounded-2" alt="Card image" style="width: 320x; height: 230px;">
+								<img th:src="${machinevodmov.imgUrl}" class="card-img rounded-2" alt="Card image" style="width: 320x; height: 230px;">
 							</div>
 							<!-- Card body -->
 							<div class="col-md-9">
@@ -117,12 +206,12 @@ Hotel list START -->
 									<div class="row">
 										<div class="col-md-11">
 											<!-- Title -->
-											<h5 class="card-title mb-1 mt-3"><a href="hotel-detail.html">동력예취기 안전사고 예방</a></h5>
+											<h5 class="card-title mb-1 mt-3"><a th:href="|/agriculture/agriculturalMachineryMovDetails?no=${machinevodmov.cntntsNo}|">[[${machinevodmov.cntntsSj}]]</a></h5>
 										</div>
 									</div>
 									<!-- Amenities -->
 									<ul class="nav nav-divider mt-3">
-										<li class="nav-item text-black">본 동영상 콘텐츠는 KBS에서 제작 방영된 프로그램의 일부를 발췌한 것으로, 농기계 안전사고 예방을 위한 농업인 교육 자료로만 활용하여 주시기 바랍니다. 소유권은 KBS에 있으며 무단으로 복제하거나 상업용으로 판매할 수 없음을 알려드립니다.</li>
+										<li class="nav-item text-black" >[[${machinevodmov.dcCut}]]</li>
 									</ul>
 									<!-- Price and Button -->
 									<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
@@ -133,7 +222,7 @@ Hotel list START -->
 										</div>
 										<!-- Button -->
 										<div class="mt-3 mt-sm-0">
-											<a class="btn btn-success2" href="#">영상 보러가기</a>   
+											<a class="btn btn-success2" th:href="|/agriculture/agriculturalMachineryMovDetails?no=${machinevodmov.cntntsNo}|">영상 보기</a>
 										</div>                  
 									</div>
 								</div>
@@ -141,13 +230,15 @@ Hotel list START -->
 						</div>
 					</div>
 					<!-- Card item END -->
-
-					<!-- Card item START -->
-					<div class="card shadow p-2">
+					
+					</th:block>
+					<th:block th:if="${list2 != null}">
+						<!-- Card item START -->
+					<div class="card shadow p-2" th:each="machinevodimg : ${list2}">
 						<div class="row g-0">
 							<!-- Card img -->
 							<div class="col-md-3">
-								<img src="http://www.nongsaro.go.kr/cms_contents/756/34968_MF_ATTACH_01.jpg" class="card-img rounded-2" alt="Card image" style="width: 320x; height: 230px;">
+								<img th:src="${machinevodimg.imgUrl}" class="card-img rounded-2" alt="Card image" style="width: 320x; height: 230px;">
 							</div>
 							<!-- Card body -->
 							<div class="col-md-9">
@@ -155,12 +246,12 @@ Hotel list START -->
 									<div class="row">
 										<div class="col-md-11">
 											<!-- Title -->
-											<h5 class="card-title mb-1 mt-3"><a href="hotel-detail.html">벨트 감김 및 끼임 사고 예방</a></h5>
+											<h5 class="card-title mb-1 mt-3"><a th:href="|/agriculture/agriculturalMachineryImgDetails?no=${machinevodimg.cntntsNo}|">[[${machinevodimg.cntntsSj}]]</a></h5>
 										</div>
 									</div>
 									<!-- Amenities -->
 									<ul class="nav nav-divider mt-3">
-										<li class="nav-item text-black">본 동영상 콘텐츠는 KBS에서 제작 방영된 프로그램의 일부를 발췌한 것으로, 농기계 안전사고 예방을 위한 농업인 교육 자료로만 활용하여 주시기 바랍니다. 소유권은 KBS에 있으며 무단으로 복제하거나 상업용으로 판매할 수 없음을 알려드립니다.</li>
+										<li class="nav-item text-black" th:utext="|${machinevodimg.smmInfoCut.replace('.', '.<br>')}|"></li>
 									</ul>
 									<!-- Price and Button -->
 									<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
@@ -171,7 +262,7 @@ Hotel list START -->
 										</div>
 										<!-- Button -->
 										<div class="mt-3 mt-sm-0">
-											<a class="btn btn-success2" href="#">영상 보러가기</a>   
+											<a class="btn btn-success2" th:href="|/agriculture/agriculturalMachineryImgDetails?no=${machinevodimg.cntntsNo}|">상세 보기</a>
 										</div>                  
 									</div>
 								</div>
@@ -179,134 +270,32 @@ Hotel list START -->
 						</div>
 					</div>
 					<!-- Card item END -->
-
-					<!-- Card item START -->
-					<div class="card shadow p-2">
-						<div class="row g-0">
-							<!-- Card img -->
-							<div class="col-md-3">
-								<img src="http://www.nongsaro.go.kr/cms_contents/756/34967_MF_ATTACH_01.jpg" class="card-img rounded-2" alt="Card image" style="width: 320x; height: 230px;">
-							</div>
-							<!-- Card body -->
-							<div class="col-md-9">
-								<div class="card-body py-md-2 d-flex flex-column h-100">
-									<div class="row">
-										<div class="col-md-11">
-											<!-- Title -->
-											<h5 class="card-title mb-1 mt-3"><a href="hotel-detail.html">브레이크 페달 음료수병 끼임 사고 예방</a></h5>
-										</div>
-									</div>
-									<!-- Amenities -->
-									<ul class="nav nav-divider mt-3">
-										<li class="nav-item text-black">본 동영상 콘텐츠는 KBS에서 제작 방영된 프로그램의 일부를 발췌한 것으로, 농기계 안전사고 예방을 위한 농업인 교육 자료로만 활용하여 주시기 바랍니다. 소유권은 KBS에 있으며 무단으로 복제하거나 상업용으로 판매할 수 없음을 알려드립니다.</li>
-									</ul>
-									<!-- Price and Button -->
-									<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
-										<!-- Button -->
-										<div class="d-flex align-items-center">
-											<h5 class="fw-bold mb-0 me-1"></h5>
-											<span class="mb-0 me-2"></span>
-										</div>
-										<!-- Button -->
-										<div class="mt-3 mt-sm-0">
-											<a class="btn btn-success2" href="#">영상 보러가기</a>   
-										</div>                  
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Card item END -->
-
-					<!-- Card item START -->
-					<div class="card shadow p-2">
-						<div class="row g-0">
-							<!-- Card img -->
-							<div class="col-md-3">
-								<img src="http://www.nongsaro.go.kr/cms_contents/756/34966_MF_ATTACH_01.jpg" class="card-img rounded-2" alt="Card image" style="width: 320x; height: 230px;">
-							</div>
-							<!-- Card body -->
-							<div class="col-md-9">
-								<div class="card-body py-md-2 d-flex flex-column h-100">
-									<div class="row">
-										<div class="col-md-11">
-											<!-- Title -->
-											<h5 class="card-title mb-1 mt-3"><a href="hotel-detail.html">농기계 사고실태 및 사례</a></h5>
-										</div>
-									</div>
-									<!-- Amenities -->
-									<ul class="nav nav-divider mt-3">
-										<li class="nav-item text-black">농업기계 안전사고의 정의, 특징, 영향, 사고분포, 시기, 원인, 피해내용 등의 소개</li>
-									</ul>
-									<!-- Price and Button -->
-									<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
-										<!-- Button -->
-										<div class="d-flex align-items-center">
-											<h5 class="fw-bold mb-0 me-1"></h5>
-											<span class="mb-0 me-2"></span>
-										</div>
-										<!-- Button -->
-										<div class="mt-3 mt-sm-0">
-											<a class="btn btn-success2" href="#">영상 보러가기</a>   
-										</div>                  
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Card item END -->
-
-					<!-- Card item START -->
-					<div class="card shadow p-2">
-						<div class="row g-0">
-							<!-- Card img -->
-							<div class="col-md-3">
-								<img src="http://www.nongsaro.go.kr/cms_contents/756/34965_MF_ATTACH_01.jpg" class="card-img rounded-2" alt="Card image" style="width: 320x; height: 230px;">
-							</div>
-							<!-- Card body -->
-							<div class="col-md-9">
-								<div class="card-body py-md-2 d-flex flex-column h-100">
-									<div class="row">
-										<div class="col-md-11">
-											<!-- Title -->
-											<h5 class="card-title mb-1 mt-3"><a href="hotel-detail.html">농업기계 안전이용기술</a></h5>
-										</div>
-										
-									</div>
-									<!-- Amenities -->
-									<ul class="nav nav-divider mt-3">
-										<li class="nav-item text-black">경운기, 트랙터, 이앙기, 콤바인, 관리기, 예취기 등 여러 종류의 농업기계에 대한 안전이용기술을 소개</li>
-									</ul>
-									<!-- Price and Button -->
-									<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
-										<!-- Button -->
-										<div class="d-flex align-items-center">
-											<h5 class="fw-bold mb-0 me-1"></h5>
-											<span class="mb-0 me-2"></span>
-										</div>
-										<!-- Button -->
-										<div class="mt-3 mt-sm-0">
-											<a class="btn btn-success2" href="#">영상 보러가기</a>  
-										</div>                  
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- Card item END -->
-
+					
+					</th:block>
+					<th:block th:if="${listSize > 0}">
 					<!-- Pagination -->
-					<nav class="d-flex justify-content-center" aria-label="navigation">
-						<ul class="pagination pagination-primary-soft2 d-inline-block d-md-flex rounded mb-0">
-							<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fa-solid fa-angle-left"></i></a></li>
-							<li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
-							<li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
-							<li class="page-item mb-0"><a class="page-link" href="#">..</a></li>
-							<li class="page-item mb-0"><a class="page-link" href="#">6</a></li>
-							<li class="page-item mb-0"><a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a></li>
-						</ul>
-					</nav>
-
+					<div class="row">
+						<div class="col-12">
+							<nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
+								<ul class="pagination pagination-primary-soft2 d-inline-block d-md-flex rounded mb-0">
+									<li class="page-item mb-0"><a class="page-link" th:onclick="movePage(1);"><i class="fa-solid fa-angle-left"></i></a></li>
+									<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${pageInfo.prevPage}]]);"><i class="fa-solid fa-angle-left"></i></a></li>
+									<th:block th:each= "num, status : ${#numbers.sequence(pageInfo.startPage, pageInfo.endPage)}">
+										<th:block th:if="${status.current == pageInfo.currentPage}">
+											<li class="page-item mb-0 active"><a class="page-link" disabled>[[${status.current}]]<span class="visually-hidden">(current)</span></a></li>
+										</th:block>
+										<th:block th:if="${status.current != pageInfo.currentPage}">
+											<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${status.current}]])">[[${status.current}]]</a></li>
+										</th:block>
+									</th:block>
+									
+									<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${pageInfo.nextPage}]])"><i class="fa-solid fa-angle-right"></i></a></li>
+									<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${pageInfo.maxPage}]])"><i class="fa-solid fa-angle-right"></i></a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					</th:block>
 				</div>
 			</div>
 			<!-- Main content END -->
@@ -315,8 +304,21 @@ Hotel list START -->
 </section>
 <!-- =======================
 Hotel list END -->
+<script type="text/javascript">
+var url_href = window.location.href;
+var url = new URL(url_href); // URL 객체 선언
 
+function movePage(page){
+	url.searchParams.set("page", page);
+	
+	window.location.search = url.searchParams;
+};
+
+
+
+</script>
 </main>
+
 <!-- **************** MAIN CONTENT END **************** -->
 
 <!-- =======================Footer START -->

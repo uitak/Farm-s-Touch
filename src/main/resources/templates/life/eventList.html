@@ -25,7 +25,7 @@
 				<div class="col-12 mb-0">
 					<div class="d-sm-flex justify-content-between align-items-center">
 						<h1 class="h3 mb-2 mb-sm-0">이벤트 / 설문</h1>
-						<div class="d-grid"><a target="_blank" href="https://www.nongsaro.go.kr/portal/ps/psx/psxn/eventSurveyMain.ps?menuId=PS65355&pageUnit=12" class="btn btn-warning-soft mb-0"><i class="bi bi-plus-lg fa-fw"></i>농촌진흥청 이동</a></div>					
+						<div class="d-grid"><a target="_blank" th:href="@{https://www.nongsaro.go.kr/portal/ps/psx/psxn/eventSurveyMain.ps?menuId=PS65355&pageUnit=12}" class="btn btn-warning-soft mb-0"><i class="bi bi-plus-lg fa-fw"></i>농촌진흥청 이동</a></div>					
 					</div>
 				</div>
 			</div>
@@ -53,7 +53,7 @@ Search START -->
 							</div>
 							<!-- Icon -->
 							<div class="icon-lg rounded-circle flex-shrink-0 bg-primary bg-opacity-10 text-primary mb-0">
-								<img src="https://img.icons8.com/stickers/100/null/tails.png"/>
+								<img th:src="@{https://img.icons8.com/stickers/100/null/tails.png}"/>
 							</div>
 						</div>
 						<!-- Progress bar -->
@@ -76,7 +76,7 @@ Search START -->
 							</div>
 							<!-- Icon -->
 							<div class="icon-lg rounded-circle flex-shrink-0 bg-danger bg-opacity-10 text-danger mb-0">
-								<img src="https://img.icons8.com/stickers/100/null/cancel-2.png"/>
+								<img th:src="@{https://img.icons8.com/stickers/100/null/cancel-2.png}"/>
 							</div>
 						</div>
 						<!-- Progress bar -->
@@ -99,7 +99,7 @@ Search START -->
 							</div>
 							<!-- Icon -->
 							<div class="icon-lg rounded-circle flex-shrink-0 bg-success bg-opacity-10 text-success mb-0">
-								<img src="https://img.icons8.com/stickers/100/null/circled-play.png"/>
+								<img th:src="@{https://img.icons8.com/stickers/100/null/circled-play.png}"/>
 							</div>
 						</div>
 						<!-- Progress bar -->
@@ -118,11 +118,11 @@ Search START -->
 							<!-- Number -->
 							<div class="me-2">
 								<span>진행중 조회수</span>
-								<h3 class="mb-0 mt-2">486</h3>
+								<h3 class="mb-0 mt-2">1003</h3>
 							</div>
 							<!-- Icon -->
 							<div class="icon-lg rounded-circle flex-shrink-0 bg-orange bg-opacity-10 text-orange mb-0">
-								<img src="https://img.icons8.com/stickers/100/null/group.png"/>
+								<img th:src="@{https://img.icons8.com/stickers/100/null/group.png}"/>
 							</div>
 						</div>
 						<!-- Progress bar -->
@@ -152,13 +152,13 @@ Search START -->
 					<!-- Tabs -->
 					<ul class="nav nav-pills-shadow nav-responsive">
 						<li class="nav-item"> 
-							<a class="nav-link mb-0 me-sm-2 active" data-bs-toggle="tab" href="#" target="_blank">농가맛집</a> 
+							<a class="nav-link mb-0 me-sm-2" th:href="|/life/farmHouseRestaurantList|" target="_blank">농가맛집</a> 
 						</li>
 						<li class="nav-item">
-							<a class="nav-link mb-0 me-sm-2" data-bs-toggle="tab" href="#" target="_blank">민간약초</a>
+							<a class="nav-link mb-0 me-sm-2" th:href="|/life/herbList|" target="_blank">민간약초</a>
 						</li>
 						<li class="nav-item"> 
-							<a class="nav-link mb-0" data-bs-toggle="tab" href="#" target="_blank">농촌체험활동</a> 
+							<a class="nav-link mb-0" th:href="|/life/ruralEducationCenterList|" target="_blank">농촌교육농장</a> 
 						</li>
 					</ul>
 				</div>
@@ -167,9 +167,9 @@ Search START -->
 					<div class="d-sm-flex gap-4 justify-content-between justify-content-lg-end">
 						<!-- Search -->
 						<div class="col-md-8">
-							<form class="rounded position-relative">
-								<input class="form-control bg-transparent" type="search" placeholder="Search" aria-label="Search">
-								<button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
+							<form th:action="@{/life/eventList}" method="get" class="rounded position-relative">
+								<input class="form-control bg-transparent" type="search" id="searchValue" name="searchValue" th:value="${param.searchValue}" placeholder="Search" aria-label="Search">
+								<button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit" th:name="searchType" value="colmnNm">
 									<i class="fas fa-search fs-6"></i>
 								</button>
 							</form>
@@ -184,20 +184,22 @@ Search START -->
 			<div class="tab-content mt-5" id="myTabContent">
 				<!-- Content item START -->
 				<div class="tab-pane fade show active" id="grid-tab-pane">
+				
 					<!-- Rooms START -->
 					<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xxl-3 g-4">
+					
 						<!-- Room item -->
-						<div class="col">
+						<div class="col" th:each="nongsaroEventList : ${list}">
 							<div class="card shadow h-100">
 								<!-- Overlay item -->
 								<div class="position-relative">
 									<!-- Image -->
-									<img src="assets/images/farmstouch/example/event1.jpg" class="card-img-top" alt="Card image" style="height: 13.75rem;">
+									<img th:src="${nongsaroEventList.imgUrl}" class="card-img-top" alt="Card image" style="height: 13.75rem;">
 									<!-- Overlay -->
 									<div class="card-img-overlay d-flex flex-column p-3">
 										<!-- Card overlay top -->
 										<div class="d-flex justify-content-between align-items-center">
-											<div class="badge text-bg-dark"><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>진행중</div>
+											<div class="badge text-bg-dark"><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>[[${nongsaroEventList.eventGubun}]]</div>
 										</div>
 									</div>
 								</div>
@@ -205,13 +207,13 @@ Search START -->
 								<!-- Card body START -->
 								<div class="card-body px-3">
 									<!-- Title -->
-									<h5 class="card-title mb-1"><a href="admin-booking-detail.html">[홍보이벤트]농사로 홈페이지 오류찾고, 경품 받고!</a></h5>
+									<h5 class="card-title mb-1"><a th:href="@{/#}">[[${nongsaroEventList.colmnNm}]]</a></h5>
 									<ul class="list-group list-group-borderless small mt-2 mb-0">
 										<li class="list-group-item pb-0">
 											<i class="fa-solid fa-candy-cane fa-fw me-2"></i>이벤트
 										</li>
 										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-calendar fa-fw me-2"></i>2023-01-16 ~ 2023-02-03	
+											<i class="fa-solid fa-calendar fa-fw me-2"></i>[[${nongsaroEventList.eventDate}]]	
 										</li>
 									</ul>
 								</div>
@@ -221,365 +223,10 @@ Search START -->
 								<div class="card-footer pt-0">
 									<!-- Price -->
 									<div class="hstack gap-2 mb-2" >
-										<h6 class="fw-normal mb-0">486</h6>
+										<h6 class="fw-normal mb-0">[[${nongsaroEventList.rdcnt}]]</h6>
 										<small>/조회수</small>
 									</div>
-									<a href="admin-booking-detail.html" class="btn btn-sm btn-warning-soft mb-0 w-100">View detail</a>
-								</div>
-							</div>
-						</div>
-
-						
-
-						<!-- Room item -->
-						<div class="col">
-							<div class="card shadow h-100">
-								<!-- Overlay item -->
-								<div class="position-relative">
-									<!-- Image -->
-									<img src="assets/images//farmstouch/example/event2.jpg" class="card-img-top" alt="Card image" style="height: 13.75rem;">
-									<!-- Overlay -->
-									<div class="card-img-overlay d-flex flex-column p-3">
-										<!-- Card overlay top -->
-										<div class="d-flex justify-content-between align-items-center">
-											<div class="badge text-bg-dark"><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>종료</div>
-										</div>
-									</div>
-								</div>
-			
-								<!-- Card body START -->
-								<div class="card-body px-3">
-									<!-- Title -->
-									<h5 class="card-title mb-1"><a href="admin-booking-detail.html">[당첨자 발표] 농사로 SNS소문내기</a></h5>
-									<ul class="list-group list-group-borderless small mt-2 mb-0">
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-candy-cane fa-fw me-2"></i>당첨자 발표
-										</li>
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-calendar fa-fw me-2"></i>2022-12-28	
-										</li>
-									</ul>
-								</div>
-								<!-- Card body END -->
-			
-								<!-- Card footer START-->
-								<div class="card-footer pt-0">
-									<!-- Price -->
-									<div class="hstack gap-2 mb-2" >
-										<h6 class="fw-normal mb-0">178</h6>
-										<small>/조회수</small>
-									</div>
-									<a href="admin-booking-detail.html" class="btn btn-sm btn-warning-soft mb-0 w-100">View detail</a>
-								</div>
-							</div>
-						</div>
-
-
-						<!-- Room item -->
-						<div class="col">
-							<div class="card shadow h-100">
-								<!-- Overlay item -->
-								<div class="position-relative">
-									<!-- Image -->
-									<img src="assets/images/farmstouch/example/event3.png" class="card-img-top" alt="Card image" style="height: 13.75rem;">
-									<!-- Overlay -->
-									<div class="card-img-overlay d-flex flex-column p-3">
-										<!-- Card overlay top -->
-										<div class="d-flex justify-content-between align-items-center">
-											<div class="badge text-bg-dark"><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>종료</div>
-										</div>
-									</div>
-								</div>
-			
-								<!-- Card body START -->
-								<div class="card-body px-3">
-									<!-- Title -->
-									<h5 class="card-title mb-1"><a href="admin-booking-detail.html">[당첨자 발표] VR 가상현실 사이버 농업과학관 오픈이벤트</a></h5>
-									<ul class="list-group list-group-borderless small mt-2 mb-0">
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-candy-cane fa-fw me-2"></i>당첨자 발표
-										</li>
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-calendar fa-fw me-2"></i>2022-12-19
-										</li>
-									</ul>
-								</div>
-								<!-- Card body END -->
-			
-								<!-- Card footer START-->
-								<div class="card-footer pt-0">
-									<!-- Price -->
-									<div class="hstack gap-2 mb-2" >
-										<h6 class="fw-normal mb-0">38</h6>
-										<small>/조회수</small>
-									</div>
-									<a href="admin-booking-detail.html" class="btn btn-sm btn-warning-soft mb-0 w-100">View detail</a>
-								</div>
-							</div>
-						</div>
-
-
-						<!-- Room item -->
-						<div class="col">
-							<div class="card shadow h-100">
-								<!-- Overlay item -->
-								<div class="position-relative">
-									<!-- Image -->
-									<img src="assets/images/farmstouch/example/event4.png" class="card-img-top" alt="Card image" style="height: 13.75rem;">
-									<!-- Overlay -->
-									<div class="card-img-overlay d-flex flex-column p-3">
-										<!-- Card overlay top -->
-										<div class="d-flex justify-content-between align-items-center">
-											<div class="badge text-bg-dark"><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>종료</div>
-										</div>
-									</div>
-								</div>
-			
-								<!-- Card body START -->
-								<div class="card-body px-3">
-									<!-- Title -->
-									<h5 class="card-title mb-1"><a href="admin-booking-detail.html">농촌진흥청 승인통계자료 사용자 만족도 공동조사</a></h5>
-									<ul class="list-group list-group-borderless small mt-2 mb-0">
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-candy-cane fa-fw me-2"></i>이벤트
-										</li>
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-calendar fa-fw me-2"></i>2022-12-09 ~ 2022-12-22
-										</li>
-									</ul>
-								</div>
-								<!-- Card body END -->
-			
-								<!-- Card footer START-->
-								<div class="card-footer pt-0">
-									<!-- Price -->
-									<div class="hstack gap-2 mb-2" >
-										<h6 class="fw-normal mb-0">259</h6>
-										<small>/조회수</small>
-									</div>
-									<a href="admin-booking-detail.html" class="btn btn-sm btn-warning-soft mb-0 w-100">View detail</a>
-								</div>
-							</div>
-						</div>
-
-						
-
-						<!-- Room item -->
-						<div class="col">
-							<div class="card shadow h-100">
-								<!-- Overlay item -->
-								<div class="position-relative">
-									<!-- Image -->
-									<img src="assets/images/farmstouch/example/event1.jpg" class="card-img-top" alt="Card image" style="height: 13.75rem;">
-									<!-- Overlay -->
-									<div class="card-img-overlay d-flex flex-column p-3">
-										<!-- Card overlay top -->
-										<div class="d-flex justify-content-between align-items-center">
-											<div class="badge text-bg-dark"><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>진행중</div>
-										</div>
-									</div>
-								</div>
-			
-								<!-- Card body START -->
-								<div class="card-body px-3">
-									<!-- Title -->
-									<h5 class="card-title mb-1"><a href="admin-booking-detail.html">[홍보이벤트]농사로 홈페이지 오류찾고, 경품 받고!</a></h5>
-									<ul class="list-group list-group-borderless small mt-2 mb-0">
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-candy-cane fa-fw me-2"></i>이벤트
-										</li>
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-calendar fa-fw me-2"></i>2023-01-16 ~ 2023-02-03	
-										</li>
-									</ul>
-								</div>
-								<!-- Card body END -->
-			
-								<!-- Card footer START-->
-								<div class="card-footer pt-0">
-									<!-- Price -->
-									<div class="hstack gap-2 mb-2" >
-										<h6 class="fw-normal mb-0">486</h6>
-										<small>/조회수</small>
-									</div>
-									<a href="admin-booking-detail.html" class="btn btn-sm btn-warning-soft mb-0 w-100">View detail</a>
-								</div>
-							</div>
-						</div>
-
-						
-
-						<!-- Room item -->
-						<div class="col">
-							<div class="card shadow h-100">
-								<!-- Overlay item -->
-								<div class="position-relative">
-									<!-- Image -->
-									<img src="assets/images/farmstouch/example/event2.jpg" class="card-img-top" alt="Card image" style="height: 13.75rem;">
-									<!-- Overlay -->
-									<div class="card-img-overlay d-flex flex-column p-3">
-										<!-- Card overlay top -->
-										<div class="d-flex justify-content-between align-items-center">
-											<div class="badge text-bg-dark"><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>종료</div>
-										</div>
-									</div>
-								</div>
-			
-								<!-- Card body START -->
-								<div class="card-body px-3">
-									<!-- Title -->
-									<h5 class="card-title mb-1"><a href="admin-booking-detail.html">[당첨자 발표] 농사로 SNS소문내기</a></h5>
-									<ul class="list-group list-group-borderless small mt-2 mb-0">
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-candy-cane fa-fw me-2"></i>당첨자 발표
-										</li>
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-calendar fa-fw me-2"></i>2022-12-28	
-										</li>
-									</ul>
-								</div>
-								<!-- Card body END -->
-			
-								<!-- Card footer START-->
-								<div class="card-footer pt-0">
-									<!-- Price -->
-									<div class="hstack gap-2 mb-2" >
-										<h6 class="fw-normal mb-0">178</h6>
-										<small>/조회수</small>
-									</div>
-									<a href="admin-booking-detail.html" class="btn btn-sm btn-warning-soft mb-0 w-100">View detail</a>
-								</div>
-							</div>
-						</div>
-
-
-						<!-- Room item -->
-						<div class="col">
-							<div class="card shadow h-100">
-								<!-- Overlay item -->
-								<div class="position-relative">
-									<!-- Image -->
-									<img src="assets/images/farmstouch/example/event3.png" class="card-img-top" alt="Card image" style="height: 13.75rem;">
-									<!-- Overlay -->
-									<div class="card-img-overlay d-flex flex-column p-3">
-										<!-- Card overlay top -->
-										<div class="d-flex justify-content-between align-items-center">
-											<div class="badge text-bg-dark"><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>종료</div>
-										</div>
-									</div>
-								</div>
-			
-								<!-- Card body START -->
-								<div class="card-body px-3">
-									<!-- Title -->
-									<h5 class="card-title mb-1"><a href="admin-booking-detail.html">[당첨자 발표] VR 가상현실 사이버 농업과학관 오픈이벤트</a></h5>
-									<ul class="list-group list-group-borderless small mt-2 mb-0">
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-candy-cane fa-fw me-2"></i>당첨자 발표
-										</li>
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-calendar fa-fw me-2"></i>2022-12-19
-										</li>
-									</ul>
-								</div>
-								<!-- Card body END -->
-			
-								<!-- Card footer START-->
-								<div class="card-footer pt-0">
-									<!-- Price -->
-									<div class="hstack gap-2 mb-2" >
-										<h6 class="fw-normal mb-0">38</h6>
-										<small>/조회수</small>
-									</div>
-									<a href="admin-booking-detail.html" class="btn btn-sm btn-warning-soft mb-0 w-100">View detail</a>
-								</div>
-							</div>
-						</div>
-
-
-						<!-- Room item -->
-						<div class="col">
-							<div class="card shadow h-100">
-								<!-- Overlay item -->
-								<div class="position-relative">
-									<!-- Image -->
-									<img src="assets/images/farmstouch/example/event4.png" class="card-img-top" alt="Card image" style="height: 13.75rem;">
-									<!-- Overlay -->
-									<div class="card-img-overlay d-flex flex-column p-3">
-										<!-- Card overlay top -->
-										<div class="d-flex justify-content-between align-items-center">
-											<div class="badge text-bg-dark"><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>종료</div>
-										</div>
-									</div>
-								</div>
-			
-								<!-- Card body START -->
-								<div class="card-body px-3">
-									<!-- Title -->
-									<h5 class="card-title mb-1"><a href="admin-booking-detail.html">농촌진흥청 승인통계자료 사용자 만족도 공동조사</a></h5>
-									<ul class="list-group list-group-borderless small mt-2 mb-0">
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-candy-cane fa-fw me-2"></i>이벤트
-										</li>
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-calendar fa-fw me-2"></i>2022-12-09 ~ 2022-12-22
-										</li>
-									</ul>
-								</div>
-								<!-- Card body END -->
-			
-								<!-- Card footer START-->
-								<div class="card-footer pt-0">
-									<!-- Price -->
-									<div class="hstack gap-2 mb-2" >
-										<h6 class="fw-normal mb-0">259</h6>
-										<small>/조회수</small>
-									</div>
-									<a href="admin-booking-detail.html" class="btn btn-sm btn-warning-soft mb-0 w-100">View detail</a>
-								</div>
-							</div>
-						</div>
-
-
-						<!-- Room item -->
-						<div class="col">
-							<div class="card shadow h-100">
-								<!-- Overlay item -->
-								<div class="position-relative">
-									<!-- Image -->
-									<img src="assets/images/farmstouch/example/event3.png" class="card-img-top" alt="Card image" style="height: 13.75rem;">
-									<!-- Overlay -->
-									<div class="card-img-overlay d-flex flex-column p-3">
-										<!-- Card overlay top -->
-										<div class="d-flex justify-content-between align-items-center">
-											<div class="badge text-bg-dark"><i class="bi fa-fw bi-star-fill me-2 text-warning"></i>종료</div>
-										</div>
-									</div>
-								</div>
-			
-								<!-- Card body START -->
-								<div class="card-body px-3">
-									<!-- Title -->
-									<h5 class="card-title mb-1"><a href="admin-booking-detail.html">[당첨자 발표] VR 가상현실 사이버 농업과학관 오픈이벤트</a></h5>
-									<ul class="list-group list-group-borderless small mt-2 mb-0">
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-candy-cane fa-fw me-2"></i>당첨자 발표
-										</li>
-										<li class="list-group-item pb-0">
-											<i class="fa-solid fa-calendar fa-fw me-2"></i>2022-12-19
-										</li>
-									</ul>
-								</div>
-								<!-- Card body END -->
-			
-								<!-- Card footer START-->
-								<div class="card-footer pt-0">
-									<!-- Price -->
-									<div class="hstack gap-2 mb-2" >
-										<h6 class="fw-normal mb-0">38</h6>
-										<small>/조회수</small>
-									</div>
-									<a href="admin-booking-detail.html" class="btn btn-sm btn-warning-soft mb-0 w-100">View detail</a>
+									<a th:href="@{/#}" class="btn btn-sm btn-warning-soft mb-0 w-100">View detail</a>
 								</div>
 							</div>
 						</div>
@@ -590,22 +237,35 @@ Search START -->
 					<!-- Pagination START -->
 					<div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-4">
 						<!-- Content -->
-						<p class="mb-sm-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
+						<p class="mb-sm-0 text-center text-sm-start">Showing [[${nongsaroEventListCount}]] of 25 entries</p>
+						
+						
+						<!-- 페이지 부 -->
+						<th:block th:if="${nongsaroEventListCount > 0}">
 						<!-- Pagination -->
 						<nav class="mb-sm-0 d-flex justify-content-center" aria-label="navigation">
 							<ul class="pagination pagination-sm pagination-primary-soft3 mb-0">
-								<li class="page-item">
-									<a class="page-link" href="#" tabindex="-1">Prev</a>
-								</li>
-								<li class="page-item"><a class="page-link" href="#">1</a></li>
-								<li class="page-item active"><a class="page-link" href="#">2</a></li>
-								<li class="page-item disabled"><a class="page-link" href="#">..</a></li>
-								<li class="page-item"><a class="page-link" href="#">15</a></li>
-								<li class="page-item">
-									<a class="page-link" href="#">Next</a>
-								</li>
+							
+								
+								<li class="page-item"><a class="page-link" th:onclick="movePage(1);"><i class="fa-solid fa-angle-left"></i></a></li>
+								<li class="page-item"><a class="page-link" th:onclick="movePage([[${pageInfo.prevPage}]]);"><i class="fa-solid fa-angle-left"></i></a></li>
+								<th:block th:each= "num, status : ${#numbers.sequence(pageInfo.startPage, pageInfo.endPage)}">
+									<th:block th:if="${status.current == pageInfo.currentPage}">
+										<li class="page-item mb-0 active"><a class="page-link" disabled>[[${status.current}]]<span class="visually-hidden">(current)</span></a></li>
+									</th:block>
+									<th:block th:if="${status.current != pageInfo.currentPage}">
+										<li class="page-item"><a class="page-link" th:onclick="movePage([[${status.current}]])">[[${status.current}]]</a></li>
+									</th:block>
+								</th:block>
+								
+								<li class="page-item"><a class="page-link" th:onclick="movePage([[${pageInfo.nextPage}]])"><i class="fa-solid fa-angle-right"></i></a></li>
+								<li class="page-item"><a class="page-link" th:onclick="movePage([[${pageInfo.maxPage}]])"><i class="fa-solid fa-angle-right"></i></a></li>
+										
 							</ul>
 						</nav>
+						</th:block>
+						
+						
 					</div>
 					<!-- Pagination END -->
 				</div>
@@ -627,5 +287,27 @@ Search START -->
 <!-- =======================Footer START -->
 
 	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+	
+	<!-- Bootstrap JS -->
+<script th:src="@{/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+
+<!-- Vendor -->
+<script th:src="@{/assets/vendor/overlay-scrollbar/js/overlayscrollbars.min.js}"></script>
+
+<!-- ThemeFunctions -->
+<script th:src="@{/assets/js/functions.js}"></script>
+
+<script type="text/javascript">
+	var url_href = window.location.href;
+	var url = new URL(url_href); // URL 객체 선언
+
+	function movePage(page){
+		url.searchParams.set("page", page);
+	
+	window.location.search = url.searchParams;
+};
+</script>
+
+
 </body>
 </html>

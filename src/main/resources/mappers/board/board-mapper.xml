@@ -23,6 +23,7 @@
 		<id 	property="rNo"			column="rNo"/>
 		<result property="bNo" 			column="bNo"/>
 		<result property="mNo" 			column="mNo"/>
+		<result property="profileImg" 	column="profileImg"/>
 		<result property="writer"		column="WRITER"/>
 		<result property="content" 		column="CONTENT"/>
 		<result property="createDate" 	column="CREATE_DATE"/>
@@ -96,6 +97,7 @@
 			R.RNO AS R_RNO, 
 		    R.BNO AS R_BNO,
 		    R.CONTENT  AS R_CONTENT, 
+		    M2.IMAGE AS R_profileImg,
 		    M2.ID AS R_WRITER, 
 		    R.CREATE_DATE  AS R_CREATE_DATE, 
 		    R.MODIFY_DATE  AS R_MODIFY_DATE

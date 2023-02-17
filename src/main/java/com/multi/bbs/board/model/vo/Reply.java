@@ -13,6 +13,7 @@ public class Reply {
 	private int rNo;
 	private int bNo;
 	private int mNo;
+	private String profileImg;
 	private String writer;
 	private String content;	
 	private Date createDate;

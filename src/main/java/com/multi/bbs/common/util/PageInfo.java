@@ -23,6 +23,11 @@ public class PageInfo {
 		this.listLimit = listLimit;
 	}
 	
+	public PageInfo(int currentPage, int listLimit) {
+		this.currentPage = currentPage;
+		this.listLimit = listLimit;
+	}
+	
 	/** 	
 	 * @return 전체 페이지 중 가장 마지막 페이지
 	 */

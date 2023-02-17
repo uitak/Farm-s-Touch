@@ -87,14 +87,14 @@ public class BoardController {
 		else if (category.equals("agriculture")) {
 			return "/board/agricultureMarketPostList";
 		}
-		return "redirect:/error";
+		return "redirect:/board/error";
 	}
 	
 	@GetMapping("/view")
 	public String view(Model model, @RequestParam("no") int no) {
 		Board board = service.findByNo(no);
 		if(board == null) {
-			return "redirect:/error";
+			return "redirect:/board/error";
 		}
 		model.addAttribute("board", board);
 		model.addAttribute("replyList", board.getReplyList());
@@ -115,7 +115,7 @@ public class BoardController {
 		else if (category.equals("agriculture")) {
 			return "/board/agriculturePostWrite";
 		}
-		return "redirect:/error";
+		return "redirect:/board/error";
 	}
 	
 	@PostMapping("{category}/write")
@@ -259,8 +259,17 @@ public class BoardController {
 	
 	@GetMapping("/file/{fileName}")
 	@ResponseBody
-	public Resource downloadImage(@PathVariable("fileName") String fileName, Model model) throws IOException {
+	public Resource downloadImage(@PathVariable("fileName") String fileName) throws IOException {
 		return new UrlResource("file:" + savePath + fileName);
+	}
+	
+	@GetMapping("/file/{memberId}/{fileName}")
+	@ResponseBody
+	public Resource memberProfileImage(@PathVariable("memberId") String memberId,
+								  	   @PathVariable("fileName") String fileName, 
+								  	   Model model) throws IOException {
+
+		return new UrlResource("file:" + savePath + memberId + "/" + fileName);
 	}
 	
 	@RequestMapping("/fileDown")
@@ -288,7 +297,6 @@ public class BoardController {
 
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build(); // 실패했을 경우
 	}
-
 
 }
 

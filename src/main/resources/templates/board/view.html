@@ -216,7 +216,7 @@ Main banner START -->
 												<!-- Avatar image -->
 												<div class="d-sm-flex align-items-center mb-3">
 													<img class="avatar avatar-md rounded-circle float-start me-3"
-														src="/assets/images/farmstouch/avatar/ava01.png" alt="avatar">
+														th:src="|/board/file/${reply.writer}/${reply.profileImg}|" alt="avatar">
 													<!-- Title -->
 													<div>
 														<h6 class="m-0" 0>[[${reply.writer}]]</h6>

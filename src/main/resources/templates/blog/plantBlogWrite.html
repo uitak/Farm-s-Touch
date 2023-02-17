@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+	<head>
+		<style>
+	    	.ck-editor__editable_inline[role=textbox] {
+	    		min-height:20rem;
+	    	}
+	    </style>
+	</head>
+	<body>
+		<header th:replace="~{common/layout2 :: #header}"></header>
+	
+		<main>
+
+			<!-- Page content START -->
+			<section class="pt-0" style="margin-top:15px; padding-bottom:0px;">
+				<div class="container">
+					<!-- Page main content START -->
+					<div class="page-content-wrapper p-xxl-4">
+						<!-- Title -->
+						<div class="row">
+							<div class="col-12 mb-0">
+								<div class="d-sm-flex justify-content-between align-items-center">
+									<h1 class="h3 mb-2 mb-sm-0">식물 블로그</h1>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="pt-0 mt-3">
+				<div class="container position-relative">
+					<!-- Bg image -->
+					<div class="rounded-3 p-4 p-sm-5"
+						style="background-image: url(/assets/images/farmstouch/bloom-1835391.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+						<!-- Banner title -->
+						<div class="row justify-content-between pt-0 pb-5">
+							<div class="col-md-7 col-lg-8 col-xxl-7 pb-5 mb-0 mb-lg-5">
+								<h4 class="text-white">내가 키운 식물을 자랑하고, 정보를 공유해요~</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<section class="pt-0 mt-3">
+			<div class="container">
+				<!-- 제목 -->
+				<div class="row justify-content-lg-center mb-4">
+					<div class="col">
+						<label class="form-label">
+							<h3>제목</h3>
+						</label>
+						<input type="text" class="form-control" id="title">
+						<div class="form-text">
+							* 블로그 제목을 작성해주세요.
+						</div>
+					</div>
+				</div>
+	
+				<!-- 썸네일 이미지 -->
+				<div class="row justify-content-lg-center">
+					<div class="col">
+						<div class="mb-5">
+							<label class="form-label">
+								<h3>썸네일 업로드</h3>
+							</label>
+							<input class="form-control" type="file" id="thumbnailImage" name="thumbnailImage" accept="image/*">
+							<div class="form-text">
+								* 블로그에서 사용할 썸네일를 등록해 주세요.
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 내용 -->
+				<div class="row justify-content-lg-center">
+					<div class="col">
+						<label class="form-label">
+							<h3>내용</h3>
+						</label>	
+						<div class="editor">
+							
+
+
+						</div>	
+					</div>
+				</div>
+
+				<div class="row justify-content-lg-center mt-5">
+					<button class="btn btn-success2 w-25" id="submit">업로드</button>
+				</div>
+			</div>
+		</section>
+		</main>		
+
+		<footer th:replace="~{common/layout2 :: #footer}"></footer>
+
+
+		<script src="/assets/js/ckeditor.js"></script>
+		<script src="/assets/js/CustomUploadAdapter.js"></script>
+		
+		<script>
+			var editor = ClassicEditor
+				.create( document.querySelector( '.editor' ), {
+					
+					licenseKey: '',
+					extraPlugins: [ CustomUploadAdapterPlugin ]
+
+				} )
+				.then( editor => {
+					window.editor = editor;
+
+				} )
+				.catch( error => {
+					console.error( 'Oops, something went wrong!' );
+					console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+					console.warn( 'Build id: 5ypp4wxft4m6-nohdljl880ze' );
+					console.error( error );
+				});
+
+			const thumbnail = document.querySelector('#thumbnailImage');
+			let thumbImgName;
+			thumbnail.addEventListener('change', function() {
+				let files = thumbnail.files;
+
+				if (files.length === 0) {
+				}
+				else {
+					const file = files[0];
+					uploadThumbnail(file).then(function(imgUrl) {
+						thumbImgName = imgUrl;
+					});
+				}
+			});
+
+			function uploadThumbnail(file) {
+				return new Promise(function(resolve, rejext) {
+					let formData = new FormData();
+
+					formData.append('thumbImg', file);
+					const requestURL = "/blog/thumbnail";
+					let xhr = new XMLHttpRequest();
+					xhr.open('POST', requestURL, true);
+					xhr.onload = function() {
+						resolve(xhr.responseText);
+					}
+					xhr.send(formData);
+				});
+			}
+
+			const submit = document.querySelector('#submit');
+			submit.addEventListener('click', () => {
+				const requestURL = "/blog/upload";
+				const xhr = new XMLHttpRequest();
+				xhr.open('POST', requestURL, true);
+				xhr.setRequestHeader("Content-Type", "application/json");
+				xhr.onload = function() {
+					let json = JSON.parse(xhr.responseText);
+					alert(json.msg);
+					window.location.href = json.location;
+				}
+				xhr.send(JSON.stringify({
+					title:`${document.getElementById('title').value}`,
+					thumbnailImgUrl:thumbImgName,
+					content:`${editor.getData()}`
+				}));
+			});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+<haed>
+	<link href="/assets/css/content-styles.css" rel="stylesheet" type="text/css">
+</haed>
+
+<body>
+
+	<!-- Header START -->
+	<header th:replace="~{common/layout2 :: #header}"></header>
+
+	<!-- **************** MAIN CONTENT START **************** -->
+	<main>
+
+		<!-- Page content START -->
+		<section class="pb-0">
+			<div class="container">
+				<div class="row">					
+					<div class="mx-auto pt-md-5 mt-n5">
+						<h2 class="">[[${blog.title}]]</h2>
+						<div class="row">
+							<div class="col-9">
+								<ul class="nav nav-divider align-items-center mt-n2">
+									<li class="nav-item">[[${blog.writer}]]</li>
+									<li class="nav-item" th:text="${#dates.format(blog.createDate, 'yyyy/MM/dd')}"></li>
+									<li class="nav-item">조회수 <span th:text="${blog.readCount}"></span></li>
+								</ul>
+							</div>
+							<div class="col-3 mt-n4">
+								<!-- Buttons -->
+								<th:block th:if="${session.loginMember != null && (session.loginMember.id == blog.writer || session.loginMember.role == 'ROLE_ADMIN')}">
+									<div class="d-flex gap-2 mt-2 mt-sm-0">
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<a id="btnUpdate" class="btn btn-sm btn-success-soft"><i class="fa-solid fa-pen-to-square"></i> 수정</a>
+										<a id="btnDelete" class="btn btn-sm btn-danger-soft"><i class="bi bi-trash"></i> 삭제</a>
+									</div>
+								</th:block>
+							</div>
+						</div>
+						<img th:if="${blog.thumbnailImgUrl != null}" class="rounded mt-3" style="border: 1px solid #E2E2E2; max-height:350px;" th:src="${blog.thumbnailImgUrl}" alt="Image">
+					</div>
+				</div>
+				<hr>
+			</div>			
+		</section>
+		
+		<section class="pt-0">
+			<div class="container position-relative">
+				<div class="row">
+					<div class="mx-auto ck-content">
+						[(${blog.content})]
+					</div>
+					<hr>
+					<div class="mx-auto">
+						<div class="mt-5">
+							<h5><span th:text="${#lists.size(commentList)}"></span>개의 댓글</h5>
+							<th:block th:if="${commentList != null}">
+								<!-- Comment -->
+								<th:block th:each="comment : ${commentList}">
+									<div class="bg-light rounded p-3">
+										<div class="d-sm-flex justify-content-between">
+											<div class="d-sm-flex align-items-center mb-3">
+												<img class="avatar avatar-md rounded-circle float-start me-3" th:src="|/blog/file/${comment.writer}/${comment.profileImg}|" alt="avatar">
+												<div>
+													<h6 class="m-0">[[${comment.writer}]]</h6>
+													<span class="me-3 small" th:text="${#dates.format(comment.createDate, 'yyyy-MM-dd')}"></span>
+												</div>
+											</div>
+											<th:block th:if="${session.loginMember != null && (session.loginMember.id == comment.writer || session.loginMember.role == 'ROLE_ADMIN')}">
+												<div class="d-flex gap-2 mt-2 mt-sm-0 align-items-center">
+													<a class="btn btn-sm btn-dark-bg-check" style="background-color: gainsboro;">수정</a>
+													<a class="btn btn-sm btn-dark-bg-check" style="background-color: gainsboro;" th:onclick="|deleteComment(${comment.cNo},${blog.bNo});|">삭제</a>
+												</div>
+											</th:block>
+										</div>
+										<p>[[${comment.content}]]</p>
+									</div>
+								</th:block>
+							</th:block>
+							
+							<th:block th:if="${commentList == null}">
+								<p>등록된 댓글이 없습니다.</p>
+							</th:block>
+
+							<!-- Reply START -->
+							<div>
+								<form class="row g-3 mt-2" th:action="@{/blog/comment}" method="post">
+									<input type="hidden" name="bNo" th:value="${blog.bNo}" />
+									<div class="col-12">
+										<textarea class="form-control" name="content" rows="3" placeholder="댓글을 작성하세요."></textarea>
+									</div>
+									<div class="col-12">
+										<button type="submit" class="btn btn-success2">등록</button>
+									</div>
+								</form>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<!-- ======================= Footer START -->
+	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+
+	<script>
+		$(document).ready(() => {
+			$("#btnUpdate").on("click", (e) => {
+				location.href = "/blog/update?no=[[${blog.bNo}]]";
+			});
+
+			$("#btnDelete").on("click", (e) => {
+				if (confirm("정말로 게시글을 삭제 하시겠습니까?")) {
+					location.replace("/blog/delete?blogNo=[[${blog.bNo}]]");
+				}
+			});
+		});
+	
+		function deleteComment(commentNo, blogNo) {
+			var url = "/blog/commentDel?commentNo=";
+			var requestURL = url + commentNo + "&blogNo=" + blogNo;
+			location.replace(requestURL);
+		}
+	</script>
+</body>
+
+</html>

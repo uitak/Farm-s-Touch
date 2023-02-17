@@ -155,13 +155,11 @@ Content START -->
 									<th:block th:if="${list != null}">
 										<tr th:each = "row : ${list}">
 											<td>
-												
 												<img th:if="${row.renamedFileName == null}" th:src="@{/image/no-image.png}" class="" alt="" style="width: 3.75rem; height: 3.75rem;"/>
 												<img th:if="${row.renamedFileName != null}" th:src="|/board/file/${row.renamedFileName}|" class="" alt="" style="width: 3.75rem; height: 3.75rem;"/>
-												
 											</td>
 											<td>
-												<a th:href="@{/board/view(no = ${row.bNo})}" target="_blank" class="text-black"> 
+												<a th:href="@{/board/view(no = ${row.bNo})}" class="text-black"> 
 													<span th:text="${row.title}"></span>
 												</a>
 											</td>

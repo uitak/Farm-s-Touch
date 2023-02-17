@@ -105,26 +105,27 @@ Main contain START -->
                           <h6 class="my-2">첨부 파일</h6>
 
                           <th:block th:if="${board.originalFileName != null}">
-                          <label class="w-100 form-control">
-                            <span>
+                            <label class="w-100 form-control">
+                              <span>
                                 <img th:src="@{/image/image-file.png}" width="40" height="40" />
-                                [[${board.originalFileName}]]                                                                                                
-                            </span>
-                            <input type="file" name="reloadFile" style="padding-left:40px;">
-                          </label>
-                          <div>
-                            <p class="small mb-0 mt-2">현재 업로드된 파일명</p>
-                          </div>
-                        </th:block>
+                                [[${board.originalFileName}]]
+                              </span>
+                              <input type="file" name="reloadFile" style="padding-left:40px;">
+                            </label>
+                            <div>
+                              <p class="small mb-0 mt-2">현재 업로드된 파일명</p>
+                            </div>
+                          </th:block>
 
                           <th:block th:if="${board.originalFileName == null}">
-                                  <span>
-                                    <input class="form-control stretched-link" type="file" name="reloadFile" id="image" accept="image/gif, image/jpeg, image/png">
-                                    <div>
-                                      <p class="small mb-0 mt-2">JPG, JPEG, PNG 파일 업로드 가능</p>
-                                    </div>
-                                  </span>
-                              </th:block>
+                            <span>
+                              <input class="form-control stretched-link" type="file" name="reloadFile" id="image"
+                                accept="image/gif, image/jpeg, image/png">
+                              <div>
+                                <p class="small mb-0 mt-2">JPG, JPEG, PNG 파일 업로드 가능</p>
+                              </div>
+                            </span>
+                          </th:block>
                         </div>
                       </div>
                     </div>

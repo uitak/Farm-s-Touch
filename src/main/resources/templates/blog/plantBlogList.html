@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+	<!-- Header START -->
+	<header th:replace="~{common/layout2 :: #header}"></header>
+
+
+	<!-- **************** MAIN CONTENT START **************** -->
+	<main>
+
+
+		<!-- Page content START -->
+		<section class="pt-0" style="margin-top:15px; padding-bottom:0px;">
+			<div class="container">
+				<!-- Page main content START -->
+				<div class="page-content-wrapper p-xxl-4">
+					<!-- Title -->
+					<div class="row">
+						<div class="col-12 mb-0">
+							<div class="d-sm-flex justify-content-between align-items-center">
+								<h1 class="h3 mb-2 mb-sm-0">식물 블로그</h1>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- =======================
+Search START -->
+		<section class="pt-0 mt-3">
+			<div class="container position-relative">
+				<!-- Bg image -->
+				<div class="rounded-3 p-4 p-sm-5"
+					style="background-image: url(/assets/images/farmstouch/bloom-1835391.jpg); background-position: center center; background-repeat: no-repeat; background-size: cover;">
+					<!-- Banner title -->
+					<div class="row justify-content-between pt-0 pb-5">
+						<div class="col-md-7 col-lg-8 col-xxl-7 pb-5 mb-0 mb-lg-5">
+							<h4 class="text-white">내가 키운 식물을 자랑하고, 정보를 공유해요~</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<!-- =======================
+Search START -->
+
+		<!-- Page content START -->
+		<section class="pt-0">
+			<div class="container">
+
+				<!-- Tabs and search START -->
+				<div class="row g-4 justify-content-between align-items-center" style="margin-top: 20px;">
+					<div class="col-lg-5">
+						<!-- Tabs -->
+						<ul class="nav nav-pills-shadow nav-responsive" id="sort">
+							<li class="nav-item">
+								<a class="nav-link mb-0 me-sm-2" value="recent" th:classappend="${paramMap.sorted} == 'recent' ? 'active'" th:href="@{/blog/list?sorted=recent}">최신순</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link mb-0 me-sm-2" value="read" th:classappend="${paramMap.sorted} == 'read' ? 'active'" th:href="@{/blog/list?sorted=read}">조회순</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link mb-0" value="like" th:classappend="${paramMap.sorted} == 'like' ? 'active'" th:href="@{/blog/list?sorted=like}">추천순</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="col-lg-3">
+						<div class="d-sm-flex gap-4 justify-content-between justify-content-lg-end">
+							<div class="d-grid">
+								<a th:href="@{/blog/write}" class="btn btn-success2 mb-0">
+									<i class="bi bi-plus-lg fa-fw"> </i>새 글 작성
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Tabs and search END -->
+
+				<!-- Tab content START -->
+				<div class="tab-content mt-5" id="myTabContent">
+					<!-- Content item START -->
+					<div class="tab-pane fade show active" id="grid-tab-pane">
+						<!-- Rooms START -->
+						<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xxl-3 g-4" id="contents">
+
+							<th:block th:if="${list == null}">
+								<p>조회된 글이 없습니다.</p>
+							</th:block>
+
+							<th:block th:if="${list != null}">
+								<div th:each="blog : ${list}" class="col">
+									<div class="card shadow h-100">
+										<!-- Overlay item -->
+										<div class="position-relative" style="border-bottom: 2px gray solid;">
+											<!-- Image -->
+											<img th:src="${blog.thumbnailImgUrl}" class="card-img-top" alt="Card image" style="height: 220px;">
+											<!-- overlay -->
+											<th:block th:if="${session.loginMember != null}">
+												<div class="card-img-overlay d-flex flex-column p-3">
+													<div class="d-flex justify-content-end align-items-center">
+														<a class="btn btn-white btn-round text-danger heart" th:id="|heart${blog.bNo}|" th:value="${blog.isLike}" th:onclick="|onClickHeart('heart${blog.bNo}', '${blog.bNo}');|">
+
+														</a>
+													</div>
+												</div>
+											</th:block>
+										</div>
+
+										<!-- Card body START -->
+										<div class="card-body px-3">
+											<!-- Title -->
+											<h5 class="card-title mb-1">
+												<a href="#">[[${blog.title}]]</a>
+											</h5>
+											<ul class="list-group list-group-borderless small mt-2 mb-0">
+												<li class="list-group-item pb-0">
+													<i class="fa-solid fa-candy-cane fa-fw me-2"></i>[[${blog.writer}]]
+												</li>
+												<li class="list-group-item pb-0">
+													<i class="fa-solid fa-calendar fa-fw me-2"></i>
+													<span th:text="${#dates.format(blog.createDate, 'yyyy-MM-dd')}"></span>
+												</li>
+											</ul>
+										</div>
+										<!-- Card body END -->
+
+										<!-- Card footer START-->
+										<div class="card-footer pt-0">
+											<!-- Price -->
+											<div class="hstack gap-2 mb-2">
+												<h6 class="fw-normal mb-0">[[${blog.readCount}]]</h6>
+												<small>/조회수</small>
+												<h6 class="fw-normal mb-0" style="margin-left:50px;">[[${blog.likeCount}]]</h6>
+												<small>/좋아요</small>
+											</div>
+											<a th:href="|/blog/view?no=${blog.bNo}|" class="btn btn-sm btn-success2 mb-0 w-100">view details</a>
+										</div>
+									</div>
+								</div>
+							</th:block>
+
+
+							
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+	</main>
+
+	<!-- ======================= Footer START -->
+	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16"></svg>
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16"></svg>
+
+	<script th:inline="javascript">
+		/*<![CDATA[*/
+		const sort = document.getElementById('sort').getElementsByClassName('active')[0].getAttribute('value');
+        const contents = document.getElementById('contents');
+        let pageNum = 2;
+        
+        async function addBlogList(num) {
+            const response = await fetch(`http://localhost/blog/paging?page=${num}&sorted=${sort}`)
+            const dataList = await response.json();
+
+			//console.log(dataList);
+			//console.log('[[${session.loginMember}]]');
+			if ('[[${session.loginMember}]]' == 'null') {
+				for (const data of dataList) {
+					contents.insertAdjacentHTML('beforeend', `<div class="col">
+															  <div class="card shadow h-100">
+															  <div class="position-relative" style="border-bottom: 2px gray solid;">
+															  <img src="${data.thumbnailImgUrl}" class="card-img-top" alt="Card image" style="height: 220px;">
+															  </div>
+															  <div class="card-body px-3">
+															  <h5 class="card-title mb-1">
+															  <a href="#">${data.title}</a>
+															  </h5>
+															  <ul class="list-group list-group-borderless small mt-2 mb-0">
+															  <li class="list-group-item pb-0">
+															  <i class="fa-solid fa-candy-cane fa-fw me-2"></i>${data.writer}
+															  </li>
+															  <li class="list-group-item pb-0">
+															  <i class="fa-solid fa-calendar fa-fw me-2"></i>
+															  ${data.createDate.split('T')[0]}
+															  </li>
+															  </ul>
+															  </div>
+															  <div class="card-footer pt-0">
+															  <div class="hstack gap-2 mb-2">
+															  <h6 class="fw-normal mb-0">${data.readCount}</h6>
+															  <small>/조회수</small>
+															  <h6 class="fw-normal mb-0" style="margin-left:50px;">${data.likeCount}</h6>
+															  <small>/좋아요</small>
+															  </div>
+															  <a href="/blog/view?no=${data.bno}" class="btn btn-sm btn-success2 mb-0 w-100">view details</a>
+															  </div>
+															  </div>
+															  </div>`);
+				}
+			}
+			else {
+				for (const data of dataList) {				
+					contents.insertAdjacentHTML('beforeend', `<div class="col">
+															  <div class="card shadow h-100">
+															  <div class="position-relative" style="border-bottom: 2px gray solid;">
+															  <img src="${data.thumbnailImgUrl}" class="card-img-top" alt="Card image" style="height: 220px;">
+															  <div class="card-img-overlay d-flex flex-column p-3">
+															  <div class="d-flex justify-content-end align-items-center">
+															  <a class="btn btn-white btn-round text-danger heart" id="heart${data.bno}" value="${data.isLike}" onclick="onClickHeart('heart${data.bno}', '${data.bno}');"></a>
+															  </div>
+															  </div>
+															  </div>
+															  <div class="card-body px-3">
+															  <h5 class="card-title mb-1">
+															  <a href="#">${data.title}</a>
+															  </h5>
+															  <ul class="list-group list-group-borderless small mt-2 mb-0">
+															  <li class="list-group-item pb-0">
+															  <i class="fa-solid fa-candy-cane fa-fw me-2"></i>${data.writer}
+															  </li>
+															  <li class="list-group-item pb-0">
+															  <i class="fa-solid fa-calendar fa-fw me-2"></i>
+															  ${data.createDate.split('T')[0]}
+															  </li>
+															  </ul>
+															  </div>
+															  <div class="card-footer pt-0">
+															  <div class="hstack gap-2 mb-2">
+															  <h6 class="fw-normal mb-0">${data.readCount}</h6>
+															  <small>/조회수</small>
+															  <h6 class="fw-normal mb-0" style="margin-left:50px;">${data.likeCount}</h6>
+															  <small>/좋아요</small>
+															  </div>
+															  <a href="/blog/view?no=${data.bno}" class="btn btn-sm btn-success2 mb-0 w-100">view details</a>
+															  </div>
+															  </div>
+															  </div>`);
+            	}
+			}
+            initHeart();
+        }
+
+        function debounce(callback, limit = 100) {
+            let timeout
+            return function(...args) {
+                clearTimeout(timeout)
+                timeout = setTimeout(() => {
+                    callback.apply(this, args)
+                }, limit)
+            }
+        }
+
+        //addBlogList(pageNum++);
+        document.addEventListener("scroll", debounce(e => {
+            const {clientHeight, scrollTop, scrollHeight} = e.target.scrollingElement;
+            if(clientHeight + scrollTop + 400 >= scrollHeight) {
+                addBlogList(pageNum++);
+            }
+        }));
+
+		initHeart();
+		function initHeart() {
+			let heartItems = document.getElementsByClassName('heart');
+			for (i = heartItems.length - 1; (i >= 0) && (i >= heartItems.length - 12); i--) {
+				let heartValue = heartItems[i].getAttribute('value');				
+				if(heartValue == 1){
+					heartItems[i].innerHTML = '<i class="bi bi-heart-fill"></i>';
+				}else{
+					heartItems[i].innerHTML = '<i class="bi bi-heart"></i>';
+				}
+			}
+		}
+
+		function onClickHeart(id, bNo) {
+			let heartValue = JSON.parse($('#'+id).attr('value'));
+			if(heartValue == 0){
+				heartValue = 1;
+			}else{
+				heartValue = 0;
+			}
+			// 여기에 AJAX로 DB 업데이트하는 코드 있어야함!!
+			$.ajax({
+				method:'get',
+				url:'/blog/like?bNo=' + bNo +'&isLike=' + heartValue ,
+				contentType: 'application/json',
+				dataType : 'json',
+				success: (result) =>{
+					$('#'+id).attr('value', ''+result);
+					if(result == 1){
+						$('#'+id).html('<i class="bi bi-heart-fill"></i>');
+					}else{
+						$('#'+id).html('<i class="bi bi-heart"></i>');
+					}
+				},
+				error : (e) => {
+					alert('전송 실패!!');
+				}
+			});
+    	}
+		/*]]>*/
+    </script>
+
+</body>
+
+</html>

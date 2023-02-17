@@ -47,7 +47,8 @@ Content START -->
 								<div class="text-center mb-3">
 									<!-- Avatar -->
 									<div class="avatar avatar-xl mb-2">
-										<img class="avatar-img rounded-circle border border-2 border-white" src="/assets/images/avatar/01.jpg" alt="">
+										<img th:if="${session.loginMember.imageUrl == null}" class="avatar-img rounded-circle border border-2 border-white" src="/assets/images/farmstouch/avatar/ava02.png" alt="">
+										<img th:if="${session.loginMember.imageUrl != null}" id="uploadfile-1-preview" class="avatar-img rounded-circle border border-2 border-white" th:src="|/member/file/${session.loginMember.imageUrl}|" alt="">
 									</div>
 									<h6 class="mb-0"><span th:text="${session.loginMember.name}"></span></h6>
 									<a href="#" class="text-reset text-success-hover small"><span th:text="${session.loginMember.email}"></span></a>
@@ -121,7 +122,7 @@ Content START -->
 							<!-- Confirm -->
 							<div class="mb-3">
 								<label class="form-label">새로운 비밀번호 확인</label>
-								<input class="form-control" type="password" placeholder="Confirm new password">
+								<input class="form-control" type="password" id="pass2" placeholder="Confirm new password">
 							</div>
 
 							<div class="text-end">
@@ -146,5 +147,22 @@ Content END -->
 
 <!-- footer 시작 -->
 	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+
+	<script>
+		$(function() {
+			$("#pass2").blur((event) => {
+				let pass1 = $("#psw-input").val();			
+				let pass2 = $(event.target).val();
+				
+				if(pass1.trim() != pass2.trim()) {
+					alert("비밀번호가 일치하지 않습니다.");
+					
+					$("#psw-input").val("");
+					$(event.target).val("");
+					$("#psw-input").focus();
+				}
+			});
+		});
+	</script>
 </body>
 </html>

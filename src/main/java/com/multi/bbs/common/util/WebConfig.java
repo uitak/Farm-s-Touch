@@ -10,9 +10,11 @@ public class WebConfig implements WebMvcConfigurer {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new AuthCheckInterceptor())
-				.addPathPatterns("/board/**")
-				.excludePathPatterns("/board/*/list/**")
-				.excludePathPatterns("/board/view/**")
-				.excludePathPatterns("/board/error");
+				.addPathPatterns("/board/*/write/**")
+				.addPathPatterns("/board/update/**")
+				.addPathPatterns("/board/reply/**")
+				.addPathPatterns("/blog/write/**")
+				.addPathPatterns("/blog/update/**")
+				.addPathPatterns("/blog/comment/**");
 	}
 }

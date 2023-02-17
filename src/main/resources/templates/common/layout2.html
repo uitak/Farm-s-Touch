@@ -112,7 +112,7 @@
 								<li> <a class="dropdown-item" href="contact-2.html">추천 식물</a></li>
 								<li> <a class="dropdown-item" href="about.html">정원 식물</a></li>
 								<li> <a class="dropdown-item" href="contact.html">다육 식물</a></li>
-								<li> <a class="dropdown-item" href="contact.html">자랑 게시판</a></li>
+								<li> <a class="dropdown-item" th:href="@{/blog/list}">블로그</a></li>
 							</ul>
 						</li>
 	
@@ -338,9 +338,9 @@
 					<div class="col-6 col-md-3">
 						<h5 class="text-reset mb-2 mb-md-4">Community</h5>
 						<ul class="nav flex-column text-primary-hover">
-							<li class="nav-item"><a class="nav-link text-reset" href="#">농산물 직거래 장터</a></li>
-							<li class="nav-item"><a class="nav-link text-reset" href="#">식물 분양 장터</a></li>
-							<li class="nav-item"><a class="nav-link text-reset" href="#">식물 자랑 게시판</a></li>
+							<li class="nav-item"><a class="nav-link text-reset" th:href="@{/board/agriculture/list}">농산물 직거래 장터</a></li>
+							<li class="nav-item"><a class="nav-link text-reset" th:href="@{/board/plant/list}">식물 분양 장터</a></li>
+							<li class="nav-item"><a class="nav-link text-reset" th:href="@{/blog/list}">식물 블로그</a></li>
 							<li class="nav-item"><a class="nav-link text-reset" href="#">공지사항</a></li>
 							<li class="nav-item"><a class="nav-link text-reset" href="#">이벤트</a></li>
 

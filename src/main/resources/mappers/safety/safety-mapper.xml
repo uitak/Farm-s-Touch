@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.multi.bbs.safety.model.mapper.SafetyMapper">
+
+	<resultMap type="Safety" id="safetyResultMap">
+		<id property="cntntsNo" column="cntntsNo"/>
+		<result property="cntntsSj" column="cntntsSj"/>
+		<result property="cn" column="cn"/>
+		<result property="knmcCode" column="knmcCode"/>
+		<result property="knmcNm" column="knmcNm"/>
+		<result property="safeacdntSeNm" column="safeacdntSeNm"/>
+		<result property="rtnFileCours" column="rtnFileCours"/>
+		<result property="rtnStreFileNm" column="rtnStreFileNm"/>
+	</resultMap>
+
+	
+	<select id="selectSafetyList" resultMap="safetyResultMap" parameterType="map">
+		SELECT  
+			cntntsNo, cntntsSj, cn, knmcCode, knmcNm, safeacdntSeNm, rtnFileCours, rtnStreFileNm
+		FROM safety
+		WHERE 1=1
+		
+ 	 	<if test="all !=null">
+			AND (
+				cntntsSj			LIKE '%${all}%'
+			OR  cn 					LIKE '%${all}%'
+			OR  safeacdntSeNm 		LIKE '%${all}%'
+			OR  knmcNm 				LIKE '%${all}%'
+			 	)
+		</if> 
+		  ORDER BY cntntsNo ASC LIMIT ${limit} OFFSET ${offset}
+	</select>
+	
+	
+	<!-- 게시글 갯수 -->
+	<select id="selectSafetyCount" resultType="int" parameterType="map">
+		SELECT
+			COUNT(DISTINCT cntntsNo)
+		FROM safety
+		where 1 = 1
+		
+		 	 	<if test="all !=null">
+			AND (
+				cntntsSj			LIKE '%${all}%'
+			OR  cn 					LIKE '%${all}%'
+			OR  safeacdntSeNm 		LIKE '%${all}%'
+			OR  knmcNm 				LIKE '%${all}%'
+			 	)
+		</if> 
+
+	</select>
+
+	
+
+</mapper>

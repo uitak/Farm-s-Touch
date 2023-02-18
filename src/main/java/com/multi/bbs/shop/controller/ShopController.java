@@ -195,6 +195,7 @@ public class ShopController {
 		
 		List<Product> list = shopService.getCartProductList(member.getMNo());
 		model.addAttribute("list", list);
+		
 		return "shop/shoppingBasket";
 	}
 	

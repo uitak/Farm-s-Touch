@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
+
+<body>
+
+<!-- Header START -->
+<header th:replace="~{common/layout2 :: #header}"></header>
+
+
+<!-- Header END -->	
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main banner START -->
+<section class="pt-4 pt-lg-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 mx-auto text-center">
+				<!-- Breadcrumb -->
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb breadcrumb-dots justify-content-center">
+						<li class="breadcrumb-item"><a th:href="|/|"><i class="bi bi-house me-1"></i> Home</a></li>
+						<li class="breadcrumb-item active">고객센터</li>
+					</ol>
+				</nav>
+				<!-- Title -->
+				<h6 class="text-primary">고객센터</h6>
+				<h1>성의있는 답변 약속드립니다.</h1>
+				<!-- Info -->
+				<p>have questions? We're here to help you</p>
+				<!-- Search -->
+				<form class="col-lg-8 position-relative mx-auto">
+					<input class="form-control form-control-lg pe-5" type="search" placeholder="Type search words" aria-label="Search">
+					<button class="text-primary-hover text-reset border-0 bg-transparent position-absolute top-50 end-0 translate-middle-y pe-3 py-0" type="submit"><i class="fas fa-search fs-6"></i></button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Main banner END -->
+
+<!-- =======================
+Main banner START -->
+<section class="pt-4 pt-md-5">
+	<div class="container">
+		<!-- Contact info -->
+		<div class="row g-4">
+
+			<!-- Contact item START -->
+			<div class="col-md-6 col-xl-4" >
+				<div class="card card-body shadow text-center align-items-center h-100" style="background-color: #f7f6c8">
+					<!-- Icon -->
+					<div class="icon-lg bg-info bg-opacity-10 text-info rounded-circle mb-2"><i class="bi bi-headset fs-5"></i></div>
+					<!-- Title -->
+					<h5>Call us</h5>
+					<p> 운영시간은 평일 오전 9시부터 오후 6시까지<br> 토요일, 일요일 및 공휴일은 휴무</p>
+					<!-- Buttons -->
+					<div class="d-grid gap-3 d-sm-block">
+						<button class="btn btn-sm btn-primary-soft"><i class="bi bi-phone me-2"></i>+123 456 789</button>
+						<button class="btn btn-sm btn-light"><i class="bi bi-telephone me-2"></i>+(222)4567 586</button>
+					</div>
+				</div>
+			</div>
+			<!-- Contact item END -->
+
+			<!-- Contact item START -->
+			<div class="col-md-6 col-xl-4">
+				<div class="card card-body shadow text-center align-items-center h-100" style="background-color: #f7f6c8">
+					<!-- Icon -->
+					<div class="icon-lg bg-danger bg-opacity-10 text-danger rounded-circle mb-2"><i class="bi bi-inboxes-fill fs-5"></i></div>
+					<!-- Title -->
+					<h5>Email us</h5>
+					<p>말로 전하지 못한 진심을 이메일로 받습니다.<br> 항상 열려있습니다.</p>
+					<!-- Buttons -->
+					<a href="#" class="btn btn-link text-decoration-underline p-0 mb-0"><i class="bi bi-envelope me-1"></i>farmstouch@gmail.com</a>
+				</div>
+			</div>
+			<!-- Contact item END -->
+
+			<!-- Contact item START -->
+			<div class="col-xl-4 position-relative">
+				<!-- Svg decoration -->
+				<figure class="position-absolute top-0 end-0 z-index-1 mt-n4 ms-n7">
+					<svg class="fill-warning" width="77px" height="77px">
+						<path d="M76.997,41.258 L45.173,41.258 L67.676,63.760 L63.763,67.673 L41.261,45.171 L41.261,76.994 L35.728,76.994 L35.728,45.171 L13.226,67.673 L9.313,63.760 L31.816,41.258 L-0.007,41.258 L-0.007,35.725 L31.816,35.725 L9.313,13.223 L13.226,9.311 L35.728,31.813 L35.728,-0.010 L41.261,-0.010 L41.261,31.813 L63.763,9.311 L67.676,13.223 L45.174,35.725 L76.997,35.725 L76.997,41.258 Z"></path>
+					</svg>
+				</figure>
+
+				<div class="card card-body shadow text-center align-items-center h-100" style="background-color: #f7f6c8">
+					<!-- Icon -->
+					<div class="icon-lg bg-orange bg-opacity-10 text-orange rounded-circle mb-2"><i class="bi bi-globe2 fs-5"></i></div>
+					<!-- Title -->
+					<h5>Social media</h5>
+					<p>팜스터치는 항상 여러분들과 소통합니다.</p>
+					<!-- Buttons -->
+					<ul class="list-inline mb-0">
+						<li class="list-inline-item"> <a class="btn btn-sm bg-facebook px-2 mb-0" href="#"><i class="fab fa-fw fa-facebook-f"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-sm bg-instagram px-2 mb-0" href="#"><i class="fab fa-fw fa-instagram"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-sm bg-twitter px-2 mb-0" href="#"><i class="fab fa-fw fa-twitter"></i></a> </li>
+						<li class="list-inline-item"> <a class="btn btn-sm bg-linkedin px-2 mb-0" href="#"><i class="fab fa-fw fa-linkedin-in"></i></a> </li>
+					</ul>
+				</div>
+			</div>
+			<!-- Contact item END -->
+		</div>
+	</div>
+</section>
+<!-- =======================
+Main banner START -->
+
+<!-- =======================
+Faqs START -->
+<section class="pt-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-10 mx-auto">
+				<div class="vstack gap-4">
+
+					<!-- Card item START -->
+					<div class="card bg-transparent border p-0">
+						<!-- Card header -->
+						<div class="card-header bg-transparent border-bottom p-4">
+							<h5 class="mb-0">Cancellation</h5>
+						</div>
+
+						<!-- Card body -->
+						<div class="card-body p-4 pt-0">
+							<!-- Faq item -->
+							<div class="mt-4">
+								<h6 class="fw-normal">How can I cancel my Account?</h6>
+								<p class="mb-0">피어나기 일월과 우리의 것이다. 하는 피가 오아이스도 하는 위하여서 아름답고 있는가? 같은 예수는 내려온 스며들어 수 같지 주는 때문이다. 힘차게 사는가 장식하는 튼튼하며, 있는 소금이라 그들에게 인간의 몸이 교향악이다. 노래하며 사랑의 열락의 사막이다. 불어 생명을 할지니, 것이다. 쓸쓸한 품고 인간에 황금시대다. 하여도 얼음이 용기가 웅대한 풀밭에 심장의 어디 있으랴? 품고 구하기 인류의 것이다.</p>
+							</div>
+
+							<!-- Faq item -->
+							<div class="mt-4">
+								<h6 class="fw-normal">How do I fix my Account?</h6>
+								<p class="mb-0">피어나기 안고, 이상 위하여서, 아름다우냐? 밥을 가치를 모래뿐일 아름다우냐? 우는 것이 이것을 있으며, 안고, 심장은 교향악이다. 가치를 못하다 청춘의 듣는다. 있는 우리 석가는 있음으로써 튼튼하며, 사랑의 인생의 사막이다. 타오르고 그들의 고동을 이것이다. 이상의 그들에게 관현악이며, 힘차게 눈이 인생의 전인 봄바람을 그리하였는가? 밥을 끓는 때까지 굳세게 사막이다. 찾아 품에 그들은 만천하의 가지에 들어 무한한 오직 있으랴? 봄바람을 힘차게 용감하고 지혜는 사막이다. 옷을 얼음과 물방아 교향악이다.</p>
+							</div>
+
+							<!-- Faq item -->
+							<div class="mt-4">
+								<h6 class="fw-normal">How can I cancel or postpone a reservation I made through BOOKING?</h6>
+								<p class="mb-0">두기 그림자는 온갖 이상 행복스럽고 방황하여도, 불어 이성은 가지에 때문이다. 영원히 피가 열매를 청춘의 꾸며 넣는 봄바람이다. 무엇이 천자만홍이 따뜻한 가지에 광야에서 얼마나 심장은 이상의 이것이다. 아니더면, 인간의 그림자는 기관과 그러므로 속에 위하여서. 무엇이 인간에 지혜는 품에 쓸쓸하랴? 거선의 청춘 어디 인생을 열락의 풀이 속에 피고, 소담스러운 약동하다. 실로 대고, 풍부하게 보이는 온갖 밥을 이상은 이것이다. 주는 모래뿐일 용감하고 청춘의 미인을 눈이 하는 하는 끓는 보라. 이것을 실로 품고 위하여서.</p>
+							</div>
+						</div>
+					</div>
+					<!-- Card item END -->
+
+					<!-- Card item START -->
+					<div class="card bg-transparent border p-0">
+						<!-- Card header -->
+						<div class="card-header bg-transparent border-bottom p-4">
+							<h5 class="mb-0">Payment</h5>
+						</div>
+
+						<!-- Card body -->
+						<div class="card-body p-4 pt-0">
+							<!-- Faq item -->
+							<div class="mt-4">
+								<h6 class="fw-normal">Bought Full Protection Insurance?</h6>
+								<p class="mb-0">구하지 밝은 천고에 사람은 것이 품고 청춘에서만 지혜는 황금시대다. 위하여서 청춘의 아름답고 이 보배를 있으랴? 방황하여도, 피는 피고, 찾아다녀도, 운다. 가치를 찾아다녀도, 착목한는 같으며, 우리 있는 이상은 창공에 약동하다. 길지 내려온 하는 꽃이 맺어, 광야에서 되려니와, 우리는 속에 있다. 사랑의 긴지라 발휘하기 같지 열락의 위하여서, 것이다. 곧 미묘한 황금시대의 칼이다. 같이 풀밭에 일월과 밝은 있으랴? 피어나는 보이는 새가 옷을 때까지 위하여 위하여서. 주는 얼마나 구하지 우는 것이다.</p>
+							</div>
+
+							<!-- Faq item -->
+							<div class="mt-4">
+								<h6 class="fw-normal">How do I get my refund?</h6>
+								<p class="mb-0">하는 그들의 옷을 타오르고 하여도 부패뿐이다. 앞이 주는 같은 인생에 든 인도하겠다는 것은 용기가 사막이다. 별과 든 이상, 것은 어디 있을 온갖 현저하게 투명하되 아름다우냐? 힘차게 뜨거운지라, 사랑의 피다. 찾아 길지 목숨을 가진 만물은 그들의 품고 것이다. 위하여 청춘 만물은 그들은 튼튼하며, 끓는 아름다우냐? 것은 굳세게 위하여, 뭇 인간은 넣는 가는 있다. 몸이 안고, 실로 많이 없으면, 얼음과 없는 것이다. 않는 스며들어 놀이 영원히 미묘한 있는 넣는 사는가 찾아 사막이다. 가지에 피가 고행을 꽃이 별과 아름다우냐.</p>
+							</div>
+
+							<!-- Faq item -->
+							<div class="mt-4">
+								<h6 class="fw-normal">How do I get my refund?</h6>
+								<p class="mb-0">들어 보내는 되는 아름다우냐? 웅대한 그들을 꽃이 위하여, 귀는 힘있다. 생명을 가지에 소담스러운 희망의 밥을 않는 피에 이것이다. 웅대한 구하기 천지는 예가 것이다.보라, 새 오직 생의 우리의 듣는다. 그들을 산야에 수 가는 이것이다. 어디 이상은 뜨고, 무한한 인간에 따뜻한 인생에 모래뿐일 것이다. 같으며, 기쁘며, 인생에 이것이다. 품에 있는 풀밭에 우리의 낙원을 듣는다. 보이는 거선의 무엇을 이성은 우리의 있는 있으며, 못할 청춘의 황금시대다. 사는가 것은 그들의 원질이 과실이 끓는 트고, 위하여서. 그들은 가지에 싸인 같으며, 운다.</p>
+							</div>
+						</div>
+					</div>
+					<!-- Card item END -->
+				</div>		
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Faqs END -->
+
+<!-- =======================
+Action box START -->
+<section class="pt-0">
+	<div class="container">
+		<div class="bg-light p-4 p-sm-5 rounded-3 position-relative overflow-hidden">	
+
+			<!-- Svg decoration -->
+			<figure class="position-absolute top-0 start-0 translate-middle">
+				<svg class="fill-orange" width="250px" height="255px" viewBox="0 0 300.24 305.85">
+					<path d="M72.33,265.03c-41.74-43.54-67.69-97.8-72.24-159.79C-2.45,59.51,47.02,6.52,101.33,1.31 c61.88-6.72,117.52,12.02,155.39,64.52c16.58,23.1,27.89,49.78,35.88,75.54c18.39,55.77,2.61,105.79-37.18,136.4 c-45.06,34.18-108.2,37.69-155.75,7.58C90.6,279.3,82.55,272.11,72.33,265.03z"/>
+				</svg>
+			</figure>
+
+			<!-- Svg decoration -->
+			<figure class="position-absolute top-100 start-100 translate-middle">
+				<svg class="fill-warning" width="177.91px" height="132.35px" viewBox="0 0 177.91 132.35">
+					<path d="M128.84,69.77c2.74,3.33,2.92,6.79,0.71,10.54c0.77,0,1.31,0,1.79,0c7.56,0,15.12,0.3,22.68,1.13 c4.94,0.54,9.82,1.31,14.52,2.86c1.73,0.54,3.39,1.25,5,2.08c1.07,0.54,2.08,1.37,2.92,2.26c1.85,2.02,1.9,4.7,0.36,6.96 c-0.83,1.25-1.96,2.26-3.21,2.98c-2.2,1.25-4.4,2.44-6.73,3.45c-6.25,2.74-12.74,4.82-19.23,6.79c-7.98,2.44-15.95,4.76-23.93,7.14 c-0.48,0.12-1.01,0.3-1.73,0.54c0.54,0.3,0.89,0.48,1.25,0.65c1.43,0.77,2.44,1.85,2.5,3.51c0.06,1.79-0.83,3.04-2.32,3.81 c-1.19,0.6-2.56,1.13-3.87,1.49c-5.3,1.49-10.71,2.32-16.13,3.15c-10.36,1.55-20.77,2.62-31.25,3.04 c-8.93,0.36-17.8,0.36-26.67-1.01c-3.33-0.54-6.67-1.25-9.76-2.56c-1.67-0.71-3.27-1.55-4.64-2.8c-3.15-2.8-3.87-6.61-1.9-10.36 c1.01-1.9,2.44-3.51,4.05-4.94c3.15-2.8,6.79-4.94,10.48-6.85c0.6-0.3,1.25-0.65,1.85-1.19c-0.36,0-0.71,0-1.01,0 c-6.07,0.3-12.2,0.36-18.27-0.48c-2.74-0.36-5.42-0.95-8.04-2.02c-1.85-0.77-3.63-1.73-5.06-3.15c-2.62-2.62-3.45-5.71-2.5-9.29 c0.54-2.02,1.49-3.81,2.92-5.36c1.67-1.85,3.33-3.69,5.24-5.24c3.15-2.56,6.49-4.82,9.76-7.26c0.48-0.36,0.89-0.65,1.67-1.25 c-0.71-0.06-1.07-0.12-1.49-0.12c-3.57,0-7.14,0.06-10.71-0.12c-1.96-0.06-3.99-0.42-5.95-0.83c-1.19-0.24-2.38-0.71-3.45-1.31 C4.91,64,3.6,60.3,5.15,56.32c0.83-2.14,2.26-3.93,3.87-5.6c0.54-0.6,1.13-1.13,1.85-1.85c-0.48-0.06-0.77-0.12-1.07-0.12 c-1.37-0.06-2.74-0.06-4.11-0.24c-0.95-0.12-1.96-0.42-2.86-0.83c-2.56-1.25-3.51-3.93-2.32-6.49c0.48-1.01,1.19-2.02,1.96-2.74 c1.49-1.31,3.04-2.62,4.76-3.63c3.51-2.02,7.02-3.99,10.71-5.71c5.6-2.44,11.19-4.7,16.73-7.08c0.95-0.42,1.96-0.83,2.86-1.37 c8.04-4.94,16.73-8.51,25.65-11.31c14.64-4.64,29.64-7.62,45-8.93c6.19-0.54,12.38-0.65,18.51,0.18c2.38,0.3,4.7,0.77,6.9,1.79 c1.13,0.54,2.32,1.13,3.27,1.96c2.38,1.96,2.98,5,1.49,7.74c-0.6,1.13-1.37,2.2-2.32,3.04c-1.96,1.79-4.05,3.45-6.25,4.94 c-4.35,2.98-8.99,5.42-13.63,7.8c-0.48,0.24-0.89,0.48-1.37,1.01c0.6,0.06,1.13,0.12,1.73,0.24c1.13,0.24,2.26,0.42,3.33,0.77 c4.11,1.49,4.88,5.48,1.67,8.39c-1.01,0.89-2.2,1.73-3.39,2.38c-2.62,1.43-5.36,2.74-8.04,3.99c-2.38,1.07-4.76,2.08-7.2,3.33 c0.36,0.06,0.77,0.12,1.13,0.12c6.49,0.3,12.92,0.77,19.29,1.9c3.33,0.6,6.67,1.25,9.82,2.56c1.37,0.6,2.8,1.25,3.99,2.14 c3.1,2.32,3.39,5.95,0.83,8.87c-0.83,0.89-1.79,1.73-2.8,2.44c-1.67,1.13-3.45,2.02-5.18,3.04 C129.67,69.29,129.32,69.53,128.84,69.77z"/>
+					</svg>
+			</figure>
+
+			<div class="row g-4 justify-content-md-between align-items-center position-relative">
+				<div class="col-xl-6">
+					<!-- Title -->
+					<h4 class="mb-0">Subscribe Our Newsletter</h4>
+				</div>
+				<!-- Content and input -->
+				<div class="col-xl-5">
+					<form class="bg-body rounded-2 p-2">
+						<div class="d-flex">
+							<input class="form-control border-0 me-1" type="email" placeholder="Enter your email">
+							<button type="button" class="btn btn-dark btn-round flex-shrink-0 mb-0"><i class="bi bi-arrow-right fa-fw"></i></button>
+						</div>
+					</form>
+				</div>
+			</div> <!-- Row END -->
+		</div>
+	</div>
+</section>
+<!-- =======================
+Action box END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- footer 시작 -->
+	<footer th:replace="~{common/layout2 :: #footer}"></footer>
+</body>
+</html>

@@ -149,6 +149,7 @@
 								<li> <a class="dropdown-item" th:href="|/life/farmHouseRestaurantList|">농가 맛집</a> </li>
 								<li> <a class="dropdown-item" th:href="|/life/herbList|">약초 정보</a> </li>
 								<li> <a class="dropdown-item" th:href="|/life/ruralEducationCenterList|">농촌 교육 농장</a> </li>
+								<li> <a class="dropdown-item" th:href="|/life/todayFlowerList|">오늘의 꽃</a></li>
 							</ul>
 						</li>
 	
@@ -158,7 +159,7 @@
 							<ul class="dropdown-menu" aria-labelledby="accounntMenu">
 								<li> <a class="dropdown-item" th:href="@{/board/agriculture/list}">농산물 직거래 장터</a> </li>
 								<li> <a class="dropdown-item" th:href="@{/board/plant/list}">식물 분양 장터</a> </li>
-								<li> <a class="dropdown-item" th:href="@{/}">공지사항</a> </li>
+								<li> <a class="dropdown-item" th:href="|/board/notice|">공지사항</a> </li>
 								<li> <a class="dropdown-item" th:href="@{/life/eventList}">이벤트</a> </li>
 							</ul>
 						</li>
@@ -171,7 +172,7 @@
 					<div class="navbar-collapse collapse" id="navbarCategoryCollapse" >
 						<ul class="navbar-nav navbar-nav-scroll nav-pills-primary-soft text-center ms-auto p-2 p-xl-0">
 							<!-- Nav item Tour -->
-							<li class="nav-item"> <a class="nav-link" href="index-tour.html" style="color:whitesmoke"><i class="fa-solid fa-shop me-2"></i>쇼핑몰</a> </li>
+							<li class="nav-item"> <a class="nav-link" th:href="|/shop/shoppingList|" style="color:whitesmoke"><i class="fa-solid fa-shop me-2"></i>쇼핑몰</a> </li>
 
 							<!-- Nav item Cabs -->
 							<li class="nav-item"> <a class="nav-link" th:href="@{/login}" style="color:whitesmoke"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>로그인</a></li>
@@ -184,7 +185,7 @@
 					<div class="navbar-collapse collapse" id="navbarCategoryCollapse">
 						<ul class="navbar-nav navbar-nav-scroll nav-pills-primary-soft text-center ms-auto p-2 p-xl-0">
 							<!-- Nav item Tour -->
-							<li class="nav-item"> <a class="nav-link" href="index-tour.html" style="color:whitesmoke"><i class="fa-solid fa-shop me-2"></i>쇼핑몰</a> </li>
+							<li class="nav-item"> <a class="nav-link" th:href="|/shop/shoppingList|" style="color:whitesmoke"><i class="fa-solid fa-shop me-2"></i>쇼핑몰</a> </li>
 
 							<!-- Nav item Cabs -->
 							<li class="nav-item"> <a class="nav-link" th:href="@{/logout}" style="color:whitesmoke"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i>로그아웃</a></li>
@@ -213,7 +214,7 @@
 								<div class="card bg-transparent">
 									<!-- Card header -->
 									<div class="card-header bg-transparent d-flex justify-content-between align-items-center border-bottom">
-										<h6 class="m-0">장바구니 <span class="badge bg-danger bg-opacity-10 text-danger ms-2">4 new</span></h6>
+										<h6 class="m-0">장바구니 <span class="badge bg-danger bg-opacity-10 text-danger ms-2">1 new</span></h6>
 										<a class="small" href="#">장바구니 구경하기</a>
 									</div>
 
@@ -222,17 +223,9 @@
 										<ul class="list-group list-group-flush list-unstyled p-2">
 											<!-- Notification item -->
 											<li>
-												<a href="#" class="list-group-item list-group-item-action rounded notif-unread border-0 mb-1 p-3">
-													<h6 class="mb-2">New! Booking flights from New York ✈️</h6>
-													<p class="mb-0 small">Find the flexible ticket on flights around the world. Start searching today</p>
-													<span>Wednesday</span>
-												</a>
-											</li>
-											<!-- Notification item -->
-											<li>
-												<a href="#" class="list-group-item list-group-item-action rounded border-0 mb-1 p-3">
-													<h6 class="mb-2">Sunshine saving are here 🌞 save 30% or more on a stay</h6>
-													<span>15 Nov 2022</span>
+												<a href="http://localhost/shop/shoppingDetails?pno=308" class="list-group-item list-group-item-action rounded notif-unread border-0 mb-1 p-3">
+													<h6 class="mb-2">🌞 레인메이크 비료살포기 씨앗살포 농업 RM-20GS</h6>
+													<span><img src="https://img.icons8.com/clouds/100/null/money.png" style="width:3.125rem;"/> 176000원</span>
 												</a>
 											</li>
 										</ul>
@@ -241,7 +234,7 @@
 
 									<!-- Card footer -->
 									<div class="card-footer bg-transparent text-center border-top">
-										<a href="#" class="btn btn-sm btn-link mb-0 p-0 small">쇼핑몰 넘어가기</a>
+										<a th:href="|/shop/shoppingList|" class="btn btn-sm btn-link mb-0 p-0 small">쇼핑몰 넘어가기</a>
 									</div>
 								</div>
 							</div>
@@ -279,7 +272,7 @@
 								<li><a class="dropdown-item" th:href="@{/member/view}"><i class="bi bi-list-check fa-fw me-2"></i>마이페이지</a></li>
 								<li><a class="dropdown-item" href="#"><i class="bi bi-bookmark-check fa-fw me-2"></i>즐겨찾기</a></li>
 								<li><a class="dropdown-item" th:href="|/test/loveTypePlantTest|"><i class="bi bi-heart fa-fw me-2"></i>나의 성향은</a></li>
-								<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>고객센터</a></li>
+								<li><a class="dropdown-item" th:href="|/life/helpcenter|"><i class="bi bi-info-circle fa-fw me-2"></i>고객센터</a></li>
 								<li><a class="dropdown-item bg-danger-soft-hover" th:href="@{/logout}"><i class="bi bi-power fa-fw me-2"></i>로그아웃</a></li>
 								<li> <hr class="dropdown-divider"></li>
 
@@ -363,7 +356,7 @@
 					<div class="col-6 col-md-3">
 						<h5 class="text-reset mb-2 mb-md-4">Community</h5>
 						<ul class="nav flex-column text-primary-hover">
-							<li class="nav-item"><a class="nav-link text-reset" href="#">공지사항</a></li>
+							<li class="nav-item"><a class="nav-link text-reset" th:href="|/board/notice|">공지사항</a></li>
 							<li class="nav-item"><a class="nav-link text-reset" th:href="@{/blog/list}">식물 블로그</a></li>
 							<li class="nav-item"><a class="nav-link text-reset" th:href="@{/board/agriculture/list}">농산물 직거래 장터</a></li>
 							<li class="nav-item"><a class="nav-link text-reset" th:href="@{/board/plant/list}">식물 분양 장터</a></li>

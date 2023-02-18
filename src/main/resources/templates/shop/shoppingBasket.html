@@ -25,67 +25,120 @@ Main START -->
 						<!-- Card header -->
 						<div class="card-header border-bottom d-flex justify-content-between align-items-center px-0 pb-3">
 							<h4 class="card-title mb-0">장바구니</h4>
-							<span>총 2개</span>
+							<span>총 1개</span>
 						</div>
 
 						<!-- Card body --> 
-						<div class="card-body p-0 pt-4">
-						
-							<div th:each="product : ${list}">
-							
-							<!-- Product item START -->
-							<div class="row align-items-center">
-								<!-- Image -->
-								<div class="col-5 col-md-2">
-									<div class="bg-light p-2 rounded-2">
-										<img th:src="${product.image}" alt="" style="height: 4.063rem;">
+						<th:block th:if="${list != null}">
+							<div class="card-body p-0 pt-4">
+								<div>
+								<!-- Product item START -->
+								<div class="row align-items-center">
+									<!-- Image -->
+									<div class="col-5 col-md-2">
+										<div class="bg-light p-2 rounded-2">
+											<img th:src="|/image/rainMake.jpg|" alt="" style="height: 4.063rem;">
+										</div>
 									</div>
-								</div>
-
-								<div class="col-7 col-md-10">
-									<div class="row g-2">
-										<!-- Content -->
-										<div class="col-md-7">
-											<!-- Product detail START -->
-											<h5 class="mb-1"><a th:href="|/shop/shoppingBasket?pno=${product.pno}|">[[${product.title}]]</a></h5>
-                      						<small style="color: #446A46;">[[${product.category1}]]</small>
-											<!-- List -->
-											<ul class="nav nav-divider small align-items-center mt-1">
-												<li class="nav-item">판매점: [[${product.mallName}]]</li>
-											</ul>
-										</div>
+	
+									<div class="col-7 col-md-10">
+										<div class="row g-2">
+											<!-- Content -->
+											<div class="col-md-7">
+												<!-- Product detail START -->
+												<h5 class="mb-1"><a th:href="|/shop/shoppingDetails?pno=308|">레인메이크 비료살포기 씨앗살포 농업 RM-20GS</a></h5>
+	                      						<small style="color: #446A46;">#생활/건강 #공구 #원예공구 #압축분무기</small>
+												<!-- List -->
+												<ul class="nav nav-divider small align-items-center mt-1">
+													<li class="nav-item">판매점: 네이버</li>
+												</ul>
+											</div>
+				
+											<!-- Select -->
+											<div class="col-md-2">
+												<select class="form-select form-select-sm" aria-label="Default select example">
+													<option value="1">01</option>
+													<option value="2">02</option>
+													<option value="3">03</option>
+													<option value="4">04</option>
+													<option value="5">05</option>
+												</select>
+											</div>
 			
-										<!-- Select -->
-										<div class="col-md-2">
-											<select class="form-select form-select-sm" aria-label="Default select example">
-												<option value="1">01</option>
-												<option value="2">02</option>
-												<option value="3">03</option>
-												<option value="4">04</option>
-												<option value="5">05</option>
-											</select>
-										</div>
-		
-										<!-- Price and button -->
-										<div class="col-md-3 text-md-end">
-											<h5>\[[${product.lprice}]]</h5>
-											<!-- Buttons -->
-											<div class="hstack gap-1 flex-wrap text-primary-hover mt-2 justify-content-md-end">
-												<a th:href="@{/#}" class="text-reset small"><i class="bi bi-trash3 me-2"></i>Remove</a>
-												<a th:href="@{/#}" class="text-reset small"><i class="bi bi-heart me-2"></i>Save for later</a>
+											<!-- Price and button -->
+											<div class="col-md-3 text-md-end">
+												<h5>\176000</h5>
+												<!-- Buttons -->
+												<div class="hstack gap-1 flex-wrap text-primary-hover mt-2 justify-content-md-end">
+													<a th:href="@{/#}" class="text-reset small"><i class="bi bi-trash3 me-2"></i>Remove</a>
+													<a th:href="@{/#}" class="text-reset small"><i class="bi bi-heart me-2"></i>Save for later</a>
+												</div>
 											</div>
 										</div>
 									</div>
+								</div>	
+								<!-- Product item END -->
+								<hr> <!-- Divider -->
+								
 								</div>
-							</div>	
-							<!-- Product item END -->
-							<hr> <!-- Divider -->
-							
 							</div>
-	
-	
+						</th:block>
+						<th:block th:if="${list != null}">
+							<div class="card-body p-0 pt-4">
 							
-						</div>
+								<div th:each="product : ${list}">
+								
+								<!-- Product item START -->
+								<div class="row align-items-center">
+									<!-- Image -->
+									<div class="col-5 col-md-2">
+										<div class="bg-light p-2 rounded-2">
+											<img th:src="${product.image}" alt="" style="height: 4.063rem;">
+										</div>
+									</div>
+	
+									<div class="col-7 col-md-10">
+										<div class="row g-2">
+											<!-- Content -->
+											<div class="col-md-7">
+												<!-- Product detail START -->
+												<h5 class="mb-1"><a th:href="|/shop/shoppingBasket?pno=${product.pno}|">[[${product.title}]]</a></h5>
+	                      						<small style="color: #446A46;">[[${product.category1}]]</small>
+												<!-- List -->
+												<ul class="nav nav-divider small align-items-center mt-1">
+													<li class="nav-item">판매점: [[${product.mallName}]]</li>
+												</ul>
+											</div>
+				
+											<!-- Select -->
+											<div class="col-md-2">
+												<select class="form-select form-select-sm" aria-label="Default select example">
+													<option value="1">01</option>
+													<option value="2">02</option>
+													<option value="3">03</option>
+													<option value="4">04</option>
+													<option value="5">05</option>
+												</select>
+											</div>
+			
+											<!-- Price and button -->
+											<div class="col-md-3 text-md-end">
+												<h5>\[[${product.lprice}]]</h5>
+												<!-- Buttons -->
+												<div class="hstack gap-1 flex-wrap text-primary-hover mt-2 justify-content-md-end">
+													<a th:href="@{/#}" class="text-reset small"><i class="bi bi-trash3 me-2"></i>Remove</a>
+													<a th:href="@{/#}" class="text-reset small"><i class="bi bi-heart me-2"></i>Save for later</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>	
+								<!-- Product item END -->
+								<hr> <!-- Divider -->
+								
+								</div>
+							</div>
+						</th:block>
 					</div>
 					<!-- My Cart END -->
 			</div>
@@ -117,7 +170,7 @@ Main START -->
 						<ul class="list-group list-group-borderless">
 							<li class="list-group-item d-flex justify-content-between align-items-center">
 								<span>합계</span>
-								<span class="h6 mb-0">\260.54</span>
+								<span class="h6 mb-0">\176000</span>
 							</li>
 							<li class="list-group-item d-flex justify-content-between align-items-center">
 								<span>할인</span>
@@ -130,7 +183,7 @@ Main START -->
 					<div class="card-footer bg-light border-top p-0 pt-3">
 						<div class="d-flex justify-content-between align-items-center mb-3">
 							<span>할인합계</span>
-							<span class="h5 mb-0">\210.54</span>
+							<span class="h5 mb-0">\176000</span>
 						</div>
 
 						<!-- Button -->

@@ -89,4 +89,6 @@ public class NaverSearchAPIParser {
 		}
 		return list;
 	}
+	
+	
 }

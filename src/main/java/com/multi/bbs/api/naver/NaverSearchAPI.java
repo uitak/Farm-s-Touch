@@ -53,36 +53,7 @@ public class NaverSearchAPI {
         return list;
     }
 	
-//	public static List<News> getNewsList(String query, int display, int start) {
-//		String clientId = "sR7e9agRVrran0oy1CO1"; //애플리케이션 클라이언트 아이디
-//		String clientSecret = "MadPis5VIy"; //애플리케이션 클라이언트 시크릿
-//        String apiURL = "https://openapi.naver.com/v1/search/news.json";  // 뉴스 JSON 결과
-//		try {
-//			query = URLEncoder.encode(query, "UTF-8");
-//		} catch (UnsupportedEncodingException e) {
-//			throw new RuntimeException("검색어 인코딩 실패",e);
-//		}
-//		
-//		StringBuilder url = new StringBuilder();
-//		
-//		url.append(apiURL);
-//		url.append("?query="+query);
-//		url.append("&display="+display);
-//		url.append("&start="+start);
-//		
-//		Map<String, String> requestHeaders = new HashMap<>();
-//		requestHeaders.put("X-Naver-Client-Id", clientId);
-//		requestHeaders.put("X-Naver-Client-Secret", clientSecret);
-//		String responseBody = get(url.toString(), requestHeaders);
-//		
-//		List<News> list = null;
-//		try {
-//			list = NaverSearchAPIParser.parseNews(responseBody);
-//		} catch (ParseException e) {
-//			e.printStackTrace();
-//		}
-//		return list;
-//	}
+
 
 	
     private static String get(String apiUrl, Map<String, String> requestHeaders){

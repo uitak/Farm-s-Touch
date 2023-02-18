@@ -12,6 +12,15 @@
 	  overflow     : hidden;    /* 내용이 길면 감춤 */
 	  display      : block;     /* ie6이상 현재요소를 블럭처리 */
 }
+
+	.hwanhontab:hover{
+		color : green;
+	}
+	
+	.hwanhonbtn{
+		background-color: #F7C32E;
+		color: black;
+	}
 </style>
 
 <body>
@@ -47,19 +56,19 @@ Main Banner START -->
 							<a class="nav-link mb-0 active" data-bs-toggle="tab" href="#tab-1-1"><i class="fa-solid fa-hashtag fa-fw me-2"></i>품종</a> 
 						</li>
 						<li class="nav-item">
-							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-2"><i class="fa-solid fa-hashtag fa-fw me-2"></i>정원식물</a> 
+							<a class="nav-link mb-0 hwanhontab" data-bs-toggle="tab" href="#tab-1-2"><i class="fa-solid fa-hashtag fa-fw me-2"></i>정원식물</a> 
 						</li>
 						<li class="nav-item"> 
-							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-3"><i class="fa-solid fa-hashtag fa-fw me-2"></i>약초</a> 
+							<a class="nav-link mb-0 hwanhontab" data-bs-toggle="tab" href="#tab-1-3"><i class="fa-solid fa-hashtag fa-fw me-2"></i>약초</a> 
 						</li>
 						<li class="nav-item"> 
-							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-4"><i class="fa-solid fa-hashtag fa-fw me-2"></i>안전사용지침</a> 
+							<a class="nav-link mb-0 hwanhontab" data-bs-toggle="tab" href="#tab-1-4"><i class="fa-solid fa-hashtag fa-fw me-2"></i>안전사용지침</a> 
 						</li>
 						<li class="nav-item"> 
-							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-5"><i class="fa-solid fa-hashtag fa-fw me-2"></i>농촌교육농장</a> 
+							<a class="nav-link mb-0 hwanhontab" data-bs-toggle="tab" href="#tab-1-5"><i class="fa-solid fa-hashtag fa-fw me-2"></i>농촌교육농장</a> 
 						</li>
 						<li class="nav-item"> 
-							<a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-1-6"><i class="fa-solid fa-hashtag fa-fw me-2"></i>주간농사정보</a> 
+							<a class="nav-link mb-0 hwanhontab" data-bs-toggle="tab" href="#tab-1-6"><i class="fa-solid fa-hashtag fa-fw me-2"></i>주간농사정보</a> 
 						</li>
 					</ul>
 				</div>
@@ -83,7 +92,7 @@ Main Banner START -->
 										</div>
 										<div class="col-2">
 											<div class="text-center pt-0" style="margin-top:-1.25rem">
-											<button class="btn btn-lg btn-success mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+											<button class="btn btn-lg mb-n7 hwanhonbtn" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
 											</div>
 										</div>
 									</div> <!-- Row END -->
@@ -92,7 +101,7 @@ Main Banner START -->
 						</div>
 						<!-- tab  시작 -->
 						<div class="tab-pane fade " id="tab-1-2">
-							<form class="card shadow p-0" th:action="@{/agriculture/farmingVarietiesList}" method="get">
+							<form class="card shadow p-0" th:action="@{/plant/gardenList}" method="get">
 								<div class="card-header p-4">
 									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>정원식물 검색</h5>
 								</div>
@@ -103,12 +112,14 @@ Main Banner START -->
 										<div class="col-10">
 											<div class="form-icon-input form-size-lg form-fs-lg">
 												<input class="form-control" type="text" id="searchName" name="searchName" placeholder="정원 식물명을 입력하세요...">
+												<input class="form-control" type="hidden" id="searchNameType" name="searchNameType" th:value="cntntsSj">
+												<input class="form-control" type="hidden" id="waterCycle" name="waterCycle">
 												<span class="form-icon"><i class="fa-solid fa-seedling fs-5"></i></span>
 											</div>
 										</div>
 										<div class="col-2">
 											<div class="text-center pt-0" style="margin-top:-1.25rem">
-											<button class="btn btn-lg btn-success mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+											<button class="btn btn-lg hwanhonbtn mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
 											</div>
 										</div>
 									</div> <!-- Row END -->
@@ -135,7 +146,7 @@ Main Banner START -->
 										</div>
 										<div class="col-2">
 											<div class="text-center pt-0" style="margin-top:-1.25rem">
-											<button class="btn btn-lg btn-success mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+											<button class="btn btn-lg hwanhonbtn mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
 											</div>
 										</div>
 									</div> <!-- Row END -->
@@ -145,7 +156,7 @@ Main Banner START -->
 						<!-- tab  끝 -->
 						<!-- tab  시작 -->
 						<div class="tab-pane fade " id="tab-1-4">
-							<form class="card shadow p-0" th:action="@{/agriculture/farmingVarietiesList}" method="get">
+							<form class="card shadow p-0" th:action="@{/agriculture/safety}" method="get">
 								<div class="card-header p-4">
 									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>안전이용지침 조회</h5>
 								</div>
@@ -155,13 +166,13 @@ Main Banner START -->
 										<!-- Location -->
 										<div class="col-10">
 											<div class="form-icon-input form-size-lg form-fs-lg">
-												<input class="form-control" type="text" id="searchName" name="searchName" placeholder="안전사용지침을 입력하세요...">
+												<input class="form-control" type="text" id="searchValue" name="searchValue" placeholder="안전사용지침을 입력하세요...">
 												<span class="form-icon"><i class="fa-solid fa-seedling fs-5"></i></span>
 											</div>
 										</div>
 										<div class="col-2">
 											<div class="text-center pt-0" style="margin-top:-1.25rem">
-											<button class="btn btn-lg btn-success mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+											<button class="btn btn-lg hwanhonbtn mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
 											</div>
 										</div>
 									</div> <!-- Row END -->
@@ -171,8 +182,8 @@ Main Banner START -->
 						<!-- tab  끝 -->
 
 						<!-- tab  시작 -->
-						<div class="tab-pane fade " id="tab-1-5">
-							<form class="card shadow p-0" th:action="@{/agriculture/farmingVarietiesList}" method="get">
+						<div class="tab-pane fade " id="tab-1-5"> <!-- http://localhost/life/ruralEducationCenterList?searchValue=%EC%8C%8D%EB%91%A5%EC%9D%B4&searchType=cntntsSj -->
+							<form class="card shadow p-0" th:action="@{/life/ruralEducationCenterList}" method="get">
 								<div class="card-header p-4">
 									<h5 class="mb-0"><i class="fa-solid fa-square-poll-horizontal fa-fw me-2"></i>농촌교육농장 검색</h5>
 								</div>
@@ -182,13 +193,14 @@ Main Banner START -->
 										<!-- Location -->
 										<div class="col-10">
 											<div class="form-icon-input form-size-lg form-fs-lg">
-												<input class="form-control" type="text" id="searchName" name="searchName" placeholder="농촌교육농장 이름을 입력하세요...">
+												<input class="form-control" type="text" id="searchValue" name="searchValue" placeholder="농촌교육농장 이름을 입력하세요...">
+												<input class="form-control" type="hidden" id="searchType" name="searchType" th:value="cntntsSj">
 												<span class="form-icon"><i class="fa-solid fa-seedling fs-5"></i></span>
 											</div>
 										</div>
 										<div class="col-2">
 											<div class="text-center pt-0" style="margin-top:-1.25rem">
-											<button class="btn btn-lg btn-success mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+											<button class="btn btn-lg hwanhonbtn mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
 											</div>
 										</div>
 									</div> <!-- Row END -->
@@ -215,7 +227,7 @@ Main Banner START -->
 										</div>
 										<div class="col-2">
 											<div class="text-center pt-0" style="margin-top:-1.25rem">
-											<button class="btn btn-lg btn-success mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
+											<button class="btn btn-lg hwanhonbtn mb-n7" type="submit"> 검색 <i class="bi bi-search ps-3"></i></button>
 											</div>
 										</div>
 									</div> <!-- Row END -->
@@ -369,7 +381,7 @@ Experience START -->
 		<div class="row mb-4">
 			<div class="col-12 text-center">
 				<h3 class="mb-0">
-					<a th:href="|/|">농업기술 동영상 구경해보실래요?</a>
+					<a th:href="|/agriculture/agriTechVideo|">농업기술 동영상 구경해보실래요?</a>
 				</h3>
 			</div>
 		</div>
@@ -417,14 +429,14 @@ Top category START -->
 		<!-- Title -->
 		<div class="row mb-4" >
 			<div class="col-6" th:each="todayFlower : ${fList}">
-				<h3 class="mb-n2">오늘의 꽃 
+				<h3 class="mb-n2"><a th:href="|/life/todayFlowerList|">오늘의 꽃</a> 
 					<a th:href="|/life/todayFlowerDetail?dataNo=${todayFlower.dataNo}|">
 						<span style="font-size:20px">Today: [[${todayFlower.fMonth}]]월 [[${todayFlower.fDay}]]일</span>
 					</a>
 				</h3>
 			</div>
 			<div class="col-6">
-				<h3 class="mb-n2">식물 자랑 게시판</h3>
+				<h3 class="mb-n2"><a th:href="|/blog/list|">식물 자랑 블로그</a></h3>
 			</div>
 		</div>
 		
@@ -466,13 +478,15 @@ Top category START -->
 					<div class="col">
 						<h5 style="color: #00311a;">내용:</h5>
 						<p class="textcutting2" id="textcutting2">
-							[[${todayFlower.fContent}]]
+							<!-- [[${todayFlower.fContent}]] -->
+							[[${reContent}]]
 						</p>
 					</div>
 					<div class="col">
 						<h5 style="color: #00311a;">자생지:</h5>
 						<p class="textcutting2" id="textcutting2">
-							[[${todayFlower.fGrow}]]
+							<!-- [[${todayFlower.fGrow}]] -->
+							[[${reGrow}]]
 						</p>
 					</div>
 
@@ -626,7 +640,7 @@ Stories START-->
 									<!-- Card body -->
 									<div class="card-body px-0 py-3 pb-0">
 										<h5 class="card-title">
-											<a href="#" class="stretched-link">정원 식물</a>
+											<a th:href="|/plant/gardenList|" class="stretched-link">정원 식물</a>
 										</h5>
 									</div>
 								</div>
@@ -635,13 +649,12 @@ Stories START-->
 								<div class="card text-center align-items-center"  style="background-color: #A6BB8D;">
 									<!-- Image -->
 									<div class="icon-xl bg-light rounded-circle">
-										<!-- <img src="assets/images/custom/weather/img1.jpg" class="w-80px" alt=""> -->
 										<img src="https://img.icons8.com/stickers/100/null/cactus.png"  class="w-80px" alt="다육식물"/>
 									</div>
 									<!-- Card body -->
 									<div class="card-body px-0 py-3 pb-0">
 										<h5 class="card-title">
-											<a href="#" class="stretched-link">다육 식물</a>
+											<a th:href="|/plant/drygardenList|" class="stretched-link">다육 식물</a>
 										</h5>
 									</div>
 								</div>
@@ -685,7 +698,7 @@ Stories START-->
 									<!-- Card body -->
 									<div class="card-body px-0 py-3 pb-0">
 										<h5 class="card-title">
-											<a href="#" class="stretched-link">농기계 정보</a>
+											<a th:href="|/agriculture/agriculturalMachineryVideoList|" class="stretched-link">농기계 정보</a>
 										</h5>
 									</div>
 								</div>
@@ -743,10 +756,10 @@ Stories END-->
 		<!-- Title -->
 		<div class="row">
 			<div class="col-6 mb-3">
-				<h3 class="mb-0">장터게시판 <a href="#" style="font-size: 0.938rem;">장터 게시판 보러가기 Click</a></h3>
+				<h3 class="mb-0">장터게시판 <a th:href="|/board/agriculture/list|" style="font-size: 0.938rem;">농산물 직거래 장터 Click</a><a th:href="|/board/plant/list|" style="font-size: 0.938rem; margin-left:2.5rem">식물 분양 장터 Click</a> </h3>
 			</div>
 			<div class="col-6 mb-3">
-				<h3 class="mb-0">이벤트 <a href="#" style="font-size: 0.938rem;">이벤트 목록 보러가기 Click</a></h3>
+				<h3 class="mb-0">이벤트 <a th:href="|/life/eventList|" style="font-size: 0.938rem;">이벤트 목록 보러가기 Click</a></h3>
 			</div>
 		</div>
 

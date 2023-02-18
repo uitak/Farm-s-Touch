@@ -27,4 +27,6 @@ public class Product {
 	private double scoreAvg; // 별점 평균
 	private int amount;
 	
+	
+	
 }

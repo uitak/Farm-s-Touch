@@ -26,4 +26,6 @@ public interface ShopMapper {
 	int updateCart(Cart cart);
 	List<Product> selectCartProductList(int mno);
 	
+	
+	
 }

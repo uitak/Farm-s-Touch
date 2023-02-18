@@ -18,4 +18,6 @@ public class ProductReply {
 	private String name;
 	private int score;
 	private Date createDate;
+	
+	
 }

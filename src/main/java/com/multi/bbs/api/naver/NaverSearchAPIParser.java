@@ -61,25 +61,6 @@ public class NaverSearchAPIParser {
 		}
 	}
 	
-//	public static List<News> parseNews(String json) throws ParseException {
-//		List<News> list = new ArrayList<>();
-//		JSONParser jsonParser = new JSONParser();
-//		JSONObject rootObj = (JSONObject) jsonParser.parse(json);
-//		JSONArray array = (JSONArray) rootObj.get("items");
-//
-//		for (int i = 0; i < array.size(); i++) {
-//			JSONObject obj = (JSONObject) array.get(i);
-//			String title = toString(obj, "title", true);
-//			String originallink = toString(obj, "originallink");
-//			String link = toString(obj, "link");
-//			String description = toString(obj, "description", true);
-//			Date pubDate = toDate(obj, "pubDate");
-//			News news = new News(0, title, originallink, link, description, pubDate);
-//			list.add(news);
-//		}
-//		return list;
-//	}
-	
 	
 	public static List<Product> parseShop(String json) throws ParseException {
 		List<Product> list = new ArrayList<>();

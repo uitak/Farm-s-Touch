@@ -54,6 +54,8 @@ public class PrvateTherpyController {
 		PageInfo pageInfo = new PageInfo(page, 10, hboardCount, 9);
 		List<PrvateTherpy> hlist = prvateTherpyService.getPrvateTherpyList(pageInfo, searchMap);
 		
+		
+		
 		model.addAttribute("hlist", hlist);
 		model.addAttribute("paramMap", paramMap);
 		model.addAttribute("pageInfo", pageInfo);

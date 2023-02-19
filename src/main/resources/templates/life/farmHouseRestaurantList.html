@@ -3,6 +3,18 @@
 
 <head th:fragment="head" th:replace="~{common/layout2 :: head}"></head>
 
+<!-- 제목의 글자수를 제한하고 ... 처리하는 css -->
+<style>
+	.textcutting{
+	  width        : 20.5rem;     
+	  text-overflow: ellipsis;  /* 위에 설정한 넓이보다 길면 말줄임표처럼 표시 */
+	  white-space  : nowrap;    /* 줄바꿈을 하지 않음 */
+	  overflow     : hidden;    /* 내용이 길면 감춤 */
+	  display      : block;     /* ie6이상 현재요소를 블럭처리 */
+	  margin-left : -0.625rem
+}
+</style>
+
 <body>
 
 <!-- Header START -->
@@ -240,16 +252,16 @@ Tour grid START -->
 
 						<!-- List -->
 						<ul class=" mt-3 mb-3">
-							<li class="nav-item h6 fw-normal">
+							<li class="nav-item h6 fw-normal textcutting">
 								<i class="fa-solid fa-location-dot text-success me-2"></i>지역 : [[${FrmhsTasteHos.subArea}]] [[${FrmhsTasteHos.adstrdNm}]]
 							</li>
-							<li class="nav-item h6 fw-normal">
+							<li class="nav-item h6 fw-normal textcutting">
 								<i class="fa-solid fa-phone text-orange me-2"></i>전화번호 : [[${FrmhsTasteHos.telno}]]
 							</li>
-							<li class="nav-item h6 fw-normal">
+							<li class="nav-item h6 fw-normal textcutting">
 								<i class="fa-solid fa-cancel text-danger me-2"></i>쉬는 날 : [[${FrmhsTasteHos.restde}]]
 							</li>
-							<li class="nav-item h6 fw-normal">
+							<li class="nav-item h6 fw-normal textcutting">
 								<i class="fa-solid fa-clock text-info me-2"></i> 영업시간 : [[${FrmhsTasteHos.bsnTime}]]
 							</li>
 						</ul>

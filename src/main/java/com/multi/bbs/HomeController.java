@@ -60,8 +60,18 @@ public class HomeController {
 //			System.out.println(havetodelete);
 //		}
 		
-		String reContent = fList.get(0).getFContent().substring(0,90) + "...";	// 문자열 너무 길어서 컷팅
-		String reGrow = fList.get(0).getFGrow().substring(0,90) + "...";	// 문자열 너무 길어서 컷팅
+		String reContent = "";
+		String reGrow = "";
+		if(fList.get(0).getFContent().length() >= 90) {
+			reContent = fList.get(0).getFContent().substring(0,90) + "...";	// 문자열 너무 길어서 컷팅
+		} else {
+			reContent = fList.get(0).getFContent();
+		}
+		if(fList.get(0).getFGrow().length() >= 90) {
+			reGrow = fList.get(0).getFGrow().substring(0,90) + "...";	// 문자열 너무 길어서 컷팅
+		} else {
+			reGrow = fList.get(0).getFGrow();
+		}
 	
 		model.addAttribute("fList", fList);	// 오늘의 꽃 전달
 		model.addAttribute("reContent", reContent);	// 문자열 컷팅 한 내용

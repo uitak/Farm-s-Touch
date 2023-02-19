@@ -48,10 +48,10 @@ public class ShopController {
 		
 		int page = 1;
 		
-		System.out.println(page);
-		System.out.println(paramMap);
-		System.out.println(kinds);
-		System.out.println(brands);
+//		System.out.println(page);
+//		System.out.println(paramMap);
+//		System.out.println(kinds);
+//		System.out.println(brands);
 		
 		if(paramMap.get("page") != null) {
 			page = Integer.parseInt((String) paramMap.get("page"));
@@ -77,7 +77,7 @@ public class ShopController {
 		model.addAttribute("paramMap", paramMap);
 		
 //		System.out.println(list);
-		System.out.println(paramMap);
+//		System.out.println(paramMap);
 		
 		return "/shop/shoppingList";
 	}
@@ -124,7 +124,7 @@ public class ShopController {
 		}
 		
 		reply.setMno(member.getMNo());
-		System.out.println(reply);
+//		System.out.println(reply);
 		int result = shopService.insertProductReply(reply);
 		shopService.updateProductAVG(reply.getPno());
 		

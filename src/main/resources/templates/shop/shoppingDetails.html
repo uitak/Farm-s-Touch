@@ -20,7 +20,7 @@ Main START -->
 			<div class="col-lg-6">
 				<div class="row g-2">
 					<div class="col-12">
-						<div class="bg-light rounded-2 glightbox-bg p-4 position-relative">
+						<div class="bg-light rounded-2 glightbox-bg p-4 position-relative" style="text-align: center;">
 							<a th:href="|${product.image}|" class="stretched-link cursor-zoom" data-glightbox data-gallery="image-popup">
 								<img th:src="${product.image}" alt="" style="height: 31.25rem;">
 							</a>
@@ -37,8 +37,8 @@ Main START -->
 					<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
 					<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
 					<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
-					<li class="list-inline-item me-0"><i class="fa-regular fa-star text-warning"></i></li>
-					<li class="list-inline-item me-0 h6">4.0/5.0</li>
+					<li class="list-inline-item me-0"><i class="fas fa-star-half-alt text-warning"></i></li>
+					<li class="list-inline-item me-0 h6">4.5/5.0</li>
 				</ul>
 				<!-- Title -->
 				<h4 class="mb-4">[[${product.title}]]</h4>
@@ -128,30 +128,17 @@ Rating and review START -->
 			<!-- Rating START -->
 			<div class="col-md-4">
 				<div class="p-4 rounded-2 mb-4" style="background-color: #446A46;">
-					<div class="text-center text-white" th:if="${product.pno==308}">
+					<div class="text-center text-white">
 						<!-- Info -->
-						<h2 class="mb-0 text-white">4.0</h2>
-						<p class="mb-2">지금까지 받은 평균 별점</p>
+						<h2 class="mb-0 text-white">4.5</h2>
+						<p class="mb-2">Based on 56 Reviews</p>
 						<!-- Star -->
 						<ul class="list-inline mb-0">
 							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
 							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
 							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
 							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
-							<li class="list-inline-item me-0"><i class="fa-regular fa-star text-warning"></i></li>
-						</ul>
-					</div>
-					<div class="text-center text-white" th:if="${product.pno!=308}">
-						<!-- Info -->
-						<h2 class="mb-0 text-white">0.0</h2>
-						<p class="mb-2">지금까지 받은 평균 별점</p>
-						<!-- Star -->
-						<ul class="list-inline mb-0">
-							<li class="list-inline-item me-0"><i class="fa-regular fa-star text-warning"></i></li>
-							<li class="list-inline-item me-0"><i class="fa-regular fa-star text-warning"></i></li>
-							<li class="list-inline-item me-0"><i class="fa-regular fa-star text-warning"></i></li>
-							<li class="list-inline-item me-0"><i class="fa-regular fa-star text-warning"></i></li>
-							<li class="list-inline-item me-0"><i class="fa-regular fa-star text-warning"></i></li>
+							<li class="list-inline-item me-0"><i class="fas fa-star-half-alt text-warning"></i></li>
 						</ul>
 					</div>
 				</div>
@@ -170,7 +157,7 @@ Rating and review START -->
 					</div>
 					<!-- Percentage -->
 					<div class="col-3 col-sm-2">
-						<span class="ms-auto h6 fw-light mb-0">95%</span>
+						<span class="ms-auto h6 fw-light mb-0">85%</span>
 					</div>
 
 					<!-- Progress bar and Rating -->
@@ -250,7 +237,7 @@ Rating and review START -->
 					<hr class="my-4"> <!-- Divider -->
 					<!-- Review item -->
 					<div class="">
-						<img class="avatar avatar-md rounded-circle float-start me-3" th:src="@{/assets/images/avatar/01.jpg}" alt="avatar">
+						<img class="avatar avatar-md rounded-circle float-start me-3" th:src="@{/assets/images/farmstouch/avatar/ava02.png}" alt="avatar">
 						<div>
 							<div class="d-flex justify-content-between mb-2">
 								<div class="">
@@ -386,11 +373,11 @@ Related Products START -->
 									<!-- Badge and price -->
 									<div class="d-flex justify-content-center mb-2">
 										<ul class="list-inline mb-0">
-											<li class="list-inline-item me-0 small"><i class="fa-regular fa-star text-warning"></i></li>
-											<li class="list-inline-item me-0 small"><i class="fa-regular fa-star text-warning"></i></li>
-											<li class="list-inline-item me-0 small"><i class="fa-regular fa-star text-warning"></i></li>
-											<li class="list-inline-item me-0 small"><i class="fa-regular fa-star text-warning"></i></li>
-											<li class="list-inline-item me-0 small"><i class="fa-regular fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+											<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
 										</ul>
 									</div>
 									<!-- Title -->

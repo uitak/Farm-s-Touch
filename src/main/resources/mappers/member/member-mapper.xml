@@ -25,6 +25,19 @@
 		<result property="imageUrl" column="IMAGE" />
 	</resultMap>
 	
+	<resultMap type="Blog" id="blogListResultMap">
+		<id 	property="bNo" 				column="BNO" />
+		<result property="mNo" 				column="MNO" />
+		<result property="writer" 			column="WRITER" />
+		<result property="title" 			column="TITLE" />
+		<result property="thumbnailImgUrl" 	column="THUMBNAIL_IMAGE_URL" />
+		<result property="readCount" 		column="READCOUNT" />
+		<result property="createDate" 		column="CREATE_DATE" />
+		<result property="modifyDate" 		column="MODIFY_DATE" />
+		<result property="likeCount" 		column="likeCount" />
+		<result property="isLike" 			column="isLike" />
+	</resultMap>
+	
 	<select id="selectCount" resultType="int">
 		SELECT COUNT(*) FROM MEMBER
 	</select>
@@ -36,17 +49,38 @@
 	<select id="selectMember" parameterType="string" resultMap="memberResultMap">
 		<include refid="selectMemberSql"/>
 		WHERE ID = #{id}
-	</select>	
+	</select>
+	
+	<select id="selectMemberByKakaoToken" parameterType="string" resultMap="memberResultMap">
+		SELECT 	
+			MNO, ID, PASSWORD, ROLE, NAME, PHONE, GENDER, BIRTH,
+			EMAIL, ADDRESS, IMAGE
+		FROM MEMBER
+		WHERE KAKAOTOKEN = #{kakaoToKen}
+	</select>
+	
+	<select id="selectLikeBlogList" parameterType="int" resultMap="blogListResultMap">
+		SELECT DISTINCT 
+			B.BNO, B.TITLE, B.CREATE_DATE, B.MODIFY_DATE,
+			B.THUMBNAIL_IMAGE_URL, B.READCOUNT,
+			(SELECT M.ID FROM MEMBER M WHERE B.MNO = M.MNO) as WRITER,
+			(SELECT COUNT(*) FROM BLOG_LIKE LK WHERE B.BNO = LK.BNO) as likeCount,
+			(SELECT COUNT(*) FROM BLOG_LIKE LK WHERE B.BNO = LK.BNO AND LK.MNO = #{mNo}) as isLike
+		FROM BLOG B
+		INNER JOIN BLOG_LIKE LK ON B.BNO = LK.BNO
+		INNER JOIN MEMBER M ON LK.MNO = M.MNO
+		WHERE LK.MNO = #{mNo}
+	</select>
 	
 	<insert id="insertMember" parameterType="Member">
 		INSERT INTO MEMBER(
 			MNO, ID, PASSWORD, 	
 			ROLE, NAME, GENDER, BIRTH, PHONE,
-			EMAIL, ADDRESS, IMAGE
+			EMAIL, ADDRESS, IMAGE, KAKAOTOKEN
 		) VALUES (
 			 0, #{id}, #{password},
 			 default, #{name}, #{gender}, #{birth}, #{phone},
-			 #{email}, #{address}, #{imageUrl}
+			 #{email}, #{address}, #{imageUrl}, #{kakaoToken}
 		)
 	</insert>
 	

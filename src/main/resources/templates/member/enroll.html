@@ -12,7 +12,7 @@
 
 
 <!-- **************** MAIN CONTENT START **************** -->
-<main>
+<main style="background-color:#F6EDD9;">
 	
 <!-- =======================
 Main Content START -->
@@ -25,7 +25,7 @@ Main Content START -->
 						<!-- Vector Image -->
 						<div class="col-lg-6 d-md-flex align-items-center order-2 order-lg-1">
 							<div class="p-3 p-lg-5">
-								<img src="/assets/images/element/signin.svg" alt="">
+								<img src="/assets/images/farmstouch/logo/login_logo.png" style="width:800px; height:800px;">
 							</div>
 							<!-- Divider -->
 							<div class="vr opacity-1 d-none d-lg-block"></div>
@@ -36,25 +36,27 @@ Main Content START -->
 							<div class="p-4 p-sm-6">
 								<!-- Logo -->
 								<a href="index.html">
-									<img class="h-50px mb-4" src="/assets/images/logo-icon.svg" alt="logo">
+									<img class="h-50px mb-4" src="/assets/images/farmstouch/logo/flo.png" alt="logo">
 								</a>
 								<!-- Title -->
-								<h1 class="mb-2 h3">Create new account</h1>
-								<p class="mb-0">Already a member?<a href="sign-in.html"> Log in</a></p>
+								<h1 class="mb-2 h3">회원가입</h1>
+								<p class="mb-0">이미 팜스터치 회원이신가요?&nbsp;<a href="/login"><u>로그인</u></a></p>
 		
 								<!-- Form START -->
 								<form class="mt-4 text-start" th:action="@{/member/enroll}" th:object="${member}" method="post">
 									<!-- Id -->
 									<div class="mb-3">
 										<label class="form-label">Enter Id</label>
-										<input type="text" class="form-control" id="newId" th:field="*{id}" required>
-										<input type="button" id="checkDuplicate" value="중복검사">
+										<div class="input-group">
+											<input type="text" class="form-control" id="newId" placeholder="아이디" th:field="*{id}" required>
+											<input class="btn btn-outline-success fs-sm" type="button" id="checkDuplicate" value="중복검사" style="float: right;">
+										</div>
 									</div>
 
 									<!-- Password -->
 									<div class="mb-3 position-relative">
 										<label class="form-label">Enter Password</label>
-										<input class="form-control fakepassword" type="password" th:field="*{password}" id="psw-input" required>
+										<input class="form-control fakepassword" type="password" th:field="*{password}" id="psw-input" placeholder="비밀번호" required>
 										<span class="position-absolute top-50 end-0 translate-middle-y p-0 mt-3">
 											<i class="fakepasswordicon fas fa-eye-slash cursor-pointer p-2"></i>
 										</span>
@@ -62,56 +64,53 @@ Main Content START -->
 									<!-- Confirm Password -->
 									<div class="mb-3">
 										<label class="form-label">Confirm Password</label>
-										<input type="password" class="form-control" id="pass2" required>
+										<input type="password" class="form-control" id="pass2" placeholder="비밀번호 확인" required>
 									</div>
 
 									<!-- Email -->									
 									<div class="mb-3">
 										<label class="form-label">Enter Email</label>
-										<input type="email" class="form-control" th:field="*{email}" required>
+										<input type="email" class="form-control" th:field="*{email}" placeholder="이메일" required>
 									</div>
 									
 									<!-- Name -->									
 									<div class="mb-3">
 										<label class="form-label">Enter Name</label>
-										<input type="text" class="form-control" th:field="*{name}">
+										<input type="text" class="form-control" th:field="*{name}" placeholder="이름">
 									</div>
 
-									<!-- Phone -->									
+									<!-- Phone 						
 									<div class="mb-3">
 										<label class="form-label">Enter Phone</label>
 										<input type="text" class="form-control" th:field="*{phone}">
 									</div>
+									-->
 
 									<!-- Address -->									
 									<div class="mb-3">
 										<label class="form-label">Enter Address</label>
-										<input type="text" class="form-control" th:field="*{address}">
+										<input type="text" class="form-control" id="signup-address" th:field="*{address}" onclick="javascript:execDaumPostcode()" placeholder="주소">
 									</div>
 
 
-									<!-- Remember me -->
+									<!-- Remember me
 									<div class="mb-3">
 										<input type="checkbox" class="form-check-input" id="rememberCheck">
 										<label class="form-check-label" for="rememberCheck">Keep me signed in</label>
 									</div>
+									-->
+
 									<!-- Button -->
-									<div><button type="submit" class="btn btn-primary w-100 mb-0" id="enrollSubmit">Sign up</button></div>
+									<button type="submit" class="btn btn-success w-100 mb-0" id="enrollSubmit">회원가입</button>
 		
 									<!-- Divider -->
 									<div class="position-relative my-4">
 										<hr>
-										<p class="small position-absolute top-50 start-50 translate-middle bg-mode px-1 px-sm-2">Or sign in with</p>
+										<p class="small position-absolute top-50 start-50 translate-middle bg-mode px-1 px-sm-2">Copyright</p>
 									</div>
-		
-									<!-- Google and facebook button -->
-									<div class="vstack gap-3">
-										<a href="#" class="btn btn-light mb-0"><i class="fab fa-fw fa-google text-google-icon me-2"></i>Sign in with Google</a>
-										<a href="#" class="btn btn-light mb-0"><i class="fab fa-fw fa-facebook-f text-facebook me-2"></i>Sign in with Facebook</a>
-									</div>
-		
+				
 									<!-- Copyright -->
-									<p class="mb-0 mt-3 text-center">©2022 <a target="_blank" href="https://www.webestica.com/">Webestica.</a> All rights reserved</p>
+									<p class="mb-0 mt-3 text-center">©2023 <a target="_blank" href="https://www.webestica.com/">FarmsTouch.</a> All rights reserved</p>
 								</form>
 								<!-- Form END -->
 							</div>		
@@ -131,6 +130,7 @@ Main Content END -->
 <!-- footer 시작 -->
 <footer th:replace="~{common/layout2 :: #footer}"></footer>
 
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 	$(function() {
 		let newId = document.getElementById("newId");
@@ -181,7 +181,7 @@ Main Content END -->
 	    					alert("이미 사용중인 아이디입니다.")
 	    				} else{
 							newId.readOnly=true;
-							$(newId).css("background-color", "#D8D8D8");
+							$(newId).css("background-color", "#F6EDD9");
 	    					alert("사용 가능합니다.")
 	    				}
 	    			},
@@ -192,6 +192,42 @@ Main Content END -->
 	    	});
 	    });
 	});
+
+	function execDaumPostcode() {
+    	new daum.Postcode({
+    	    oncomplete: function(data) {
+    	      // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+    	      // 도로명 주소의 노출 규칙에 따라 주소를 조합한다.
+    	      // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+    	      var fullRoadAddr = data.roadAddress; // 도로명 주소 변수
+    	      var extraRoadAddr = ''; // 도로명 조합형 주소 변수
+
+    	      // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+    	      // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+    	      if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+    	        extraRoadAddr += data.bname;
+    	      }
+    	      // 건물명이 있고, 공동주택일 경우 추가한다.
+    	      if(data.buildingName !== '' && data.apartment === 'Y'){
+    	        extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+    	      }
+    	      // 도로명, 지번 조합형 주소가 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+    	      if(extraRoadAddr !== ''){
+    	        extraRoadAddr = ' (' + extraRoadAddr + ')';
+    	      }
+    	      // 도로명, 지번 주소의 유무에 따라 해당 조합형 주소를 추가한다.
+    	      if(fullRoadAddr !== ''){
+    	        fullRoadAddr += extraRoadAddr;
+    	      }
+
+    	      // 우편번호와 주소 정보를 해당 필드에 넣는다.
+    	      document.getElementById('signup-address').value = fullRoadAddr;
+    	      document.getElementById("signup-address").focus();
+    	     
+    	    }
+    	}).open();
+    }
 </script>
 
 </body>

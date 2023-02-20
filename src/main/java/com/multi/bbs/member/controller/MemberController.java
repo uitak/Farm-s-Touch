@@ -2,6 +2,7 @@ package com.multi.bbs.member.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.multi.bbs.blog.model.vo.Blog;
+import com.multi.bbs.member.model.service.KaKaoService;
 import com.multi.bbs.member.model.service.MemberService;
 import com.multi.bbs.member.model.vo.Member;
 
@@ -37,11 +40,52 @@ public class MemberController {
 	@Autowired
 	private MemberService service;
 	
+	@Autowired
+	private KaKaoService kakaoService;
+	
 	final static private String savePath = "c:/multicampus/";
 	
 	@GetMapping("/login")
 	String login() {
 		return "/member/login";
+	}
+	
+	@GetMapping("/kakaoLogin")
+	public String kakaoLogin(Model model, String code) {
+		log.info("로그인 요청");
+		if(code != null) {
+			try {
+				String loginUrl = "http://localhost/kakaoLogin";
+				String token = kakaoService.getToken(code, loginUrl);
+				Map<String, Object> map = kakaoService.getUserInfo(token);
+				String kakaoToken = (String) map.get("id");
+				Member loginMember = service.loginKaKao(kakaoToken);
+
+				System.out.println("id: " + map.get("id"));
+				System.out.println("nickname: " + map.get("nickname"));
+				System.out.println("email: " + map.get("email"));
+				
+				if(loginMember != null) { // 로그인 성공
+					model.addAttribute("loginMember",loginMember); // 세션으로 저장되는 코드, 이유: @SessionAttributes
+					return "redirect:/";
+				}
+				else {
+					Member member = new Member();
+					member.setId(""+map.get("email"));
+					member.setName(""+map.get("nickname"));
+					member.setKakaoToken(kakaoToken);
+					member.setMNo(service.saveKakao(member));
+					model.addAttribute("loginMember", member);
+					return "redirect:/";
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		//model.addAttribute("msg", "로그인에 실패하였습니다.");
+		//model.addAttribute("location","/");
+		//return "common/msg";
+		return "redirect:/error";
 	}
 	
 	@PostMapping("/login")
@@ -159,6 +203,16 @@ public class MemberController {
 							 @ModelAttribute Member updateMember) {
 		log.info("회원 정보 페이지 요청");
 		return "member/myInfo";
+	}
+	
+	@GetMapping("/member/wishList")
+	public String memberWish(Model model,
+							 @SessionAttribute(name = "loginMember", required = true) Member loginMember) {
+		
+		List<Blog> blogList = service.findLikeBlogList(loginMember.getMNo());
+		model.addAttribute("blogList", blogList);
+		
+		return "member/myWish";
 	}
 	
 	@GetMapping("/member/updatePwd")

@@ -93,7 +93,7 @@ Search START -->
 						<!-- Rooms START -->
 						<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xxl-3 g-4" id="contents">
 
-							<th:block th:if="${list == null}">
+							<th:block th:if="${list.isEmpty()}">
 								<p>조회된 글이 없습니다.</p>
 							</th:block>
 

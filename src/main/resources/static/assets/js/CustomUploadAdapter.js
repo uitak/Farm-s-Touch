@@ -8,8 +8,8 @@ class UploadAdapter {
     upload() {
         return this.loader.file
             .then( file => new Promise( ( resolve, reject ) => {
-                this._initRequest();
-                this._initListeners( resolve, reject, file );
+                this._initRequest();                
+                this._initListeners( resolve, reject, file );                
                 this._sendRequest( file );
             } ) );
     }
@@ -37,17 +37,17 @@ class UploadAdapter {
         xhr.addEventListener( 'error', () => reject( genericErrorText ) );
         xhr.addEventListener( 'abort', () => reject() );
         xhr.addEventListener( 'load', () => {
-            const response = xhr.response;
-			
+            const response = xhr.response;			
 			// console.log(response);
 			
             if ( !response || response.error ) {
                 return reject( response && response.error ? response.error.message : genericErrorText );
             }
-
-            resolve( {
+            
+            setTimeout(() => resolve( {
                 default: response
-            } );
+            } ), 3000);
+            
         } );
 
         if ( xhr.upload ) {

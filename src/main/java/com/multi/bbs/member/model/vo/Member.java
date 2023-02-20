@@ -19,4 +19,5 @@ public class Member {
 	private String email;
 	private String address;
 	private String imageUrl;
+	private String kakaoToken;
 }

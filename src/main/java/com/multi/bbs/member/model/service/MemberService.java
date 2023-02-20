@@ -4,6 +4,7 @@ import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.multi.bbs.blog.model.vo.Blog;
 import com.multi.bbs.member.model.mapper.MemberMapper;
 import com.multi.bbs.member.model.vo.Member;
 
@@ -40,6 +42,28 @@ public class MemberService {
 		}
 	}
 	
+	public Member loginKaKao(String kakaoToken) {
+		Member member = mapper.selectMemberByKakaoToken(kakaoToken);
+		if(member != null ) {
+			return member;
+		}else {
+			return null;
+		}
+	}
+	
+	public int saveKakao(Member member) {
+		int ret = 0;
+		if (member.getMNo() == 0) {
+			String encodePW = pwEncoder.encode("kakao");
+			member.setPassword(encodePW);
+			ret = mapper.insertMember(member);
+		}
+		else {
+			ret = mapper.updateMember(member);
+		}
+		return ret;
+	}
+	
 	// @Transactional : DB 트랜잭션 관리를 위한 AOP 어노테이션. 만일 오류가 발생하면 롤백. 아니면 커밋
 	// (rollbackFor = Exception.class) : 사용하지 않은 경우 트랜잭션 코드가 정상적으로 작동하지 않을수 있다.
 	@Transactional(rollbackFor = Exception.class)
@@ -63,6 +87,9 @@ public class MemberService {
 		return mapper.selectMember(id);
 	}
 
+	public List<Blog> findLikeBlogList(int no) {
+		return mapper.selectLikeBlogList(no);
+	}
 	
 	@Transactional(rollbackFor = Exception.class)
 	public int delete(int no) {

@@ -62,7 +62,8 @@
 									<div class="bg-light rounded p-3">
 										<div class="d-sm-flex justify-content-between">
 											<div class="d-sm-flex align-items-center mb-3">
-												<img class="avatar avatar-md rounded-circle float-start me-3" th:src="|/blog/file/${comment.writer}/${comment.profileImg}|" alt="avatar">
+												<img th:if="${comment.profileImg != null}" class="avatar avatar-md rounded-circle float-start me-3" th:src="|/blog/file/${comment.writer}/${comment.profileImg}|" alt="avatar">
+												<img th:if="${comment.profileImg == null}" class="avatar avatar-md rounded-circle float-start me-3" src="/assets/images/farmstouch/avatar/ava02.png" alt="avatar">
 												<div>
 													<h6 class="m-0">[[${comment.writer}]]</h6>
 													<span class="me-3 small" th:text="${#dates.format(comment.createDate, 'yyyy-MM-dd')}"></span>

@@ -6,28 +6,6 @@
 <body>
 	<header th:replace="~{common/layout2 :: #header}"></header>
 
-	<!--
-<style>
-    section>div#board-write-container{width:600px; margin:0 auto; text-align:center;}
-    section>div#board-write-container h2{margin:10px 0;}
-    table#tbl-board{width:500px; margin:0 auto; border:1px solid black; border-collapse:collapse; clear:both; }
-    table#tbl-board th {width: 125px; border:1px solid; padding: 5px 0; text-align:center;} 
-    table#tbl-board td {border:1px solid; padding: 5px 0 5px 10px; text-align:left;}
-    div#comment-container button#btn-insert{width:60px;height:50px; color:white; background-color:#3300FF;position:relative;top:-20px;}
-    
-    /*댓글테이블*/
-    table#tbl-comment{width:580px; margin:0 auto; border-collapse:collapse; clear:both; } 
-    table#tbl-comment tr td{border-bottom:1px solid; border-top:1px solid; padding:5px; text-align:left; line-height:120%;}
-    table#tbl-comment tr td:first-of-type{padding: 5px 5px 5px 50px;}
-    table#tbl-comment tr td:last-of-type {text-align:right; width: 100px;}
-    table#tbl-comment button.btn-delete{display:none;}
-    table#tbl-comment tr:hover {background:lightgray;}
-    table#tbl-comment tr:hover button.btn-delete{display:inline;}
-    table#tbl-comment sub.comment-writer {color:navy; font-size:14px}
-    table#tbl-comment sub.comment-date {color:tomato; font-size:10px}
-</style>
--->
-
 	<!-- =======================
 Main banner START -->
 	<section class="pt-0">
@@ -215,8 +193,8 @@ Main banner START -->
 											<div class="d-sm-flex justify-content-between">
 												<!-- Avatar image -->
 												<div class="d-sm-flex align-items-center mb-3">
-													<img class="avatar avatar-md rounded-circle float-start me-3"
-														th:src="|/board/file/${reply.writer}/${reply.profileImg}|" alt="avatar">
+													<img th:if="${reply.profileImg != null}" class="avatar avatar-md rounded-circle float-start me-3" th:src="|/board/file/${reply.writer}/${reply.profileImg}|" alt="avatar">
+													<img th:if="${reply.profileImg == null}" class="avatar avatar-md rounded-circle float-start me-3" src="/assets/images/farmstouch/avatar/ava02.png" alt="avatar">
 													<!-- Title -->
 													<div>
 														<h6 class="m-0" 0>[[${reply.writer}]]</h6>

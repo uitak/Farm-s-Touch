@@ -243,23 +243,29 @@ Main Banner START -->
 		
 	<!-- </div> -->
 </section>
-<!-- =======================
-Main Banner END -->
-
-<!-- 수정 시작 #################################################################################################################################### -->
 
 <!-- =======================
 Packages START -->
 <section class="p-0 mt-n3">
 	<div class="container">
-		
+
 		<div class="row row-cols-7 g-4 mb-n3">
-			<!-- Fleet item --> <!-- #82A284  rgb(237, 223, 179) EAE7B1 -->
-			<div class="row mb-0" style="margin-bottom: -0.625rem;">
-				<div class="col-12" style="text-align: right; margin-bottom: -1.563rem;">
-					<h6 class="mb-0">서울특별시 종로구 청와대로 1 <button class="btn"><img src="https://img.icons8.com/stickers/100/null/synchronize.png" style="height: 1.25rem;"/> 새로고침</button></h6>
-				</div>
+
+			<div class="row mb-0 align-items-end" style="margin-bottom: -0.625rem;">
+				<div class="hstack gap-4">
+					<div class="ms-auto">
+						<h5 class="mb-0" id="status">
+
+						</h5>					
+					</div>
+					<div>
+						<button class="btn p-0 align-self-end" id="resetWeather">
+							<img src="https://img.icons8.com/stickers/100/null/synchronize.png" style="height: 1.25rem;"/> <span>새로고침</span>
+						</button>
+					</div>
+				</div>					
 			</div>
+
 			<div class="col">
 				<div class="card shadow text-center align-items-center p-3" style="background-color:#E1F1FF;">
 					<!-- Image -->
@@ -268,8 +274,8 @@ Packages START -->
 					</div>
 					<!-- Card body -->
 					<div class="card-body px-0 pb-0">
-						<h6 class="card-title"><a href="#" class="stretched-link">-3°C/2°C</a></h6>
-						<span style="color:red;"><b>(일)</b></span>
+						<h6 id="temperature-0"> </h6>
+						<span id="date-0"> </span>
 					</div>
 				</div>
 			</div>
@@ -283,8 +289,8 @@ Packages START -->
 					</div>
 					<!-- Card body -->
 					<div class="card-body px-0 pb-0">
-						<h6 class="card-title"><a href="#" class="stretched-link">-3°C/2°C</a></h6>
-						<span><b>(월)</b></span>
+						<h6 id="temperature-1"> </h6>
+						<span id="date-1"> </span>
 					</div>
 				</div>
 			</div>
@@ -298,8 +304,8 @@ Packages START -->
 					</div>
 					<!-- Card body -->
 					<div class="card-body px-0 pb-0">
-						<h6 class="card-title"><a href="#" class="stretched-link">-3°C/2°C</a></h6>
-						<span><b>(화)</b></span>
+						<h6 id="temperature-2"> </h6>
+						<span id="date-2"> </span>
 					</div>
 				</div>
 			</div>
@@ -313,8 +319,8 @@ Packages START -->
 					</div>
 					<!-- Card body -->
 					<div class="card-body px-0 pb-0">
-						<h6 class="card-title"><a href="#" class="stretched-link">-3°C/2°C</a></h6>
-						<span><b>(수)</b></span>
+						<h6 id="temperature-3"> </h6>
+						<span id="date-3"> </span>
 					</div>
 				</div>
 			</div>
@@ -328,8 +334,8 @@ Packages START -->
 					</div>
 					<!-- Card body -->
 					<div class="card-body px-0 pb-0">
-						<h6 class="card-title"><a href="#" class="stretched-link">-3°C/2°C</a></h6>
-						<span><b>(목)</b></span>
+						<h6 id="temperature-4"> </h6>
+						<span id="date-4"> </span>
 					</div>
 				</div>
 			</div>
@@ -343,8 +349,8 @@ Packages START -->
 					</div>
 					<!-- Card body -->
 					<div class="card-body px-0 pb-0">
-						<h6 class="card-title"><a href="#" class="stretched-link">-3°C/2°C</a></h6>
-						<span><b>(금)</b></span>
+						<h6 id="temperature-5"> </h6>
+						<span id="date-5"> </span>
 					</div>
 				</div>
 			</div>
@@ -358,8 +364,8 @@ Packages START -->
 					</div>
 					<!-- Card body -->
 					<div class="card-body px-0 pb-0">
-						<h6 class="card-title"><a href="#" class="stretched-link">-3°C/2°C</a></h6>
-						<span style="color:blue;"><b>(토)</b></span>
+						<h6 id="temperature-6"> </h6>
+						<span id="date-6"> </span>
 					</div>
 				</div>
 			</div>
@@ -903,6 +909,31 @@ Action box END -->
 </main>
 	<!-- **************** MAIN CONTENT END **************** -->
 	<footer th:replace="~{common/layout1 :: #footer}"></footer>
+
+	<script src="/assets/js/regionCode.json" type="text/javascript"></script>
+	<script src="/assets/js/weather.js"></script>
+
+	<script>
+		window.addEventListener("load", (event) => {
+			const latitude  = 36.47903420095472;
+			const longitude = 127.28984986228387;
+
+			const status = document.querySelector('#status');
+
+			const baseDateTime = shortTermDate();
+            const baseDate = baseDateTime.date;
+            const baseTime = baseDateTime.time;
+
+			// 기본 x,y 좌표는 세종특별자치시 보람동.
+			parsingShortTermForecast(baseDate, baseTime, 66, 103);
+			findAddress(latitude, longitude)
+				.then(function(ret) {
+					status.textContent = ret['address'];
+					parsingMidTermForecast(ret['region']);
+				});
+		});
+	</script>
+
 </body>
 </html>
 

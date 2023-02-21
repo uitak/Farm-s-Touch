@@ -33,6 +33,7 @@
 								<th:block th:if="${session.loginMember != null && (session.loginMember.id == blog.writer || session.loginMember.role == 'ROLE_ADMIN')}">
 									<div class="d-flex gap-2 mt-2 mt-sm-0">
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<a th:href="|/blog/list|" class="btn btn-sm btn-info-soft"><i class="fa-solid fa-pen-to-square"></i> 목록</a>
 										<a id="btnUpdate" class="btn btn-sm btn-success-soft"><i class="fa-solid fa-pen-to-square"></i> 수정</a>
 										<a id="btnDelete" class="btn btn-sm btn-danger-soft"><i class="bi bi-trash"></i> 삭제</a>
 									</div>

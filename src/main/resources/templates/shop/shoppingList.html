@@ -151,7 +151,7 @@ Main START -->
 						</div>
 						<!-- Buttons -->
 						<div class="d-flex justify-content-between p-2 p-xl-0 mt-xl-3">
-							<button class="btn btn-link p-0 mb-0" style="color: #446A46;" type="reset">Clear all</button>
+							<button class="btn btn-link p-0 mb-0" style="color: #446A46;" type="button" onClick="location.href='http://localhost/shop/shoppingList'" >Clear all</button>
 							<button type="submit" class="btn btn-success2 mb-0">Filter Result</button>
 						</div>
 					
@@ -196,9 +196,9 @@ Main START -->
 				<div class="d-flex align-items-center flex-nowra col-md-6 col-xl-6 mb-n4">
 					<label class="text-black opacity-50 text-nowrap fs-sm me-2 d-none d-sm-block" for="sorting">Sort by:</label>
 					<select id="sort" name="sort" class="form-select"  onchange="document.searchForm.submit();">
-                    <option value="normal">추천순</option>
-                    <option value="low">낮은 가격순</option>
-                    <option value="high" >높은 가격순</option>
+	                    <option th:value="normal">추천순</option>
+	                    <option th:value="low" >낮은 가격순</option>
+	                    <option th:value="high" >높은 가격순</option>
                   </select>
                   <span class="fs-sm text-black opacity-50 text-nowrap ms-2 d-none d-md-block">of [[${count}]] products</span>
 				</div>

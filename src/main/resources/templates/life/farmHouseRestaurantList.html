@@ -231,12 +231,13 @@ Tour grid START -->
 							<div>
 								<span class="badge text-bg-dark">
 									<h6 class="fw-light text-white m-0"><i class="fa-solid fa-star text-warning me-2"></i>
-										<th:block th:if="${param.star == null}">	
-											별점없음
+										<th:block th:if="${FrmhsTasteHos.cntntsNo == '208832'}">	
+											4.0
 										</th:block>
-										<th:block th:unless="${param.star != null}">	
-											[[${param.star}]]
+										<th:block th:unless="${FrmhsTasteHos.cntntsNo == '208832'}">	
+											 별점없음 [[${param.star}]] 
 										</th:block>
+						
 									</h6>
 								</span>
 							</div>

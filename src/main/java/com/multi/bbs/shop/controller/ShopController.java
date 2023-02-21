@@ -53,11 +53,13 @@ public class ShopController {
 //		System.out.println(kinds);
 //		System.out.println(brands);
 		
+		
 		if(paramMap.get("page") != null) {
 			page = Integer.parseInt((String) paramMap.get("page"));
 		}
 		paramMap.put("kinds", kinds);
 		paramMap.put("brands", brands);
+		
 		
 		int count = shopService.getProductCount(paramMap);
 		PageInfo pageInfo = new PageInfo(page, 10, count, 9);
@@ -77,7 +79,6 @@ public class ShopController {
 		model.addAttribute("paramMap", paramMap);
 		
 //		System.out.println(list);
-//		System.out.println(paramMap);
 		
 		return "/shop/shoppingList";
 	}

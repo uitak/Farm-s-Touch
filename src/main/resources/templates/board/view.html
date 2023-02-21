@@ -101,7 +101,7 @@ Main banner START -->
 									<div class="mb-3">
 										<h6 class="my-2">내용</h6>
 										<textarea class="form-control" rows="12"
-											readonly>[[${board.content}]]</textarea>
+											style="resize:none;" readonly>[[${board.content}]]</textarea>
 									</div>
 								</div>
 
@@ -162,13 +162,13 @@ Main banner START -->
 						<div class="card-header border-bottom">
 							<h5 class="card-header-title">리뷰 작성하기</h5>
 						</div>
-						<form class="row align-items-center" action="/board/reply" method="post">
+						<form class="row card-body align-items-center" action="/board/reply" method="post">
 							<div class="col-10">
 								<input type="hidden" name="bNo" th:value="${board.bNo}" />
-								<textarea class="form-control" name="content" id="replyContent" rows="3"></textarea>
+								<textarea class="form-control mx-auto my-1" style="resize:none;" name="content" id="replyContent" rows="3"></textarea>
 							</div>
-							<div class="col-2">
-								<button class="btn btn-success2 w-50 align-self-center" type="submit" id="btn-insert">등록</button>
+							<div class="col-2 text-center">
+								<button class="btn btn-success2 w-50" type="submit" id="btn-insert">등록</button>
 							</div>								
 						</form>
 					</div>

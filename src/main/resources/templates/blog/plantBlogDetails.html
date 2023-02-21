@@ -59,7 +59,7 @@
 							<th:block th:if="${commentList != null}">
 								<!-- Comment -->
 								<th:block th:each="comment : ${commentList}">
-									<div class="bg-light rounded p-3">
+									<div class="bg-light rounded p-3 my-3">
 										<div class="d-sm-flex justify-content-between">
 											<div class="d-sm-flex align-items-center mb-3">
 												<img th:if="${comment.profileImg != null}" class="avatar avatar-md rounded-circle float-start me-3" th:src="|/blog/file/${comment.writer}/${comment.profileImg}|" alt="avatar">
@@ -90,10 +90,10 @@
 								<form class="row g-3 mt-2" th:action="@{/blog/comment}" method="post">
 									<input type="hidden" name="bNo" th:value="${blog.bNo}" />
 									<div class="col-12">
-										<textarea class="form-control" name="content" rows="3" placeholder="댓글을 작성하세요."></textarea>
+										<textarea class="form-control" style="resize:none;" name="content" rows="3" placeholder="댓글을 작성하세요."></textarea>
 									</div>
-									<div class="col-12">
-										<button type="submit" class="btn btn-success2">등록</button>
+									<div class="col-12 text-end">
+										<button type="submit" class="btn btn-success2 me-4">등록</button>
 									</div>
 								</form>
 							</div>

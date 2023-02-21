@@ -268,6 +268,7 @@ Hotel list START -->
 						<!-- Buttons -->
 						
 					</div>
+					
 					<!-- Responsive offcanvas body END -->
 				</aside>
 				<!-- Left sidebar END -->
@@ -288,6 +289,7 @@ Hotel list START -->
 						</th:block>
 						
 						<th:block th:if="${list != null}">
+							
 							<div th:each="garden : ${list}" class="card shadow p-2">
 							<div class="row g-0">
 								<!-- Card img -->
@@ -388,10 +390,13 @@ Hotel list START -->
 	
 						<!-- Pagination -->
 						<th:block th:if="${listSize > 0}">
+						<div class="row py-0 my-0">
+						<h5 class="text-end text-success">총 [[${gardenCount}]]개의 결과가 검색되었습니다.</h5>
+						</div>
 						<!-- Pagination -->
 						<div class="row">
 							<div class="col-12">
-								<nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
+								<nav class="mt-0 d-flex justify-content-center" aria-label="navigation">
 									<ul class="pagination pagination-primary-soft2 d-inline-block d-md-flex rounded mb-0">
 										<li class="page-item mb-0"><a class="page-link" th:onclick="movePage(1);"><i class="fa-solid fa-angles-left"></i></a></li>
 										<li class="page-item mb-0"><a class="page-link" th:onclick="movePage([[${pageInfo.prevPage}]]);"><i class="fa-solid fa-angle-left"></i></a></li>

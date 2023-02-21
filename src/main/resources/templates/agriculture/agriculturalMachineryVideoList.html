@@ -24,7 +24,7 @@ Main Banner START -->
 			<div class="row my-2 my-xl-5"> 
 				<div class="col-md-6 mx-auto"> </div>
 				<div class="col-md-6 mx-auto"> 
-					<h1 class="text-center " style="text-shadow:2px 2px 2px white; color: #285430;">농기계 시청각 자료</h1>
+					<h1 class="text-center " ><a style="text-shadow:2px 2px 2px white; color: #285430;" th:href="|/agriculture/agriculturalMachineryVideoList|">농기계 시청각 자료</a></h1>
 					<h4 class="text-center " style="text-shadow:2px 2px 2px #285430; color: white;">Agricultural Machine Vod</h4>
 				</div>		
 			</div>
@@ -142,7 +142,7 @@ Hotel list START -->
 					<th:block th:if="${listSize == 0}">
 						<div class="row mt-5">
 							<div class = "col-8 pt-3 mx-auto text-center">
-								<h2 class="text-secondary"><i class="fa-solid fa-circle-exclamation"></i> 조회된 내용이 없습니다.</h2>
+								<img src="../assets/images/farmstouch/noresult2.png" class="rounded-3 position-relative" alt="">
 							</div>
 						</div>
 						
@@ -273,6 +273,9 @@ Hotel list START -->
 					
 					</th:block>
 					<th:block th:if="${listSize > 0}">
+					<div class="row pt-4 my-0">
+						<h5 class="text-end text-success">총 [[${boardCount}]]개의 결과가 검색되었습니다.</h5>
+					</div>
 					<!-- Pagination -->
 					<div class="row">
 						<div class="col-12">

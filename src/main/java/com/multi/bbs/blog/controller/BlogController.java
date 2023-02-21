@@ -61,7 +61,7 @@ public class BlogController {
 			paramMap.put("sorted", "recent");
 		}
 
-		PageInfo pageInfo = new PageInfo(1, 12);
+		PageInfo pageInfo = new PageInfo(1, 9);
 		List<Blog> blogList = service.getBlogList(pageInfo, paramMap);
 		for (Blog blog : blogList) {
 			if (blog.getThumbnailImgUrl() == null) {
@@ -83,7 +83,7 @@ public class BlogController {
 			paramMap.put("mNo", ""+((Member)session.getAttribute("loginMember")).getMNo());
 		}
 		int page = Integer.parseInt(paramMap.get("page"));
-		PageInfo pageInfo = new PageInfo(page, 12);
+		PageInfo pageInfo = new PageInfo(page, 9);
 
 		List<Blog> blogList = service.getBlogList(pageInfo, paramMap);
 		for (Blog blog : blogList) {

@@ -45,7 +45,7 @@ Main Banner START -->
 										<div class="col-11 col-lg-7">
 											<h6 class="text-white fw-normal mb-0">💖 Fall in love with the Food</h6>
 											<!-- Title -->
-											<h1 class="text-white display-6">농가 맛집</h1>
+											<h1 class=""><a class="text-white display-6" th:href="|/life/farmHouseRestaurantList|">농가 맛집</a></h1>
 											<!-- Form -->
 									<form class="bg-body d-flex rounded-2 p-2" th:action="@{/life/farmHouseRestaurantList}" method="get">
 										<input class="form-control border-0 me-1" type="text" placeholder="맛집 이름을 검색하세요. 지역별 보기는 아래쪽에" id="searchValue" name="searchValue" th:value="${param.searchValue}">

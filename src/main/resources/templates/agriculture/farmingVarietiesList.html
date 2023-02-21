@@ -22,7 +22,7 @@ Main Banner START -->
 			<div class="row my-2 my-xl-5"> 
 				<div class="col-md-1 mx-auto"></div>
 				<div class="col-md-4 mx-auto"> 
-					<h1 class="text-center  text-center" style="text-shadow:1px 1px 1px white; color:#4d3f15; ">품종 검색</h1>
+					<h1 class="text-center  text-center"><a style="text-shadow:1px 1px 1px white; color:#4d3f15; " th:href="|/agriculture/farmingVarietiesList|">품종 검색</a></h1>
 					<h5 class="text-center  text-center" style="text-shadow:2px 2px 2px #6B591D; color:#FDFAF6; ">Seed information search</h5>
 				</div>
 				
@@ -585,7 +585,7 @@ Title and Tabs END -->
 			<th:block th:if="${listSize == 0}">
 				<div class="row mt-5">
 					<div class = "col-8 pt-3 mx-auto text-center">
-						<h2 class="text-secondary"><i class="fa-solid fa-circle-exclamation"></i> 조회된 내용이 없습니다.</h2>
+						<img src="../assets/images/farmstouch/noresult2.png" class="rounded-3 position-relative" alt="">
 					</div>
 				</div>
 				
@@ -598,8 +598,12 @@ Title and Tabs END -->
 				<div th:each="variety : ${list}" class="col-md-6 col-xl-4">
 				<div class="card shadow p-2 pb-0 h-100">
 					<!-- Image -->
+					<th:block th:if="${not #strings.isEmpty(variety.imgFileLink)}">
 					<img th:src= "${variety.imgFileLink}" class="rounded-2" alt="Card image" style="height: 268px;">
-
+					</th:block>
+					<th:block th:if="${#strings.isEmpty(variety.imgFileLink)}">
+					<img src="http://www.nongsaro.go.kr/ps/img/common/anvil_img.jpg" class="rounded-2" alt="Card image" style="height: 268px;">
+					</th:block>
 					<!-- Card body START -->
 					<div class="card-body px-3 pb-0">
 
@@ -635,6 +639,9 @@ Title and Tabs END -->
 			
 		</div> <!-- Row END -->
 		<th:block th:if="${listSize > 0}">
+		<div class="row pt-4 my-0">
+			<h5 class="text-end text-success">총 [[${boardCount}]]개의 결과가 검색되었습니다.</h5>
+		</div>
 		<!-- Pagination -->
 		<div class="row">
 			<div class="col-12">
